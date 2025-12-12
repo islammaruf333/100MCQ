@@ -1,0 +1,321 @@
+import { useState, useEffect, useCallback } from 'react'
+import ExamHeader from './ExamHeader'
+import QuestionCard from './QuestionCard'
+import SidebarGrid from './SidebarGrid'
+import ResultSummary from './ResultSummary'
+import { saveSubmission } from '../utils/api'
+import './MCQContainer.css'
+
+const STATUS = {
+  IDLE: 'IDLE',
+  RUNNING: 'RUNNING',
+  SUBMITTED: 'SUBMITTED'
+}
+
+const DURATION_SECONDS = 60 * 60 // 60 minutes
+const MARK_PER_QUESTION = 1.25
+const NEGATIVE_MARKING = 0.25
+const PASS_MARK = 40
+
+function MCQContainer({ questions, studentName }) {
+  console.log('MCQContainer rendered:', { 
+    hasQuestions: !!questions, 
+    isArray: Array.isArray(questions), 
+    length: questions?.length,
+    studentName 
+  })
+
+  // ALL HOOKS MUST BE CALLED BEFORE ANY CONDITIONAL RETURNS
+  const [status, setStatus] = useState(STATUS.RUNNING)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  const [answers, setAnswers] = useState({})
+  const [visitedQuestions, setVisitedQuestions] = useState(new Set([0]))
+  const [timeLeft, setTimeLeft] = useState(DURATION_SECONDS)
+  const [markedForReview, setMarkedForReview] = useState(new Set())
+
+  // All useCallback hooks must be defined before any returns
+  const handleAnswerSelect = useCallback((questionId, optionId) => {
+    setAnswers(prev => ({
+      ...prev,
+      [questionId]: optionId
+    }))
+    setVisitedQuestions(prev => new Set([...prev, currentQuestionIndex]))
+  }, [currentQuestionIndex])
+
+  const handleQuestionJump = useCallback((index) => {
+    if (questions && index >= 0 && index < questions.length) {
+      setCurrentQuestionIndex(index)
+      setVisitedQuestions(prev => new Set([...prev, index]))
+    }
+  }, [questions])
+
+  const handlePrev = useCallback(() => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(prev => {
+        const newIndex = prev - 1
+        setVisitedQuestions(prevSet => new Set([...prevSet, newIndex]))
+        return newIndex
+      })
+    }
+  }, [currentQuestionIndex])
+
+  const handleNext = useCallback(() => {
+    if (questions && currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(prev => {
+        const newIndex = prev + 1
+        setVisitedQuestions(prevSet => new Set([...prevSet, newIndex]))
+        return newIndex
+      })
+    }
+  }, [currentQuestionIndex, questions])
+
+  const toggleMarkForReview = useCallback(() => {
+    setMarkedForReview(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(currentQuestionIndex)) {
+        newSet.delete(currentQuestionIndex)
+      } else {
+        newSet.add(currentQuestionIndex)
+      }
+      return newSet
+    })
+  }, [currentQuestionIndex])
+
+  const calculateScore = useCallback(() => {
+    if (!questions || !Array.isArray(questions)) return { score: 0, correct: 0, wrong: 0, attempted: 0, total: 0 }
+    
+    let correct = 0
+    let wrong = 0
+
+    questions.forEach(q => {
+      const selected = answers[q.id]
+      if (!selected) return
+      if (selected === q.correctOptionId) {
+        correct++
+      } else {
+        wrong++
+      }
+    })
+
+    const score = Math.max(correct * MARK_PER_QUESTION - wrong * NEGATIVE_MARKING, 0)
+    return { score, correct, wrong, attempted: correct + wrong, total: questions.length }
+  }, [questions, answers])
+
+  const handleSubmit = useCallback(async () => {
+    if (status === STATUS.SUBMITTED) return
+
+    const scoreData = calculateScore()
+    const payload = {
+      studentName,
+      answers,
+      score: parseFloat(scoreData.score.toFixed(2)),
+      totalMarks: scoreData.total * MARK_PER_QUESTION,
+      timestamp: new Date().toISOString(),
+      attempted: scoreData.attempted,
+      correct: scoreData.correct,
+      wrong: scoreData.wrong,
+      pass: scoreData.score >= PASS_MARK
+    }
+
+    try {
+      const result = await saveSubmission(payload)
+      setStatus(STATUS.SUBMITTED)
+      localStorage.removeItem(`mcq_state_${studentName}`)
+    } catch (err) {
+      console.error('Failed to save submission', err)
+      alert(`সার্ভারে সেভ করতে সমস্যা হয়েছে: ${err.message}\n\nআপনার স্কোর: ${scoreData.score.toFixed(2)}`)
+      // Still show results even if save failed
+      setStatus(STATUS.SUBMITTED)
+      localStorage.removeItem(`mcq_state_${studentName}`)
+    }
+  }, [status, studentName, answers, questions, calculateScore])
+
+  // All useEffect hooks must be called before any returns
+  useEffect(() => {
+    if (!questions || questions.length === 0) return
+    
+    const saved = localStorage.getItem(`mcq_state_${studentName}`)
+    if (saved) {
+      try {
+        const data = JSON.parse(saved)
+        setAnswers(data.answers || {})
+        const maxIndex = Math.max(0, questions.length - 1)
+        setCurrentQuestionIndex(Math.min(data.currentIndex || 0, maxIndex))
+        setTimeLeft(data.timeLeft ?? DURATION_SECONDS)
+        setVisitedQuestions(new Set(data.visited || [0]))
+        setMarkedForReview(new Set(data.marked || []))
+      } catch (e) {
+        console.error('Failed to load saved state', e)
+      }
+    }
+  }, [studentName, questions])
+
+  useEffect(() => {
+    if (status === STATUS.RUNNING) {
+      const state = {
+        answers,
+        currentIndex: currentQuestionIndex,
+        timeLeft,
+        visited: Array.from(visitedQuestions),
+        marked: Array.from(markedForReview)
+      }
+      localStorage.setItem(`mcq_state_${studentName}`, JSON.stringify(state))
+    }
+  }, [answers, currentQuestionIndex, timeLeft, visitedQuestions, markedForReview, status, studentName])
+
+  // Timer - must be after handleSubmit definition
+  useEffect(() => {
+    if (status !== STATUS.RUNNING || timeLeft <= 0) return
+
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          handleSubmit()
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [status, timeLeft, handleSubmit])
+
+  // Safety check for current question index
+  useEffect(() => {
+    if (questions && questions.length > 0 && (currentQuestionIndex < 0 || currentQuestionIndex >= questions.length)) {
+      setCurrentQuestionIndex(0)
+    }
+  }, [currentQuestionIndex, questions])
+
+  // NOW we can do conditional returns after all hooks
+  // Validate questions array AFTER all hooks (React rules)
+  if (!questions || !Array.isArray(questions) || questions.length === 0) {
+    console.error('MCQContainer: Invalid questions array', { questions })
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh',
+        flexDirection: 'column',
+        gap: '16px',
+        padding: '20px',
+        backgroundColor: 'var(--gray-50)'
+      }}>
+        <div style={{ color: 'var(--error)', fontSize: '18px', textAlign: 'center' }} className="bengali">
+          প্রশ্ন পাওয়া যায়নি। দয়া করে পৃষ্ঠাটি রিফ্রেশ করুন।
+        </div>
+        <div style={{ color: 'var(--gray-600)', fontSize: '14px', marginTop: '8px', textAlign: 'center' }}>
+          {!questions ? 'Questions is null/undefined' : 
+           !Array.isArray(questions) ? 'Questions is not an array' : 
+           questions.length === 0 ? 'Questions array is empty' : 'Unknown error'}
+        </div>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '12px 24px',
+            backgroundColor: 'var(--primary)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            marginTop: '8px'
+          }}
+          className="bengali"
+        >
+          রিফ্রেশ করুন
+        </button>
+      </div>
+    )
+  }
+
+  if (status === STATUS.SUBMITTED) {
+    return (
+      <ResultSummary
+        questions={questions}
+        answers={answers}
+        studentName={studentName}
+        score={calculateScore()}
+        onRestart={() => window.location.reload()}
+      />
+    )
+  }
+
+  const safeIndex = Math.max(0, Math.min(currentQuestionIndex, questions.length - 1))
+  const currentQuestion = questions[safeIndex]
+  
+  if (!currentQuestion) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh' 
+      }}>
+        <div className="bengali">প্রশ্ন লোড হচ্ছে...</div>
+      </div>
+    )
+  }
+
+  try {
+    return (
+      <div className="mcq-container">
+        <ExamHeader
+          examName="MCQ Exam"
+          timeLeft={timeLeft}
+          totalQuestions={questions.length}
+        />
+        <div className="mcq-content">
+          <div className="question-section">
+            <QuestionCard
+              question={currentQuestion}
+              questionNumber={safeIndex + 1}
+              selectedAnswer={answers[currentQuestion.id]}
+              onAnswerSelect={handleAnswerSelect}
+              onPrev={handlePrev}
+              onNext={handleNext}
+              canGoPrev={safeIndex > 0}
+              canGoNext={safeIndex < questions.length - 1}
+              isMarked={markedForReview.has(safeIndex)}
+              onToggleMark={toggleMarkForReview}
+              onSubmit={handleSubmit}
+            />
+          </div>
+          <SidebarGrid
+            totalQuestions={questions.length}
+            currentIndex={safeIndex}
+            answers={answers}
+            questions={questions}
+            visitedQuestions={visitedQuestions}
+            markedQuestions={markedForReview}
+            onQuestionJump={handleQuestionJump}
+          />
+        </div>
+      </div>
+    )
+  } catch (error) {
+    console.error('MCQContainer render error:', error)
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh',
+        flexDirection: 'column',
+        gap: '16px',
+        padding: '20px'
+      }}>
+        <div style={{ color: 'var(--error)', fontSize: '18px' }} className="bengali">
+          রেন্ডারিং ত্রুটি: {error.message}
+        </div>
+        <button onClick={() => window.location.reload()} className="bengali">
+          রিফ্রেশ করুন
+        </button>
+      </div>
+    )
+  }
+}
+
+export default MCQContainer
+

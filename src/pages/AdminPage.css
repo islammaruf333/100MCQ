@@ -1,0 +1,48 @@
+.admin-page {
+  min-height: 100vh;
+  background: var(--gray-50);
+  padding: 24px;
+}
+
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 16px;
+}
+
+.error button {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.date-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.empty-dates {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray-500);
+}
+
+@media (max-width: 640px) {
+  .admin-page {
+    padding: 16px;
+  }
+  
+  .date-sections {
+    grid-template-columns: 1fr;
+  }
+}
+

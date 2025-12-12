@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary purpose of an operating system?",
+    "options": {
+      "A": "Manage hardware and software resources",
+      "B": "Compile source code to machine code",
+      "C": "Design application user interfaces",
+      "D": "Provide network routing services"
+    },
+    "correctAnswer": "A"
+  },
+  {
+    "id": 2,
+    "question": "Which data structure uses First-In-First-Out (FIFO) ordering?",
+    "options": {
+      "A": "Stack",
+      "B": "Queue",
+      "C": "Tree",
+      "D": "Graph"
+    },
+    "correctAnswer": "B"
+  },
+  {
+    "id": 3,
+    "question": "What does HTTP stand for?",
+    "options": {
+      "A": "HyperText Transfer Protocol",
+      "B": "High Transfer Text Protocol",
+      "C": "Hyperlink Transmission Process",
+      "D": "Host Transfer Text Procedure"
+    },
+    "correctAnswer": "A"
+  },
+  {
+    "id": 4,
+    "question": "In relational databases, which key uniquely identifies a record in a table?",
+    "options": {
+      "A": "Foreign key",
+      "B": "Composite key",
+      "C": "Primary key",
+      "D": "Candidate key"
+    },
+    "correctAnswer": "C"
+  },
+  {
+    "id": 5,
+    "question": "Which HTML tag is used to link an external JavaScript file?",
+    "options": {
+      "A": "<style>",
+      "B": "<script src=\"...\">",
+      "C": "<link rel=\"script\">",
+      "D": "<js include=\"...\">"
+    },
+    "correctAnswer": "B"
+  }
+]
+
