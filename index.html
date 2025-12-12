@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Exam</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1>MCQ Exam</h1>
+          <p>সময়: ৬০ মিনিট | মোট নম্বর: ১০০ | প্রশ্ন: ৮০</p>
+          <p>সঠিক: +১.২৫ | ভুল: -০.২৫ | পাস মার্ক: ৪০</p>
+        </div>
+        <div class="timer" id="timer">60:00</div>
+      </header>
+
+      <section class="card" id="start-section">
+        <h2>পরীক্ষা শুরু করুন</h2>
+        <label for="student-name">নাম / আইডি</label>
+        <input id="student-name" type="text" placeholder="আপনার নাম বা আইডি লিখুন" />
+        <button id="start-btn">Start Exam</button>
+        <p class="hint">পাসওয়ার্ড প্রয়োজন নেই। শুধু নাম দিয়ে শুরু করুন।</p>
+      </section>
+
+      <section class="card hidden" id="exam-section">
+        <div class="exam-top">
+          <div id="progress-text"></div>
+          <div class="nav-buttons">
+            <button id="prev-btn">পূর্বের</button>
+            <button id="next-btn">পরের</button>
+          </div>
+        </div>
+
+        <div id="question-container"></div>
+
+        <div class="actions">
+          <button id="submit-btn" class="primary">Submit</button>
+          <span id="autosave-indicator" class="muted">Progress saved locally</span>
+        </div>
+      </section>
+
+      <section class="card hidden" id="result-section">
+        <h2>ফলাফল</h2>
+        <div id="result-summary"></div>
+        <button id="restart-btn">পুনরায় পরীক্ষা দিন</button>
+      </section>
+    </main>
+
+    <script src="exam.js"></script>
+  </body>
+  </html>
+
