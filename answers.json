@@ -15,22 +15,5 @@
     "correct": 3,
     "wrong": 2,
     "pass": false
-  },
-  {
-    "studentName": "fdasf",
-    "answers": {
-      "1": "C",
-      "2": "B",
-      "3": "B",
-      "4": "A",
-      "5": "C"
-    },
-    "score": 0.25,
-    "totalMarks": 6.25,
-    "timestamp": "2025-12-12T17:18:01.547Z",
-    "attempted": 5,
-    "correct": 1,
-    "wrong": 4,
-    "pass": false
   }
 ]
