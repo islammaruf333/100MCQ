@@ -39,6 +39,26 @@ export async function deleteSubmission(studentName, timestamp) {
   return res.json()
 }
 
+export async function deleteStudent(studentName) {
+  let res;
+  try {
+    res = await fetch('/api/delete-student', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentName })
+    })
+  } catch (fetchErr) {
+    throw fetchErr;
+  }
+  
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(text || 'Failed to delete student')
+  }
+  
+  return res.json()
+}
+
 export async function loadSubmissions() {
   const url = 'https://raw.githubusercontent.com/islammaruf333/100MCQ/main/answers.json'
   
@@ -59,4 +79,5 @@ export async function loadSubmissions() {
   const data = await res.json()
   return data
 }
+
 

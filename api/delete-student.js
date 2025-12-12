@@ -15,22 +15,22 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Missing GitHub configuration" });
   }
 
-  const { studentName, timestamp } = req.body || {};
-  if (!studentName || !timestamp) {
-    return res.status(400).json({ error: "studentName and timestamp required" });
+  const { studentName } = req.body || {};
+  if (!studentName) {
+    return res.status(400).json({ error: "studentName required" });
   }
 
   try {
     const { content, sha } = await fetchFile();
     const list = Array.isArray(content) ? content : [];
     
-    // Remove the submission
+    // Remove all submissions for the student
     const filtered = list.filter(
-      item => !(item.studentName === studentName && item.timestamp === timestamp)
+      item => item.studentName !== studentName
     );
 
     if (filtered.length === list.length) {
-      return res.status(404).json({ error: "Submission not found" });
+      return res.status(404).json({ error: "Student not found" });
     }
 
     const updated = JSON.stringify(filtered, null, 2);
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: "Failed to delete answer" });
+    return res.status(500).json({ error: "Failed to delete student submissions" });
   }
 }
 
@@ -74,7 +74,7 @@ async function updateFile(content, sha) {
       Accept: "application/vnd.github+json",
     },
     body: JSON.stringify({
-      message: "chore: delete exam submission",
+      message: "chore: delete all submissions for a student",
       content: Buffer.from(content).toString("base64"),
       branch: BRANCH,
       sha,
@@ -86,5 +86,3 @@ async function updateFile(content, sha) {
     throw new Error(`GitHub update failed: ${res.status} ${text}`);
   }
 }
-
-

@@ -82,3 +82,4 @@ function ResultSummary({ questions, answers, studentName, score, onRestart }) {
 
 export default ResultSummary
 
+

@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { loadSubmissions, deleteSubmission } from '../utils/api'
+import { loadSubmissions, deleteSubmission, deleteStudent } from '../utils/api'
 import AdminHeader from '../components/admin/AdminHeader'
 import DateFilter from '../components/admin/DateFilter'
 import SubmissionsTable from '../components/admin/SubmissionsTable'
@@ -57,6 +57,21 @@ function AdminPage() {
       await deleteSubmission(studentName, timestamp)
       await loadData() // Reload data
       setNotification({ message: `${studentName} এর উত্তর সফলভাবে মুছে ফেলা হয়েছে`, type: 'success' })
+    } catch (err) {
+      console.error('Delete failed:', err)
+      setNotification({ message: `মুছে ফেলতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
+    }
+  }
+
+  async function handleDeleteStudent(studentName) {
+    if (!window.confirm(`আপনি কি ${studentName} এর সকল উত্তর মুছে ফেলতে চান?\n\nএই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।`)) {
+      return
+    }
+
+    try {
+      await deleteStudent(studentName)
+      await loadData() // Reload data
+      setNotification({ message: `${studentName} এর সকল উত্তর সফলভাবে মুছে ফেলা হয়েছে`, type: 'success' })
     } catch (err) {
       console.error('Delete failed:', err)
       setNotification({ message: `মুছে ফেলতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
@@ -145,6 +160,7 @@ function AdminPage() {
         <SubmissionsTable
           submissions={filteredSubmissions}
           onDelete={handleDelete}
+          onDeleteStudent={handleDeleteStudent}
           date={selectedDate}
         />
       ) : (
@@ -188,4 +204,5 @@ function AdminPage() {
 }
 
 export default AdminPage
+
 

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import './SubmissionsTable.css'
 
-function SubmissionsTable({ submissions, onDelete, date }) {
+function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
   const [selectedSubmission, setSelectedSubmission] = useState(null)
 
   function formatDate(timestamp) {
@@ -14,6 +14,21 @@ function SubmissionsTable({ submissions, onDelete, date }) {
       minute: '2-digit'
     })
   }
+  
+  const submissionsByStudent = useMemo(() => {
+    const groups = {}
+    submissions.forEach(sub => {
+      const studentKey = sub.studentId || sub.studentName
+      if (!groups[studentKey]) {
+        groups[studentKey] = {
+          ...sub,
+          submissions: []
+        }
+      }
+      groups[studentKey].submissions.push(sub)
+    })
+    return Object.values(groups)
+  }, [submissions])
 
   return (
     <div className="submissions-table-container">
@@ -22,50 +37,55 @@ function SubmissionsTable({ submissions, onDelete, date }) {
           <thead>
             <tr>
               <th className="bengali">নাম</th>
-              <th className="bengali">স্কোর</th>
+              <th className="bengali">আইডি</th>
+              <th className="bengali">সর্বশেষ স্কোর</th>
+              <th className="bengali">জমা সংখ্যা</th>
               <th className="bengali">স্ট্যাটাস</th>
-              <th className="bengali">সময়</th>
               <th className="bengali">বিস্তারিত</th>
-              <th className="bengali">মুছুন</th>
+              <th className="bengali">ছাত্র মুছুন</th>
             </tr>
           </thead>
           <tbody>
-            {submissions.length === 0 ? (
+            {submissionsByStudent.length === 0 ? (
               <tr>
-                <td colSpan="6" className="empty-state bengali">
+                <td colSpan="7" className="empty-state bengali">
                   কোন উত্তর নেই
                 </td>
               </tr>
             ) : (
-              submissions.map((sub, idx) => (
-                <tr key={idx}>
-                  <td className="bengali">{sub.studentName || 'Unknown'}</td>
-                  <td className="score">{Number(sub.score || 0).toFixed(2)}</td>
-                  <td>
-                    <span className={`status-badge ${sub.pass ? 'pass' : 'fail'}`}>
-                      {sub.pass ? 'পাস' : 'ফেল'}
-                    </span>
-                  </td>
-                  <td className="bengali">{formatDate(sub.timestamp)}</td>
-                  <td>
-                    <button
-                      className="view-btn"
-                      onClick={() => setSelectedSubmission(sub)}
-                    >
-                      <span className="bengali">দেখুন</span>
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className="delete-btn bengali"
-                      onClick={() => onDelete(sub.studentName, sub.timestamp)}
-                      title="মুছুন"
-                    >
-                      ✗ মুছুন
-                    </button>
-                  </td>
-                </tr>
-              ))
+              submissionsByStudent.map((student, idx) => {
+                const latestSubmission = student.submissions.sort((a,b) => b.timestamp - a.timestamp)[0]
+                return (
+                  <tr key={idx}>
+                    <td className="bengali">{student.studentName || 'Unknown'}</td>
+                    <td className="bengali">{student.studentId || 'N/A'}</td>
+                    <td className="score">{Number(latestSubmission.score || 0).toFixed(2)}</td>
+                    <td className='bengali'>{student.submissions.length}</td>
+                    <td>
+                      <span className={`status-badge ${latestSubmission.pass ? 'pass' : 'fail'}`}>
+                        {latestSubmission.pass ? 'পাস' : 'ফেল'}
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        className="view-btn"
+                        onClick={() => setSelectedSubmission(latestSubmission)}
+                      >
+                        <span className="bengali">দেখুন</span>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className="delete-btn bengali"
+                        onClick={() => onDeleteStudent(student.studentName)}
+                        title="ছাত্রের সকল উত্তর মুছুন"
+                      >
+                        ✗ ছাত্র মুছুন
+                      </button>
+                    </td>
+                  </tr>
+                )
+              })
             )}
           </tbody>
         </table>
@@ -104,6 +124,10 @@ function SubmissionsTable({ submissions, onDelete, date }) {
                   <span className="info-label bengali">চেষ্টা:</span>
                   <span className="info-value">{selectedSubmission.attempted || 0}</span>
                 </div>
+                 <div className="info-item">
+                  <span className="info-label bengali">সময়:</span>
+                  <span className="info-value">{formatDate(selectedSubmission.timestamp)}</span>
+                </div>
                 <div className="info-item">
                   <span className="info-label bengali">স্ট্যাটাস:</span>
                   <span className={`info-value ${selectedSubmission.pass ? 'pass-status' : 'fail-status'}`}>
@@ -131,4 +155,5 @@ function SubmissionsTable({ submissions, onDelete, date }) {
 }
 
 export default SubmissionsTable
+
 

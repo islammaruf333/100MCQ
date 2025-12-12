@@ -54,3 +54,4 @@ function StatisticsCard({ submissions, groupedByDate }) {
 
 export default StatisticsCard
 
+

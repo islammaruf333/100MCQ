@@ -34,3 +34,4 @@ function ExamHeader({ examName, timeLeft, totalQuestions }) {
 
 export default ExamHeader
 
+
