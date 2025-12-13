@@ -76,19 +76,5 @@
     "correct": 42,
     "wrong": 24,
     "pass": true
-  },
-  {
-    "studentName": "Maruf - 2",
-    "answers": {
-      "1": "A",
-      "80": "B"
-    },
-    "score": 2.5,
-    "totalMarks": 100,
-    "timestamp": "2025-12-13T16:09:42.447Z",
-    "attempted": 2,
-    "correct": 2,
-    "wrong": 0,
-    "pass": false
   }
 ]
