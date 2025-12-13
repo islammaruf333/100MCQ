@@ -187,8 +187,8 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                       <div
                         key={qid}
                         className={`answer-item ${!isAnswered ? 'unanswered' :
-                            correct === true ? 'correct-answer' :
-                              correct === false ? 'incorrect-answer' : ''
+                          correct === true ? 'correct-answer' :
+                            correct === false ? 'incorrect-answer' : ''
                           }`}
                         onClick={() => handleQuestionClick(qid, ans)}
                         style={{ cursor: 'pointer' }}
@@ -226,16 +226,16 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
 
               <div className="options-list">
                 <div className="option-item bengali">
-                  <strong>A)</strong> {selectedQuestion.options.A}
+                  <strong>A)</strong> {selectedQuestion.options.a}
                 </div>
                 <div className="option-item bengali">
-                  <strong>B)</strong> {selectedQuestion.options.B}
+                  <strong>B)</strong> {selectedQuestion.options.b}
                 </div>
                 <div className="option-item bengali">
-                  <strong>C)</strong> {selectedQuestion.options.C}
+                  <strong>C)</strong> {selectedQuestion.options.c}
                 </div>
                 <div className="option-item bengali">
-                  <strong>D)</strong> {selectedQuestion.options.D}
+                  <strong>D)</strong> {selectedQuestion.options.d}
                 </div>
               </div>
 
