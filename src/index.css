@@ -26,13 +26,36 @@ body {
   font-family: 'Inter', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--gray-50);
-  color: var(--gray-900);
+  background: white;
+  color: #1f2937;
   line-height: 1.6;
+  position: relative;
 }
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  background: white;
+  position: relative;
+}
+
+/* Circuit Board Background - Applied to all pages */
+#root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, #d5c5ff 0%, #a7f3d0 50%, #f0f0f0 100%);
+}
+
+/* Ensure all content appears above the background */
+#root>* {
+  position: relative;
+  z-index: 1;
 }
 
 /* Bengali font support */
@@ -46,10 +69,11 @@ body {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
   }
-  
-  input, textarea, select {
-    font-size: 16px; /* Prevents zoom on iOS */
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    /* Prevents zoom on iOS */
   }
 }
-
-

@@ -2,7 +2,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--gray-50);
 }
 
 .mcq-content {
@@ -33,5 +32,3 @@
     gap: 16px;
   }
 }
-
-

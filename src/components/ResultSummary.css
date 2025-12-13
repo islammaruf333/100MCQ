@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: var(--gray-50);
 }
 
 .result-card {
@@ -203,18 +202,16 @@
   .result-card {
     padding: 24px;
   }
-  
+
   .score-value {
     font-size: 3rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .answers-list {
     max-height: 300px;
   }
 }
-
-
