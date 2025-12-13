@@ -15,7 +15,7 @@ function AdminPage() {
   const [selectedDate, setSelectedDate] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [lastRefresh, setLastRefresh] = useState(null)
-  const [autoRefresh, setAutoRefresh] = useState(true)
+  const [autoRefresh, setAutoRefresh] = useState(false)
   const [notification, setNotification] = useState(null)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function AdminPage() {
   // Auto-refresh every 30 seconds
   useEffect(() => {
     if (!autoRefresh) return
-    
+
     const interval = setInterval(() => {
       loadData()
     }, 30000) // 30 seconds
@@ -148,7 +148,7 @@ function AdminPage() {
         onAutoRefreshToggle={setAutoRefresh}
         loading={loading}
       />
-      
+
       <DateFilter
         dates={dates}
         selectedDate={selectedDate}
@@ -191,7 +191,7 @@ function AdminPage() {
           </div>
         </>
       )}
-      
+
       {notification && (
         <NotificationToast
           message={notification.message}
