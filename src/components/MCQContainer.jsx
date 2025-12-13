@@ -17,12 +17,12 @@ const MARK_PER_QUESTION = 1.25
 const NEGATIVE_MARKING = 0.25
 const PASS_MARK = 40
 
-function MCQContainer({ questions, studentName }) {
-  console.log('MCQContainer rendered:', { 
-    hasQuestions: !!questions, 
-    isArray: Array.isArray(questions), 
+function MCQContainer({ questions, studentName, questionFile = 'questions.json' }) {
+  console.log('MCQContainer rendered:', {
+    hasQuestions: !!questions,
+    isArray: Array.isArray(questions),
     length: questions?.length,
-    studentName 
+    studentName
   })
 
   // ALL HOOKS MUST BE CALLED BEFORE ANY CONDITIONAL RETURNS
@@ -83,7 +83,7 @@ function MCQContainer({ questions, studentName }) {
 
   const calculateScore = useCallback(() => {
     if (!questions || !Array.isArray(questions)) return { score: 0, correct: 0, wrong: 0, attempted: 0, total: 0 }
-    
+
     let correct = 0
     let wrong = 0
 
@@ -114,7 +114,8 @@ function MCQContainer({ questions, studentName }) {
       attempted: scoreData.attempted,
       correct: scoreData.correct,
       wrong: scoreData.wrong,
-      pass: scoreData.score >= PASS_MARK
+      pass: scoreData.score >= PASS_MARK,
+      questionFile: questionFile
     }
 
     try {
@@ -133,7 +134,7 @@ function MCQContainer({ questions, studentName }) {
   // All useEffect hooks must be called before any returns
   useEffect(() => {
     if (!questions || questions.length === 0) return
-    
+
     const saved = localStorage.getItem(`mcq_state_${studentName}`)
     if (saved) {
       try {
@@ -192,10 +193,10 @@ function MCQContainer({ questions, studentName }) {
   if (!questions || !Array.isArray(questions) || questions.length === 0) {
     console.error('MCQContainer: Invalid questions array', { questions })
     return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         minHeight: '100vh',
         flexDirection: 'column',
         gap: '16px',
@@ -206,11 +207,11 @@ function MCQContainer({ questions, studentName }) {
           প্রশ্ন পাওয়া যায়নি। দয়া করে পৃষ্ঠাটি রিফ্রেশ করুন।
         </div>
         <div style={{ color: 'var(--gray-600)', fontSize: '14px', marginTop: '8px', textAlign: 'center' }}>
-          {!questions ? 'Questions is null/undefined' : 
-           !Array.isArray(questions) ? 'Questions is not an array' : 
-           questions.length === 0 ? 'Questions array is empty' : 'Unknown error'}
+          {!questions ? 'Questions is null/undefined' :
+            !Array.isArray(questions) ? 'Questions is not an array' :
+              questions.length === 0 ? 'Questions array is empty' : 'Unknown error'}
         </div>
-        <button 
+        <button
           onClick={() => window.location.reload()}
           style={{
             padding: '12px 24px',
@@ -244,14 +245,14 @@ function MCQContainer({ questions, studentName }) {
 
   const safeIndex = Math.max(0, Math.min(currentQuestionIndex, questions.length - 1))
   const currentQuestion = questions[safeIndex]
-  
+
   if (!currentQuestion) {
     return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        minHeight: '100vh' 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh'
       }}>
         <div className="bengali">প্রশ্ন লোড হচ্ছে...</div>
       </div>
@@ -297,10 +298,10 @@ function MCQContainer({ questions, studentName }) {
   } catch (error) {
     console.error('MCQContainer render error:', error)
     return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         minHeight: '100vh',
         flexDirection: 'column',
         gap: '16px',

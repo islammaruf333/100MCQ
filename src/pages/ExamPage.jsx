@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import MCQContainer from '../components/MCQContainer'
 import StartScreen from '../components/StartScreen'
 import ErrorBoundary from '../components/ErrorBoundary'
+import { loadLatestQuestions } from '../utils/api'
 
 function ExamPage() {
   const [studentName, setStudentName] = useState('')
   const [questions, setQuestions] = useState([])
+  const [questionFile, setQuestionFile] = useState('questions.json')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -15,22 +17,26 @@ function ExamPage() {
 
   async function loadQuestions() {
     try {
-      console.log('Loading questions from /questions.json')
-      const res = await fetch('/questions.json', { cache: 'no-store' })
+      // Get the latest question file
+      const { file } = await loadLatestQuestions()
+      setQuestionFile(file)
+
+      console.log(`Loading questions from /${file}`)
+      const res = await fetch(`/${file}`, { cache: 'no-store' })
       console.log('Fetch response:', { status: res.status, ok: res.ok })
-      
+
       if (!res.ok) {
         throw new Error(`Failed to load questions: ${res.status} ${res.statusText}`)
       }
-      
+
       const data = await res.json()
       console.log('Loaded questions data:', { isArray: Array.isArray(data), count: data?.length })
-      
+
       // Validate data
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error('No questions found in file')
       }
-      
+
       // Transform questions to match expected format
       const transformed = data.map(q => ({
         id: q.id,
@@ -39,14 +45,14 @@ function ExamPage() {
         correctOptionId: q.correctAnswer,
         explanation: `সঠিক উত্তর: ${q.correctAnswer}. ${q.question}`
       }))
-      
+
       console.log('Transformed questions:', { count: transformed.length, firstQuestion: transformed[0] })
-      
+
       // Validate transformed questions
       if (transformed.length === 0) {
         throw new Error('No valid questions found after processing')
       }
-      
+
       setQuestions(transformed)
       setLoading(false)
     } catch (err) {
@@ -66,12 +72,12 @@ function ExamPage() {
 
   if (error) {
     return (
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        minHeight: '100vh', 
-        flexDirection: 'column', 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        flexDirection: 'column',
         gap: '16px',
         padding: '20px',
         textAlign: 'center'
@@ -82,7 +88,7 @@ function ExamPage() {
         <div style={{ color: 'var(--gray-600)', fontSize: '14px', marginTop: '8px' }}>
           {error}
         </div>
-        <button 
+        <button
           onClick={loadQuestions}
           style={{
             padding: '12px 24px',
@@ -108,16 +114,16 @@ function ExamPage() {
     }} />
   }
 
-  console.log('ExamPage rendering MCQContainer:', { 
-    studentName, 
-    questionsCount: questions.length, 
-    loading, 
-    error 
+  console.log('ExamPage rendering MCQContainer:', {
+    studentName,
+    questionsCount: questions.length,
+    loading,
+    error
   })
 
   return (
     <ErrorBoundary>
-      <MCQContainer questions={questions} studentName={studentName} />
+      <MCQContainer questions={questions} studentName={studentName} questionFile={questionFile} />
     </ErrorBoundary>
   )
 }

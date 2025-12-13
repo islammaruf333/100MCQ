@@ -7,12 +7,16 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
   const [selectedQuestion, setSelectedQuestion] = useState(null)
 
   useEffect(() => {
-    loadQuestions()
-  }, [])
+    if (selectedSubmission) {
+      loadQuestions()
+    }
+  }, [selectedSubmission])
 
   async function loadQuestions() {
     try {
-      const res = await fetch('/questions.json', { cache: 'no-store' })
+      // Try to load from the submission's question file if available
+      const questionFile = selectedSubmission?.questionFile || 'questions.json'
+      const res = await fetch(`/${questionFile}`, { cache: 'no-store' })
       if (!res.ok) {
         throw new Error('Failed to load questions')
       }
