@@ -241,6 +241,11 @@ td {
   border: 2px solid rgba(239, 68, 68, 0.3);
 }
 
+.answer-item.unanswered {
+  background: rgba(128, 128, 128, 0.05);
+  border: 2px solid rgba(128, 128, 128, 0.2);
+}
+
 .question-id {
   font-size: 0.75rem;
   color: var(--gray-600);
@@ -261,18 +266,21 @@ td {
   color: var(--error);
 }
 
+.answer-item.unanswered .answer-value {
+  color: #333;
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .table-wrapper {
     overflow-x: scroll;
   }
-  
+
   .detail-info {
     grid-template-columns: 1fr;
   }
-  
+
   .answers-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
-
-

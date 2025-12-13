@@ -39,7 +39,7 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
       minute: '2-digit'
     })
   }
-  
+
   const submissionsByStudent = useMemo(() => {
     const groups = {}
     submissions.forEach(sub => {
@@ -79,7 +79,7 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
               </tr>
             ) : (
               submissionsByStudent.map((student, idx) => {
-                const latestSubmission = student.submissions.sort((a,b) => b.timestamp - a.timestamp)[0]
+                const latestSubmission = student.submissions.sort((a, b) => b.timestamp - a.timestamp)[0]
                 return (
                   <tr key={idx}>
                     <td className="bengali">{student.studentName || 'Unknown'}</td>
@@ -149,7 +149,7 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                   <span className="info-label bengali">চেষ্টা:</span>
                   <span className="info-value">{selectedSubmission.attempted || 0}</span>
                 </div>
-                 <div className="info-item">
+                <div className="info-item">
                   <span className="info-label bengali">সময়:</span>
                   <span className="info-value">{formatDate(selectedSubmission.timestamp)}</span>
                 </div>
@@ -161,14 +161,24 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                 </div>
               </div>
               <div className="answers-detail">
-                <h3 className="bengali">উত্তরসমূহ ({Object.keys(selectedSubmission.answers || {}).length} টি):</h3>
+                <h3 className="bengali">উত্তরসমূহ ({Object.keys(selectedSubmission.answers || {}).length} / {questions.length} টি):</h3>
                 <div className="answers-grid">
-                  {Object.entries(selectedSubmission.answers || {}).map(([qid, ans]) => {
-                    const correct = isAnswerCorrect(qid, ans)
+                  {questions.map((question) => {
+                    const qid = question.id.toString()
+                    const ans = (selectedSubmission.answers || {})[qid]
+                    const isAnswered = ans !== undefined && ans !== null
+                    const correct = isAnswered ? isAnswerCorrect(qid, ans) : null
+
                     return (
-                      <div key={qid} className={`answer-item ${correct === true ? 'correct-answer' : correct === false ? 'incorrect-answer' : ''}`}>
+                      <div
+                        key={qid}
+                        className={`answer-item ${!isAnswered ? 'unanswered' :
+                            correct === true ? 'correct-answer' :
+                              correct === false ? 'incorrect-answer' : ''
+                          }`}
+                      >
                         <span className="question-id bengali">প্রশ্ন {qid}</span>
-                        <span className="answer-value">{ans}</span>
+                        <span className="answer-value">{isAnswered ? ans : '—'}</span>
                       </div>
                     )
                   })}
