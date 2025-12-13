@@ -76,19 +76,5 @@
     "correct": 42,
     "wrong": 24,
     "pass": true
-  },
-  {
-    "studentName": "dfad",
-    "answers": {
-      "1": "C",
-      "80": "C"
-    },
-    "score": 0,
-    "totalMarks": 100,
-    "timestamp": "2025-12-13T15:26:38.333Z",
-    "attempted": 2,
-    "correct": 0,
-    "wrong": 2,
-    "pass": false
   }
 ]
