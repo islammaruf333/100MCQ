@@ -78,20 +78,6 @@
     "pass": true
   },
   {
-    "studentName": "Maruf -1",
-    "answers": {
-      "1": "C",
-      "80": "C"
-    },
-    "score": 0,
-    "totalMarks": 100,
-    "timestamp": "2025-12-13T15:27:20.142Z",
-    "attempted": 2,
-    "correct": 0,
-    "wrong": 2,
-    "pass": false
-  },
-  {
     "studentName": "Maruf",
     "answers": {
       "1": "A",
