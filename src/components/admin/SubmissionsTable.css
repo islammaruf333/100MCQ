@@ -231,6 +231,16 @@ td {
   gap: 4px;
 }
 
+.answer-item.correct-answer {
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.answer-item.incorrect-answer {
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
 .question-id {
   font-size: 0.75rem;
   color: var(--gray-600);
@@ -241,6 +251,14 @@ td {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--primary);
+}
+
+.answer-item.correct-answer .answer-value {
+  color: var(--success);
+}
+
+.answer-item.incorrect-answer .answer-value {
+  color: var(--error);
 }
 
 @media (max-width: 768px) {

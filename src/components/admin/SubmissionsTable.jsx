@@ -1,8 +1,33 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import './SubmissionsTable.css'
 
 function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
   const [selectedSubmission, setSelectedSubmission] = useState(null)
+  const [questions, setQuestions] = useState([])
+
+  useEffect(() => {
+    loadQuestions()
+  }, [])
+
+  async function loadQuestions() {
+    try {
+      const res = await fetch('/questions.json', { cache: 'no-store' })
+      if (!res.ok) {
+        throw new Error('Failed to load questions')
+      }
+      const data = await res.json()
+      setQuestions(data)
+    } catch (err) {
+      console.error('Failed to load questions:', err)
+    }
+  }
+
+  function isAnswerCorrect(questionId, studentAnswer) {
+    const qid = typeof questionId === 'string' ? parseInt(questionId) : questionId
+    const question = questions.find(q => q.id === qid || q.id.toString() === questionId.toString())
+    if (!question) return null
+    return question.correctAnswer === studentAnswer
+  }
 
   function formatDate(timestamp) {
     const date = new Date(timestamp)
@@ -138,12 +163,15 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
               <div className="answers-detail">
                 <h3 className="bengali">উত্তরসমূহ ({Object.keys(selectedSubmission.answers || {}).length} টি):</h3>
                 <div className="answers-grid">
-                  {Object.entries(selectedSubmission.answers || {}).map(([qid, ans]) => (
-                    <div key={qid} className="answer-item">
-                      <span className="question-id bengali">প্রশ্ন {qid}</span>
-                      <span className="answer-value">{ans}</span>
-                    </div>
-                  ))}
+                  {Object.entries(selectedSubmission.answers || {}).map(([qid, ans]) => {
+                    const correct = isAnswerCorrect(qid, ans)
+                    return (
+                      <div key={qid} className={`answer-item ${correct === true ? 'correct-answer' : correct === false ? 'incorrect-answer' : ''}`}>
+                        <span className="question-id bengali">প্রশ্ন {qid}</span>
+                        <span className="answer-value">{ans}</span>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
