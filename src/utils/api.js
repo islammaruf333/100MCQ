@@ -60,7 +60,10 @@ export async function deleteStudent(studentName) {
 }
 
 export async function loadSubmissions() {
-  const url = 'https://raw.githubusercontent.com/islammaruf333/100MCQ/main/answers.json'
+  const isDev = window.location.hostname === 'localhost'
+  const url = isDev
+    ? '/answers.json'
+    : 'https://raw.githubusercontent.com/islammaruf333/100MCQ/main/answers.json'
   
   let res;
   try {
