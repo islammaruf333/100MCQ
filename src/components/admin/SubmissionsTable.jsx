@@ -1,10 +1,20 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './SubmissionsTable.css'
 
-function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
+function SubmissionsTable({
+  submissions,
+  onDelete,
+  onDeleteStudent,
+  loading,
+  currentPage,
+  totalPages,
+  totalItems,
+  itemsPerPage,
+  onPageChange
+}) {
   const [selectedSubmission, setSelectedSubmission] = useState(null)
-  const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState(null)
+  const [questions, setQuestions] = useState([])
 
   useEffect(() => {
     if (selectedSubmission) {
@@ -14,7 +24,6 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
 
   async function loadQuestions() {
     try {
-      // Try to load from the submission's question file if available
       const questionFile = selectedSubmission?.questionFile || 'questions.json'
       const res = await fetch(`/${questionFile}`, { cache: 'no-store' })
       if (!res.ok) {
@@ -58,85 +67,127 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
     })
   }
 
-  const submissionsByStudent = useMemo(() => {
-    const groups = {}
-    submissions.forEach(sub => {
-      const studentKey = sub.studentId || sub.studentName
-      if (!groups[studentKey]) {
-        groups[studentKey] = {
-          ...sub,
-          submissions: []
-        }
-      }
-      groups[studentKey].submissions.push(sub)
-    })
-    return Object.values(groups)
-  }, [submissions])
+  if (loading) {
+    return (
+      <div className="data-table-container">
+        <div className="loading-overlay">
+          <div className="spinner"></div>
+          <div className="bengali">লোড হচ্ছে...</div>
+        </div>
+      </div>
+    )
+  }
+
+  if (submissions.length === 0) {
+    return (
+      <div className="data-table-container">
+        <div className="empty-state">
+          <div className="empty-state-icon">📝</div>
+          <h3 className="bengali">কোন ডাটা পাওয়া যায়নি</h3>
+          <p className="bengali">এখনও কোন শিক্ষার্থী পরীক্ষা দেয়নি</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="submissions-table-container">
-      <div className="table-wrapper">
-        <table>
+    <>
+      <div className="data-table-container">
+        <table className="data-table">
           <thead>
             <tr>
               <th className="bengali">নাম</th>
               <th className="bengali">আইডি</th>
-              <th className="bengali">সর্বশেষ স্কোর</th>
-              <th className="bengali">জমা সংখ্যা</th>
+              <th className="bengali">স্কোর</th>
               <th className="bengali">স্ট্যাটাস</th>
-              <th className="bengali">বিস্তারিত</th>
-              <th className="bengali">ছাত্র মুছুন</th>
+              <th className="bengali">সময়</th>
+              <th className="bengali">অ্যাকশন</th>
             </tr>
           </thead>
           <tbody>
-            {submissionsByStudent.length === 0 ? (
-              <tr>
-                <td colSpan="7" className="empty-state bengali">
-                  কোন উত্তর নেই
+            {submissions.map((sub, idx) => (
+              <tr key={idx}>
+                <td data-label="নাম" className="bengali">{sub.studentName || 'Unknown'}</td>
+                <td data-label="আইডি" className="bengali">{sub.studentId || 'N/A'}</td>
+                <td data-label="স্কোর"><strong>{Number(sub.score || 0).toFixed(2)}</strong></td>
+                <td data-label="স্ট্যাটাস">
+                  <span className={`status-badge ${sub.pass ? 'pass' : 'fail'}`}>
+                    {sub.pass ? 'পাস' : 'ফেল'}
+                  </span>
+                </td>
+                <td data-label="সময়" className="bengali">{formatDate(sub.timestamp)}</td>
+                <td data-label="অ্যাকশন">
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <button
+                      className="action-button bengali"
+                      onClick={() => setSelectedSubmission(sub)}
+                    >
+                      দেখুন
+                    </button>
+                    <button
+                      className="action-button danger bengali"
+                      onClick={() => onDeleteStudent(sub.studentName)}
+                      title="ছাত্র মুছুন"
+                    >
+                      ✗
+                    </button>
+                  </div>
                 </td>
               </tr>
-            ) : (
-              submissionsByStudent.map((student, idx) => {
-                const latestSubmission = student.submissions.sort((a, b) => b.timestamp - a.timestamp)[0]
-                return (
-                  <tr key={idx}>
-                    <td className="bengali">{student.studentName || 'Unknown'}</td>
-                    <td className="bengali">{student.studentId || 'N/A'}</td>
-                    <td className="score">{Number(latestSubmission.score || 0).toFixed(2)}</td>
-                    <td className='bengali'>{student.submissions.length}</td>
-                    <td>
-                      <span className={`status-badge ${latestSubmission.pass ? 'pass' : 'fail'}`}>
-                        {latestSubmission.pass ? 'পাস' : 'ফেল'}
-                      </span>
-                    </td>
-                    <td>
-                      <button
-                        className="view-btn"
-                        onClick={() => setSelectedSubmission(latestSubmission)}
-                      >
-                        <span className="bengali">দেখুন</span>
-                      </button>
-                    </td>
-                    <td>
-                      <button
-                        className="delete-btn bengali"
-                        onClick={() => onDeleteStudent(student.studentName)}
-                        title="ছাত্রের সকল উত্তর মুছুন"
-                      >
-                        ✗ ছাত্র মুছুন
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })
-            )}
+            ))}
           </tbody>
         </table>
+
+        {/* Pagination */}
+        <div className="pagination">
+          <div className="pagination-info bengali">
+            দেখানো হচ্ছে {((currentPage - 1) * itemsPerPage) + 1} থেকে {Math.min(currentPage * itemsPerPage, totalItems)} টি, মোট {totalItems} টি
+          </div>
+          <div className="pagination-buttons">
+            <button
+              className="pagination-button"
+              onClick={() => onPageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              ←
+            </button>
+            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+              let pageNum
+              if (totalPages <= 5) {
+                pageNum = i + 1
+              } else if (currentPage <= 3) {
+                pageNum = i + 1
+              } else if (currentPage >= totalPages - 2) {
+                pageNum = totalPages - 4 + i
+              } else {
+                pageNum = currentPage - 2 + i
+              }
+
+              return (
+                <button
+                  key={pageNum}
+                  className={`pagination-button ${currentPage === pageNum ? 'active' : ''}`}
+                  onClick={() => onPageChange(pageNum)}
+                >
+                  {pageNum}
+                </button>
+              )
+            })}
+            <button
+              className="pagination-button"
+              onClick={() => onPageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              →
+            </button>
+          </div>
+        </div>
       </div>
 
+      {/* Detail Modal */}
       {selectedSubmission && (
-        <div className="detail-modal">
-          <div className="modal-content">
+        <div className="detail-modal" onClick={() => setSelectedSubmission(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h2 className="bengali">
                 {selectedSubmission.studentName} - উত্তর বিস্তারিত
@@ -168,7 +219,7 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                   <span className="info-value">{selectedSubmission.attempted || 0}</span>
                 </div>
                 <div className="info-item">
-                  <span className="info-label bengali">সময়:</span>
+                  <span className="info-label bengali">সময়:</span>
                   <span className="info-value">{formatDate(selectedSubmission.timestamp)}</span>
                 </div>
                 <div className="info-item">
@@ -210,6 +261,7 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
         </div>
       )}
 
+      {/* Question Detail Modal */}
       {selectedQuestion && (
         <div className="question-detail-modal" onClick={() => setSelectedQuestion(null)}>
           <div className="question-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -276,10 +328,8 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 }
 
 export default SubmissionsTable
-
-

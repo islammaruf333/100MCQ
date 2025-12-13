@@ -1,10 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { loadSubmissions, deleteSubmission, deleteStudent } from '../utils/api'
-import AdminHeader from '../components/admin/AdminHeader'
-import DateFilter from '../components/admin/DateFilter'
 import SubmissionsTable from '../components/admin/SubmissionsTable'
-import StatisticsCard from '../components/admin/StatisticsCard'
-import DateSectionCard from '../components/admin/DateSectionCard'
 import NotificationToast from '../components/admin/NotificationToast'
 import './AdminPage.css'
 
@@ -12,11 +8,13 @@ function AdminPage() {
   const [submissions, setSubmissions] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [selectedDate, setSelectedDate] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
+  const [statusFilter, setStatusFilter] = useState('all')
   const [lastRefresh, setLastRefresh] = useState(null)
   const [autoRefresh, setAutoRefresh] = useState(false)
   const [notification, setNotification] = useState(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 20
 
   useEffect(() => {
     loadData()
@@ -55,7 +53,7 @@ function AdminPage() {
 
     try {
       await deleteSubmission(studentName, timestamp)
-      await loadData() // Reload data
+      await loadData()
       setNotification({ message: `${studentName} এর উত্তর সফলভাবে মুছে ফেলা হয়েছে`, type: 'success' })
     } catch (err) {
       console.error('Delete failed:', err)
@@ -70,7 +68,7 @@ function AdminPage() {
 
     try {
       await deleteStudent(studentName)
-      await loadData() // Reload data
+      await loadData()
       setNotification({ message: `${studentName} এর সকল উত্তর সফলভাবে মুছে ফেলা হয়েছে`, type: 'success' })
     } catch (err) {
       console.error('Delete failed:', err)
@@ -78,32 +76,21 @@ function AdminPage() {
     }
   }
 
-  // Group submissions by date
-  const groupedByDate = useMemo(() => {
+  // Group submissions by student (latest only)
+  const submissionsByStudent = useMemo(() => {
     const groups = {}
     submissions.forEach(sub => {
-      const date = new Date(sub.timestamp).toISOString().split('T')[0]
-      if (!groups[date]) {
-        groups[date] = []
+      const studentKey = sub.studentId || sub.studentName
+      if (!groups[studentKey] || new Date(sub.timestamp) > new Date(groups[studentKey].timestamp)) {
+        groups[studentKey] = sub
       }
-      groups[date].push(sub)
     })
-    return groups
+    return Object.values(groups)
   }, [submissions])
-
-  // Get dates sorted (newest first)
-  const dates = useMemo(() => {
-    return Object.keys(groupedByDate).sort((a, b) => b.localeCompare(a))
-  }, [groupedByDate])
 
   // Filter submissions
   const filteredSubmissions = useMemo(() => {
-    let filtered = submissions
-
-    // Filter by date
-    if (selectedDate) {
-      filtered = groupedByDate[selectedDate] || []
-    }
+    let filtered = submissionsByStudent
 
     // Filter by search term
     if (searchTerm) {
@@ -114,23 +101,40 @@ function AdminPage() {
       )
     }
 
-    return filtered
-  }, [submissions, selectedDate, searchTerm, groupedByDate])
+    // Filter by status
+    if (statusFilter !== 'all') {
+      const isPassed = statusFilter === 'pass'
+      filtered = filtered.filter(sub => sub.pass === isPassed)
+    }
 
-  if (loading) {
-    return (
-      <div className="admin-page">
-        <div className="loading">লোড হচ্ছে...</div>
-      </div>
-    )
-  }
+    return filtered
+  }, [submissionsByStudent, searchTerm, statusFilter])
+
+  // Pagination
+  const totalPages = Math.ceil(filteredSubmissions.length / itemsPerPage)
+  const paginatedSubmissions = filteredSubmissions.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
+
+  // Stats
+  const stats = useMemo(() => {
+    const total = submissionsByStudent.length
+    const passed = submissionsByStudent.filter(s => s.pass).length
+    const failed = total - passed
+    const avgScore = total > 0
+      ? (submissionsByStudent.reduce((sum, s) => sum + (s.score || 0), 0) / total).toFixed(1)
+      : 0
+    return { total, passed, failed, avgScore }
+  }, [submissionsByStudent])
 
   if (error) {
     return (
       <div className="admin-page">
-        <div className="error">
-          <p>লোড করতে সমস্যা হয়েছে: {error}</p>
-          <button onClick={loadData}>আবার চেষ্টা করুন</button>
+        <div className="error-state">
+          <h2 className="bengali">লোড করতে সমস্যা হয়েছে</h2>
+          <p>{error}</p>
+          <button onClick={loadData} className="export-button">আবার চেষ্টা করুন</button>
         </div>
       </div>
     )
@@ -138,60 +142,73 @@ function AdminPage() {
 
   return (
     <div className="admin-page">
-      <AdminHeader
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-        onRefresh={loadData}
-        totalSubmissions={submissions.length}
-        lastRefresh={lastRefresh}
-        autoRefresh={autoRefresh}
-        onAutoRefreshToggle={setAutoRefresh}
-        loading={loading}
-      />
+      {/* Header */}
+      <div className="admin-header">
+        <h1 className="bengali">শিক্ষার্থী ডাটাবেস</h1>
+        <div className="admin-header-right">
+          <div className="stats-badge bengali">
+            মোট: <strong>{stats.total}</strong>
+          </div>
+          <button
+            className={`icon-button ${autoRefresh ? 'active' : ''}`}
+            onClick={() => setAutoRefresh(!autoRefresh)}
+            title={autoRefresh ? 'অটো রিফ্রেশ চালু' : 'অটো রিফ্রেশ বন্ধ'}
+          >
+            🔄
+          </button>
+          <button
+            className="icon-button"
+            onClick={loadData}
+            title="রিফ্রেশ করুন"
+            disabled={loading}
+          >
+            ↻
+          </button>
+        </div>
+      </div>
 
-      <DateFilter
-        dates={dates}
-        selectedDate={selectedDate}
-        onDateSelect={setSelectedDate}
-        groupedByDate={groupedByDate}
-      />
+      {/* Main Content */}
+      <div className="admin-content">
+        {/* Filter Bar */}
+        <div className="filter-bar">
+          <input
+            type="text"
+            className="search-input bengali"
+            placeholder="নাম বা আইডি দিয়ে খুঁজুন..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
 
-      {selectedDate ? (
+          <select
+            className="filter-select bengali"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="all">সকল স্ট্যাটাস</option>
+            <option value="pass">পাস</option>
+            <option value="fail">ফেল</option>
+          </select>
+
+          <button className="export-button bengali" onClick={() => alert('Export feature coming soon!')}>
+            📥 Export CSV
+          </button>
+        </div>
+
+        {/* Data Table */}
         <SubmissionsTable
-          submissions={filteredSubmissions}
+          submissions={paginatedSubmissions}
           onDelete={handleDelete}
           onDeleteStudent={handleDeleteStudent}
-          date={selectedDate}
+          loading={loading}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          totalItems={filteredSubmissions.length}
+          itemsPerPage={itemsPerPage}
+          onPageChange={setCurrentPage}
         />
-      ) : (
-        <>
-          <StatisticsCard submissions={submissions} groupedByDate={groupedByDate} />
-          <div className="date-sections">
-            {dates.length === 0 ? (
-              <div className="empty-dates bengali">
-                <p>কোন উত্তর নেই</p>
-              </div>
-            ) : (
-              dates.map(date => {
-                const dateSubs = groupedByDate[date]
-                const passCount = dateSubs.filter(s => s.pass).length
-                const failCount = dateSubs.length - passCount
-                return (
-                  <DateSectionCard
-                    key={date}
-                    date={date}
-                    count={dateSubs.length}
-                    passCount={passCount}
-                    failCount={failCount}
-                    onView={() => setSelectedDate(date)}
-                  />
-                )
-              })
-            )}
-          </div>
-        </>
-      )}
+      </div>
 
+      {/* Notification Toast */}
       {notification && (
         <NotificationToast
           message={notification.message}
@@ -204,5 +221,3 @@ function AdminPage() {
 }
 
 export default AdminPage
-
-
