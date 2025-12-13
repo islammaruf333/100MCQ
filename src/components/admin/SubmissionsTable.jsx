@@ -4,6 +4,7 @@ import './SubmissionsTable.css'
 function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
   const [selectedSubmission, setSelectedSubmission] = useState(null)
   const [questions, setQuestions] = useState([])
+  const [selectedQuestion, setSelectedQuestion] = useState(null)
 
   useEffect(() => {
     loadQuestions()
@@ -27,6 +28,19 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
     const question = questions.find(q => q.id === qid || q.id.toString() === questionId.toString())
     if (!question) return null
     return question.correctAnswer === studentAnswer
+  }
+
+  function handleQuestionClick(questionId, studentAnswer) {
+    const qid = typeof questionId === 'string' ? parseInt(questionId) : questionId
+    const question = questions.find(q => q.id === qid || q.id.toString() === questionId.toString())
+    if (question) {
+      setSelectedQuestion({
+        ...question,
+        studentAnswer,
+        isCorrect: question.correctAnswer === studentAnswer,
+        isAnswered: studentAnswer !== undefined && studentAnswer !== null
+      })
+    }
   }
 
   function formatDate(timestamp) {
@@ -176,6 +190,9 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                             correct === true ? 'correct-answer' :
                               correct === false ? 'incorrect-answer' : ''
                           }`}
+                        onClick={() => handleQuestionClick(qid, ans)}
+                        style={{ cursor: 'pointer' }}
+                        title="ক্লিক করে বিস্তারিত দেখুন"
                       >
                         <span className="question-id bengali">প্রশ্ন {qid}</span>
                         <span className="answer-value">{isAnswered ? ans : '—'}</span>
@@ -183,6 +200,73 @@ function SubmissionsTable({ submissions, onDelete, onDeleteStudent, date }) {
                     )
                   })}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedQuestion && (
+        <div className="question-detail-modal" onClick={() => setSelectedQuestion(null)}>
+          <div className="question-modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="question-modal-header">
+              <h2 className="bengali">প্রশ্ন নং {selectedQuestion.id}</h2>
+              <button
+                className="close-btn"
+                onClick={() => setSelectedQuestion(null)}
+              >
+                ✕
+              </button>
+            </div>
+            <div className="question-modal-body">
+              <div className="question-text bengali">
+                <strong>প্রশ্ন:</strong>
+                <p>{selectedQuestion.question}</p>
+              </div>
+
+              <div className="options-list">
+                <div className="option-item bengali">
+                  <strong>A)</strong> {selectedQuestion.options.A}
+                </div>
+                <div className="option-item bengali">
+                  <strong>B)</strong> {selectedQuestion.options.B}
+                </div>
+                <div className="option-item bengali">
+                  <strong>C)</strong> {selectedQuestion.options.C}
+                </div>
+                <div className="option-item bengali">
+                  <strong>D)</strong> {selectedQuestion.options.D}
+                </div>
+              </div>
+
+              <div className="answer-details">
+                {selectedQuestion.isAnswered ? (
+                  <>
+                    <div className={`student-answer ${selectedQuestion.isCorrect ? 'correct' : 'wrong'}`}>
+                      <strong className="bengali">শিক্ষার্থীর উত্তর:</strong>
+                      <span className="answer-badge">{selectedQuestion.studentAnswer}</span>
+                      {selectedQuestion.isCorrect ? (
+                        <span className="status-text correct bengali">✓ সঠিক</span>
+                      ) : (
+                        <span className="status-text wrong bengali">✗ ভুল</span>
+                      )}
+                    </div>
+                    {!selectedQuestion.isCorrect && (
+                      <div className="correct-answer-display">
+                        <strong className="bengali">সঠিক উত্তর:</strong>
+                        <span className="answer-badge correct">{selectedQuestion.correctAnswer}</span>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="no-answer bengali">
+                    <strong>শিক্ষার্থী এই প্রশ্নের উত্তর দেয়নি</strong>
+                    <div className="correct-answer-display">
+                      <strong className="bengali">সঠিক উত্তর:</strong>
+                      <span className="answer-badge correct">{selectedQuestion.correctAnswer}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
