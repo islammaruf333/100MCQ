@@ -107,6 +107,9 @@ function AdminPage() {
       filtered = filtered.filter(sub => sub.pass === isPassed)
     }
 
+    // Sort by timestamp - most recent first
+    filtered = filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+
     return filtered
   }, [submissionsByStudent, searchTerm, statusFilter])
 
