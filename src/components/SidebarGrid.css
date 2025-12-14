@@ -113,7 +113,7 @@
     position: static;
     margin-top: 16px;
   }
-  
+
   .questions-grid {
     grid-template-columns: repeat(10, 1fr);
   }
@@ -122,16 +122,39 @@
 @media (max-width: 640px) {
   .sidebar-grid {
     padding: 16px;
+    border-radius: 10px;
   }
-  
+
+  .sidebar-header h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .legend {
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+  }
+
+  .legend-item {
+    font-size: 0.9rem;
+  }
+
+  .legend-dot {
+    width: 16px;
+    height: 16px;
+  }
+
   .questions-grid {
     grid-template-columns: repeat(8, 1fr);
-    gap: 6px;
+    gap: 8px;
   }
-  
+
   .question-bubble {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    border-width: 2px;
+    min-height: 40px;
+    min-width: 40px;
+    font-weight: 700;
   }
 }
-
-

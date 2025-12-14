@@ -85,11 +85,52 @@
 }
 
 @media (max-width: 640px) {
+  .start-screen {
+    padding: 16px;
+  }
+
   .start-card {
-    padding: 24px;
+    padding: 28px 20px;
+    border-radius: 12px;
   }
 
   .start-card h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  .exam-info {
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+
+  .exam-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .start-card label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .start-card input {
+    padding: 16px 18px;
+    font-size: 1.1rem;
+    border-width: 2px;
+    min-height: 54px;
+  }
+
+  .primary-btn {
+    padding: 16px 28px;
+    font-size: 1.1rem;
+    min-height: 54px;
+    font-weight: 600;
+  }
+
+  .hint {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    line-height: 1.5;
   }
 }

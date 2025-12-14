@@ -144,29 +144,75 @@
 
 @media (max-width: 640px) {
   .question-card {
-    padding: 16px;
+    padding: 18px;
+    border-radius: 10px;
   }
-  
+
+  .question-header {
+    margin-bottom: 16px;
+  }
+
+  .question-badge {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+  }
+
+  .review-badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
   .question-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
   }
-  
+
+  .options-grid {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
   .option-card {
-    padding: 12px;
+    padding: 16px 14px;
+    min-height: 56px;
+    font-size: 1.05rem;
+    border-width: 2px;
   }
-  
+
+  .option-label {
+    font-size: 1rem;
+    min-width: 28px;
+  }
+
+  .option-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    font-size: 1.4rem;
+  }
+
   .question-actions {
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    padding-top: 16px;
   }
-  
+
   .nav-buttons {
     width: 100%;
+    gap: 10px;
   }
-  
+
   .action-btn {
     flex: 1;
+    padding: 14px 20px;
+    font-size: 1rem;
+    min-height: 50px;
+  }
+
+  .action-btn.secondary {
+    width: 100%;
   }
 }
-
-
