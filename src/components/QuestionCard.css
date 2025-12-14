@@ -38,6 +38,22 @@
   font-weight: 500;
 }
 
+.question-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 16px;
+  background: var(--gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.question-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
 .options-grid {
   display: flex;
   flex-direction: column;

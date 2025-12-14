@@ -1,4 +1,5 @@
 import { useSwipe } from '../hooks/useSwipe'
+import { renderLatex } from '../utils/latex'
 import './QuestionCard.css'
 
 function QuestionCard({
@@ -22,7 +23,7 @@ function QuestionCard({
   if (!question) return null
 
   return (
-    <div 
+    <div
       className="question-card"
       {...swipeHandlers}
     >
@@ -30,9 +31,13 @@ function QuestionCard({
         <span className="question-badge bengali">প্রশ্ন {questionNumber}</span>
         {isMarked && <span className="review-badge bengali">রিভিউ</span>}
       </div>
-      
-      <div className="question-text bengali" dangerouslySetInnerHTML={{ __html: question.question }} />
-      
+
+      <div className="question-text bengali" dangerouslySetInnerHTML={{ __html: renderLatex(question.question) }} />
+
+      {question.hasDiagram && question.svg_code && (
+        <div className="question-diagram" dangerouslySetInnerHTML={{ __html: question.svg_code }} />
+      )}
+
       <div className="options-grid">
         {question.options.map((option) => {
           const isSelected = selectedAnswer === option.id
@@ -43,7 +48,7 @@ function QuestionCard({
               onClick={() => onAnswerSelect(question.id, option.id)}
             >
               <span className="option-label">{option.id})</span>
-              <span className="option-text bengali">{option.text}</span>
+              <span className="option-text bengali" dangerouslySetInnerHTML={{ __html: renderLatex(option.text) }} />
               {isSelected && <span className="check-icon">✓</span>}
             </button>
           )

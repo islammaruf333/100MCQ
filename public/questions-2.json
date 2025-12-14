@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "subject": "Physics",
     "question": "একটি জাংশনের সম্মুখ বায়াসের বিভব পার্থক্য 1.2 V থেকে বাড়িয়ে 3.3 V করা হলে, বিদ্যুৎ প্রবাহ 320 mA থেকে 340 mA হয়। জাংশনের গতীয় রোধ কত?",
     "options": {
       "a": "0.105 Ω",
@@ -8,10 +9,12 @@
       "c": "0.205 KΩ",
       "d": "0.205 Ω"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ r_d = \\frac{\\Delta V}{\\Delta I} = \\frac{3.3 - 1.2}{(340 - 320) \\times 10^{-3}} = \\frac{2.1}{20 \\times 10^{-3}} = 105 \\Omega = 0.105 k\\Omega $$"
   },
   {
     "id": 2,
+    "subject": "Physics",
     "question": "সোডিয়াম ধাতুর উপর 6630 Å তরঙ্গদৈর্ঘ্যের আলো আপতিত হলে শুধুমাত্র ইলেকট্রন নির্গত হয় কিন্তু গতিশক্তি প্রাপ্ত হয় না। সোডিয়ামের কার্যপেক্ষক কত?",
     "options": {
       "a": "3.875 eV",
@@ -19,10 +22,12 @@
       "c": "0.875 eV",
       "d": "1.875 eV"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "$$ \\phi = \\frac{hc}{\\lambda} = \\frac{6.63 \\times 10^{-34} \\times 3 \\times 10^8}{6630 \\times 10^{-10}} J = 3 \\times 10^{-19} J = 1.875 eV $$"
   },
   {
     "id": 3,
+    "subject": "Physics",
     "question": "একটি ধারকের ধারকত্ব, C = (3 ± 0.1) μF এবং বিভব, V = (20 ± 0.1) V। ধারকের সঞ্চিত শক্তি নির্ণয়ে পরম ত্রুটি কত?",
     "options": {
       "a": "7/125 J",
@@ -30,10 +35,12 @@
       "c": "3/225 J",
       "d": "3.5 × 10⁻⁸ J"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ \\frac{\\Delta E}{E} = \\frac{\\Delta C}{C} + 2\\frac{\\Delta V}{V} $$. মান বসিয়ে, $$ \\Delta E = 2.6 \\times 10^{-5} J $$"
   },
   {
     "id": 4,
+    "subject": "Physics",
     "question": "একটি সিলিন্ডারের পরিমাপ্য ব্যাসার্ধ (5 ± 0.5) cm এবং উচ্চতা (10 ± 0.1) cm হলে, আয়তন নির্ণয়ের শতকরা ত্রুটি কত?",
     "options": {
       "a": "21%",
@@ -41,10 +48,12 @@
       "c": "2.1%",
       "d": "3.1%"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "$$ \\frac{\\Delta V}{V} \\times 100\\% = (2 \\frac{\\Delta r}{r} + \\frac{\\Delta h}{h}) \\times 100\\% = (2 \\times \\frac{0.5}{5} + \\frac{0.1}{10}) \\times 100\\% = 21\\% $$"
   },
   {
     "id": 5,
+    "subject": "Physics",
     "question": "একটি লিফট 5 ms⁻² ত্বরণে নিচে নামছে। 50 kg ভরের ব্যক্তি লিফটের মেঝতে কত বল প্রয়োগ করবে?",
     "options": {
       "a": "2400 N",
@@ -52,21 +61,28 @@
       "c": "240 N",
       "d": "2000 N"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "$$ R = m(g-a) = 50(9.8 - 5) = 240 N $$"
   },
   {
     "id": 6,
+    "subject": "Physics",
+    "topic": "Current Electricity",
     "question": "কোন বর্তনীটিতে বাল্বটি একবারেই জ্বলবে না?",
+    "hasDiagram": true,
+    "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' width='200' height='150'><style>text{font-family:Arial, sans-serif; font-size:14px;}</style><rect x='5' y='5' width='190' height='140' fill='none' stroke='#ccc' stroke-dasharray='5,5'/><text x='10' y='25' fill='gray'>(c)</text><line x1='70' y1='120' x2='90' y2='120' stroke='black' stroke-width='2'/><line x1='110' y1='120' x2='130' y2='120' stroke='black' stroke-width='2'/><line x1='90' y1='110' x2='90' y2='130' stroke='black' stroke-width='2'/><line x1='110' y1='115' x2='110' y2='125' stroke='black' stroke-width='4'/><line x1='70' y1='30' x2='95' y2='30' stroke='black' stroke-width='2'/><line x1='105' y1='30' x2='130' y2='30' stroke='black' stroke-width='2'/><line x1='95' y1='20' x2='95' y2='40' stroke='black' stroke-width='2'/><line x1='105' y1='20' x2='105' y2='40' stroke='black' stroke-width='2'/><text x='92' y='15' font-size='12'>C</text><circle cx='160' cy='75' r='15' fill='none' stroke='black' stroke-width='2'/><path d='M150 85 L170 65 M150 65 L170 85' stroke='black' stroke-width='2'/><line x1='70' y1='30' x2='70' y2='120' stroke='black' stroke-width='2'/><line x1='130' y1='30' x2='160' y2='30' stroke='black' stroke-width='2'/><line x1='160' y1='30' x2='160' y2='60' stroke='black' stroke-width='2'/><line x1='160' y1='90' x2='160' y2='120' stroke='black' stroke-width='2'/><line x1='160' y1='120' x2='130' y2='120' stroke='black' stroke-width='2'/></svg>",
     "options": {
       "a": "চিত্র (a)",
       "b": "চিত্র (b)",
       "c": "চিত্র (c)",
       "d": "চিত্র (d)"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "চিত্র (c)-তে একটি ক্যাপাসিটর (C) ব্যাটারির সাথে শ্রেণিতে যুক্ত। DC প্রবাহে ক্যাপাসিটর চার্জিত হওয়ার পর ওপেন সার্কিটের মতো আচরণ করে, তাই বিদ্যুৎ প্রবাহ বন্ধ হয়ে যায় এবং বাল্ব জ্বলে না।"
   },
   {
     "id": 7,
+    "subject": "Physics",
     "question": "একটি বস্তুর উপর F = (ax² + bx + c) N বল প্রয়োগের ফলে বস্তুটি বলের দিকে 0 m থেকে 4 m সরে যায়। কাজের পরিমাণ কত?",
     "options": {
       "a": "64b/3 + 8a + 4c",
@@ -74,10 +90,12 @@
       "c": "64a/3 + 4b + 8c",
       "d": "64a/3 + 12b + 8c"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ W = \\int_{0}^{4} (ax^2 + bx + c) dx = [\\frac{ax^3}{3} + \\frac{bx^2}{2} + cx]_0^4 $$"
   },
   {
     "id": 8,
+    "subject": "Physics",
     "question": "একটি স্প্রিং-ব্লক সিস্টেম সরল ছন্দিত গতিতে স্পন্দিত হয়। যদি ব্লকের ভর তিনগুণ ও বিস্তার অর্ধেক করা হয়, তবে সর্বোচ্চ ত্বরণ কতগুণ পরিবর্তিত হয়?",
     "options": {
       "a": "6a₂",
@@ -85,21 +103,25 @@
       "c": "a₁/6",
       "d": "a₂/6"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "$$ a_{max} = \\omega^2 A = \\frac{k}{m} A $$. ভর ৩ গুণ ও বিস্তার ১/২ হলে ত্বরণ ১/৬ গুণ হবে।"
   },
   {
     "id": 9,
-    "question": "−173°C তাপমাত্রায় অক্সিজেন অণুর গড় বর্গবেগের বর্গমূল কত তাপমাত্রায় নাইট্রোজেনের গড় বর্গবেগের বর্গমূলের সমান হবে?",
+    "subject": "Physics",
+    "question": "-173°C তাপমাত্রায় অক্সিজেন অণুর গড় বর্গবেগের বর্গমূল কত তাপমাত্রায় নাইট্রোজেনের গড় বর্গবেগের বর্গমূলের সমান হবে?",
     "options": {
       "a": "87.5 K",
       "b": "87.5°C",
       "c": "43.75 F",
       "d": "43.75 R"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "$$ C_{rms} \\propto \\sqrt{\\frac{T}{M}} $$. শর্তমতে, $$ \\frac{T_{O_2}}{M_{O_2}} = \\frac{T_{N_2}}{M_{N_2}} $$"
   },
   {
     "id": 10,
+    "subject": "Physics",
     "question": "কোনো পরিবাহীর রোধ 50 Ω। এর মধ্য দিয়ে 2 A প্রবাহ 2 মিনিট প্রবাহিত হলে কত তাপ উৎপন্ন হবে?",
     "options": {
       "a": "5760 cal",
@@ -107,10 +129,12 @@
       "c": "1152 cal",
       "d": "1152 J"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "$$ H = I^2Rt / 4.2 $$ (ক্যালোরিতে)। $$ H = \\frac{2^2 \\times 50 \\times 120}{4.2} \\approx 5760 \\text{ cal} $$"
   },
   {
     "id": 11,
+    "subject": "Physics",
     "question": "একটি গ্লাস রডকে সিল্কের কাপড় দ্বারা ঘর্ষণ করা হলে গ্লাস রডে যে ধরনের বিদ্যুৎ উৎপন্ন হবে তা হলো—",
     "options": {
       "a": "ধনাত্মক ও ঋণাত্মক উভয়ই",
@@ -118,10 +142,12 @@
       "c": "ধনাত্মক",
       "d": "কোনোটিই নয়"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "গ্লাস রড ইলেকট্রন হারায়, তাই ধনাত্মক আধানগ্রস্থ হয়।"
   },
   {
     "id": 12,
+    "subject": "Physics",
     "question": "স্বতঃস্ফূর্ত পরিবর্তনে—",
     "options": {
       "a": "এনট্রপি ও বিশৃঙ্খলা হ্রাস পায়",
@@ -133,6 +159,7 @@
   },
   {
     "id": 13,
+    "subject": "Physics",
     "question": "∇ × V = 0 হলে, কোনটি সঠিক?",
     "options": {
       "a": "সলিনয়ডাল",
@@ -140,10 +167,12 @@
       "c": "সংরক্ষণশীল",
       "d": "ঘূর্ণনশীল"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "কার্ল শূন্য হলে ভেক্টরটি অঘূর্ণনশীল বা সংরক্ষণশীল হয়।"
   },
   {
     "id": 14,
+    "subject": "Physics",
     "question": "একটি বৃত্তাকার রিং অনুভূমিক মসৃণ তলে ω সমকৌণিক বেগে গড়িয়ে চলছে। এর ভর m এবং ব্যাসার্ধ r। বস্তুটির মোট গতিশক্তি কত?",
     "options": {
       "a": "½ mω²r²",
@@ -151,10 +180,12 @@
       "c": "mω²r²",
       "d": "mωr"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "মোট শক্তি = রৈখিক + ঘূর্ণন = $$ \\frac{1}{2}mv^2 + \\frac{1}{2}I\\omega^2 = \\frac{1}{2}m(\\omega r)^2 + \\frac{1}{2}(mr^2)\\omega^2 = m\\omega^2r^2 $$"
   },
   {
     "id": 15,
+    "subject": "Physics",
     "question": "কোনটি x-অক্ষের উপর লম্ব হবে?",
     "options": {
       "a": "(i × j) × k",
@@ -162,21 +193,28 @@
       "c": "(j × i) × j",
       "d": "(k × j) × i"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ (i \\times j) \\times i = k \\times i = j $$; যা y-অক্ষ বরাবর, অর্থাৎ x-অক্ষের উপর লম্ব।"
   },
   {
     "id": 16,
+    "subject": "Physics",
+    "topic": "Circuit Analysis",
     "question": "বর্তনীটির তুল্যরোধ এবং প্রবাহমাত্রার কোন সম্পর্কটি সঠিক?",
+    "hasDiagram": true,
+    "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180' width='300' height='180'><style>text{font-family:Arial, sans-serif; font-size:14px;}</style><line x1='50' y1='140' x2='50' y2='40' stroke='black' stroke-width='2'/><line x1='50' y1='40' x2='100' y2='40' stroke='black' stroke-width='2'/><line x1='200' y1='40' x2='250' y2='40' stroke='black' stroke-width='2'/><line x1='250' y1='40' x2='250' y2='140' stroke='black' stroke-width='2'/><line x1='100' y1='40' x2='100' y2='70' stroke='black' stroke-width='2'/><line x1='200' y1='40' x2='200' y2='70' stroke='black' stroke-width='2'/><line x1='100' y1='100' x2='100' y2='70' stroke='black' stroke-width='2'/><line x1='200' y1='100' x2='200' y2='70' stroke='black' stroke-width='2'/><rect x='120' y='30' width='60' height='20' fill='white' stroke='black' stroke-width='2'/><text x='135' y='45'>6Ω</text><line x1='100' y1='40' x2='120' y2='40' stroke='black' stroke-width='2'/><line x1='180' y1='40' x2='200' y2='40' stroke='black' stroke-width='2'/><rect x='120' y='90' width='60' height='20' fill='white' stroke='black' stroke-width='2'/><text x='135' y='105'>3Ω</text><line x1='100' y1='100' x2='120' y2='100' stroke='black' stroke-width='2'/><line x1='180' y1='100' x2='200' y2='100' stroke='black' stroke-width='2'/><rect x='40' y='80' width='20' height='40' fill='white' stroke='black' stroke-width='2'/><text x='35' y='105' transform='rotate(-90 35,105)'>2Ω</text><line x1='130' y1='140' x2='170' y2='140' stroke='black' stroke-width='2'/><line x1='145' y1='130' x2='145' y2='150' stroke='black' stroke-width='2'/><line x1='155' y1='135' x2='155' y2='145' stroke='black' stroke-width='4'/><text x='135' y='165'>12V</text><line x1='50' y1='140' x2='145' y2='140' stroke='black' stroke-width='2'/><line x1='155' y1='140' x2='250' y2='140' stroke='black' stroke-width='2'/><text x='70' y='135'>I →</text><text x='110' y='35'>I₁ →</text><text x='110' y='95'>I₂ →</text></svg>",
     "options": {
-      "a": "4Ω, I₂ > I > I₁",
-      "b": "4Ω, I > I₂ > I₁",
-      "c": "4Ω, I > I₁ > I₂",
-      "d": "4Ω, I₁ > I₂ > I"
+      "a": "$$ 4\\Omega, I_2 > I > I_1 $$",
+      "b": "$$ 4\\Omega, I > I_2 > I_1 $$",
+      "c": "$$ 4\\Omega, I > I_1 > I_2 $$",
+      "d": "$$ 4\\Omega, I_1 > I_2 > I $$"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "তুল্যরোধ $$ R_p = (6||3) = 2\\Omega $$। মোট রোধ $$ R = 2 + 2 = 4\\Omega $$। মূল প্রবাহ $$ I = 12/4 = 3A $$। সমান্তরাল অংশে বিভব $$ V_p = 3A \\times 2\\Omega = 6V $$। $$ I_{6\\Omega}(I_1) = 6V/6\\Omega = 1A $$। $$ I_{3\\Omega}(I_2) = 6V/3\\Omega = 2A $$। ক্রম: $$ I(3A) > I_2(2A) > I_1(1A) $$।"
   },
   {
     "id": 17,
+    "subject": "Physics",
     "question": "পৃথিবীর ভর ও ব্যাসার্ধ যথাক্রমে চাঁদের ভর ও ব্যাসার্ধের 81 গুণ এবং 4 গুণ। পৃথিবী পৃষ্ঠে একজন লোকের ওজন 684 N হলে চাঁদে লোকটির ওজন কত?",
     "options": {
       "a": "135 N",
@@ -184,10 +222,12 @@
       "c": "135 J",
       "d": "140 N"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "$$ W_m = \\frac{1}{6} W_e $$ (প্রায়), সঠিক হিসাব: $$ g_m = g_e \\times \\frac{M_m}{M_e} \\times (\\frac{R_e}{R_m})^2 $$"
   },
   {
     "id": 18,
+    "subject": "Physics",
     "question": "একটি হুইটস্টোন ব্রিজের চারটি বাহুতে যথাক্রমে 6 Ω, 18 Ω, 10 Ω এবং 60 Ω রোধ যুক্ত আছে। চতুর্থ বাহুতে কত মানের একটি রোধ কিভাবে যুক্ত করলে ব্রিজটি সাম্যাবস্থায় আসবে?",
     "options": {
       "a": "60 Ω, শ্রেণিতে",
@@ -195,10 +235,12 @@
       "c": "120 Ω, সমান্তরালে",
       "d": "20 Ω, সমান্তরালে"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ P/Q = R/S \\Rightarrow 6/18 = 10/S' \\Rightarrow S' = 30\\Omega $$. আছে 60Ω, তাই সমান্তরালে 60Ω দিলে 30Ω হবে।"
   },
   {
     "id": 19,
+    "subject": "Physics",
     "question": "দুইটি সরল দোলক x এবং y। যদি y এর দৈর্ঘ্য x এর তিনগুণ এবং y এর দোলনকাল 3 s হয় তবে x এর দোলনকাল কত?",
     "options": {
       "a": "3 min",
@@ -206,10 +248,12 @@
       "c": "√3 min",
       "d": "√3 s"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "$$ T \\propto \\sqrt{L} $$. $$ \\frac{T_x}{T_y} = \\sqrt{\\frac{L_x}{L_y}} = \\sqrt{\\frac{1}{3}} \\Rightarrow T_x = \\frac{3}{\\sqrt{3}} = \\sqrt{3} s $$"
   },
   {
     "id": 20,
+    "subject": "Physics",
     "question": "27°C তাপমাত্রায় কোনো নির্দিষ্ট পরিমাণ গ্যাস হঠাৎ প্রসারিত হয়ে আটগুণ আয়তন লাভ করে। চূড়ান্ত তাপমাত্রা কত? [γ = 1.67]",
     "options": {
       "a": "75°F",
@@ -217,21 +261,28 @@
       "c": "75 K",
       "d": "80 K"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "হঠাৎ প্রসারণ = রুদ্ধতাপীয়। $$ T_1V_1^{\\gamma-1} = T_2V_2^{\\gamma-1} $$"
   },
   {
     "id": 21,
-    "question": "বস্তুর ভর ধ্রুবক হলে, রৈখিক ভরবেগ p বনাম গতিশক্তি Ek লেখচিত্রটি হবে—",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "question": "বস্তুর ভর ধ্রুবক হলে, রৈখিক ভরবেগ $$ p $$ বনাম গতিশক্তি $$ E_k $$ লেখচিত্রটি হবে—",
+    "hasDiagram": true,
+    "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'><style>text{font-family:Times New Roman, serif; font-size:16px; font-style:italic;}</style><line x1='20' y1='180' x2='180' y2='180' stroke='black' stroke-width='2'/><line x1='20' y1='180' x2='20' y2='20' stroke='black' stroke-width='2'/><text x='180' y='195'>p</text><text x='5' y='20'>Ek</text><path d='M20,180 Q100,180 170,30' fill='none' stroke='black' stroke-width='2'/></svg>",
     "options": {
       "a": "চিত্র (a)",
       "b": "চিত্র (b)",
       "c": "চিত্র (c)",
       "d": "চিত্র (d)"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "আমরা জানি $$ p = \\sqrt{2mE_k} $$ বা $$ p^2 = 2mE_k $$। যদি y-অক্ষে $$ E_k $$ এবং x-অক্ষে $$ p $$ থাকে, তবে সমীকরণটি দাঁড়ায় $$ x^2 = 2my $$, যা একটি পরাবৃত্ত এবং এটি y-অক্ষ ($$ E_k $$ অক্ষ) এর দিকে মুখ করা থাকবে। (মূল প্রশ্নের চিত্র (b) এর সাথে হুবহু মিল রেখে এটি আঁকা হয়েছে)।"
   },
   {
     "id": 22,
+    "subject": "Physics",
     "question": "কয়েকটি ধারক শ্রেণি সমবায়ে সংযুক্ত করলে—",
     "options": {
       "a": "লব্ধি ধারকত্ব সবগুলো ধারকের সমষ্টি থেকে বড়",
@@ -243,6 +294,7 @@
   },
   {
     "id": 23,
+    "subject": "Physics",
     "question": "একটি ফ্রনহফার শ্রেণির একক চিড়ের দরুন অপবর্তন পরীক্ষায় 5000 Å তরঙ্গদৈর্ঘ্যের আলো ব্যবহার করা হলো। দ্বিতীয় অবমের জন্য অপবর্তন কোণ 30° হলে চিড়ের বেধ কত?",
     "options": {
       "a": "0.002 mm",
@@ -250,11 +302,13 @@
       "c": "0.02 mm",
       "d": "0.02 m"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "$$ a \\sin \\theta = n\\lambda $$. এখানে n=2. $$ a = \\frac{2 \\times 5000 \\times 10^{-10}}{\\sin 30} = 2 \\times 10^{-6} m = 0.002 mm $$"
   },
   {
     "id": 24,
-    "question": "²⁰⁹₈₄Po →(β) B →(α) C →(γ) D, D মৌলের পারমাণবিক সংখ্যা কত?",
+    "subject": "Chemistry",
+    "question": "$$ ^{209}_{84}Po \\xrightarrow{\\beta} B \\xrightarrow{\\alpha} C \\xrightarrow{\\gamma} D $$, D মৌলের পারমাণবিক সংখ্যা কত?",
     "options": {
       "a": "84",
       "b": "83",
@@ -265,6 +319,7 @@
   },
   {
     "id": 25,
+    "subject": "Physics",
     "question": "1 m দীর্ঘ ও 1 mm ব্যাসের তারকে বল প্রয়োগে 0.025 cm দৈর্ঘ্য বৃদ্ধি করা হলে তারের ব্যাস কতটুকু হ্রাস পাবে? [σ = 0.1]",
     "options": {
       "a": "1.5 × 10⁻³ m",
@@ -272,10 +327,12 @@
       "c": "2.5 × 10⁻³ m",
       "d": "1.5 × 10⁻³ mm"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ \\sigma = \\frac{\\Delta d / d}{\\Delta l / l} $$"
   },
   {
     "id": 26,
+    "subject": "Chemistry",
     "question": "Cu(29)- এর 3d অরবিটালে ইলেকট্রন সংখ্যা-",
     "options": {
       "a": "9",
@@ -283,21 +340,25 @@
       "c": "10",
       "d": "4"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "ব্যতিক্রম ইলেকট্রন বিন্যাস: $$ [Ar] 3d^{10} 4s^1 $$"
   },
   {
     "id": 27,
-    "question": "Ka এর নিম্নোক্ত মানের উপর ভিত্তি করে এসিডগুলি সবল থেকে দুর্বলের ক্রম অনুসারে সাজাও- \n(i) HCN(Ka = 6.2 × 10⁻¹⁰) \n(ii) HC₂H₃O₂(Ka = 1.8 × 10⁻⁵) \n(iii) HCOOH(Ka = 1.78 × 10⁻⁴) \n(iv) HNO₂(Ka = 4.6 × 10⁻⁴)",
+    "subject": "Chemistry",
+    "question": "Ka এর মানের উপর ভিত্তি করে এসিডগুলি সবল থেকে দুর্বলের ক্রম: (i) HCN (Ka = 6.2e-10), (ii) Acetic (1.8e-5), (iii) Formic (1.78e-4), (iv) HNO2 (4.6e-4)",
     "options": {
       "a": "HCN < HC₂H₃O₂ < HCOOH < HNO₂",
       "b": "HCN < HNO₂ < HC₂H₃O₂ < HCOOH",
       "c": "HNO₂ < HCOOH < HC₂H₃O₂ < HCN",
       "d": "HCOOH < HNO₂ < HCN < HC₂H₃O₂"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "Ka এর মান যত বেশি, এসিড তত শক্তিশালী। উল্টো ক্রমে সাজানো হয়েছে (দুর্বল থেকে সবল)।"
   },
   {
     "id": 28,
+    "subject": "Physics",
     "question": "চার্লসের সূত্রে কোনটি অপরিবর্তিত থাকে?",
     "options": {
       "a": "তাপমাত্রা",
@@ -309,6 +370,7 @@
   },
   {
     "id": 29,
+    "subject": "Chemistry",
     "question": "NH₄OH ও H₂SO₄ এর টাইট্রেশনে উপযুক্ত নির্দেশক কোনটি?",
     "options": {
       "a": "থাইমলথ্যালিন",
@@ -316,32 +378,41 @@
       "c": "মিথাইল রেড",
       "d": "ফেনলফথ্যালিন"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "সবল এসিড ও দুর্বল ক্ষারের টাইট্রেশনে মিথাইল রেড বা মিথাইল অরেঞ্জ ব্যবহৃত হয়।"
   },
   {
     "id": 30,
-    "question": "C₆H₅ − CONH₂ + Br₂ + KOH →(Δ) ___ + KBr + H₂O বিক্রিয়ার শূন্যস্থানে কোন উৎপাদটি হবে?",
+    "subject": "Chemistry",
+    "question": "$$ C_6H_5CONH_2 + Br_2 + KOH \\xrightarrow{\\Delta} \\text{___} + KBr + H_2O $$ বিক্রিয়ায় উৎপাদ কোনটি?",
     "options": {
       "a": "বেনজয়িক এসিড",
       "b": "ব্রোমো-বেনজামাইড",
       "c": "অ্যানিলিন",
       "d": "সায়ানো বেনজিন"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "এটি হফম্যান ক্ষুদ্রাংশকরণ (Hofmann degradation) বিক্রিয়া। অ্যামাইড থেকে প্রাইমারি অ্যামিন (অ্যানিলিন) তৈরি হয়।"
   },
   {
     "id": 31,
-    "question": "টলুইন →[65% H₂SO₄, MnO₂, 45°C] বিক্রিয়ায় উৎপন্ন পদার্থ কোনটি?",
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "বিক্রিয়ায় উৎপন্ন পদার্থ কোনটি?",
+    "hasDiagram": true,
+    "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 120' width='350' height='120'><style>text{font-family:Arial, sans-serif; font-size:14px;}</style><g transform='translate(50, 70)'><polygon points='0,-30 26,-15 26,15 0,30 -26,15 -26,-15' fill='none' stroke='black' stroke-width='2'/><circle cx='0' cy='0' r='15' fill='none' stroke='black' stroke-width='1.5'/><line x1='0' y1='-30' x2='0' y2='-50' stroke='black' stroke-width='2'/><text x='-12' y='-55'>CH₃</text></g><line x1='100' y1='70' x2='200' y2='70' stroke='black' stroke-width='2'/><polygon points='200,70 190,65 190,75' fill='black'/><text x='110' y='55' font-size='12'>65% H₂SO₄, MnO₂</text><text x='135' y='90' font-size='12'>45°C</text><text x='220' y='80' font-size='40'>?</text></svg>",
     "options": {
       "a": "বেনজ্যালডিহাইড",
       "b": "বেনজয়িক এসিড",
       "c": "ফেনল",
       "d": "এসিটোফেনন"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "এটি একটি জারণ বিক্রিয়া। $$ MnO_2 $$ এবং $$ H_2SO_4 $$ এর উপস্থিতিতে টলুইনের পার্শ্ব শিকল ($$ -CH_3 $$) জারিত হয়ে অ্যালডিহাইড মূলকে ($$ -CHO $$) পরিণত হয়, ফলে বেনজ্যালডিহাইড উৎপন্ন হয়।"
   },
   {
     "id": 32,
+    "subject": "Chemistry",
     "question": "কোনটির জলীয় দ্রবণ অধিক ক্ষারীয়?",
     "options": {
       "a": "P₂O₅",
@@ -349,10 +420,12 @@
       "c": "MgO",
       "d": "Na₂O"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "ধাতব অক্সাইড ক্ষারীয়। Na সবচেয়ে বেশি সক্রিয় ধাতু।"
   },
   {
     "id": 33,
+    "subject": "Chemistry",
     "question": "CH₄, NH₃, H₂O, H₂S এর মধ্যে বন্ধন কোণের সঠিক ক্রম কোনটি?",
     "options": {
       "a": "H₂S > CH₄ > NH₃ > H₂O",
@@ -360,10 +433,12 @@
       "c": "NH₃ > CH₄ > H₂O > H₂S",
       "d": "CH₄ > NH₃ > H₂O > H₂S"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "CH4 (109.5°) > NH3 (107°) > H2O (104.5°) > H2S (92°)"
   },
   {
     "id": 34,
+    "subject": "Chemistry",
     "question": "2.5A বিদ্যুৎ 1 মিনিট ধরে একটি ইলেকট্রোডে প্রবাহিত করলে প্রবাহিত বিদ্যুতের চার্জ কত?",
     "options": {
       "a": "150 F",
@@ -371,10 +446,12 @@
       "c": "3/1930 F",
       "d": "a ও b"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "Q = It = 2.5 * 60 = 150 C. Faraday তে নিলে 150/96500 F."
   },
   {
     "id": 35,
+    "subject": "Chemistry",
     "question": "2A + B ⇌ C + D বিক্রিয়াটি তাপোৎপাদী; সর্বোচ্চ উৎপাদ পেতে নিচের কোন শর্ত যুগল কার্যকর হবে?",
     "options": {
       "a": "বেশি চাপ - বেশি তাপমাত্রা",
@@ -382,10 +459,12 @@
       "c": "বেশি চাপ - কম তাপমাত্রা",
       "d": "কম চাপ - কম তাপমাত্রা"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "তাপোৎপাদী তাই কম তাপমাত্রা। বিক্রিয়ক ৩ মোল, উৎপাদ ২ মোল, তাই চাপ বাড়ালে উৎপাদ বাড়বে।"
   },
   {
     "id": 36,
+    "subject": "Chemistry",
     "question": "H-পরমাণুর বর্ণালিতে বামার সিরিজের সর্বনিম্ন কত তরঙ্গ সংখ্যার রশ্মি বিকিরিত হয়?",
     "options": {
       "a": "9/144 RH",
@@ -393,32 +472,37 @@
       "c": "3/4 RH",
       "d": "8/9 RH"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "বামার সিরিজের জন্য n1=2। সর্বনিম্ন তরঙ্গ সংখ্যা মানে সর্বোচ্চ তরঙ্গদৈর্ঘ্য (প্রথম লাইন), n2=3। $$ \\bar{\\nu} = R_H (\\frac{1}{2^2} - \\frac{1}{3^2}) = R_H \\frac{5}{36} $$"
   },
   {
     "id": 37,
-    "question": "CH₃ − CH₂ − CHBr − CH₃ —(Alc.KOH, Δ)→ A(80%); A যৌগটি হলো-",
+    "subject": "Chemistry",
+    "question": "$$ CH_3 - CH_2 - CHBr - CH_3 \\xrightarrow{Alc.KOH, \\Delta} A(80\\%) $$; A যৌগটি হলো-",
     "options": {
-      "a": "CH₃ − CH₂ − CH = CH₂",
-      "b": "CH₃ − CH = CH − CH₃",
-      "c": "CH₃ − C ≡ C ≡ CH₃",
+      "a": "$$ CH_3 - CH_2 - CH = CH_2 $$",
+      "b": "$$ CH_3 - CH = CH - CH_3 $$",
+      "c": "$$ CH_3 - C \\equiv C - CH_3 $$",
       "d": "কোনটিই নয়"
     },
     "correctAnswer": "b"
   },
   {
     "id": 38,
-    "question": "হেন্ডারসন-হ্যাসেলবাখ সমীকরণ নয়-",
+    "subject": "Chemistry",
+    "question": "হেন্ডারসন-হ্যাসেলবাখ সমীকরণ নয় কোনটি?",
     "options": {
       "a": "pH = pKa − log([acid]/[salt])",
       "b": "pOH = pKb − log([base]/[salt])",
       "c": "pH = pKa + log([acid]/[salt])",
       "d": "a & b"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "সঠিক সমীকরণ: pH = pKa + log([salt]/[acid])"
   },
   {
     "id": 39,
+    "subject": "Chemistry",
     "question": "MgCl₂ ও CuCl₂ এর মধ্যে সমযোজী বন্ধনের মাত্রা-",
     "options": {
       "a": "MgCl₂ এর বেশি",
@@ -426,21 +510,25 @@
       "c": "CuCl₂ এর কম",
       "d": "সমান"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "ফাজানের নীতি: Cu2+ এর পোলারায়ন ক্ষমতা Mg2+ এর চেয়ে বেশি।"
   },
   {
     "id": 40,
-    "question": "2 (P + 0.25a/V²) (V − 0.5b) = RT সমীকরণটির জন্য কত গ্রাম CO₂ গ্যাস প্রযোজ্য?",
+    "subject": "Chemistry",
+    "question": "$$ 2 (P + \\frac{0.25a}{V^2}) (V - 0.5b) = RT $$ সমীকরণটির জন্য কত গ্রাম CO₂ গ্যাস প্রযোজ্য?",
     "options": {
       "a": "22",
       "b": "11",
       "c": "44",
       "d": "33"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "ভ্যান ডার ওয়ালস সমীকরণ: $$ (P + \\frac{n^2a}{V^2})(V-nb) = nRT $$। তুলনা করে $$ n^2 = 0.25 \\Rightarrow n=0.5 $$ মোল। 0.5 mol CO2 = 22g।"
   },
   {
     "id": 41,
+    "subject": "Chemistry",
     "question": "তাপমাত্রা বৃদ্ধির সাথে নিচের কোন দ্রবের দ্রাব্যতা হ্রাস পায়?",
     "options": {
       "a": "KI",
@@ -448,10 +536,12 @@
       "c": "KNO₃",
       "d": "Li₂SO₄"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "Li2SO4 এবং Ca(OH)2 এর দ্রাব্যতা তাপ বাড়লে কমে।"
   },
   {
     "id": 42,
+    "subject": "Chemistry",
     "question": "মেটামারিজম প্রদর্শন করে-",
     "options": {
       "a": "অ্যাসিটিলিন ও ইথিন",
@@ -463,6 +553,7 @@
   },
   {
     "id": 43,
+    "subject": "Chemistry",
     "question": "কোন বিক্রিয়ার মাধ্যমে উচ্চতর অ্যালকেন উৎপন্ন হয়?",
     "options": {
       "a": "উইলিয়াম সংশ্লেষণ",
@@ -474,6 +565,7 @@
   },
   {
     "id": 44,
+    "subject": "Chemistry",
     "question": "Fe₃O₄ এ Fe এর প্রকৃত জারণ সংখ্যা কত?",
     "options": {
       "a": "+2",
@@ -481,10 +573,12 @@
       "c": "+8/3",
       "d": "a ও b উভয়ই"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "Fe3O4 একটি মিশ্র অক্সাইড (FeO + Fe2O3)। এখানে +2 এবং +3 উভয়ই আছে।"
   },
   {
     "id": 45,
+    "subject": "Chemistry",
     "question": "2 atm চাপে একটি আবদ্ধ পাত্রে N₂ ও O₂ 3:2 অনুপাতে আছে, N₂ এর আংশিক চাপ কত?",
     "options": {
       "a": "12 × 10⁴ Pa",
@@ -492,10 +586,12 @@
       "c": "12 × 10⁶ Pa",
       "d": "0.8 atm"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "মূল ভগ্নাংশ = 3/5. আংশিক চাপ = (3/5)*2 = 1.2 atm = 1.2 * 101325 Pa ≈ 12 * 10^4 Pa"
   },
   {
     "id": 46,
+    "subject": "Chemistry",
     "question": "STP কে 159 g Cu₂S বাতাসে পোড়ালে উৎপন্ন SO₂ যৌগে O পরমাণুর সংখ্যা কত হবে?",
     "options": {
       "a": "6.02 × 10²³",
@@ -507,6 +603,7 @@
   },
   {
     "id": 47,
+    "subject": "Chemistry",
     "question": "Sn2 বিক্রিয়ায় অ্যালকাইল হ্যালাইড সমূহের সক্রিয়তার ক্রম-",
     "options": {
       "a": "3° > 2° > 1° > −CH₃",
@@ -518,7 +615,8 @@
   },
   {
     "id": 48,
-    "question": "140°C তাপমাত্রায় অধিক মিথানল ও H₂SO₄ বিক্রিয়ায় করে উৎপন্ন করে-",
+    "subject": "Chemistry",
+    "question": "140°C তাপমাত্রায় অধিক মিথানল ও H₂SO₄ বিক্রিয়া করে উৎপন্ন করে-",
     "options": {
       "a": "মিথানয়িক এসিড",
       "b": "ডাই মিথাইল ইথার",
@@ -529,7 +627,8 @@
   },
   {
     "id": 49,
-    "question": "26.50 g Na₂CO₃ পরিমাপ করে 200 ml আয়তনিক ফ্লাস্কে নিয়ে পরিমাণ মতো পানি মিশিয়ে দ্রবণ তৈরি করা হলো। দ্রবণের মোলার ঘনমাত্রা কত?",
+    "subject": "Chemistry",
+    "question": "26.50 g Na₂CO₃ পরিমাপ করে 200 ml আয়তনিক ফ্লাস্কে নিয়ে দ্রবণ তৈরি করা হলো। মোলার ঘনমাত্রা কত?",
     "options": {
       "a": "1.50 M",
       "b": "1.75 M",
@@ -540,6 +639,7 @@
   },
   {
     "id": 50,
+    "subject": "Chemistry",
     "question": "নিচের কোন আয়নটি সবুজ নয়?",
     "options": {
       "a": "Fe²⁺",
@@ -547,10 +647,12 @@
       "c": "V³⁺",
       "d": "Ni²⁺"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "Cu2+ নীল রঙের হয়। Fe2+, V3+, Ni2+ সবুজ।"
   },
   {
     "id": 51,
+    "subject": "ICT",
     "question": "দশমিক সংখ্যা 12 এর 2's complement কত?",
     "options": {
       "a": "0011",
@@ -558,10 +660,12 @@
       "c": "0100",
       "d": "0001"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "এটি প্রশ্নে সম্ভবত ভুল আছে অথবা বিট সংখ্যা উল্লেখ নেই। 12 = 1100. 8-bit এ -12 হতো। অপশন দেখে মনে হচ্ছে এটি সাধারণ বাইনারি বা 4-bit রিলেটেড কিছু।"
   },
   {
     "id": 52,
+    "subject": "ICT",
     "question": "ইন্টারনেট এর মাধ্যমে কর্মসংস্থানের সুযোগকে কী বলে?",
     "options": {
       "a": "আউটসোর্সিং",
@@ -573,17 +677,23 @@
   },
   {
     "id": 53,
+    "subject": "ICT",
+    "topic": "Digital Logic",
     "question": "লজিক গেইট চিত্র: A ও B এর মান কত হলে Y = 1 হবে?",
+    "hasDiagram": true,
+    "svg_code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' width='200' height='100'><style>text{font-family:Arial, sans-serif; font-size:16px;}</style><text x='10' y='35'>A</text><line x1='30' y1='30' x2='70' y2='30' stroke='black' stroke-width='2'/><text x='10' y='75'>B</text><line x1='30' y1='70' x2='70' y2='70' stroke='black' stroke-width='2'/><path d='M70,10 L110,10 C140,10 140,90 110,90 L70,90 Z' fill='none' stroke='black' stroke-width='2'/><circle cx='146' cy='50' r='6' fill='none' stroke='black' stroke-width='2'/><line x1='152' y1='50' x2='180' y2='50' stroke='black' stroke-width='2'/><text x='185' y='55'>Y</text></svg>",
     "options": {
-      "a": "A = 1, B = 0",
-      "b": "A = 0, B = 1",
-      "c": "A = 0, B = 0",
+      "a": "$$ A = 1, B = 0 $$",
+      "b": "$$ A = 0, B = 1 $$",
+      "c": "$$ A = 0, B = 0 $$",
       "d": "a & c"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanation": "চিত্রে প্রদর্শিত গেইটটি একটি **NAND** গেইট। NAND গেইটের সত্যক সারণী অনুযায়ী, যদি কোনো একটি ইনপুট বা উভয় ইনপুট 0 হয়, তবে আউটপুট 1 হবে। অপশন (a) তে B=0 এবং অপশন (c) তে A=0, B=0; তাই উভয় ক্ষেত্রেই Y=1 হবে।"
   },
   {
     "id": 54,
+    "subject": "ICT",
     "question": "একই প্রটোকল বিশিষ্ট দুই বা ততোধিক নেটওয়ার্ককে সংযুক্ত করে কোন ডিভাইস?",
     "options": {
       "a": "রিপিটার",
@@ -595,6 +705,7 @@
   },
   {
     "id": 55,
+    "subject": "ICT",
     "question": "রেডিও এবং টেলিভিশন সম্প্রচারে কোন ধরনের কমিউনিকেশন মোড ব্যবহৃত হয়?",
     "options": {
       "a": "সিমপ্লেক্স এবং ব্রডকাস্ট",
@@ -606,6 +717,7 @@
   },
   {
     "id": 56,
+    "subject": "Biology",
     "question": "ছত্রাক কোষপ্রাচীরের প্রধান উপাদান কী?",
     "options": {
       "a": "কাইটিন",
@@ -617,6 +729,7 @@
   },
   {
     "id": 57,
+    "subject": "Biology",
     "question": "কোন ভিটামিন গলগি বডিতে উপস্থিত থাকে?",
     "options": {
       "a": "K",
@@ -628,6 +741,7 @@
   },
   {
     "id": 58,
+    "subject": "Biology",
     "question": "ম্যালেরিয়া পরজীবীর কোন দশায় সাফনার্স দানা দেখা যায়?",
     "options": {
       "a": "সিগনেট রিং",
@@ -639,6 +753,7 @@
   },
   {
     "id": 59,
+    "subject": "Biology",
     "question": "কোনটি ডিএনএ ভাইরাস?",
     "options": {
       "a": "HAV",
@@ -650,6 +765,7 @@
   },
   {
     "id": 60,
+    "subject": "Biology",
     "question": "মূলের বহিরাবরণকে কী বলে?",
     "options": {
       "a": "এপিডার্মিস",
@@ -661,6 +777,7 @@
   },
   {
     "id": 61,
+    "subject": "Biology",
     "question": "উদ্ভিদ দ্বারা সবচেয়ে দ্রুত কোনটি শোষিত হয়?",
     "options": {
       "a": "NO₃⁻",
@@ -672,7 +789,8 @@
   },
   {
     "id": 62,
-    "question": "ফ্রুক্টোজ ৬ – ফসফেট হতে ফ্রুক্টোজ ১,৬ – বিসফসফেট উৎপাদনে কার্যকরী এনজাইমের নাম কী?",
+    "subject": "Biology",
+    "question": "ফ্রুক্টোজ ৬–ফসফেট হতে ফ্রুক্টোজ ১,৬–বিসফসফেট উৎপাদনে কার্যকরী এনজাইম কোনটি?",
     "options": {
       "a": "ফসফোফ্রুক্টো আইসোমারেজ",
       "b": "ফসফোফ্রুক্টো কাইনেজ",
@@ -683,6 +801,7 @@
   },
   {
     "id": 63,
+    "subject": "Biology",
     "question": "মানবদেহের দীর্ঘতম কোষ কোনটি?",
     "options": {
       "a": "স্নায়ুকোষ",
@@ -694,17 +813,19 @@
   },
   {
     "id": 64,
+    "subject": "Biology",
     "question": "কোনটিতে ZZ-ZW পদ্ধতিতে লিঙ্গ নির্ধারিত হয়?",
     "options": {
       "a": "তেলাকুচা",
       "b": "প্রজাপতি",
       "c": "ঘাসফড়িং",
-      "d": "মৌমাছি/মাছি"
+      "d": "মৌমাছি"
     },
     "correctAnswer": "b"
   },
   {
     "id": 65,
+    "subject": "Biology",
     "question": "কোনটি মানবদেহের সবচেয়ে বড় অস্থি?",
     "options": {
       "a": "হিউমেরাস",
@@ -716,6 +837,7 @@
   },
   {
     "id": 66,
+    "subject": "Biology",
     "question": "নিম্নোক্ত কোন পাচক রসে এনজাইম থাকে না?",
     "options": {
       "a": "আন্ত্রিক রস",
@@ -727,6 +849,7 @@
   },
   {
     "id": 67,
+    "subject": "Biology",
     "question": "কোন প্রক্রিয়ায় হাইড্রার আরোহণ ও অবরোহণ সম্পন্ন হয়?",
     "options": {
       "a": "লুপিং",
@@ -738,6 +861,7 @@
   },
   {
     "id": 68,
+    "subject": "Biology",
     "question": "কোন পর্বে tube within a tube গঠন দেখা যায়?",
     "options": {
       "a": "পরিফেরা",
@@ -749,62 +873,71 @@
   },
   {
     "id": 69,
+    "subject": "Math",
     "question": "(4, −5) এবং (6, 6) বিন্দু দুইটির রেখাকে যে বিন্দুটি 3: 2 অনুপাতে অন্তর্বিভক্ত করে তার স্থানাঙ্ক কত?",
     "options": {
-      "a": "(23/5, 8/5)",
-      "b": "(13/5, 6/5)",
-      "c": "(22/5, 28/5)",
-      "d": "(18/5, 12/5)"
+      "a": "$$ (\\frac{26}{5}, \\frac{8}{5}) $$",
+      "b": "$$ (\\frac{13}{5}, \\frac{6}{5}) $$",
+      "c": "$$ (\\frac{22}{5}, \\frac{28}{5}) $$",
+      "d": "$$ (\\frac{18}{5}, \\frac{12}{5}) $$"
     },
     "correctAnswer": "a"
   },
   {
     "id": 70,
-    "question": "|1 -2 6|\n|0 1 3|\n|2 x 4| নির্ণায়কটির (2, 1)- তম সহগুণক 20 হলে x এর মান কত?",
+    "subject": "Math",
+    "question": "নির্ণায়ক $$ \\begin{vmatrix} 1 & -2 & 6 \\\\ 0 & 1 & 3 \\\\ 2 & x & 4 \\end{vmatrix} $$ এর (2, 1)-তম সহগুণক 20 হলে x এর মান কত?",
     "options": {
-      "a": "−2",
-      "b": "−3",
+      "a": "-2",
+      "b": "-3",
       "c": "2",
       "d": "3"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "$$ A_{21} = -(-2(4) - 6x) = 8 + 6x = 20 \\Rightarrow 6x = 12 \\Rightarrow x = 2 $$"
   },
   {
     "id": 71,
-    "question": "x + y = a রেখাটি এবং x- অক্ষের সাপেক্ষে এর প্রতিবিম্ব রেখাটি y- অক্ষের সাথে যে ত্রিভুজ তৈরী করে তার ক্ষেত্রফল কত?",
+    "subject": "Math",
+    "question": "x + y = a রেখাটি এবং x-অক্ষের সাপেক্ষে এর প্রতিবিম্ব রেখাটি y-অক্ষের সাথে যে ত্রিভুজ তৈরী করে তার ক্ষেত্রফল কত?",
     "options": {
-      "a": "½ a² বর্গ একক",
-      "b": "a² বর্গ একক",
-      "c": "2a² বর্গ একক",
-      "d": "2 বর্গ একক"
+      "a": "½ a²",
+      "b": "a²",
+      "c": "2a²",
+      "d": "2"
     },
     "correctAnswer": "b"
   },
   {
     "id": 72,
-    "question": "∫[π/2 to π] x³ cos x⁶ dx =?",
+    "subject": "Math",
+    "question": "$$ \\int_{\\pi/2}^{\\pi} x^3 \\cos x^6 dx = ? $$",
     "options": {
       "a": "0",
       "b": "1/32",
       "c": "1/6",
-      "d": "−1/16"
+      "d": "-1/16"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanation": "Odd function check or property."
   },
   {
     "id": 73,
-    "question": "∫ e^x(1+x)/cos²(xe^x) dx = f(x) + c হলে, f(x) = ?",
+    "subject": "Math",
+    "question": "$$ \\int \\frac{e^x(1+x)}{\\cos^2(xe^x)} dx = f(x) + c $$ হলে, f(x) = ?",
     "options": {
-      "a": "sin(xe^x) − xe^x + c",
-      "b": "tan (xe^x) − xe^x + c",
-      "c": "cos (xe^x) − xe^x + c",
-      "d": "sec (xe^x) − xe^x + c"
+      "a": "sin(xe^x) - xe^x",
+      "b": "tan(xe^x) - xe^x",
+      "c": "cos(xe^x) - xe^x",
+      "d": "sec(xe^x) - xe^x"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "Let $$ xe^x = z $$"
   },
   {
     "id": 74,
-    "question": "সমীকরণ y = 0 বৃত্তের একটি ব্যাস এবং কেন্দ্র থেকে y − 2 = 0 স্পর্শকের দূরত্ব 2 হলে, বৃত্তটির সমীকরণ কী?",
+    "subject": "Math",
+    "question": "সমীকরণ y = 0 বৃত্তের একটি ব্যাস এবং কেন্দ্র থেকে y - 2 = 0 স্পর্শকের দূরত্ব 2 হলে, বৃত্তটির সমীকরণ কী?",
     "options": {
       "a": "x² + y² − 4 = 0",
       "b": "x² + y² + 4 = 0",
@@ -815,6 +948,7 @@
   },
   {
     "id": 75,
+    "subject": "Math",
     "question": "কোন উপবৃত্তের বৃহদাক্ষের দৈর্ঘ্য উহার ফোকাসদ্বয়ের মধ্যকার দূরত্বের তিনগুণ হলে e =?",
     "options": {
       "a": "1/√3",
@@ -822,21 +956,25 @@
       "c": "1/9",
       "d": "None"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ 2a = 3(2ae) \\Rightarrow e = 1/3 $$"
   },
   {
     "id": 76,
-    "question": "z = r(cos θ + i sin θ), r = 2 এবং θ = 2π/3 হলে, z ও z̄ এর মধ্যবর্তী কোণ নিচের কোনটি?",
+    "subject": "Math",
+    "question": "$$ z = r(\\cos \\theta + i \\sin \\theta), r = 2, \\theta = 2\\pi/3 $$ হলে, z ও z̄ এর মধ্যবর্তী কোণ কোনটি?",
     "options": {
       "a": "60°",
       "b": "90°",
       "c": "120°",
       "d": "150°"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "$$ 2\\theta = 2(2\\pi/3) = 4\\pi/3 = 240^\\circ $$, but angle between them is $$ 2\\pi - 240 = 120^\\circ $$"
   },
   {
     "id": 77,
+    "subject": "Math",
     "question": "sin20° ⋅ sin40° ⋅ sin60° ⋅ sin80° =?",
     "options": {
       "a": "1/16",
@@ -848,6 +986,7 @@
   },
   {
     "id": 78,
+    "subject": "Math",
     "question": "sin A + cos A = sin B + cos B এবং A = 2π/9 হলে B =?",
     "options": {
       "a": "3π/9",
@@ -859,6 +998,7 @@
   },
   {
     "id": 79,
+    "subject": "Math",
     "question": "যদি u বেগে অনুভূমিকের সাথে α কোণে প্রক্ষিপ্ত বস্তু T সময়ে তার গতিপথের সর্বোচ্চ উচ্চতা H এ পৌঁছায়, তবে H/T² হবে-",
     "options": {
       "a": "2/g",
@@ -866,17 +1006,20 @@
       "c": "g",
       "d": "1/g"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanation": "$$ H = \\frac{u^2 \\sin^2 \\alpha}{2g}, T = \\frac{u \\sin \\alpha}{g} \\Rightarrow T^2 = \\frac{u^2 \\sin^2 \\alpha}{g^2} $$. Ratio = g/2."
   },
   {
     "id": 80,
-    "question": "m এর কোন মানের জন্য (x − 1)ᵐ⁻¹ = 0 এর 3 টি বাস্তব এবং অভিন্ন মূল বিদ্যমান?",
+    "subject": "Math",
+    "question": "m এর কোন মানের জন্য $$ (x - 1)^{m-1} = 0 $$ এর 3 টি বাস্তব এবং অভিন্ন মূল বিদ্যমান?",
     "options": {
       "a": "m = 3",
-      "b": "m = −3",
+      "b": "m = -3",
       "c": "m = 4",
-      "d": "m = −4"
+      "d": "m = -4"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanation": "তিনটি অভিন্ন মূল থাকার জন্য ঘাত 3 হতে হবে। m-1=3 => m=4"
   }
 ]

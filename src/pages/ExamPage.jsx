@@ -43,7 +43,10 @@ function ExamPage() {
         question: q.question,
         options: Object.entries(q.options).map(([id, text]) => ({ id, text })),
         correctOptionId: q.correctAnswer,
-        explanation: `সঠিক উত্তর: ${q.correctAnswer}. ${q.question}`
+        explanation: `সঠিক উত্তর: ${q.correctAnswer}. ${q.question}`,
+        hasDiagram: q.hasDiagram || false,
+        svg_code: q.svg_code || null,
+        subject: q.subject || ''
       }))
 
       console.log('Transformed questions:', { count: transformed.length, firstQuestion: transformed[0] })
