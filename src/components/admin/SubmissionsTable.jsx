@@ -49,9 +49,18 @@ function SubmissionsTable({
       baseName = baseName.replace(/\s+/g, '')
       const answerFile = baseName + '-Answer.json'
 
+      console.log('🔍 Loading solutions:')
+      console.log('  Question file:', questionFile)
+      console.log('  Base name:', baseName)
+      console.log('  Answer file:', answerFile)
+      console.log('  Fetching from:', `/${answerFile}`)
+
       const res = await fetch(`/${answerFile}`, { cache: 'no-store' })
+      console.log('  Response status:', res.status, res.ok ? '✓' : '✗')
+      console.log('  Content-Type:', res.headers.get('content-type'))
+
       if (!res.ok) {
-        console.log('No answer file found for:', questionFile, '-> tried:', answerFile)
+        console.log('❌ No answer file found for:', questionFile, '-> tried:', answerFile)
         setSolutions([])
         return
       }
@@ -60,6 +69,7 @@ function SubmissionsTable({
       console.log('✅ Loaded solutions from:', answerFile, '- Total solutions:', data.length)
     } catch (err) {
       console.log('❌ Could not load solutions:', err)
+      console.log('   Error details:', err.message)
       setSolutions([])
     }
   }
