@@ -1,9 +1,46 @@
+import { useState, useEffect } from 'react'
 import './ResultSummary.css'
 
 function ResultSummary({ questions, answers, studentName, score, onRestart }) {
   const { score: totalScore, correct, wrong, attempted, total } = score
   const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0
   const pass = totalScore >= 40
+  const [solutions, setSolutions] = useState([])
+  const [expandedQuestion, setExpandedQuestion] = useState(null)
+
+  useEffect(() => {
+    loadSolutions()
+  }, [])
+
+  async function loadSolutions() {
+    try {
+      // Load answer file - using questions-1-Answer.json (no spaces)
+      const questionFile = 'questions - 1.json'
+      let baseName = questionFile.replace('.json', '')
+      // Remove all spaces
+      baseName = baseName.replace(/\s+/g, '')
+      const answerFile = baseName + '-Answer.json'
+
+      const res = await fetch(`/${answerFile}`, { cache: 'no-store' })
+      if (!res.ok) {
+        console.log('No answer file found, tried:', answerFile)
+        return
+      }
+      const data = await res.json()
+      setSolutions(data)
+      console.log('✅ Loaded solutions from:', answerFile, '- Total:', data.length)
+    } catch (err) {
+      console.log('❌ Could not load solutions:', err)
+    }
+  }
+
+  function getSolution(questionId) {
+    return solutions.find(s => s.id === questionId || s.id.toString() === questionId.toString())?.solution || null
+  }
+
+  function toggleExpand(questionId) {
+    setExpandedQuestion(expandedQuestion === questionId ? null : questionId)
+  }
 
   return (
     <div className="result-summary">
@@ -66,6 +103,29 @@ function ResultSummary({ questions, answers, studentName, score, onRestart }) {
                       <span className="bengali">উত্তর দেওয়া হয়নি</span>
                     )}
                   </div>
+
+                  {/* Solution toggle */}
+                  {getSolution(q.id) && (
+                    <div className="solution-toggle-section">
+                      <button
+                        className="solution-toggle-btn bengali"
+                        onClick={() => toggleExpand(q.id)}
+                      >
+                        {expandedQuestion === q.id ? '▼' : '▶'} সমাধান দেখুন
+                      </button>
+                      {expandedQuestion === q.id && (
+                        <div className="solution-box">
+                          <div className="solution-header bengali">
+                            <span className="solution-icon">💡</span>
+                            <strong>সমাধান/ব্যাখ্যা:</strong>
+                          </div>
+                          <div className="solution-text bengali">
+                            {getSolution(q.id)}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )
             })}

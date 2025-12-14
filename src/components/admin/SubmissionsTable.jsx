@@ -15,6 +15,7 @@ function SubmissionsTable({
   const [selectedSubmission, setSelectedSubmission] = useState(null)
   const [selectedQuestion, setSelectedQuestion] = useState(null)
   const [questions, setQuestions] = useState([])
+  const [solutions, setSolutions] = useState([])
 
   useEffect(() => {
     if (selectedSubmission) {
@@ -31,8 +32,35 @@ function SubmissionsTable({
       }
       const data = await res.json()
       setQuestions(data)
+
+      // Load corresponding answer file
+      await loadSolutions(questionFile)
     } catch (err) {
       console.error('Failed to load questions:', err)
+    }
+  }
+
+  async function loadSolutions(questionFile) {
+    try {
+      // Map question file to answer file
+      // Handle: "questions - 1.json" -> "questions-1-Answer.json" (no spaces for URL compatibility)
+      let baseName = questionFile.replace('.json', '')
+      // Remove all spaces and normalize
+      baseName = baseName.replace(/\s+/g, '')
+      const answerFile = baseName + '-Answer.json'
+
+      const res = await fetch(`/${answerFile}`, { cache: 'no-store' })
+      if (!res.ok) {
+        console.log('No answer file found for:', questionFile, '-> tried:', answerFile)
+        setSolutions([])
+        return
+      }
+      const data = await res.json()
+      setSolutions(data)
+      console.log('✅ Loaded solutions from:', answerFile, '- Total solutions:', data.length)
+    } catch (err) {
+      console.log('❌ Could not load solutions:', err)
+      setSolutions([])
     }
   }
 
@@ -46,12 +74,14 @@ function SubmissionsTable({
   function handleQuestionClick(questionId, studentAnswer) {
     const qid = typeof questionId === 'string' ? parseInt(questionId) : questionId
     const question = questions.find(q => q.id === qid || q.id.toString() === questionId.toString())
+    const solution = solutions.find(s => s.id === qid || s.id.toString() === questionId.toString())
     if (question) {
       setSelectedQuestion({
         ...question,
         studentAnswer,
         isCorrect: question.correctAnswer === studentAnswer,
-        isAnswered: studentAnswer !== undefined && studentAnswer !== null
+        isAnswered: studentAnswer !== undefined && studentAnswer !== null,
+        solution: solution?.solution || null
       })
     }
   }
@@ -324,6 +354,19 @@ function SubmissionsTable({
                   </div>
                 )}
               </div>
+
+              {/* Solution Section */}
+              {selectedQuestion.solution && (
+                <div className="solution-section">
+                  <div className="solution-header bengali">
+                    <span className="solution-icon">💡</span>
+                    <strong>সমাধান/ব্যাখ্যা:</strong>
+                  </div>
+                  <div className="solution-content bengali">
+                    {selectedQuestion.solution}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
