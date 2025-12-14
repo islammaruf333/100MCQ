@@ -239,6 +239,7 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
         studentName={studentName}
         score={calculateScore()}
         onRestart={() => window.location.reload()}
+        questionFile={questionFile}
       />
     )
   }

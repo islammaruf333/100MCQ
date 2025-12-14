@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './ResultSummary.css'
 
-function ResultSummary({ questions, answers, studentName, score, onRestart }) {
+function ResultSummary({ questions, answers, studentName, score, onRestart, questionFile }) {
   const { score: totalScore, correct, wrong, attempted, total } = score
   const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0
   const pass = totalScore >= 40
@@ -14,12 +14,16 @@ function ResultSummary({ questions, answers, studentName, score, onRestart }) {
 
   async function loadSolutions() {
     try {
-      // Load answer file - using questions-1-Answer.json (no spaces)
-      const questionFile = 'questions - 1.json'
-      let baseName = questionFile.replace('.json', '')
+      // Load answer file based on questionFile prop
+      const qFile = questionFile || 'questions.json'
+      let baseName = qFile.replace('.json', '')
       // Remove all spaces
       baseName = baseName.replace(/\s+/g, '')
       const answerFile = baseName + '-Answer.json'
+
+      console.log('🔍 Student result loading solutions:')
+      console.log('  Question file:', qFile)
+      console.log('  Answer file:', answerFile)
 
       const res = await fetch(`/${answerFile}`, { cache: 'no-store' })
       if (!res.ok) {
