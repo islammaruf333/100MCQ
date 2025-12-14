@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { renderLatex } from '../../utils/latex'
 import './SubmissionsTable.css'
 
 function SubmissionsTable({
@@ -317,21 +318,21 @@ function SubmissionsTable({
             <div className="question-modal-body">
               <div className="question-text bengali">
                 <strong>প্রশ্ন:</strong>
-                <p>{selectedQuestion.question}</p>
+                <p dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.question) }} />
               </div>
 
               <div className="options-list">
                 <div className="option-item bengali">
-                  <strong>A)</strong> {selectedQuestion.options.a}
+                  <strong>A)</strong> <span dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.options.a) }} />
                 </div>
                 <div className="option-item bengali">
-                  <strong>B)</strong> {selectedQuestion.options.b}
+                  <strong>B)</strong> <span dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.options.b) }} />
                 </div>
                 <div className="option-item bengali">
-                  <strong>C)</strong> {selectedQuestion.options.c}
+                  <strong>C)</strong> <span dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.options.c) }} />
                 </div>
                 <div className="option-item bengali">
-                  <strong>D)</strong> {selectedQuestion.options.d}
+                  <strong>D)</strong> <span dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.options.d) }} />
                 </div>
               </div>
 
@@ -372,9 +373,7 @@ function SubmissionsTable({
                     <span className="solution-icon">💡</span>
                     <strong>সমাধান/ব্যাখ্যা:</strong>
                   </div>
-                  <div className="solution-content bengali">
-                    {selectedQuestion.solution}
-                  </div>
+                  <div className="solution-content bengali" dangerouslySetInnerHTML={{ __html: renderLatex(selectedQuestion.solution) }} />
                 </div>
               )}
             </div>
