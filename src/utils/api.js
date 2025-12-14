@@ -84,20 +84,29 @@ export async function loadSubmissions() {
 }
 
 export async function loadLatestQuestions() {
-  try {
-    // Get the latest question file name
-    const res = await fetch('/api/get-latest-questions')
-    if (!res.ok) {
-      // Fallback to questions.json if API fails
-      return { file: 'questions.json' }
+  // Try to find the latest question file by checking in descending order
+  // Try questions-5.json down to questions-1.json, then questions.json
+
+  for (let version = 5; version >= 1; version--) {
+    const fileName = `questions-${version}.json`
+    try {
+      const res = await fetch(`/${fileName}`)
+      if (res.ok) {
+        // Try to parse as JSON to verify it's a valid file
+        const text = await res.text()
+        JSON.parse(text) // This will throw if it's not valid JSON (like HTML)
+        console.log(`Found latest questions file: ${fileName}`)
+        return { file: fileName, version }
+      }
+    } catch (error) {
+      // File doesn't exist or is not valid JSON, continue to next
+      continue
     }
-    const data = await res.json()
-    return data
-  } catch (error) {
-    console.error('Error getting latest questions:', error)
-    // Fallback to questions.json
-    return { file: 'questions.json' }
   }
+
+  // Fallback to questions.json
+  console.log('Using default questions.json')
+  return { file: 'questions.json', version: 0 }
 }
 
 
