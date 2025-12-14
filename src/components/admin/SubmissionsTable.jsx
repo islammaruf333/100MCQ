@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import html2canvas from 'html2canvas'
 import { renderLatex } from '../../utils/latex'
 import './SubmissionsTable.css'
 
@@ -106,6 +107,68 @@ function SubmissionsTable({
       hour: '2-digit',
       minute: '2-digit'
     })
+  }
+
+  async function handleScreenshot() {
+    try {
+      const modalElement = document.querySelector('.modal-content')
+      if (!modalElement) return
+
+      // Store the original max-height and overflow styles
+      const originalMaxHeight = modalElement.style.maxHeight
+      const originalOverflow = modalElement.style.overflow
+      const originalOverflowY = modalElement.style.overflowY
+
+      // Temporarily remove height restrictions to capture full content
+      modalElement.style.maxHeight = 'none'
+      modalElement.style.overflow = 'visible'
+      modalElement.style.overflowY = 'visible'
+
+      // Wait a bit for the DOM to stabilize
+      await new Promise(resolve => setTimeout(resolve, 100))
+
+      // Create canvas from the full modal content
+      const canvas = await html2canvas(modalElement, {
+        backgroundColor: '#ffffff',
+        scale: 2, // Higher quality
+        logging: false,
+        useCORS: true,
+        allowTaint: true,
+        windowHeight: modalElement.scrollHeight,
+        height: modalElement.scrollHeight
+      })
+
+      // Restore original styles
+      modalElement.style.maxHeight = originalMaxHeight
+      modalElement.style.overflow = originalOverflow
+      modalElement.style.overflowY = originalOverflowY
+
+      // Convert canvas to blob
+      canvas.toBlob((blob) => {
+        if (!blob) return
+
+        // Create download link
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        const timestamp = new Date().toLocaleString('bn-BD', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        }).replace(/[/:,\s]/g, '-')
+
+        link.href = url
+        link.download = `উত্তর-বিস্তারিত-${selectedSubmission?.studentName || 'student'}-${timestamp}.jpg`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      }, 'image/jpeg', 0.95)
+    } catch (error) {
+      console.error('Screenshot failed:', error)
+      alert('স্ক্রিনশট নিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।')
+    }
   }
 
   if (loading) {
@@ -233,12 +296,21 @@ function SubmissionsTable({
               <h2 className="bengali">
                 {selectedSubmission.studentName} - উত্তর বিস্তারিত
               </h2>
-              <button
-                className="close-btn"
-                onClick={() => setSelectedSubmission(null)}
-              >
-                ✕
-              </button>
+              <div className="modal-header-actions">
+                <button
+                  className="screenshot-btn bengali"
+                  onClick={handleScreenshot}
+                  title="স্ক্রিনশট নিন"
+                >
+                  📸 স্ক্রিনশট
+                </button>
+                <button
+                  className="close-btn"
+                  onClick={() => setSelectedSubmission(null)}
+                >
+                  ✕
+                </button>
+              </div>
             </div>
             <div className="modal-body">
               <div className="detail-info">
