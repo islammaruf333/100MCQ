@@ -1123,3 +1123,4 @@
     "correctAnswer": "b",
     "explanation": "$$ |z_1z_2| = |z_1||z_2| = \\sqrt{4+1}\\sqrt{9+1} = \\sqrt{5}\\sqrt{10} = \\sqrt{50} = 5\\sqrt{2} $$"
   }
+]
