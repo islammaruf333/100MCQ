@@ -395,28 +395,5 @@
     "wrong": 7,
     "pass": true,
     "questionFile": "questions-2.json"
-  },
-  {
-    "studentName": "Maruf",
-    "answers": {
-      "9": "a",
-      "10": "b",
-      "42": "c",
-      "44": "b",
-      "59": "b",
-      "62": "c",
-      "69": "c",
-      "72": "b",
-      "74": "c",
-      "80": "c"
-    },
-    "score": 0.5,
-    "totalMarks": 100,
-    "timestamp": "2025-12-15T04:42:56.783Z",
-    "attempted": 10,
-    "correct": 2,
-    "wrong": 8,
-    "pass": false,
-    "questionFile": "questions-3.json"
   }
 ]
