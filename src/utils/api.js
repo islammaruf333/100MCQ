@@ -109,5 +109,72 @@ export async function loadLatestQuestions() {
   return { file: 'questions.json', version: 0 }
 }
 
+export async function savePendingStudent(studentName) {
+  let res;
+  try {
+    res = await fetch('/api/save-pending-student', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentName })
+    })
+  } catch (fetchErr) {
+    throw fetchErr;
+  }
+
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(text || 'Failed to save pending student')
+  }
+
+  return res.json()
+}
+
+export async function removePendingStudent(studentName) {
+  let res;
+  try {
+    res = await fetch('/api/remove-pending-student', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentName })
+    })
+  } catch (fetchErr) {
+    throw fetchErr;
+  }
+
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(text || 'Failed to remove pending student')
+  }
+
+  return res.json()
+}
+
+export async function loadPendingStudents() {
+  const isDev = window.location.hostname === 'localhost'
+  const url = isDev
+    ? '/pending-students.json'
+    : 'https://raw.githubusercontent.com/islammaruf333/100MCQ/main/pending-students.json'
+
+  let res;
+  try {
+    res = await fetch(url, {
+      cache: 'no-store'
+    })
+  } catch (fetchErr) {
+    throw fetchErr;
+  }
+
+  if (!res.ok) {
+    // If file doesn't exist yet, return empty array
+    if (res.status === 404) {
+      return []
+    }
+    const text = await res.text().catch(() => 'Could not read error')
+    throw new Error(`Failed to load pending students: ${res.status} ${res.statusText}`)
+  }
+
+  const data = await res.json()
+  return data
+}
 
 

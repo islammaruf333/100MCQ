@@ -3,7 +3,7 @@ import ExamHeader from './ExamHeader'
 import QuestionCard from './QuestionCard'
 import SidebarGrid from './SidebarGrid'
 import ResultSummary from './ResultSummary'
-import { saveSubmission } from '../utils/api'
+import { saveSubmission, savePendingStudent, removePendingStudent } from '../utils/api'
 import './MCQContainer.css'
 
 const STATUS = {
@@ -32,6 +32,8 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
   const [visitedQuestions, setVisitedQuestions] = useState(new Set([0]))
   const [timeLeft, setTimeLeft] = useState(DURATION_SECONDS)
   const [markedForReview, setMarkedForReview] = useState(new Set())
+  const [examStartTime] = useState(Date.now()) // Track when exam started
+  const [pendingSent, setPendingSent] = useState(false) // Track if pending status was sent
 
   // All useCallback hooks must be defined before any returns
   const handleAnswerSelect = useCallback((questionId, optionId) => {
@@ -119,6 +121,11 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
     }
 
     try {
+      // Remove from pending list first (don't wait for it to prevent blocking submission)
+      removePendingStudent(studentName).catch(err => {
+        console.warn('Failed to remove pending student:', err)
+      })
+
       const result = await saveSubmission(payload)
       setStatus(STATUS.SUBMITTED)
       localStorage.removeItem(`mcq_state_${studentName}`)
@@ -129,7 +136,7 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
       setStatus(STATUS.SUBMITTED)
       localStorage.removeItem(`mcq_state_${studentName}`)
     }
-  }, [status, studentName, answers, questions, calculateScore])
+  }, [status, studentName, answers, questions, calculateScore, questionFile])
 
   // All useEffect hooks must be called before any returns
   useEffect(() => {
@@ -187,6 +194,32 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
       setCurrentQuestionIndex(0)
     }
   }, [currentQuestionIndex, questions])
+
+  // Track 5-minute threshold for pending students
+  useEffect(() => {
+    if (status !== STATUS.RUNNING || pendingSent) return
+
+    const FIVE_MINUTES = 5 * 60 * 1000 // 5 minutes in milliseconds
+
+    const checkInterval = setInterval(() => {
+      const elapsed = Date.now() - examStartTime
+
+      if (elapsed >= FIVE_MINUTES && !pendingSent) {
+        // 5 minutes passed, save as pending student
+        setPendingSent(true)
+        savePendingStudent(studentName)
+          .then(() => {
+            console.log(`${studentName} marked as pending after 5 minutes`)
+          })
+          .catch(err => {
+            console.error('Failed to save pending student:', err)
+            // Don't show error to user, this is a background operation
+          })
+      }
+    }, 10000) // Check every 10 seconds
+
+    return () => clearInterval(checkInterval)
+  }, [status, pendingSent, examStartTime, studentName])
 
   // NOW we can do conditional returns after all hooks
   // Validate questions array AFTER all hooks (React rules)

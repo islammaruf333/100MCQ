@@ -109,6 +109,14 @@ function SubmissionsTable({
     })
   }
 
+  function getElapsedTime(timestamp) {
+    const now = Date.now()
+    const start = new Date(timestamp).getTime()
+    const elapsed = now - start
+    const minutes = Math.floor(elapsed / (1000 * 60))
+    return minutes
+  }
+
   async function handleScreenshot() {
     try {
       const modalElement = document.querySelector('.modal-content')
@@ -210,24 +218,41 @@ function SubmissionsTable({
           </thead>
           <tbody>
             {submissions.map((sub, idx) => (
-              <tr key={idx}>
+              <tr key={idx} className={sub.isPending ? 'pending-row' : ''}>
                 <td data-label="নাম" className="bengali">{sub.studentName || 'Unknown'}</td>
                 <td data-label="আইডি" className="bengali">{sub.studentId || 'N/A'}</td>
-                <td data-label="স্কোর"><strong>{Number(sub.score || 0).toFixed(2)}</strong></td>
+                <td data-label="স্কোর">
+                  {sub.isPending ? (
+                    <span className="bengali" style={{ color: '#999' }}>—</span>
+                  ) : (
+                    <strong>{Number(sub.score || 0).toFixed(2)}</strong>
+                  )}
+                </td>
                 <td data-label="স্ট্যাটাস">
-                  <span className={`status-badge ${sub.pass ? 'pass' : 'fail'}`}>
-                    {sub.pass ? 'পাস' : 'ফেল'}
-                  </span>
+                  {sub.isPending ? (
+                    <span className="status-badge pending">
+                      ⏱️ পেন্ডিং ({getElapsedTime(sub.timestamp)} মিনিট)
+                    </span>
+                  ) : (
+                    <span className={`status-badge ${sub.pass ? 'pass' : 'fail'}`}>
+                      {sub.pass ? 'পাস' : 'ফেল'}
+                    </span>
+                  )}
                 </td>
                 <td data-label="সময়" className="bengali">{formatDate(sub.timestamp)}</td>
                 <td data-label="অ্যাকশন">
                   <div style={{ display: 'flex', gap: '8px' }}>
-                    <button
-                      className="action-button bengali"
-                      onClick={() => setSelectedSubmission(sub)}
-                    >
-                      দেখুন
-                    </button>
+                    {!sub.isPending && (
+                      <button
+                        className="action-button bengali"
+                        onClick={() => setSelectedSubmission(sub)}
+                      >
+                        দেখুন
+                      </button>
+                    )}
+                    {sub.isPending && (
+                      <span className="bengali" style={{ color: '#999', fontSize: '12px' }}>পরীক্ষা চলছে...</span>
+                    )}
                     <button
                       className="action-button danger bengali"
                       onClick={() => onDeleteStudent(sub.studentName)}

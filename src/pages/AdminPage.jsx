@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
-import { loadSubmissions, deleteSubmission, deleteStudent } from '../utils/api'
+import { loadSubmissions, deleteSubmission, deleteStudent, loadPendingStudents } from '../utils/api'
 import SubmissionsTable from '../components/admin/SubmissionsTable'
 import NotificationToast from '../components/admin/NotificationToast'
 import './AdminPage.css'
 
 function AdminPage() {
   const [submissions, setSubmissions] = useState([])
+  const [pendingStudents, setPendingStudents] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
@@ -34,13 +35,17 @@ function AdminPage() {
   async function loadData() {
     try {
       setLoading(true)
-      const data = await loadSubmissions()
-      setSubmissions(data)
+      const [submissionsData, pendingData] = await Promise.all([
+        loadSubmissions(),
+        loadPendingStudents().catch(() => []) // Don't fail if pending students file doesn't exist
+      ])
+      setSubmissions(submissionsData)
+      setPendingStudents(pendingData)
       setError(null)
       setLastRefresh(new Date())
     } catch (err) {
       setError(err.message)
-      console.error('Failed to load submissions', err)
+      console.error('Failed to load data', err)
     } finally {
       setLoading(false)
     }
@@ -76,17 +81,36 @@ function AdminPage() {
     }
   }
 
-  // Group submissions by student (latest only)
+  // Group submissions by student (latest only) and merge with pending students
   const submissionsByStudent = useMemo(() => {
     const groups = {}
+
+    // Add all submissions
     submissions.forEach(sub => {
       const studentKey = sub.studentId || sub.studentName
       if (!groups[studentKey] || new Date(sub.timestamp) > new Date(groups[studentKey].timestamp)) {
         groups[studentKey] = sub
       }
     })
+
+    // Add pending students who haven't submitted yet
+    pendingStudents.forEach(pending => {
+      const studentKey = pending.studentName
+      if (!groups[studentKey]) {
+        // This student is pending and hasn't submitted
+        groups[studentKey] = {
+          ...pending,
+          studentName: pending.studentName,
+          timestamp: pending.timestamp,
+          status: 'Pending',
+          isPending: true
+        }
+      }
+      // If student already submitted, ignore the pending entry
+    })
+
     return Object.values(groups)
-  }, [submissions])
+  }, [submissions, pendingStudents])
 
   // Filter submissions
   const filteredSubmissions = useMemo(() => {
@@ -102,13 +126,23 @@ function AdminPage() {
     }
 
     // Filter by status
-    if (statusFilter !== 'all') {
-      const isPassed = statusFilter === 'pass'
-      filtered = filtered.filter(sub => sub.pass === isPassed)
+    if (statusFilter === 'pending') {
+      filtered = filtered.filter(sub => sub.isPending === true)
+    } else if (statusFilter === 'pass') {
+      filtered = filtered.filter(sub => !sub.isPending && sub.pass === true)
+    } else if (statusFilter === 'fail') {
+      filtered = filtered.filter(sub => !sub.isPending && sub.pass === false)
     }
+    // 'all' shows everything
 
-    // Sort by timestamp - most recent first
-    filtered = filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+    // Sort: Pending first, then by timestamp - most recent first
+    filtered = filtered.sort((a, b) => {
+      // Pending students come first
+      if (a.isPending && !b.isPending) return -1
+      if (!a.isPending && b.isPending) return 1
+      // Otherwise sort by timestamp
+      return new Date(b.timestamp) - new Date(a.timestamp)
+    })
 
     return filtered
   }, [submissionsByStudent, searchTerm, statusFilter])
@@ -188,6 +222,7 @@ function AdminPage() {
             onChange={(e) => setStatusFilter(e.target.value)}
           >
             <option value="all">সকল স্ট্যাটাস</option>
+            <option value="pending">পেন্ডিং</option>
             <option value="pass">পাস</option>
             <option value="fail">ফেল</option>
           </select>

@@ -59,6 +59,30 @@ td {
   color: var(--error);
 }
 
+.status-badge.pending {
+  background: rgba(251, 191, 36, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  animation: pulse-pending 2s ease-in-out infinite;
+}
+
+@keyframes pulse-pending {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pending-row {
+  background: rgba(251, 191, 36, 0.02);
+}
+
+.pending-row:hover {
+  background: rgba(251, 191, 36, 0.05);
+}
+
 .view-btn,
 .delete-btn {
   padding: 6px 12px;
