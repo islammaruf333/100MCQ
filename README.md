@@ -2,6 +2,20 @@
 
 Single-page MCQ exam (student) + admin dashboard. Questions/answers stored in GitHub JSON; submissions appended via Vercel serverless API.
 
+## Screenshots
+
+### Exam Start Page
+![Exam Start Page](screenshots/exam-start.png)
+*Students enter their name to begin the exam*
+
+### Question Interface
+![Question Interface](screenshots/exam-question.png)
+*MCQ interface with timer, question display, and answer options*
+
+### Admin Panel
+![Admin Panel](screenshots/admin-panel.png)
+*Admin dashboard showing student submissions, scores, and status*
+
 ## Features
 - Student starts exam with name/ID (no password)
 - 60 min timer, 80 MCQ (example 5 provided)
