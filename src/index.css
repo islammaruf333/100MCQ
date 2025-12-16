@@ -39,7 +39,7 @@ body {
   position: relative;
 }
 
-/* Circuit Board Background - Applied to all pages */
+/* Diagonal Cross Grid Bottom Background - Applied to all pages */
 #root::before {
   content: '';
   position: fixed;
@@ -49,7 +49,12 @@ body {
   bottom: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(120deg, #d5c5ff 0%, #a7f3d0 50%, #f0f0f0 100%);
+  background-image:
+    linear-gradient(45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 100%, #000 50%, transparent 90%);
+  mask-image: radial-gradient(ellipse 100% 80% at 50% 100%, #000 50%, transparent 90%);
 }
 
 /* Ensure all content appears above the background */
