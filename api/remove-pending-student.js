@@ -23,9 +23,19 @@ async function removeLocally(studentName) {
     }
 
     // Remove student from the list
-    const filteredData = currentData.filter(
+    let filteredData = currentData.filter(
         item => item.studentName !== studentName
     );
+
+    // Also cleanup expired pending students (>70 minutes)
+    const now = Date.now();
+    const TIMEOUT_THRESHOLD = 70 * 60 * 1000; // 70 minutes in milliseconds
+
+    filteredData = filteredData.filter(item => {
+        const timestamp = new Date(item.timestamp).getTime();
+        const elapsed = now - timestamp;
+        return elapsed <= TIMEOUT_THRESHOLD; // Keep only non-expired
+    });
 
     await fs.writeFile(filePath, JSON.stringify(filteredData, null, 2));
 }
@@ -59,9 +69,19 @@ export default async function handler(req, res) {
         const list = Array.isArray(content) ? content : [];
 
         // Remove student from the list
-        const filteredList = list.filter(
+        let filteredList = list.filter(
             item => item.studentName !== body.studentName
         );
+
+        // Also cleanup expired pending students (>70 minutes)
+        const now = Date.now();
+        const TIMEOUT_THRESHOLD = 70 * 60 * 1000; // 70 minutes in milliseconds
+
+        filteredList = filteredList.filter(item => {
+            const timestamp = new Date(item.timestamp).getTime();
+            const elapsed = now - timestamp;
+            return elapsed <= TIMEOUT_THRESHOLD; // Keep only non-expired
+        });
 
         const updated = JSON.stringify(filteredList, null, 2);
         await updateFile(updated, sha);

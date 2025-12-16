@@ -121,10 +121,23 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
     }
 
     try {
-      // Remove from pending list first (don't wait for it to prevent blocking submission)
-      removePendingStudent(studentName).catch(err => {
-        console.warn('Failed to remove pending student:', err)
-      })
+      // Remove from pending list with retry logic
+      let retries = 3
+      while (retries > 0) {
+        try {
+          await removePendingStudent(studentName)
+          console.log('✓ Successfully removed pending student:', studentName)
+          break
+        } catch (removeErr) {
+          retries--
+          if (retries === 0) {
+            console.error('Failed to remove pending student after 3 attempts:', removeErr)
+          } else {
+            console.warn(`Failed to remove pending student, retrying... (${retries} attempts left)`)
+            await new Promise(resolve => setTimeout(resolve, 1000)) // Wait 1 second before retry
+          }
+        }
+      }
 
       const result = await saveSubmission(payload)
       setStatus(STATUS.SUBMITTED)

@@ -114,7 +114,16 @@ function SubmissionsTable({
     const start = new Date(timestamp).getTime()
     const elapsed = now - start
     const minutes = Math.floor(elapsed / (1000 * 60))
-    return minutes
+
+    // Exam is 60 minutes, add 10 minute grace period = 70 minutes total
+    const TIMEOUT_THRESHOLD = 70
+    const WARNING_THRESHOLD = 50 // Show warning when approaching timeout
+
+    return {
+      minutes,
+      isExpired: minutes > TIMEOUT_THRESHOLD,
+      isWarning: minutes > WARNING_THRESHOLD && minutes <= TIMEOUT_THRESHOLD
+    }
   }
 
   async function handleScreenshot() {
@@ -229,11 +238,28 @@ function SubmissionsTable({
                   )}
                 </td>
                 <td data-label="স্ট্যাটাস">
-                  {sub.isPending ? (
-                    <span className="status-badge pending">
-                      ⏱️ পেন্ডিং ({getElapsedTime(sub.timestamp)} মিনিট)
-                    </span>
-                  ) : (
+                  {sub.isPending ? (() => {
+                    const timeInfo = getElapsedTime(sub.timestamp)
+                    if (timeInfo.isExpired) {
+                      return (
+                        <span className="status-badge" style={{ backgroundColor: '#dc2626', color: 'white' }}>
+                          ⏱️ টাইম আউট ({timeInfo.minutes} মিনিট)
+                        </span>
+                      )
+                    } else if (timeInfo.isWarning) {
+                      return (
+                        <span className="status-badge" style={{ backgroundColor: '#f59e0b', color: 'white' }}>
+                          ⚠️ পেন্ডিং ({timeInfo.minutes} মিনিট)
+                        </span>
+                      )
+                    } else {
+                      return (
+                        <span className="status-badge pending">
+                          ⏱️ পেন্ডিং ({timeInfo.minutes} মিনিট)
+                        </span>
+                      )
+                    }
+                  })() : (
                     <span className={`status-badge ${sub.pass ? 'pass' : 'fail'}`}>
                       {sub.pass ? 'পাস' : 'ফেল'}
                     </span>

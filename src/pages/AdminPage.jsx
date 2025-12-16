@@ -97,13 +97,22 @@ function AdminPage() {
     pendingStudents.forEach(pending => {
       const studentKey = pending.studentName
       if (!groups[studentKey]) {
+        // Calculate elapsed time to check if expired
+        const now = Date.now()
+        const start = new Date(pending.timestamp).getTime()
+        const elapsed = now - start
+        const minutes = Math.floor(elapsed / (1000 * 60))
+        const TIMEOUT_THRESHOLD = 70
+
         // This student is pending and hasn't submitted
         groups[studentKey] = {
           ...pending,
           studentName: pending.studentName,
           timestamp: pending.timestamp,
           status: 'Pending',
-          isPending: true
+          isPending: true,
+          isExpired: minutes > TIMEOUT_THRESHOLD,
+          elapsedMinutes: minutes
         }
       }
       // If student already submitted, ignore the pending entry
@@ -127,13 +136,21 @@ function AdminPage() {
 
     // Filter by status
     if (statusFilter === 'pending') {
-      filtered = filtered.filter(sub => sub.isPending === true)
+      filtered = filtered.filter(sub => sub.isPending === true && !sub.isExpired)
+    } else if (statusFilter === 'timeout') {
+      filtered = filtered.filter(sub => sub.isPending === true && sub.isExpired === true)
     } else if (statusFilter === 'pass') {
       filtered = filtered.filter(sub => !sub.isPending && sub.pass === true)
     } else if (statusFilter === 'fail') {
       filtered = filtered.filter(sub => !sub.isPending && sub.pass === false)
+    } else if (statusFilter === 'all') {
+      // Show everything except expired pending students
+      filtered = filtered.filter(sub => !sub.isExpired)
+    } else if (statusFilter === 'all-including-expired') {
+      // Show absolutely everything including expired
+      // No filter needed
     }
-    // 'all' shows everything
+    // Default: filter out expired pending students
 
     // Sort: Pending first, then by timestamp - most recent first
     filtered = filtered.sort((a, b) => {
@@ -223,8 +240,10 @@ function AdminPage() {
           >
             <option value="all">সকল স্ট্যাটাস</option>
             <option value="pending">পেন্ডিং</option>
+            <option value="timeout">টাইম আউট</option>
             <option value="pass">পাস</option>
             <option value="fail">ফেল</option>
+            <option value="all-including-expired">সব (টাইম আউট সহ)</option>
           </select>
 
           <button className="export-button bengali" onClick={() => alert('Export feature coming soon!')}>
