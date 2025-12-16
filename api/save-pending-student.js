@@ -19,12 +19,12 @@ async function saveLocally(data) {
       throw error;
     }
   }
-  
+
   // Check for duplicates - prevent same student from being added multiple times
   const existingIndex = currentData.findIndex(
     item => item.studentName === data.studentName
   );
-  
+
   if (existingIndex === -1) {
     // Student not found, add new entry
     currentData.push(data);
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
 
   const pendingStudent = {
     studentName: body.studentName,
-    timestamp: new Date().toISOString(),
+    timestamp: body.timestamp || new Date().toISOString(), // Use provided timestamp or fallback to now
     status: "Pending"
   };
 
@@ -66,12 +66,12 @@ export default async function handler(req, res) {
   try {
     const { content, sha } = await fetchFile();
     const list = Array.isArray(content) ? content : [];
-    
+
     // Check for duplicates
     const existingIndex = list.findIndex(
       item => item.studentName === pendingStudent.studentName
     );
-    
+
     if (existingIndex === -1) {
       // Student not found, add new entry
       list.push(pendingStudent);
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
       await updateFile(updated, sha);
     }
     // If student already exists, don't add duplicate
-    
+
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error(err);

@@ -109,13 +109,16 @@ export async function loadLatestQuestions() {
   return { file: 'questions.json', version: 0 }
 }
 
-export async function savePendingStudent(studentName) {
+export async function savePendingStudent(studentName, timestamp = null) {
   let res;
   try {
     res = await fetch('/api/save-pending-student', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ studentName })
+      body: JSON.stringify({
+        studentName,
+        timestamp: timestamp ? new Date(timestamp).toISOString() : undefined
+      })
     })
   } catch (fetchErr) {
     throw fetchErr;

@@ -218,11 +218,11 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
       const elapsed = Date.now() - examStartTime
 
       if (elapsed >= FIVE_MINUTES && !pendingSent) {
-        // 5 minutes passed, save as pending student
+        // 5 minutes passed, save as pending student with ACTUAL exam start time
         setPendingSent(true)
-        savePendingStudent(studentName)
+        savePendingStudent(studentName, examStartTime)
           .then(() => {
-            console.log(`${studentName} marked as pending after 5 minutes`)
+            console.log(`${studentName} marked as pending after 5 minutes (timestamp: ${new Date(examStartTime).toISOString()})`)
           })
           .catch(err => {
             console.error('Failed to save pending student:', err)
