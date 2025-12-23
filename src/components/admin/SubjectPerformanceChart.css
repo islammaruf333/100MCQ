@@ -64,21 +64,21 @@
     color: white;
 }
 
-.performance-badge-compact.excellent {
-    background: #20c997;
-}
-
+.performance-badge-compact.excellent,
 .performance-badge-compact.good {
-    background: #17a2b8;
+    background: #28a745;
+    /* Green */
 }
 
 .performance-badge-compact.average {
     background: #ffc107;
+    /* Yellow */
     color: #343a40;
 }
 
 .performance-badge-compact.poor {
     background: #dc3545;
+    /* Red */
 }
 
 /* Compact Progress Bar */
@@ -97,20 +97,20 @@
     transition: width 0.6s ease;
 }
 
-.progress-bar-compact.excellent {
-    background: #20c997;
-}
-
+.progress-bar-compact.excellent,
 .progress-bar-compact.good {
-    background: #17a2b8;
+    background: #28a745;
+    /* Green */
 }
 
 .progress-bar-compact.average {
     background: #ffc107;
+    /* Yellow */
 }
 
 .progress-bar-compact.poor {
     background: #dc3545;
+    /* Red */
 }
 
 /* Stats Row */
