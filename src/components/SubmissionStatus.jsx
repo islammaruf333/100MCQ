@@ -1,12 +1,40 @@
+import { useEffect, useState } from 'react'
 import './SubmissionStatus.css'
 
 function SubmissionStatus({ status, retryCount, nextRetryIn, error }) {
-    if (status === 'idle' || status === 'success') {
+    const [isVisible, setIsVisible] = useState(true)
+    const [isManuallyDismissed, setIsManuallyDismissed] = useState(false)
+
+    // Auto-hide success message after 3 seconds
+    useEffect(() => {
+        if (status === 'success') {
+            const timer = setTimeout(() => {
+                setIsVisible(false)
+            }, 3000)
+            return () => clearTimeout(timer)
+        } else {
+            setIsVisible(true)
+        }
+    }, [status])
+
+    // Reset manual dismiss when status changes
+    useEffect(() => {
+        setIsManuallyDismissed(false)
+    }, [status])
+
+    if (status === 'idle' || (status === 'success' && !isVisible) || isManuallyDismissed) {
         return null
+    }
+
+    const handleClose = () => {
+        setIsManuallyDismissed(true)
     }
 
     const getStatusText = () => {
         switch (status) {
+            case 'success':
+                return 'সফলভাবে জমা হয়েছে'
+
             case 'submitting':
                 return retryCount === 0 ? 'উত্তরপত্র জমা দেওয়া হচ্ছে...' : `পুনরায় চেষ্টা করা হচ্ছে (${retryCount})...`
 
@@ -24,24 +52,33 @@ function SubmissionStatus({ status, retryCount, nextRetryIn, error }) {
 
     const getIcon = () => {
         switch (status) {
+            case 'success':
+                return null
             case 'submitting':
-                return '⏳'
+                return null
             case 'retrying':
-                return '🔄'
+                return null
             case 'failed':
-                return '⚠️'
+                return null
             default:
-                return '📤'
+                return null
         }
     }
 
-    const statusClass = status === 'failed' ? 'error' : status === 'retrying' ? 'warning' : 'info'
+    const statusClass = status === 'failed' ? 'error' : status === 'retrying' ? 'warning' : status === 'success' ? 'success' : 'info'
 
     return (
         <div className={`submission-status ${statusClass}`}>
             <div className="submission-status-content">
-                <span className="submission-icon">{getIcon()}</span>
+                {getIcon() && <span className="submission-icon">{getIcon()}</span>}
                 <span className="submission-text bengali">{getStatusText()}</span>
+                <button
+                    className="submission-close-btn"
+                    onClick={handleClose}
+                    aria-label="Close notification"
+                >
+                    ×
+                </button>
             </div>
             {status === 'retrying' && (
                 <div className="submission-progress">
