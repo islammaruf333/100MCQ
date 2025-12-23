@@ -869,22 +869,6 @@
     "questionFile": "questions-7.json"
   },
   {
-    "studentName": "Maruf Test",
-    "answers": {
-      "1": "c",
-      "33": "c",
-      "80": "c"
-    },
-    "score": 0.75,
-    "totalMarks": 100,
-    "timestamp": "2025-12-23T07:12:29.780Z",
-    "attempted": 3,
-    "correct": 1,
-    "wrong": 2,
-    "pass": false,
-    "questionFile": "questions-8.json"
-  },
-  {
     "studentName": "Rifah 7",
     "answers": {
       "2": "a",
