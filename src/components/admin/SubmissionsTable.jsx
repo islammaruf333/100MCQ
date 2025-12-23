@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import html2canvas from 'html2canvas'
 import { renderLatex } from '../../utils/latex'
+import SubjectPerformanceChart from './SubjectPerformanceChart'
 import './SubmissionsTable.css'
 
 function SubmissionsTable({
@@ -393,6 +394,13 @@ function SubmissionsTable({
                   </span>
                 </div>
               </div>
+
+              {/* Subject Performance Chart */}
+              <SubjectPerformanceChart
+                questions={questions}
+                studentAnswers={selectedSubmission.answers || {}}
+              />
+
               <div className="answers-detail">
                 <h3 className="bengali">উত্তরসমূহ ({Object.keys(selectedSubmission.answers || {}).length} / {questions.length} টি):</h3>
                 <div className="answers-grid">
