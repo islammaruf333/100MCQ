@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import SubmissionStatus from './SubmissionStatus'
 import './ResultSummary.css'
 
-function ResultSummary({ questions, answers, studentName, score, onRestart, questionFile }) {
+function ResultSummary({ questions, answers, studentName, score, onRestart, questionFile, submissionStatus }) {
   const { score: totalScore, correct, wrong, attempted, total } = score
   const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0
   const pass = totalScore >= 40
@@ -140,6 +141,8 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
           নতুন পরীক্ষা শুরু করুন
         </button>
       </div>
+
+      <SubmissionStatus {...submissionStatus} />
     </div>
   )
 }

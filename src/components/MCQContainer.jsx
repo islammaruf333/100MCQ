@@ -3,8 +3,11 @@ import ExamHeader from './ExamHeader'
 import QuestionCard from './QuestionCard'
 import SidebarGrid from './SidebarGrid'
 import ResultSummary from './ResultSummary'
+import SubmissionStatus from './SubmissionStatus'
 import { saveSubmission, savePendingStudent, removePendingStudent } from '../utils/api'
+import { queueSubmission, processSubmission, startBackgroundSync } from '../utils/SubmissionManager'
 import './MCQContainer.css'
+
 
 const STATUS = {
   IDLE: 'IDLE',
@@ -34,6 +37,7 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
   const [markedForReview, setMarkedForReview] = useState(new Set())
   const [examStartTime] = useState(Date.now()) // Track when exam started
   const [pendingSent, setPendingSent] = useState(false) // Track if pending status was sent
+  const [submissionStatus, setSubmissionStatus] = useState({ status: 'idle', retryCount: 0 })
 
   // All useCallback hooks must be defined before any returns
   const handleAnswerSelect = useCallback((questionId, optionId) => {
@@ -120,35 +124,27 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
       questionFile: questionFile
     }
 
-    try {
-      // Remove from pending list with retry logic
-      let retries = 3
-      while (retries > 0) {
-        try {
-          await removePendingStudent(studentName)
-          console.log('✓ Successfully removed pending student:', studentName)
-          break
-        } catch (removeErr) {
-          retries--
-          if (retries === 0) {
-            console.error('Failed to remove pending student after 3 attempts:', removeErr)
-          } else {
-            console.warn(`Failed to remove pending student, retrying... (${retries} attempts left)`)
-            await new Promise(resolve => setTimeout(resolve, 1000)) // Wait 1 second before retry
-          }
-        }
-      }
+    // Immediately queue the submission to localStorage for insurance
+    const queueId = queueSubmission(payload)
+    console.log('📝 Submission queued locally:', queueId)
 
-      const result = await saveSubmission(payload)
-      setStatus(STATUS.SUBMITTED)
-      localStorage.removeItem(`mcq_state_${studentName}`)
-    } catch (err) {
-      console.error('Failed to save submission', err)
-      alert(`সার্ভারে সেভ করতে সমস্যা হয়েছে: ${err.message}\n\nআপনার স্কোর: ${scoreData.score.toFixed(2)}`)
-      // Still show results even if save failed
-      setStatus(STATUS.SUBMITTED)
-      localStorage.removeItem(`mcq_state_${studentName}`)
-    }
+    // Show result screen immediately
+    setStatus(STATUS.SUBMITTED)
+
+    // Start attempting to submit in background
+    const queueItem = { id: queueId, payload, retryCount: 0 }
+
+    processSubmission(queueItem, (progress) => {
+      setSubmissionStatus(progress)
+
+      if (progress.status === 'success') {
+        // Clean up only on confirmed success
+        localStorage.removeItem(`mcq_state_${studentName}`)
+      }
+    }).catch(err => {
+      console.error('Submission error:', err)
+      // Don't remove anything - let retry mechanism handle it
+    })
   }, [status, studentName, answers, questions, calculateScore, questionFile])
 
   // All useEffect hooks must be called before any returns
@@ -208,31 +204,48 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
     }
   }, [currentQuestionIndex, questions])
 
-  // Track 5-minute threshold for pending students
+  // Track pending students - First after 1 minute, then every 5 minutes
   useEffect(() => {
-    if (status !== STATUS.RUNNING || pendingSent) return
+    if (status !== STATUS.RUNNING) return
 
-    const FIVE_MINUTES = 5 * 60 * 1000 // 5 minutes in milliseconds
+    const ONE_MINUTE = 1 * 60 * 1000 // 1 minute
+    const FIVE_MINUTES = 5 * 60 * 1000 // 5 minutes
 
-    const checkInterval = setInterval(() => {
-      const elapsed = Date.now() - examStartTime
-
-      if (elapsed >= FIVE_MINUTES && !pendingSent) {
-        // 5 minutes passed, save as pending student with ACTUAL exam start time
+    // 1. Initial trigger after 1 minute
+    const initialTimer = setTimeout(() => {
+      if (!pendingSent) {
         setPendingSent(true)
         savePendingStudent(studentName, examStartTime)
           .then(() => {
-            console.log(`${studentName} marked as pending after 5 minutes (timestamp: ${new Date(examStartTime).toISOString()})`)
+            console.log(`${studentName} marked as pending after 1 minute`)
           })
-          .catch(err => {
-            console.error('Failed to save pending student:', err)
-            // Don't show error to user, this is a background operation
-          })
+          .catch(err => console.error('Failed to save pending student (1 min):', err))
       }
-    }, 10000) // Check every 10 seconds
+    }, ONE_MINUTE)
 
-    return () => clearInterval(checkInterval)
+    // 2. Heartbeat every 5 minutes (to ensure we "catch" them if they are still there)
+    const heartbeatInterval = setInterval(() => {
+      savePendingStudent(studentName, examStartTime)
+        .then(() => {
+          console.log(`Heartbeat: ${studentName} is still taking exam`)
+        })
+        .catch(err => console.error('Failed to send heartbeat:', err))
+    }, FIVE_MINUTES)
+
+    return () => {
+      clearTimeout(initialTimer)
+      clearInterval(heartbeatInterval)
+    }
   }, [status, pendingSent, examStartTime, studentName])
+
+  // Background sync for pending submissions (network reconnection handling)
+  useEffect(() => {
+    const cleanup = startBackgroundSync((progress) => {
+      setSubmissionStatus(progress)
+    })
+
+    return cleanup
+  }, [])
 
   // NOW we can do conditional returns after all hooks
   // Validate questions array AFTER all hooks (React rules)
@@ -286,6 +299,7 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
         score={calculateScore()}
         onRestart={() => window.location.reload()}
         questionFile={questionFile}
+        submissionStatus={submissionStatus}
       />
     )
   }
@@ -340,6 +354,8 @@ function MCQContainer({ questions, studentName, questionFile = 'questions.json' 
             onQuestionJump={handleQuestionJump}
           />
         </div>
+
+        <SubmissionStatus {...submissionStatus} />
       </div>
     )
   } catch (error) {
