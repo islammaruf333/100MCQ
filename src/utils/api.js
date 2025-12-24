@@ -84,29 +84,27 @@ export async function loadSubmissions() {
 }
 
 export async function loadLatestQuestions() {
-  // Try to find the latest question file by checking in descending order
-  // Try questions-100.json down to questions-1.json, then questions.json
+  try {
+    // Use server-side API to get latest questions file (much faster than looping)
+    const res = await fetch('/api/get-latest-questions', {
+      cache: 'no-store'
+    })
 
-  for (let version = 100; version >= 1; version--) {
-    const fileName = `questions-${version}.json`
-    try {
-      const res = await fetch(`/${fileName}`)
-      if (res.ok) {
-        // Try to parse as JSON to verify it's a valid file
-        const text = await res.text()
-        JSON.parse(text) // This will throw if it's not valid JSON (like HTML)
-        console.log(`Found latest questions file: ${fileName}`)
-        return { file: fileName, version }
-      }
-    } catch (error) {
-      // File doesn't exist or is not valid JSON, continue to next
-      continue
+    if (res.ok) {
+      const data = await res.json()
+      console.log(`Using latest questions file: ${data.file} (version ${data.version})`)
+      return data
     }
-  }
 
-  // Fallback to questions.json
-  console.log('Using default questions.json')
-  return { file: 'questions.json', version: 0 }
+    // If API fails, fall back to default
+    console.warn('API endpoint failed, using default questions.json')
+    return { file: 'questions.json', version: 0 }
+  } catch (error) {
+    // If there's any error (network, parsing, etc.), use default
+    console.error('Error getting latest questions:', error)
+    console.log('Falling back to default questions.json')
+    return { file: 'questions.json', version: 0 }
+  }
 }
 
 export async function savePendingStudent(studentName, timestamp = null) {

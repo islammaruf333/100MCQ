@@ -3,6 +3,9 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' })
     }
 
+    // Add caching headers for edge caching
+    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60')
+
     try {
         const fs = require('fs')
         const path = require('path')
