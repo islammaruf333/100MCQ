@@ -8,6 +8,34 @@ const BRANCH = process.env.GITHUB_BRANCH || "main";
 const TOKEN = process.env.GITHUB_TOKEN;
 const FILE_PATH = "answers.json";
 
+/**
+ * Generate a unique student name by checking existing submissions
+ * and appending numeric suffixes if duplicates exist
+ */
+function getUniqueStudentName(desiredName, existingSubmissions) {
+  // Get all existing student names
+  const existingNames = existingSubmissions.map(sub => sub.studentName);
+
+  // If the desired name doesn't exist, use it as-is
+  if (!existingNames.includes(desiredName)) {
+    return desiredName;
+  }
+
+  // Find all names that match the pattern: desiredName, desiredName_1, desiredName_2, etc.
+  const namePattern = new RegExp(`^${desiredName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(_\\d+)?$`);
+  const matchingNames = existingNames.filter(name => namePattern.test(name));
+
+  // Extract suffix numbers from matching names
+  const suffixNumbers = matchingNames.map(name => {
+    const match = name.match(/_(\d+)$/);
+    return match ? parseInt(match[1], 10) : 0;
+  });
+
+  // Find the next available suffix
+  const nextSuffix = Math.max(...suffixNumbers) + 1;
+  return `${desiredName}_${nextSuffix}`;
+}
+
 async function saveLocally(data) {
   const filePath = path.join(process.cwd(), FILE_PATH);
   let currentData = [];
@@ -19,8 +47,15 @@ async function saveLocally(data) {
       throw error;
     }
   }
-  currentData.push(data);
+
+  // Generate unique student name before saving
+  const uniqueName = getUniqueStudentName(data.studentName, currentData);
+  const dataToSave = { ...data, studentName: uniqueName };
+
+  currentData.push(dataToSave);
   await fs.writeFile(filePath, JSON.stringify(currentData, null, 2));
+
+  return { originalName: data.studentName, savedName: uniqueName };
 }
 
 export default async function handler(req, res) {
@@ -35,8 +70,13 @@ export default async function handler(req, res) {
 
   if (!process.env.VERCEL_ENV) {
     try {
-      await saveLocally(body);
-      return res.status(200).json({ success: true });
+      const result = await saveLocally(body);
+      console.log(`Saved submission: "${result.originalName}" as "${result.savedName}"`);
+      return res.status(200).json({
+        success: true,
+        savedName: result.savedName,
+        wasRenamed: result.originalName !== result.savedName
+      });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ error: "Failed to save answer locally" });
@@ -50,11 +90,22 @@ export default async function handler(req, res) {
   try {
     const { content, sha } = await fetchFile();
     const list = Array.isArray(content) ? content : [];
-    list.push(body);
+
+    // Generate unique student name before saving
+    const uniqueName = getUniqueStudentName(body.studentName, list);
+    const dataToSave = { ...body, studentName: uniqueName };
+
+    list.push(dataToSave);
 
     const updated = JSON.stringify(list, null, 2);
     await updateFile(updated, sha);
-    return res.status(200).json({ success: true });
+
+    console.log(`Saved submission: "${body.studentName}" as "${uniqueName}"`);
+    return res.status(200).json({
+      success: true,
+      savedName: uniqueName,
+      wasRenamed: body.studentName !== uniqueName
+    });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to save answer" });
