@@ -18,7 +18,6 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
 
   useEffect(() => {
     loadSolutions()
-    // Animate counters only once
     if (!hasAnimated.current) {
       hasAnimated.current = true
       animateCounter(setAnimatedCorrect, correct)
@@ -44,27 +43,15 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
 
   async function loadSolutions() {
     try {
-      // Load answer file based on questionFile prop
       const qFile = questionFile || 'questions.json'
-      let baseName = qFile.replace('.json', '')
-      // Remove all spaces
-      baseName = baseName.replace(/\s+/g, '')
+      let baseName = qFile.replace('.json', '').replace(/\s+/g, '')
       const answerFile = baseName + '-Answer.json'
-
-      console.log('🔍 Student result loading solutions:')
-      console.log('  Question file:', qFile)
-      console.log('  Answer file:', answerFile)
-
       const res = await fetch(`/${answerFile}`, { cache: 'no-store' })
-      if (!res.ok) {
-        console.log('No answer file found, tried:', answerFile)
-        return
-      }
+      if (!res.ok) return
       const data = await res.json()
       setSolutions(data)
-      console.log('✅ Loaded solutions from:', answerFile, '- Total:', data.length)
     } catch (err) {
-      console.log('❌ Could not load solutions:', err)
+      console.log('Could not load solutions:', err)
     }
   }
 
@@ -208,6 +195,7 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
                     {hasAnswer && !isCorrect && <span className="icon-cross"></span>}
                     {!hasAnswer && <span className="icon-dash"></span>}
                   </div>
+                  <div className="question-text bengali">{q.question}</div>
                   <div className="answer-details">
                     {hasAnswer ? (
                       <>
@@ -219,7 +207,6 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
                     )}
                   </div>
 
-                  {/* Solution toggle */}
                   {getSolution(q.id) && (
                     <div className="solution-toggle-section">
                       <button
@@ -257,5 +244,3 @@ function ResultSummary({ questions, answers, studentName, score, onRestart, ques
 }
 
 export default ResultSummary
-
-

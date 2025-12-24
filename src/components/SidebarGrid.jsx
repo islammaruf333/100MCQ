@@ -12,11 +12,11 @@ function SidebarGrid({
   function getQuestionStatus(index) {
     const question = questions[index]
     if (!question) return 'unvisited'
-    
+
     const hasAnswer = answers[question.id] !== undefined
     const isVisited = visitedQuestions.has(index)
     const isMarked = markedQuestions.has(index)
-    
+
     if (index === currentIndex) return 'active'
     if (isMarked) return 'marked'
     if (hasAnswer) return 'answered'
@@ -28,22 +28,22 @@ function SidebarGrid({
     <aside className="sidebar-grid">
       <div className="sidebar-header">
         <h3 className="bengali">প্রশ্ন নেভিগেশন</h3>
-        <div className="legend">
-          <div className="legend-item">
-            <span className="legend-dot unvisited"></span>
-            <span className="bengali">অদেখা</span>
+        <div className="status-legend-grid">
+          <div className="status-item unvisited">
+            <div className="status-indicator"></div>
+            <span className="status-label">অদেখা</span>
           </div>
-          <div className="legend-item">
-            <span className="legend-dot visited"></span>
-            <span className="bengali">দেখা</span>
+          <div className="status-item visited">
+            <div className="status-indicator"></div>
+            <span className="status-label">দেখা</span>
           </div>
-          <div className="legend-item">
-            <span className="legend-dot answered"></span>
-            <span className="bengali">উত্তর</span>
+          <div className="status-item answered">
+            <div className="status-indicator"></div>
+            <span className="status-label">উত্তর</span>
           </div>
-          <div className="legend-item">
-            <span className="legend-dot marked"></span>
-            <span className="bengali">রিভিউ</span>
+          <div className="status-item marked">
+            <div className="status-indicator"></div>
+            <span className="status-label">রিভিউ</span>
           </div>
         </div>
       </div>
