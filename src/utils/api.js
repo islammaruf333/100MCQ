@@ -85,9 +85,9 @@ export async function loadSubmissions() {
 
 export async function loadLatestQuestions() {
   // Try to find the latest question file by checking in descending order
-  // Try questions-6.json down to questions-1.json, then questions.json
+  // Try questions-100.json down to questions-1.json, then questions.json
 
-  for (let version = 10; version >= 1; version--) {
+  for (let version = 100; version >= 1; version--) {
     const fileName = `questions-${version}.json`
     try {
       const res = await fetch(`/${fileName}`)
