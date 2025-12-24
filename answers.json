@@ -991,22 +991,6 @@
     "questionFile": "questions-9.json"
   },
   {
-    "studentName": "Test-Maruf",
-    "answers": {
-      "1": "b",
-      "28": "c",
-      "80": "b"
-    },
-    "score": 0.75,
-    "totalMarks": 100,
-    "timestamp": "2025-12-24T06:32:33.407Z",
-    "attempted": 3,
-    "correct": 1,
-    "wrong": 2,
-    "pass": false,
-    "questionFile": "questions-9.json"
-  },
-  {
     "studentName": "Maruf_2",
     "answers": {
       "1": "c",
