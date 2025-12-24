@@ -15,7 +15,7 @@ export function renderLatex(html) {
         let result = html.replace(/\$\$(.*?)\$\$/g, (match, latex) => {
             try {
                 return katex.renderToString(latex.trim(), {
-                    displayMode: true,
+                    displayMode: false,
                     throwOnError: false,
                     trust: true
                 })

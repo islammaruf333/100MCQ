@@ -283,3 +283,41 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* KaTeX Math Formula Fixes */
+.katex {
+  font-size: 1em !important;
+  line-height: 1 !important;
+  display: inline !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.katex-display {
+  margin: 8px 0 !important;
+  padding: 4px 0 !important;
+}
+
+.katex-html {
+  display: inline !important;
+  line-height: inherit !important;
+}
+
+.katex .base {
+  display: inline !important;
+  vertical-align: middle !important;
+}
+
+/* Fix for question text with LaTeX */
+.question-text .katex,
+.option-text .katex {
+  display: inline !important;
+  vertical-align: baseline !important;
+  line-height: 1 !important;
+}
+
+/* Remove extra spacing from KaTeX spans */
+.katex span {
+  line-height: 1 !important;
+}
