@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import MCQContainer from '../components/MCQContainer'
 import StartScreen from '../components/StartScreen'
 import ErrorBoundary from '../components/ErrorBoundary'
-import { loadLatestQuestions } from '../utils/api'
+import { loadExamConfig } from '../utils/api'
 
 function ExamPage() {
   const [studentName, setStudentName] = useState('')
   const [questions, setQuestions] = useState([])
   const [questionFile, setQuestionFile] = useState('questions.json')
+  const [examConfig, setExamConfig] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -17,12 +18,21 @@ function ExamPage() {
 
   async function loadQuestions() {
     try {
-      // Get the latest question file
-      const { file } = await loadLatestQuestions()
-      setQuestionFile(file)
+      // 1. Load exam configuration first
+      console.log('Loading exam configuration...')
+      const config = await loadExamConfig()
+      console.log('Exam config loaded:', config)
+      setExamConfig(config)
 
-      console.log(`Loading questions from /${file}`)
-      const res = await fetch(`/${file}`, { cache: 'no-store' })
+      // 2. Determine which question file to use based on current type
+      const currentType = config.currentType || 'type1'
+      const typeConfig = config[currentType]
+      const questionFileToLoad = typeConfig.questionFile
+
+      console.log(`Loading questions from /${questionFileToLoad} (${typeConfig.label})`)
+      setQuestionFile(questionFileToLoad)
+
+      const res = await fetch(`/${questionFileToLoad}`, { cache: 'no-store' })
       console.log('Fetch response:', { status: res.status, ok: res.ok })
 
       if (!res.ok) {
@@ -35,6 +45,11 @@ function ExamPage() {
       // Validate data
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error('No questions found in file')
+      }
+
+      // Validate question count matches config
+      if (data.length !== typeConfig.totalQuestions) {
+        console.warn(`Warning: Expected ${typeConfig.totalQuestions} questions but found ${data.length}`)
       }
 
       // Transform questions to match expected format
@@ -120,17 +135,26 @@ function ExamPage() {
   console.log('ExamPage rendering MCQContainer:', {
     studentName,
     questionsCount: questions.length,
+    examConfig,
     loading,
     error
   })
 
+  // Pass examConfig to MCQContainer
+  const currentType = examConfig?.currentType || 'type1'
+  const currentTypeConfig = examConfig?.[currentType]
+
   return (
     <ErrorBoundary>
-      <MCQContainer questions={questions} studentName={studentName} questionFile={questionFile} />
+      <MCQContainer
+        questions={questions}
+        studentName={studentName}
+        questionFile={questionFile}
+        examConfig={currentTypeConfig}
+      />
     </ErrorBoundary>
   )
 }
 
 export default ExamPage
-
 

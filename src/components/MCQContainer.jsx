@@ -15,18 +15,20 @@ const STATUS = {
   SUBMITTED: 'SUBMITTED'
 }
 
-const DURATION_SECONDS = 60 * 60 // 60 minutes
-const MARK_PER_QUESTION = 1.25
-const NEGATIVE_MARKING = 0.25
-const PASS_MARK = 40
-
-function MCQContainer({ questions, studentName, questionFile = 'questions.json' }) {
+function MCQContainer({ questions, studentName, questionFile = 'questions.json', examConfig }) {
   console.log('MCQContainer rendered:', {
     hasQuestions: !!questions,
     isArray: Array.isArray(questions),
     length: questions?.length,
-    studentName
+    studentName,
+    examConfig
   })
+
+  // Use examConfig values or fall back to defaults if not provided
+  const DURATION_SECONDS = examConfig?.durationSeconds || 60 * 60
+  const MARK_PER_QUESTION = examConfig?.markPerQuestion || 1.25
+  const NEGATIVE_MARKING = examConfig?.negativeMarking || 0.25
+  const PASS_MARK = examConfig?.passMark || 40
 
   // ALL HOOKS MUST BE CALLED BEFORE ANY CONDITIONAL RETURNS
   const [status, setStatus] = useState(STATUS.RUNNING)

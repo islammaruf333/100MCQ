@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { loadSubmissions, deleteSubmission, deleteStudent, loadPendingStudents } from '../utils/api'
+import { loadSubmissions, deleteSubmission, deleteStudent, loadPendingStudents, loadExamConfig, updateExamConfig } from '../utils/api'
 import SubmissionsTable from '../components/admin/SubmissionsTable'
 import NotificationToast from '../components/admin/NotificationToast'
 import './AdminPage.css'
@@ -17,8 +17,14 @@ function AdminPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 20
 
+  // Exam config state
+  const [examConfig, setExamConfig] = useState(null)
+  const [selectedExamType, setSelectedExamType] = useState('type1')
+  const [updatingConfig, setUpdatingConfig] = useState(false)
+
   useEffect(() => {
     loadData()
+    loadCurrentConfig()
   }, [])
 
   // Auto-refresh every 30 seconds
@@ -78,6 +84,38 @@ function AdminPage() {
     } catch (err) {
       console.error('Delete failed:', err)
       setNotification({ message: `মুছে ফেলতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
+    }
+  }
+
+  async function loadCurrentConfig() {
+    try {
+      const config = await loadExamConfig()
+      setExamConfig(config)
+      setSelectedExamType(config.currentType || 'type1')
+    } catch (err) {
+      console.error('Failed to load exam config:', err)
+      setNotification({ message: `কনফিগারেশন লোড করতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
+    }
+  }
+
+  async function handleUpdateExamType() {
+    if (!window.confirm(`আপনি কি পরীক্ষার ধরন ${selectedExamType === 'type1' ? 'Type 1 (৮০ প্রশ্ন)' : 'Type 2 (২৫ প্রশ্ন)'} এ পরিবর্তন করতে চান?`)) {
+      return
+    }
+
+    try {
+      setUpdatingConfig(true)
+      await updateExamConfig({ currentType: selectedExamType })
+      await loadCurrentConfig()
+      setNotification({
+        message: `পরীক্ষার ধরন সফলভাবে ${selectedExamType === 'type1' ? 'Type 1 (৮০ প্রশ্ন)' : 'Type 2 (২৫ প্রশ্ন)'} এ পরিবর্তিত হয়েছে`,
+        type: 'success'
+      })
+    } catch (err) {
+      console.error('Failed to update exam config:', err)
+      setNotification({ message: `কনফিগারেশন আপডেট করতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
+    } finally {
+      setUpdatingConfig(false)
     }
   }
 
@@ -220,6 +258,69 @@ function AdminPage() {
           </button>
         </div>
       </div>
+
+      {/* Exam Configuration Section */}
+      {examConfig && (
+        <div className="admin-config-section" style={{
+          backgroundColor: 'var(--card-bg)',
+          padding: '20px',
+          borderRadius: '12px',
+          marginBottom: '24px',
+          border: '1px solid var(--border-color)'
+        }}>
+          <h2 className="bengali" style={{ marginTop: 0, marginBottom: '16px', fontSize: '18px' }}>
+            পরীক্ষা কনফিগারেশন
+          </h2>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1', minWidth: '200px' }}>
+              <label className="bengali" style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+                বর্তমান পরীক্ষার ধরন:
+              </label>
+              <select
+                className="filter-select bengali"
+                value={selectedExamType}
+                onChange={(e) => setSelectedExamType(e.target.value)}
+                disabled={updatingConfig}
+                style={{ width: '100%' }}
+              >
+                <option value="type1">{examConfig.type1?.label || 'Type 1: ৮০ প্রশ্ন - ৬০ মিনিট'}</option>
+                <option value="type2">{examConfig.type2?.label || 'Type 2: ২৫ প্রশ্ন - ১৮:৪৫ মিনিট'}</option>
+              </select>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <button
+                className="export-button bengali"
+                onClick={handleUpdateExamType}
+                disabled={updatingConfig || selectedExamType === examConfig.currentType}
+                style={{
+                  opacity: (updatingConfig || selectedExamType === examConfig.currentType) ? 0.5 : 1,
+                  cursor: (updatingConfig || selectedExamType === examConfig.currentType) ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {updatingConfig ? '⏳ আপডেট হচ্ছে...' : '💾 কনফিগারেশন আপডেট করুন'}
+              </button>
+              {selectedExamType !== examConfig.currentType && (
+                <small className="bengali" style={{ color: 'var(--warning)', fontSize: '12px' }}>
+                  পরিবর্তন সংরক্ষিত হয়নি
+                </small>
+              )}
+            </div>
+            <div style={{ flex: '1', minWidth: '250px', padding: '12px', backgroundColor: 'var(--gray-50)', borderRadius: '8px' }}>
+              <div className="bengali" style={{ marginBottom: '4px', fontSize: '12px', color: 'var(--gray-600)' }}>
+                সক্রিয় কনফিগারেশন:
+              </div>
+              <div className="bengali" style={{ fontSize: '14px', fontWeight: '600', color: 'var(--primary)' }}>
+                {examConfig[examConfig.currentType]?.label}
+              </div>
+              <div style={{ fontSize: '12px', color: 'var(--gray-600)', marginTop: '4px' }}>
+                প্রশ্ন: {examConfig[examConfig.currentType]?.totalQuestions} |
+                সময়: {Math.floor(examConfig[examConfig.currentType]?.durationSeconds / 60)} মিনিট |
+                পাস মার্ক: {examConfig[examConfig.currentType]?.passMark}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <div className="admin-content">

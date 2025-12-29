@@ -178,4 +178,47 @@ export async function loadPendingStudents() {
   return data
 }
 
+export async function loadExamConfig() {
+  const isDev = window.location.hostname === 'localhost'
+  const url = isDev
+    ? '/exam-config.json'
+    : 'https://raw.githubusercontent.com/islammaruf333/100MCQ/main/exam-config.json'
+
+  let res
+  try {
+    res = await fetch(url, {
+      cache: 'no-store'
+    })
+  } catch (fetchErr) {
+    throw fetchErr
+  }
+
+  if (!res.ok) {
+    throw new Error(`Failed to load exam configuration: ${res.status} ${res.statusText}`)
+  }
+
+  const data = await res.json()
+  return data
+}
+
+export async function updateExamConfig(config) {
+  let res
+  try {
+    res = await fetch('/api/update-exam-config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(config)
+    })
+  } catch (fetchErr) {
+    throw fetchErr
+  }
+
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(text || 'Failed to update exam configuration')
+  }
+
+  return res.json()
+}
+
 
