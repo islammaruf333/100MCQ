@@ -133,6 +133,40 @@ app.post('/api/delete-answer', (req, res) => {
     }
 });
 
+// 3b. Delete all submissions for a student (by student name)
+app.post('/api/delete-student', (req, res) => {
+    try {
+        const { studentName } = req.body;
+
+        if (!studentName) {
+            return res.status(400).json({ error: 'studentName required' });
+        }
+
+        // Get all submissions for this student
+        const allSubmissions = statements.getAllSubmissions();
+        const studentSubmissions = allSubmissions.filter(sub => sub.student_name === studentName);
+
+        if (studentSubmissions.length === 0) {
+            return res.status(404).json({ error: 'Student not found' });
+        }
+
+        // Delete each submission
+        let deletedCount = 0;
+        for (const submission of studentSubmissions) {
+            const result = statements.deleteSubmission(submission.student_name, submission.timestamp);
+            if (result.changes > 0) {
+                deletedCount++;
+            }
+        }
+
+        console.log(`✅ Deleted ${deletedCount} submission(s) for student: ${studentName}`);
+        res.json({ success: true, deletedCount });
+    } catch (error) {
+        console.error('Error deleting student:', error);
+        res.status(500).json({ error: 'Failed to delete student' });
+    }
+});
+
 // 4. Get all pending students
 app.get('/api/pending-students', (req, res) => {
     try {
