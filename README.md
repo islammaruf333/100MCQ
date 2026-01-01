@@ -1,85 +1,223 @@
 # MCQ Exam System
 
-Single-page MCQ exam (student) + admin dashboard. Questions/answers stored in GitHub JSON; submissions appended via Vercel serverless API.
+A full-featured online MCQ examination system with student exam interface and admin dashboard. Supports both Vercel serverless deployment and traditional cPanel hosting.
 
-## Screenshots
+## ✨ Features
 
-### Exam Start Page
-![Exam Start Page](screenshots/exam-start.png)
-*Students enter their name to begin the exam*
+### For Students
+- Clean, intuitive exam interface with countdown timer
+- Automatic answer saving (LocalStorage backup)
+- Support for multiple exam types (80 MCQ / 25 MCQ)
+- Real-time score calculation with negative marking
+- Instant results with detailed performance analysis
 
-### Question Interface
-![Question Interface](screenshots/exam-question.png)
-*MCQ interface with timer, question display, and answer options*
+### For Administrators
+- Comprehensive admin dashboard
+- View all student submissions with scores
+- Filter by pass/fail status
+- Detailed answer review with correct/wrong indicators
+- Subject-wise performance analytics
+- Export capabilities
 
-### Admin Panel
-![Admin Panel](screenshots/admin-panel.png)
-*Admin dashboard showing student submissions, scores, and status*
+## 🚀 Quick Start
 
-## Features
-- Student starts exam with name/ID (no password)
-- 60 min timer, 80 MCQ (example 5 provided)
-- Scoring: +1.25 correct, -0.25 wrong, 0 unanswered; Pass ≥ 40
-- LocalStorage autosave during exam
-- Submit saves to GitHub `answers.json`
-- Admin page lists scores, pass/fail, timestamp, and detailed answers
+### Prerequisites
+- Node.js 16+ (for development)
+- Git
 
-## Files
-- `index.html` / `exam.js` / `styles.css` — student exam UI
-- `admin.html` / `admin.js` — admin dashboard
-- `questions.json` — sample questions (5; extend to 80)
-- `answers.json` — submissions store (appended by API)
-- `api/save-answer.js` — Vercel function writing to GitHub
+### Installation
 
-## Run locally
 ```bash
-npm install # only if you add tooling; static files otherwise
-npm run dev # if using a dev server; else open index.html
-```
-Use any static server, e.g. `npx serve .`
+# Clone the repository
+git clone https://github.com/yourusername/100MCQ.git
+cd 100MCQ
 
-## Deploy to Vercel
-1) Push this repo to GitHub.  
-2) Create a Vercel project pointing to the repo.  
-3) Set Environment Variables in Vercel Project Settings:
-```
-GITHUB_OWNER=<your-github-username-or-org>
-GITHUB_REPO=<repo-name>
-GITHUB_BRANCH=main          # optional, defaults to main
-GITHUB_TOKEN=<PAT with repo scope>
-```
-4) Deploy. Student page: `/`. Admin page: `/admin.html`.
+# Install dependencies
+npm install
 
-## GitHub JSON notes
-- `questions.json`: extend to 80 items keeping same structure.
-- `answers.json`: should start as `[]`. API appends each submission.
+# Start development server
+npm run dev
+```
 
-## API details
-- Endpoint: `/api/save-answer` (POST JSON)
-- Body example:
+Visit `http://localhost:5173` for the exam page and `http://localhost:5173/admin` for the admin panel.
+
+## 📦 Deployment Options
+
+### Option 1: Vercel (Recommended for Quick Deploy)
+
+1. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**
+   - Connect your GitHub repository to Vercel
+   - Set environment variables in Vercel dashboard:
+     ```
+     GITHUB_OWNER=your-github-username
+     GITHUB_REPO=your-repo-name
+     GITHUB_BRANCH=main
+     GITHUB_TOKEN=your_personal_access_token
+     ```
+
+3. **Deploy** - Vercel will automatically build and deploy
+
+### Option 2: cPanel / Traditional Hosting
+
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
+
+2. **Prepare server files**
+   - Upload `server-hosting/` directory contents to your server
+   - Upload `dist/` directory contents
+   - Upload question JSON files
+
+3. **Install dependencies on server**
+   ```bash
+   cd server-hosting
+   npm install
+   ```
+
+4. **Start the server**
+   ```bash
+   node server.js
+   ```
+
+The server runs on port 3000 by default (configurable via PORT environment variable).
+
+## 📁 Project Structure
+
+```
+100MCQ/
+├── src/                    # React source code
+│   ├── components/        # Reusable UI components
+│   ├── pages/            # Main pages (Exam, Admin)
+│   └── utils/            # Helper functions & API calls
+│
+├── server-hosting/        # Node.js backend for cPanel
+│   ├── server.js         # Express server (FIXED: question mapping)
+│   ├── database.js       # SQLite database layer (FIXED: added question_file column)
+│   └── *.js              # Helper scripts
+│
+├── api/                   # Vercel serverless functions
+│   └── *.js              # API endpoints
+│
+├── public/                # Static assets & question files
+│   ├── questions.json    # Type 1 questions (80 MCQ)
+│   ├── questions_type2.json  # Type 2 questions (25 MCQ)
+│   └── ...               # Additional question sets
+│
+└── dist/                  # Build output (generated)
+```
+
+## 🎯 Configuration
+
+### Exam Settings
+
+Edit `public/exam-config.json` (or use admin panel):
+
 ```json
 {
-  "studentName": "Alice",
-  "answers": { "1": "A", "2": "C" },
-  "score": 72.5,
-  "totalMarks": 100,
-  "timestamp": "2025-01-01T12:00:00.000Z",
-  "attempted": 60,
-  "correct": 55,
-  "wrong": 5,
-  "pass": true
+  "currentType": "type1",
+  "type1": {
+    "questionFile": "questions.json",
+    "totalQuestions": 80,
+    "durationSeconds": 3600,
+    "markPerQuestion": 1.25,
+    "negativeMarking": 0.25,
+    "passMark": 40,
+    "label": "Type 1: 80 Questions - 60 Minutes"
+  },
+  "type2": {
+    "questionFile": "questions_type2.json",
+    "totalQuestions": 25,
+    "durationSeconds": 1200,
+    "markPerQuestion": 1.25,
+    "negativeMarking": 0.25,
+    "passMark": 15,
+    "label": "Type 2: 25 Questions - 20 Minutes"
+  }
 }
 ```
 
-## Admin page data source
-- Currently reads `answers.json` from the same repo path. If hosting elsewhere, set the URL in `admin.js` (`RESULTS_URL`).
+### Question File Format
 
-## Customization
-- Update branding/texts in `index.html` and `admin.html`.
-- Styling in `styles.css`.
-- Adjust scoring/timer in `exam.js` (`MARK_PER_QUESTION`, `NEGATIVE_MARKING`, `DURATION_SECONDS`, `PASS_MARK`).
+```json
+[
+  {
+    "id": 1,
+    "question": "What is 2 + 2?",
+    "options": {
+      "a": "3",
+      "b": "4",
+      "c": "5",
+      "d": "6"
+    },
+    "correctAnswer": "b",
+    "subject": "Mathematics"
+  }
+]
+```
 
-## Known limitations
-- No authentication; admin page is open via URL.
-- GitHub write is append-only; no concurrency lock. For heavy traffic, consider a DB.
+## 🔧 Recent Fixes
 
+### Question Mapping Bug Fix (2026-01-01)
+**Problem**: Admin panel displayed wrong question set when students answered different exam types.
+
+**Solution**: 
+- Added `question_file` column to database schema
+- Updated backend to store which question file was used
+- Fixed admin panel to load correct questions
+
+**Files Changed**:
+- `server-hosting/database.js` - Added migration & column
+- `server-hosting/server.js` - Extract & store questionFile
+
+## 🛡️ Security Notes
+
+- Admin panel has no authentication (add your own if needed)
+- Database files (`.db`, `.sqlite`) are gitignored
+- Student data files are gitignored
+- Never commit `.env` or `.env.local` files
+
+## 📝 Development
+
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Built with React + Vite
+- Backend: Express.js + SQLite
+- Serverless: Vercel Functions
+- UI Components: Custom React components
+
+## 📧 Support
+
+For issues or questions, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ for educators and students**
