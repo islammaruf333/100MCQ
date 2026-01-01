@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { loadSubmissions, deleteSubmission, deleteStudent, loadPendingStudents, loadExamConfig, updateExamConfig } from '../utils/api'
+import { loadSubmissions, deleteSubmission, deleteStudent, loadPendingStudents, removePendingStudent, loadExamConfig, updateExamConfig, loadQuestionFiles, uploadQuestionFile } from '../utils/api'
 import SubmissionsTable from '../components/admin/SubmissionsTable'
 import NotificationToast from '../components/admin/NotificationToast'
 import './AdminPage.css'
@@ -19,13 +19,27 @@ function AdminPage() {
 
   // Exam config state
   const [examConfig, setExamConfig] = useState(null)
+  const [initialConfig, setInitialConfig] = useState(null) // Track original config for change detection
   const [selectedExamType, setSelectedExamType] = useState('type1')
   const [updatingConfig, setUpdatingConfig] = useState(false)
+  const [uploadingFile, setUploadingFile] = useState(false)
+  const [showConfigModal, setShowConfigModal] = useState(false)
+  const [availableFiles, setAvailableFiles] = useState([])
 
   useEffect(() => {
     loadData()
     loadCurrentConfig()
+    loadFiles()
   }, [])
+
+  async function loadFiles() {
+    try {
+      const files = await loadQuestionFiles()
+      setAvailableFiles(files)
+    } catch (err) {
+      console.error('Failed to load question files:', err)
+    }
+  }
 
   // Auto-refresh every 30 seconds
   useEffect(() => {
@@ -77,20 +91,84 @@ function AdminPage() {
       return
     }
 
+    // Check if this is a pending student
+    const student = submissionsByStudent.find(s => s.studentName === studentName)
+    const isPending = student?.isPending === true
+
     try {
-      await deleteStudent(studentName)
+      if (isPending) {
+        // Delete from pending students table
+        console.log(`Deleting pending student: ${studentName}`)
+        await removePendingStudent(studentName)
+      } else {
+        // Delete from submissions table
+        console.log(`Deleting submitted student: ${studentName}`)
+        await deleteStudent(studentName)
+      }
       await loadData()
-      setNotification({ message: `${studentName} এর সকল উত্তর সফলভাবে মুছে ফেলা হয়েছে`, type: 'success' })
+      const successMessage = isPending
+        ? `${studentName} পেন্ডিং তালিকা থেকে সফলভাবে মুছে ফেলা হয়েছে`
+        : `${studentName} এর সকল উত্তর সফলভাবে মুছে ফেলা হয়েছে`
+      setNotification({ message: successMessage, type: 'success' })
     } catch (err) {
       console.error('Delete failed:', err)
       setNotification({ message: `মুছে ফেলতে সমস্যা হয়েছে: ${err.message}`, type: 'error' })
     }
   }
 
+  async function handleFileUpload(e) {
+    const file = e.target.files[0]
+    if (!file) return
+
+    // Validation: File type
+    if (!file.name.endsWith('.json')) {
+      setNotification({ message: 'শুধুমাত্র .json ফাইল আপলোড করা যাবে', type: 'error' })
+      return
+    }
+
+    // Validation: Size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setNotification({ message: 'ফাইলের আকার অনেক বড় (সর্বোচ্চ ৫ মেগাবাইট)', type: 'error' })
+      return
+    }
+
+    const reader = new FileReader()
+    reader.onload = async (event) => {
+      try {
+        // Validation: JSON Syntax
+        const content = JSON.parse(event.target.result)
+
+        // Validation: JSON Schema (Array)
+        if (!Array.isArray(content)) {
+          setNotification({ message: 'ফাইলের ফরম্যাট সঠিক নয় (JSON Array হতে হবে)', type: 'error' })
+          return
+        }
+
+        if (!window.confirm(`আপনি কি "${file.name}" ফাইলটি আপলোড করতে চান? এতে ${content.length} টি প্রশ্ন আছে।`)) {
+          e.target.value = ''
+          return
+        }
+
+        setUploadingFile(true)
+        await uploadQuestionFile(file.name, content)
+        await loadFiles()
+        setNotification({ message: 'প্রশ্ন ফাইল সফলভাবে আপলোড হয়েছে!', type: 'success' })
+        e.target.value = ''
+      } catch (err) {
+        console.error('Upload failed:', err)
+        setNotification({ message: `আপলোড ব্যর্থ হয়েছে: ${err.message}`, type: 'error' })
+      } finally {
+        setUploadingFile(false)
+      }
+    }
+    reader.readAsText(file)
+  }
+
   async function loadCurrentConfig() {
     try {
       const config = await loadExamConfig()
       setExamConfig(config)
+      setInitialConfig(JSON.parse(JSON.stringify(config))) // Deep clone for comparison
       setSelectedExamType(config.currentType || 'type1')
     } catch (err) {
       console.error('Failed to load exam config:', err)
@@ -99,16 +177,22 @@ function AdminPage() {
   }
 
   async function handleUpdateExamType() {
-    if (!window.confirm(`আপনি কি পরীক্ষার ধরন ${selectedExamType === 'type1' ? 'Type 1 (৮০ প্রশ্ন)' : 'Type 2 (২৫ প্রশ্ন)'} এ পরিবর্তন করতে চান?`)) {
+    if (!window.confirm(`আপনি কি পরিবর্তন সংরক্ষণ করতে চান?`)) {
       return
     }
 
     try {
       setUpdatingConfig(true)
-      await updateExamConfig({ currentType: selectedExamType })
+      // Save current selected type AND the full configuration for type1 and type2
+      // This ensures any changes to files/names are also saved
+      await updateExamConfig({
+        currentType: selectedExamType,
+        type1: examConfig.type1,
+        type2: examConfig.type2
+      })
       await loadCurrentConfig()
       setNotification({
-        message: `পরীক্ষার ধরন সফলভাবে ${selectedExamType === 'type1' ? 'Type 1 (৮০ প্রশ্ন)' : 'Type 2 (২৫ প্রশ্ন)'} এ পরিবর্তিত হয়েছে`,
+        message: `পরীক্ষার ধরন এবং কনফিগারেশন সফলভাবে আপডেট হয়েছে`,
         type: 'success'
       })
     } catch (err) {
@@ -242,6 +326,13 @@ function AdminPage() {
             মোট: <strong>{stats.total}</strong>
           </div>
           <button
+            className="icon-button"
+            onClick={() => setShowConfigModal(true)}
+            title="পরীক্ষা কনফিগারেশন"
+          >
+            ⚙️
+          </button>
+          <button
             className={`icon-button ${autoRefresh ? 'active' : ''}`}
             onClick={() => setAutoRefresh(!autoRefresh)}
             title={autoRefresh ? 'অটো রিফ্রেশ চালু' : 'অটো রিফ্রেশ বন্ধ'}
@@ -259,63 +350,127 @@ function AdminPage() {
         </div>
       </div>
 
-      {/* Exam Configuration Section */}
-      {examConfig && (
-        <div className="admin-config-section" style={{
-          backgroundColor: 'var(--card-bg)',
-          padding: '20px',
-          borderRadius: '12px',
-          marginBottom: '24px',
-          border: '1px solid var(--border-color)'
+      {/* Exam Configuration Modal - Refactored */}
+      {showConfigModal && examConfig && (
+        <div className="modal-overlay" onClick={(e) => {
+          if (e.target === e.currentTarget) setShowConfigModal(false)
         }}>
-          <h2 className="bengali" style={{ marginTop: 0, marginBottom: '16px', fontSize: '18px' }}>
-            পরীক্ষা কনফিগারেশন
-          </h2>
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px' }}>
-              <label className="bengali" style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
-                বর্তমান পরীক্ষার ধরন:
-              </label>
-              <select
-                className="filter-select bengali"
-                value={selectedExamType}
-                onChange={(e) => setSelectedExamType(e.target.value)}
-                disabled={updatingConfig}
-                style={{ width: '100%' }}
-              >
-                <option value="type1">{examConfig.type1?.label || 'Type 1: ৮০ প্রশ্ন - ৬০ মিনিট'}</option>
-                <option value="type2">{examConfig.type2?.label || 'Type 2: ২৫ প্রশ্ন - ১৮:৪৫ মিনিট'}</option>
-              </select>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div className="config-modal">
+            <div className="config-modal-header">
+              <h2 className="bengali">পরীক্ষা কনফিগারেশন</h2>
               <button
-                className="export-button bengali"
-                onClick={handleUpdateExamType}
-                disabled={updatingConfig || selectedExamType === examConfig.currentType}
-                style={{
-                  opacity: (updatingConfig || selectedExamType === examConfig.currentType) ? 0.5 : 1,
-                  cursor: (updatingConfig || selectedExamType === examConfig.currentType) ? 'not-allowed' : 'pointer'
-                }}
+                className="close-modal-btn"
+                onClick={() => setShowConfigModal(false)}
+                title="Close"
               >
-                {updatingConfig ? '⏳ আপডেট হচ্ছে...' : '💾 কনফিগারেশন আপডেট করুন'}
+                ✕
               </button>
-              {selectedExamType !== examConfig.currentType && (
-                <small className="bengali" style={{ color: 'var(--warning)', fontSize: '12px' }}>
-                  পরিবর্তন সংরক্ষিত হয়নি
-                </small>
-              )}
             </div>
-            <div style={{ flex: '1', minWidth: '250px', padding: '12px', backgroundColor: 'var(--gray-50)', borderRadius: '8px' }}>
-              <div className="bengali" style={{ marginBottom: '4px', fontSize: '12px', color: 'var(--gray-600)' }}>
-                সক্রিয় কনফিগারেশন:
+
+            <div className="config-section">
+              {/* Exam Type Selection */}
+              <div className="form-group">
+                <label className="form-label bengali">বর্তমান পরীক্ষার ধরন নির্বাচন করুন:</label>
+                <select
+                  className="filter-select bengali"
+                  value={selectedExamType}
+                  onChange={(e) => setSelectedExamType(e.target.value)}
+                  disabled={updatingConfig}
+                  style={{ width: '100%' }}
+                >
+                  <option value="type1">{examConfig.type1?.label || 'Type 1: ৮০ প্রশ্ন - ৬০ মিনিট'}</option>
+                  <option value="type2">{examConfig.type2?.label || 'Type 2: ২৫ প্রশ্ন - ১৮:৪৫ মিনিট'}</option>
+                </select>
               </div>
-              <div className="bengali" style={{ fontSize: '14px', fontWeight: '600', color: 'var(--primary)' }}>
-                {examConfig[examConfig.currentType]?.label}
+
+              {/* Question File Selection */}
+              <div className="form-group">
+                <label className="form-label bengali">প্রশ্ন ফাইল নির্বাচন করুন:</label>
+                <select
+                  className="filter-select"
+                  value={examConfig[selectedExamType]?.questionFile}
+                  onChange={(e) => {
+                    const newFile = e.target.value;
+                    setExamConfig(prev => ({
+                      ...prev,
+                      [selectedExamType]: {
+                        ...prev[selectedExamType],
+                        questionFile: newFile
+                      }
+                    }))
+                  }}
+                  disabled={updatingConfig}
+                  style={{ width: '100%' }}
+                >
+                  {availableFiles.map(file => (
+                    <option key={file} value={file}>{file}</option>
+                  ))}
+                </select>
               </div>
-              <div style={{ fontSize: '12px', color: 'var(--gray-600)', marginTop: '4px' }}>
-                প্রশ্ন: {examConfig[examConfig.currentType]?.totalQuestions} |
-                সময়: {Math.floor(examConfig[examConfig.currentType]?.durationSeconds / 60)} মিনিট |
-                পাস মার্ক: {examConfig[examConfig.currentType]?.passMark}
+
+              {/* Active Config Details */}
+              <div className="config-details-card">
+                <div className="details-title bengali">সক্রিয় কনফিগারেশন বিস্তারিত</div>
+                <div className="active-config-name bengali">{examConfig[selectedExamType]?.label}</div>
+                <div className="config-meta bengali">
+                  <span>প্রশ্ন: <strong>{examConfig[selectedExamType]?.totalQuestions}</strong></span>
+                  <span>•</span>
+                  <span>সময়: <strong>{Math.floor(examConfig[selectedExamType]?.durationSeconds / 60)} মিনিট</strong></span>
+                  <span>•</span>
+                  <span>পাস মার্ক: <strong>{examConfig[selectedExamType]?.passMark}</strong></span>
+                </div>
+              </div>
+
+              {/* Question Upload Section */}
+              <div className="upload-section">
+                <div className="file-input-wrapper">
+                  <label className="form-label bengali">নতুন প্রশ্ন আপলোড করুন (.json):</label>
+                  <input
+                    type="file"
+                    accept=".json"
+                    className="file-input"
+                    disabled={uploadingFile}
+                    onChange={handleFileUpload}
+                  />
+                  {uploadingFile && (
+                    <div className="upload-feedback">
+                      <div className="small-spinner"></div>
+                      <span className="bengali">আপলোড হচ্ছে...</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Save Button */}
+              <div className="form-group">
+                <button
+                  className="save-config-btn bengali"
+                  onClick={async () => {
+                    await handleUpdateExamType();
+                  }}
+                  disabled={
+                    updatingConfig ||
+                    !initialConfig ||
+                    (selectedExamType === initialConfig.currentType &&
+                      examConfig[selectedExamType]?.questionFile === initialConfig[selectedExamType]?.questionFile)
+                  }
+                >
+                  {updatingConfig ? (
+                    <>
+                      <div className="small-spinner" style={{ width: '18px', height: '18px', borderTopColor: 'white' }}></div>
+                      আপডেট হচ্ছে...
+                    </>
+                  ) : (
+                    '💾 কনফিগারেশন আপডেট করুন'
+                  )}
+                </button>
+
+                {initialConfig && (selectedExamType !== initialConfig.currentType ||
+                  examConfig[selectedExamType]?.questionFile !== initialConfig[selectedExamType]?.questionFile) && (
+                    <div className="warning-message bengali">
+                      ⚠ পরিবর্তন সংরক্ষিত হয়নি - বাটনে ক্লিক করে সেভ করুন
+                    </div>
+                  )}
               </div>
             </div>
           </div>

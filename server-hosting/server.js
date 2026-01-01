@@ -3,6 +3,7 @@ import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { statements, ready } from './database.js';
 
@@ -20,8 +21,30 @@ app.use(cors());
 app.use(compression());
 app.use(express.json({ limit: '10mb' }));
 
+// Serve uploaded JSON files from root OR public directory
+app.use((req, res, next) => {
+    if (req.method === 'GET' && req.path.endsWith('.json')) {
+        const filename = path.basename(req.path);
+
+        // 1. Check server-hosting root (uploaded files)
+        const rootPath = path.join(__dirname, filename);
+        if (fs.existsSync(rootPath)) {
+            return res.sendFile(rootPath);
+        }
+
+        // 2. Check public directory (dev/manual files)
+        // This allows files created manually in public/ to work immediately
+        const publicPath = path.join(__dirname, '../public', filename);
+        if (fs.existsSync(publicPath)) {
+            return res.sendFile(publicPath);
+        }
+    }
+    next();
+});
+
 // Serve static files from the dist directory (your built React app)
-app.use(express.static(path.join(__dirname, '../dist')));
+// For cPanel: dist/ is in the same directory as server.js
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Helper function to generate unique student name
 function getUniqueStudentName(desiredName) {
@@ -64,7 +87,8 @@ app.get('/api/submissions', (req, res) => {
             attempted: sub.attempted,
             correct: sub.correct,
             wrong: sub.wrong,
-            pass: Boolean(sub.pass)
+            pass: Boolean(sub.pass),
+            questionFile: sub.question_file  // Map question_file to questionFile for frontend
         }));
         res.json(formatted);
     } catch (error) {
@@ -76,7 +100,7 @@ app.get('/api/submissions', (req, res) => {
 // 2. Save answer/submission
 app.post('/api/save-answer', (req, res) => {
     try {
-        const { studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass } = req.body;
+        const { studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass, questionFile } = req.body;
 
         if (!studentName) {
             return res.status(400).json({ error: 'studentName required' });
@@ -85,7 +109,10 @@ app.post('/api/save-answer', (req, res) => {
         // Generate unique student name
         const uniqueName = getUniqueStudentName(studentName);
 
-        // Insert submission
+        // Validate and default questionFile
+        const validQuestionFile = questionFile || 'questions.json';
+
+        // Insert submission with questionFile
         statements.insertSubmission(
             uniqueName,
             JSON.stringify(answers),
@@ -95,10 +122,11 @@ app.post('/api/save-answer', (req, res) => {
             attempted,
             correct,
             wrong,
-            pass ? 1 : 0
+            pass ? 1 : 0,
+            validQuestionFile
         );
 
-        console.log(`✅ Saved submission: "${studentName}" as "${uniqueName}"`);
+        console.log(`✅ Saved submission: "${studentName}" as "${uniqueName}" with question file: ${validQuestionFile}`);
         res.json({
             success: true,
             savedName: uniqueName,
@@ -297,6 +325,85 @@ app.post('/api/update-exam-config', (req, res) => {
     }
 });
 
+// 9. Get list of available question files
+app.get('/api/question-files', (req, res) => {
+    try {
+        const files = new Set();
+
+        // System files to exclude from question files list
+        const excludedFiles = ['package.json', 'manifest.json', 'exam-config.json', 'students.json', 'pending-students.json', 'answers.json'];
+
+        // 1. Scan server-hosting root
+        try {
+            const rootFiles = fs.readdirSync(__dirname);
+            rootFiles.forEach(f => {
+                if (f.endsWith('.json') && !excludedFiles.includes(f.toLowerCase())) {
+                    files.add(f);
+                }
+            });
+        } catch (e) { console.error('Error reading root:', e); }
+
+        // 2. Scan public directory (for local dev files)
+        try {
+            const publicDir = path.join(__dirname, '../public');
+            if (fs.existsSync(publicDir)) {
+                const publicFiles = fs.readdirSync(publicDir);
+                publicFiles.forEach(f => {
+                    if (f.endsWith('.json') && !excludedFiles.includes(f.toLowerCase())) {
+                        files.add(f);
+                    }
+                });
+            }
+        } catch (e) { console.error('Error reading public:', e); }
+
+        // Convert to array and filter out package.json etc
+        const questionFiles = Array.from(files).filter(file =>
+            !file.includes('package')
+        ).sort();
+
+        res.json(questionFiles);
+    } catch (error) {
+        console.error('Error listing question files:', error);
+        res.status(500).json({ error: 'Failed to list question files' });
+    }
+});
+
+// 10. Upload new question file
+app.post('/api/upload-questions', (req, res) => {
+    try {
+        const { filename, content } = req.body;
+
+        if (!filename || !content) {
+            return res.status(400).json({ error: 'Filename and content required' });
+        }
+
+        if (!filename.endsWith('.json')) {
+            return res.status(400).json({ error: 'Only .json files allowed' });
+        }
+
+        if (!Array.isArray(content)) {
+            return res.status(400).json({ error: 'Content must be a JSON array of questions' });
+        }
+
+        // Validate structure of first item to be safe
+        if (content.length > 0) {
+            const first = content[0];
+            if (!first.question || !first.options || !first.correctAnswer) {
+                return res.status(400).json({ error: 'Invalid question format. Must include question, options, and correctAnswer' });
+            }
+        }
+
+        const filePath = path.join(__dirname, filename);
+        fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
+
+        console.log(`✅ Uploaded new question file: ${filename}`);
+        res.json({ success: true, message: 'File uploaded successfully' });
+    } catch (error) {
+        console.error('Error uploading file:', error);
+        res.status(500).json({ error: 'Failed to upload file' });
+    }
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
@@ -304,7 +411,7 @@ app.get('/api/health', (req, res) => {
 
 // Serve React app for all other routes (SPA fallback)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 // Error handler

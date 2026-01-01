@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "subject": "Physics",
+    "topic": "Vector",
+    "question": "১. $$\\vec{A} = 2\\hat{i} + \\hat{j} - \\hat{k}$$ এবং $$\\vec{B} = \\hat{i} - 2\\hat{j} + \\hat{k}$$ হলে এদের ডট গুণফল কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$-1$$",
+      "b": "1",
+      "c": "0",
+      "d": "2"
+    },
+    "correctAnswer": "a",
+    "explanation": "$$\\vec{A} \\cdot \\vec{B} = (2)(1) + (1)(-2) + (-1)(1) = 2 - 2 - 1 = -1$$।"
+  },
+  {
+    "id": 2,
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "question": "২. ঘূর্ণায়মান বস্তুর কৌণিক ভরবেগ $$L$$ এবং গতিশক্তি $$E$$ হলে, জড়তার ভ্রামক $$I$$ কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$L^2/2E$$",
+      "b": "$$2E/L^2$$",
+      "c": "$$E/L^2$$",
+      "d": "$$L/2E$$"
+    },
+    "correctAnswer": "a",
+    "explanation": "আমরা জানি, $$E = \\frac{L^2}{2I}$$। অতএব, $$I = \\frac{L^2}{2E}$$।"
+  },
+  {
+    "id": 3,
+    "subject": "Physics",
+    "topic": "Work Power",
+    "question": "৩. একটি পাম্প ১ মিনিটে ১০০ কেজি পানি ১০ মিটার উচ্চতায় তোলে। পাম্পের ক্ষমতা কত? ($$g=10$$)",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "100 W",
+      "b": "166.6 W",
+      "c": "600 W",
+      "d": "1000 W"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$P = \\frac{mgh}{t} = \\frac{100 \\times 10 \\times 10}{60} = \\frac{10000}{60} \\approx 166.6 \\text{ W}$$।"
+  },
+  {
+    "id": 4,
+    "subject": "Physics",
+    "topic": "Gravity",
+    "question": "৪. পৃথিবীর কেন্দ্রে $$g$$ এর মান কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "9.8",
+      "b": "0",
+      "c": "অসীম",
+      "d": "1"
+    },
+    "correctAnswer": "b",
+    "explanation": "পৃথিবীর কেন্দ্রে গভীরতা $$d = R$$, তাই $$g' = g(1 - \\frac{d}{R}) = g(1 - 1) = 0$$।"
+  },
+  {
+    "id": 5,
+    "subject": "Physics",
+    "topic": "Properties of Matter",
+    "question": "৫. কোনো তারের দৈর্ঘ্য দ্বিগুণ এবং ব্যাসার্ধ অর্ধেক করা হলে ইয়ং এর গুণাঙ্ক কত হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "৪ গুণ",
+      "b": "৮ গুণ",
+      "c": "অপরিবর্তিত",
+      "d": "১৬ গুণ"
+    },
+    "correctAnswer": "c",
+    "explanation": "ইয়ং এর গুণাঙ্ক উপাদানের একটি সহজাত বৈশিষ্ট্য। এটি তারের দৈর্ঘ্য বা ব্যাসার্ধের মতো জ্যামিতিক আকারের উপর নির্ভর করে না।"
+  },
+  {
+    "id": 6,
+    "subject": "Physics",
+    "topic": "Thermodynamics",
+    "question": "৬. রুদ্ধতাপীয় প্রক্রিয়ায় কোন রাশিটি স্থির থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "তাপমাত্রা",
+      "b": "চাপ",
+      "c": "এনট্রপি",
+      "d": "অন্তঃস্থ শক্তি"
+    },
+    "correctAnswer": "c",
+    "explanation": "রুদ্ধতাপীয় প্রক্রিয়ায় বাইরে থেকে তাপ আদান-প্রদান হয় না ($$dQ = 0$$)। এনট্রপির পরিবর্তন $$dS = \\frac{dQ}{T} = 0$$, অর্থাৎ এনট্রপি স্থির থাকে।"
+  },
+  {
+    "id": 7,
+    "subject": "Physics",
+    "topic": "Ideal Gas",
+    "question": "৭. RMS বেগ ($$C$$) এবং ঘনত্বের ($$\\rho$$) সম্পর্ক কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C \\propto \\rho$$",
+      "b": "$$C \\propto \\frac{1}{\\sqrt{\\rho}}$$",
+      "c": "$$C \\propto \\sqrt{\\rho}$$",
+      "d": "$$C \\propto \\frac{1}{\\rho}$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "আদর্শ গ্যাসের চাপ $$P = \\frac{1}{3} \\rho C^2$$। এখান থেকে পাওয়া যায়, $$C = \\sqrt{\\frac{3P}{\\rho}}$$, অর্থাৎ $$C \\propto \\frac{1}{\\sqrt{\\rho}}$$।"
+  },
+  {
+    "id": 8,
+    "subject": "Physics",
+    "topic": "SHM",
+    "question": "৮. সরল দোলকের দৈর্ঘ্য ১৬ গুণ বাড়ালে দোলনকাল কত গুণ হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "২ গুণ",
+      "b": "৪ গুণ",
+      "c": "৮ গুণ",
+      "d": "১৬ গুণ"
+    },
+    "correctAnswer": "b",
+    "explanation": "দোলনকাল $$T \\propto \\sqrt{L}$$। দৈর্ঘ্য ১৬ গুণ হলে দোলনকাল হবে $$\\sqrt{16} = 4$$ গুণ।"
+  },
+  {
+    "id": 9,
+    "subject": "Physics",
+    "topic": "Vector",
+    "question": "৯. নিচের কোনটি ভেক্টর রাশি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কাজ",
+      "b": "বিভব",
+      "c": "প্রাবল্য",
+      "d": "ক্ষমতা"
+    },
+    "correctAnswer": "c",
+    "explanation": "তড়িৎ প্রাবল্য বা মহাকর্ষীয় প্রাবল্যের নির্দিষ্ট দিক ও মান উভয়ই আছে, তাই এটি ভেক্টর রাশি। কাজ, বিভব এবং ক্ষমতা স্কেলার রাশি।"
+  },
+  {
+    "id": 10,
+    "subject": "Physics",
+    "topic": "Wave",
+    "question": "১০. পানিতে শব্দের বেগ বায়ু অপেক্ষা-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কম",
+      "b": "বেশি",
+      "c": "সমান",
+      "d": "শূন্য"
+    },
+    "correctAnswer": "b",
+    "explanation": "পানির স্থিতিস্থাপকতা বায়ুর চেয়ে অনেক বেশি, তাই পানিতে শব্দের বেগ বায়ুর তুলনায় প্রায় ৪.৫ গুণ বেশি (১৪৫০ m/s)।"
+  },
+  {
+    "id": 11,
+    "subject": "Physics",
+    "topic": "Thermodynamics",
+    "question": "১১. কার্নো ইঞ্জিনের দক্ষতা ৮০% হতে পারে কি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হ্যাঁ",
+      "b": "না",
+      "c": "শর্তসাপেক্ষে",
+      "d": "বলা যাবে না"
+    },
+    "correctAnswer": "b",
+    "explanation": "বাস্তব কোনো ইঞ্জিনের পক্ষেই ৮০% দক্ষতা অর্জন করা প্রায় অসম্ভব কারণ ঘর্ষণজনিত ক্ষয় এবং তাপ গ্রাহকের তাপমাত্রা ০ কেলভিন করা সম্ভব নয়।"
+  },
+  {
+    "id": 12,
+    "subject": "Physics",
+    "topic": "Properties of Matter",
+    "question": "১২. সান্দ্রতা গুণাঙ্কের মাত্রা কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$ML^{-1}T^{-1}$$",
+      "b": "$$MLT^{-2}$$",
+      "c": "$$ML^{-2}T^{-1}$$",
+      "d": "$$M^{-1}L^3T^{-2}$$"
+    },
+    "correctAnswer": "a",
+    "explanation": "$$\\eta = \\frac{F}{A(dv/dy)}$$। মাত্রা বসালে: $$[MLT^{-2}] / ([L^2][LT^{-1}/L]) = [ML^{-1}T^{-1}]$$।"
+  },
+  {
+    "id": 13,
+    "subject": "Physics",
+    "topic": "Vector",
+    "question": "১৩. ৬০° কোণে ক্রিয়ারত দুটি সমমানের ভেক্টরের লব্ধি বলের মান ভেক্টরদ্বয়ের মানের-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$\\sqrt{2}$$ গুণ",
+      "b": "$$\\sqrt{3}$$ গুণ",
+      "c": "সমান",
+      "d": "দ্বিগুণ"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$R = \\sqrt{P^2 + P^2 + 2P^2 \\cos 60^\\circ} = \\sqrt{2P^2 + 2P^2(0.5)} = \\sqrt{3P^2} = P\\sqrt{3}$$।"
+  },
+  {
+    "id": 14,
+    "subject": "Physics",
+    "topic": "Gravity",
+    "question": "১৪. মহাকাশে একটি সেকেন্ড দোলকের কম্পাঙ্ক কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "০",
+      "b": "১",
+      "c": "অসীম",
+      "d": "০.৫"
+    },
+    "correctAnswer": "a",
+    "explanation": "মহাকাশে ওজনহীনতায় $$g=0$$, ফলে দোলনকাল $$T = \\infty$$। কম্পাঙ্ক $$f = \\frac{1}{T} = 0 \\text{ Hz}$$।"
+  },
+  {
+    "id": 15,
+    "subject": "Physics",
+    "topic": "Work Power",
+    "question": "১৫. একটি স্প্রিংকে কেটে সমান ৩ টুকরা করলে স্প্রিং ধ্রুবক কত গুণ হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "১/৩",
+      "b": "৩",
+      "c": "৯",
+      "d": "অপরিবর্তিত"
+    },
+    "correctAnswer": "b",
+    "explanation": "স্প্রিং ধ্রুবক দৈর্ঘ্যের ব্যস্তানুপাতিক ($$k \\propto \\frac{1}{L}$$)। দৈর্ঘ্য ১/৩ গুণ হলে $$k$$ এর মান ৩ গুণ হবে।"
+  },
+  {
+    "id": 16,
+    "subject": "Physics",
+    "topic": "Ideal Gas",
+    "question": "১৬. শিশিরাঙ্ক ও আপেক্ষিক আর্দ্রতা নির্ণয়ে কোন যন্ত্র ব্যবহৃত হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ব্যারোমিটার",
+      "b": "হাইগ্রোমিটার",
+      "c": "ল্যাক্টোমিটার",
+      "d": "ম্যানোমিটার"
+    },
+    "correctAnswer": "b",
+    "explanation": "হাইগ্রোমিটারের (Hygrometer) সাহায্যে বায়ুমণ্ডলের জলীয় বাষ্পের পরিমাণ বা আর্দ্রতা পরিমাপ করা হয়।"
+  },
+  {
+    "id": 17,
+    "subject": "Physics",
+    "topic": "Gravity",
+    "question": "১৭. মুক্তিবেগের মান বস্তুর ভরের উপর-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সমানুপাতিক",
+      "b": "ব্যস্তানুপাতিক",
+      "c": "বর্গের সমানুপাতিক",
+      "d": "নির্ভর করে না"
+    },
+    "correctAnswer": "d",
+    "explanation": "মুক্তিবেগ $$v_e = \\sqrt{2gR}$$। এই সমীকরণে নিক্ষিপ্ত বস্তুর ভর ($$m$$) নেই, তাই এটি ভরের উপর নির্ভর করে না।"
+  },
+  {
+    "id": 18,
+    "subject": "Physics",
+    "topic": "Work Power",
+    "question": "১৮. ১ অশ্বক্ষমতা (HP) = কত ওয়াট?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "746",
+      "b": "764",
+      "c": "550",
+      "d": "1000"
+    },
+    "correctAnswer": "a",
+    "explanation": "ক্ষমতার ব্রিটিশ প্রকৌশল একক অনুযায়ী, ১ হর্সপাওয়ার সমান ৭৪৬ ওয়াট।"
+  },
+  {
+    "id": 19,
+    "subject": "Physics",
+    "topic": "Ideal Gas",
+    "question": "১৯. কোন তাপমাত্রায় গ্যাসের গতিশক্তি শূন্য হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0°C",
+      "b": "273 K",
+      "c": "-273°C",
+      "d": "100 K"
+    },
+    "correctAnswer": "c",
+    "explanation": "পরম শূন্য তাপমাত্রায় ($$0 \\text{ K}$$ বা $$-273^\\circ\\text{C}$$) তাত্ত্বিকভাবে সকল গ্যাসের অণুর গতি স্তব্ধ হয়ে যায় এবং গতিশক্তি শূন্য হয়।"
+  },
+  {
+    "id": 20,
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "question": "২০. 10 N বল 2 kg ভরের ওপর 2 sec ক্রিয়া করলে গতির পরিবর্তন কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5 m/s",
+      "b": "10 m/s",
+      "c": "20 m/s",
+      "d": "0 m/s"
+    },
+    "correctAnswer": "b",
+    "explanation": "বেগের পরিবর্তন $$\\Delta v = \\frac{F \\cdot t}{m} = \\frac{10 \\times 2}{2} = 10 \\text{ m/s}$$।"
+  },
+  {
+    "id": 21,
+    "subject": "Physics",
+    "topic": "Vector",
+    "question": "২১. নিচের কোনটি স্কেলার গুণফল?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কাজ",
+      "b": "টর্ক",
+      "c": "কৌণিক ভরবেগ",
+      "d": "লরেন্জ বল"
+    },
+    "correctAnswer": "a",
+    "explanation": "কাজ ($$W = \\vec{F} \\cdot \\vec{d}$$) একটি স্কেলার বা ডট গুণফল। টর্ক এবং বল ভেক্টর গুণফল।"
+  },
+  {
+    "id": 22,
+    "subject": "Physics",
+    "topic": "Thermodynamics",
+    "question": "২২. পানির ত্রৈধ বিন্দুর চাপ কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4.58 mm Hg",
+      "b": "1 atm",
+      "c": "76 cm Hg",
+      "d": "1 Pa"
+    },
+    "correctAnswer": "a",
+    "explanation": "পানির ত্রৈধ বিন্দুতে চাপ ৪.৫৮ মিমি পারদ স্তম্ভের চাপের সমান।"
+  },
+  {
+    "id": 23,
+    "subject": "Physics",
+    "topic": "SHM",
+    "question": "২৩. দোলক ঘড়ি পাহাড়ে নিলে কী হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সময় হারাবে",
+      "b": "সময় লাভ করবে",
+      "c": "ঠিক থাকবে",
+      "d": "বন্ধ হবে"
+    },
+    "correctAnswer": "a",
+    "explanation": "পাহাড়ে উচ্চতা বাড়লে $$g$$ কমে। যেহেতু $$T \\propto \\frac{1}{\\sqrt{g}}$$, তাই দোলনকাল বাড়বে (ঘড়ি ধীরে চলবে) এবং সময় হারাবে।"
+  },
+  {
+    "id": 24,
+    "subject": "Physics",
+    "topic": "Properties of Matter",
+    "question": "২৪. পৃষ্ঠটানের একক কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "N/m",
+      "b": "N/m²",
+      "c": "J/m",
+      "d": "kg/s"
+    },
+    "correctAnswer": "a",
+    "explanation": "পৃষ্ঠটান $$T = \\frac{F}{L}$$, তাই এর একক নিউটন/মিটার ($$N/m$$)।"
+  },
+  {
+    "id": 25,
+    "subject": "Physics",
+    "topic": "Vector",
+    "question": "২৫. ক্রস গুণন বিনিময় সূত্র মেনে চলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হ্যাঁ",
+      "b": "না",
+      "c": "মাঝে মাঝে",
+      "d": "বলা অসম্ভব"
+    },
+    "correctAnswer": "b",
+    "explanation": "ভেক্টর গুণনে $$\\vec{A} \\times \\vec{B} = - (\\vec{B} \\times \\vec{A})$$। যেহেতু দিক পরিবর্তিত হয়, তাই এটি বিনিময় সূত্র মানে না।"
+  }
+]

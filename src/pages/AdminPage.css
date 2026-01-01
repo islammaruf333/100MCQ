@@ -596,3 +596,231 @@
     font-size: 1rem;
   }
 }
+/* Configuration Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.config-modal {
+  background-color: white;
+  padding: 32px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 550px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.config-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 16px;
+}
+
+.config-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  color: #4B5563;
+  background-color: #F3F4F6;
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.config-details-card {
+  background-color: #F9FAFB;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  padding: 16px;
+}
+
+.details-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.active-config-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3B82F6;
+  margin-bottom: 4px;
+}
+
+.config-meta {
+  font-size: 0.875rem;
+  color: #4B5563;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.upload-section {
+  background-color: #F9FAFB;
+  border: 1px dashed #D1D5DB;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.upload-section:hover {
+  border-color: #3B82F6;
+  background-color: #EFF6FF;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-input {
+  width: 100%;
+  font-size: 0.875rem;
+  color: #4B5563;
+}
+
+.file-input::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  background: white;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-input::file-selector-button:hover {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+}
+
+.upload-feedback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #3B82F6;
+  font-weight: 500;
+}
+
+.success-message {
+  padding: 12px;
+  background-color: #ECFDF5;
+  color: #065F46;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.warning-message {
+  font-size: 0.75rem;
+  color: #D97706;
+  text-align: center;
+  background: #FFFBEB;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.small-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #E5E7EB;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.save-config-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-config-btn:hover:not(:disabled) {
+  background-color: #2563EB;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.save-config-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #9CA3AF;
+}

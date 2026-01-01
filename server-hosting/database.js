@@ -38,9 +38,21 @@ async function initDatabase() {
       correct INTEGER NOT NULL,
       wrong INTEGER NOT NULL,
       pass INTEGER NOT NULL,
+      question_file TEXT DEFAULT 'questions.json',
       created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )
   `);
+
+  // Migration: Add question_file column if it doesn't exist
+  try {
+    db.run(`ALTER TABLE submissions ADD COLUMN question_file TEXT DEFAULT 'questions.json'`);
+    console.log('✅ Added question_file column to submissions table');
+  } catch (e) {
+    // Column already exists, ignore error
+    if (!e.message.includes('duplicate column name')) {
+      console.error('Migration warning:', e.message);
+    }
+  }
 
   db.run(`
     CREATE TABLE IF NOT EXISTS pending_students (
@@ -96,7 +108,8 @@ export const statements = {
       correct: row[7],
       wrong: row[8],
       pass: row[9],
-      created_at: row[10]
+      question_file: row[10],  // Map to questionFile for frontend
+      created_at: row[11]
     }));
   },
 
@@ -118,14 +131,15 @@ export const statements = {
       correct: row[7],
       wrong: row[8],
       pass: row[9],
-      created_at: row[10]
+      question_file: row[10],
+      created_at: row[11]
     };
   },
 
-  insertSubmission: (studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass) => {
+  insertSubmission: (studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass, questionFile = 'questions.json') => {
     db.run(
-      'INSERT INTO submissions (student_name, answers, score, total_marks, timestamp, attempted, correct, wrong, pass) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass]
+      'INSERT INTO submissions (student_name, answers, score, total_marks, timestamp, attempted, correct, wrong, pass, question_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?, ?)',
+      [studentName, answers, score, totalMarks, timestamp, attempted, correct, wrong, pass, questionFile]
     );
     saveDatabase();
     return { changes: db.getRowsModified() };
@@ -152,7 +166,8 @@ export const statements = {
       correct: row[7],
       wrong: row[8],
       pass: row[9],
-      created_at: row[10]
+      question_file: row[10],
+      created_at: row[11]
     }));
   },
 

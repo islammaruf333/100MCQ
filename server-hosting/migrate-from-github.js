@@ -1,13 +1,15 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { statements } from './database.js';
+import { statements, ready } from './database.js'; // Import ready promise
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function migrateDataFromJSON() {
-    console.log('🔄 Starting migration from JSON files to SQLite...\n');
+    console.log('⏳ Waiting for database initialization...');
+    await ready; // Wait for DB to be ready
+    console.log('✅ Database ready. Starting migration from JSON files to SQLite...\n');
 
     try {
         // 1. Migrate answers.json to submissions table
@@ -18,24 +20,31 @@ async function migrateDataFromJSON() {
             const answers = JSON.parse(answersData);
 
             if (Array.isArray(answers) && answers.length > 0) {
+                let count = 0;
                 for (const answer of answers) {
                     try {
-                        statements.insertSubmission.run(
-                            answer.studentName,
-                            JSON.stringify(answer.answers),
-                            answer.score,
-                            answer.totalMarks,
-                            answer.timestamp,
-                            answer.attempted || 0,
-                            answer.correct || 0,
-                            answer.wrong || 0,
-                            answer.pass ? 1 : 0
-                        );
+                        const exists = statements.getSubmissionByNameAndTime(answer.studentName, answer.timestamp);
+                        if (!exists) {
+                            statements.insertSubmission(
+                                answer.studentName,
+                                JSON.stringify(answer.answers),
+                                answer.score,
+                                answer.totalMarks,
+                                answer.timestamp,
+                                answer.attempted || 0,
+                                answer.correct || 0,
+                                answer.wrong || 0,
+                                answer.pass ? 1 : 0
+                            );
+                            count++;
+                        } else {
+                            // console.log(`   ⏭️  Skipping existing: ${answer.studentName}`);
+                        }
                     } catch (err) {
-                        console.log(`   ⚠️  Skipping duplicate: ${answer.studentName} at ${answer.timestamp}`);
+                        console.log(`   ⚠️  Error inserting: ${answer.studentName} - ${err.message}`);
                     }
                 }
-                console.log(`   ✅ Migrated ${answers.length} submissions\n`);
+                console.log(`   ✅ Migrated ${count} new submissions (from total ${answers.length})\n`);
             } else {
                 console.log('   ℹ️  No submissions to migrate\n');
             }
@@ -55,18 +64,23 @@ async function migrateDataFromJSON() {
             const pending = JSON.parse(pendingData);
 
             if (Array.isArray(pending) && pending.length > 0) {
+                let count = 0;
                 for (const student of pending) {
                     try {
-                        statements.insertPendingStudent.run(
-                            student.studentName,
-                            student.timestamp || new Date().toISOString(),
-                            student.status || 'Pending'
-                        );
+                        const exists = statements.getPendingStudent(student.studentName);
+                        if (!exists) {
+                            statements.insertPendingStudent(
+                                student.studentName,
+                                student.timestamp || new Date().toISOString(),
+                                student.status || 'Pending'
+                            );
+                            count++;
+                        }
                     } catch (err) {
-                        console.log(`   ⚠️  Skipping duplicate: ${student.studentName}`);
+                        console.log(`   ⚠️  Error inserting pending: ${student.studentName}`);
                     }
                 }
-                console.log(`   ✅ Migrated ${pending.length} pending students\n`);
+                console.log(`   ✅ Migrated ${count} new pending students (from total ${pending.length})\n`);
             } else {
                 console.log('   ℹ️  No pending students to migrate\n');
             }
@@ -85,7 +99,7 @@ async function migrateDataFromJSON() {
             const configData = await fs.readFile(configPath, 'utf-8');
             const config = JSON.parse(configData);
 
-            statements.upsertExamConfig.run(
+            statements.upsertExamConfig(
                 config.currentType || 'type1',
                 JSON.stringify(config.type1 || { name: 'Type 1 Questions', questionFile: 'questions.json' }),
                 JSON.stringify(config.type2 || { name: 'Type 2 Questions', questionFile: 'questions-type2.json' })
@@ -94,7 +108,7 @@ async function migrateDataFromJSON() {
         } catch (error) {
             if (error.code === 'ENOENT') {
                 console.log('   ℹ️  exam-config.json not found, using defaults...\n');
-                statements.upsertExamConfig.run(
+                statements.upsertExamConfig(
                     'type1',
                     JSON.stringify({ name: 'Type 1 Questions', questionFile: 'questions.json' }),
                     JSON.stringify({ name: 'Type 2 Questions', questionFile: 'questions-type2.json' })
@@ -105,10 +119,19 @@ async function migrateDataFromJSON() {
         }
 
         console.log('✅ Migration completed successfully!\n');
-        console.log('📊 Final Statistics:');
-        console.log(`   - Total Submissions: ${statements.getAllSubmissions.all().length}`);
-        console.log(`   - Pending Students: ${statements.getAllPendingStudents.all().length}`);
-        console.log(`   - Exam Config: ${statements.getExamConfig.get() ? 'Configured' : 'Default'}`);
+
+        // Wait for database to save
+        setTimeout(() => {
+            const allSubs = statements.getAllSubmissions();
+            const allPending = statements.getAllPendingStudents();
+            const config = statements.getExamConfig();
+
+            console.log('📊 Final Statistics:');
+            console.log(`   - Total Submissions in DB: ${allSubs.length}`);
+            console.log(`   - Pending Students in DB: ${allPending.length}`);
+            console.log(`   - Exam Config: ${config ? 'Configured' : 'Missing'}`);
+            process.exit(0);
+        }, 1000);
 
     } catch (error) {
         console.error('❌ Migration failed:', error);
