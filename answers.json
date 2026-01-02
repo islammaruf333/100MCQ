@@ -970,20 +970,5 @@
     "wrong": 0,
     "pass": false,
     "questionFile": "questions-9.json"
-  },
-  {
-    "studentName": "Maruf_1",
-    "answers": {
-      "1": "c",
-      "80": "c"
-    },
-    "score": 1,
-    "totalMarks": 100,
-    "timestamp": "2026-01-02T05:45:55.955Z",
-    "attempted": 2,
-    "correct": 1,
-    "wrong": 1,
-    "pass": false,
-    "questionFile": "questions-10.json"
   }
 ]
