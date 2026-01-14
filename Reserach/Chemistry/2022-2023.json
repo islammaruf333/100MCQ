@@ -1,0 +1,706 @@
+[
+  {
+    "id": 1,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question": "একটি প্রথম ক্রম বিক্রিয়ার 50% সমাপ্ত হতে 10 মিনিট সময় লাগে। বিক্রিয়াটির 75% সমাপ্ত হতে কত সময় লাগে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1000 s",
+      "b": "1200 s",
+      "c": "1400 s",
+      "d": "1600 s"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "$$t_{75\\%} = 2 \\times t_{50\\%} = 2 \\times 10 = 20$$ min = 1200 s. [cite: 13079]"
+  },
+  {
+    "id": 2,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question": "$$A\\rightarrow B$$ বিক্রিয়াটিতে A এর প্রাথমিক ঘনমাত্রা 0.475 mol L⁻¹ এবং বিক্রিয়া শুরু হওয়ার 5 মিনিট পরে A এর ঘনমাত্রা হ্রাস পেয়ে 0.175 mol L⁻¹ হলে, গড় বিক্রিয়ার হার-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.1 mol L⁻¹s⁻¹",
+      "b": "0.01 mol L⁻¹s⁻¹",
+      "c": "0.005 mol L⁻¹s⁻¹",
+      "d": "0.001 mol L⁻¹s⁻¹"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "Rate = $$\\frac{0.475 - 0.175}{5 \\times 60} = \\frac{0.3}{300} = 0.001$$ mol L⁻¹s⁻¹. [cite: 13083]"
+  },
+  {
+    "id": 3,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "বিক্রিয়ার সাম্যধ্রুবক $$K_p$$ ও $$K_c$$ এর মধ্যে সম্পর্কের ক্ষেত্রে কোন তথ্যটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$K_p > K_c$$ যখন $$\\Delta n > 0$$",
+      "b": "$$K_p < K_c$$ যখন $$\\Delta n < 0$$",
+      "c": "$$K_p = K_c$$ যখন $$\\Delta n = 0$$",
+      "d": "সবগুলো"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "$$K_p = K_c(RT)^{\\Delta n}$$ সমীকরণ অনুযায়ী সবগুলো শর্তই সঠিক। [cite: 12415]"
+  },
+  {
+    "id": 4,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "ম্যাক্সওয়েল সম্ভাব্যতম বেগ ($$\\alpha$$) এর ক্ষেত্রে কোনটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$\\alpha = \\sqrt{\\frac{RT}{M}}$$",
+      "b": "$$\\alpha = \\sqrt{\\frac{2RT}{M}}$$",
+      "c": "$$\\alpha = \\sqrt{\\frac{3RT}{M}}$$",
+      "d": "$$\\alpha = \\sqrt{\\frac{4RT}{M}}$$"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "সম্ভাব্যতম বেগ, $$\\alpha = \\sqrt{\\frac{2RT}{M}}$$। [cite: 12416]"
+  },
+  {
+    "id": 5,
+    "subject": "Chemistry",
+    "topic": "Solubility",
+    "question": "AgCN পানিতে স্বল্প দ্রবণীয় হলেও কোনটি যোগে এর দ্রাব্যতা বৃদ্ধি পায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "KI",
+      "b": "H₂S",
+      "c": "KCN",
+      "d": "KCl"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "KCN যোগ করলে জটিল যৌগ $$K[Ag(CN)_2]$$ গঠন করে যা দ্রবণীয়, ফলে দ্রাব্যতা বৃদ্ধি পায়। [cite: 13085]"
+  },
+  {
+    "id": 6,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "25°C এ $$O_2$$ এর RMS বেগ কোন তাপমাত্রায় (°C) $$SO_2$$ এর RMS বেগের সমান?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "298",
+      "b": "396",
+      "c": "498",
+      "d": "596"
+    },
+    "correctAnswer": "a",
+    "explanation": "$$\\sqrt{\\frac{3RT_{O2}}{M_{O2}}} = \\sqrt{\\frac{3RT_{SO2}}{M_{SO2}}}$$ থেকে হিসাব করলে $$T_{SO2} = 596 K = 323^{\\circ}C$$ হয়। [cite_start]অপশনে সঠিক উত্তর নেই, তবে প্রশ্নব্যাংক অনুযায়ী 596 কেলভিন বা কাছাকাছি মান নির্দেশ করতে পারে। [cite: 13086]"
+  },
+  {
+    "id": 7,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোনটির $$pK_b$$ এর মান সবচেয়ে কম?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3NH_2$$",
+      "b": "$$NH_3$$",
+      "c": "$$(CH_3)_2NH$$",
+      "d": "$$(CH_3)_3N$$"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "গ্যাসীয় অবস্থায় বা অ্যাপ্রোটিক দ্রাবকে ২-ডিগ্রি অ্যামিন ($$(CH_3)_2NH$$) সবচেয়ে বেশি ক্ষারীয়, তাই এর $$pK_b$$ মান সবচেয়ে কম। [cite: 13087]"
+  },
+  {
+    "id": 8,
+    "subject": "Chemistry",
+    "topic": "Solutions",
+    "question": "নির্দিষ্ট তাপমাত্রায় 750 mL সম্পৃক্ত দ্রবণে 200 g NaCl দ্রবীভূত আছে। NaCl এর দ্রাব্যতা $$gL^{-1}$$ এ কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "166.67",
+      "b": "366.67",
+      "c": "66.67",
+      "d": "266.67"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "দ্রাব্যতা = $$\\frac{200}{0.75} = 266.67$$ g/L। [cite: 13088]"
+  },
+  {
+    "id": 9,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "সমআয়তন পাত্রে কোন গ্যাসটির চাপ সর্বনিম্ন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "71 g $$Cl_2$$",
+      "b": "8 g He",
+      "c": "16 g $$O_2$$",
+      "d": "17 g $$NH_3$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "মোল সংখ্যা: $$Cl_2=1, He=2, O_2=0.5, NH_3=1$$। [cite_start]যার মোল সংখ্যা কম তার চাপ কম ($$P \\propto n$$)। [cite: 13092]"
+  },
+  {
+    "id": 10,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোনটির সাথে বিক্রিয়ায় প্রোপানোন ও প্রোপান্যাল ভিন্ন পর্যবেক্ষণ দেয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$I_2(aq) + NaOH(aq)$$",
+      "b": "$$PCl_3$$",
+      "c": "Bromine water",
+      "d": "2,4-DNPH"
+    },
+    "correctAnswer": "a",
+    [cite_start]"explanation": "প্রোপানোন হ্যালোফর্ম বিক্রিয়া দেয় (আয়োডিন ও ক্ষারের সাথে হলুদ অধঃক্ষেপ), কিন্তু প্রোপান্যাল দেয় না। [cite: 13098]"
+  },
+  {
+    "id": 11,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_3OCH_2CH_2CH_3$$ যৌগে কয়টি মেটামার সমাণু আছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "0"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "$$C_4H_{10}O$$ ইথারের ৩টি মেটামার সম্ভব: 1. Methoxypropane, 2. Ethoxyethane, 3. Methoxy-isopropane. [cite: 13102]"
+  },
+  {
+    "id": 12,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$\\begin{matrix}CH_{3}-CH-CH-CH-CH-CH_{3}\\\\ \\quad\\quad\\quad OH\\quad CH_{2}CH_{3}\\end{matrix}$$ যৌগটির IUPAC নাম-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "3-হাইড্রোক্সি-2-মিথাইল-4-ইথাইল পেন্টেন",
+      "b": "2,4-ডাইমিথাইল হেক্সানল-3",
+      "c": "2-ইথাইল-4-মিথাইল-3-হেক্সানল",
+      "d": "2-মিথাইল-4-ইথাইল পেন্টানল-3"
+    },
+    "correctAnswer": "b",
+    "explanation": "দীর্ঘতম শিকল ৬ কার্বনের এবং ৩ নং কার্বনে -OH মূলক আছে। ২ ও ৪ নং কার্বনে মিথাইল মূলক। [cite_start]নাম: 2,4-Dimethylhexan-3-ol. [cite: 12478]"
+  },
+  {
+    "id": 13,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কার্যকরী মূলকে একক ও দ্বিবন্ধন উভয়ই উপস্থিত থাকলে কোন ধরনের বিক্রিয়া ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অপসারণ ও প্রতিস্থাপন",
+      "b": "প্রতিস্থাপন",
+      "c": "সংযোজন",
+      "d": "অপসারণ"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "দ্বিবন্ধন বা অসম্পৃক্ততা থাকলে সাধারণত সংযোজন বিক্রিয়া ঘটে। [cite: 12498]"
+  },
+  {
+    "id": 14,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি অ্যারোমেটিক নয়?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "Cyclobutadiene (Image)",
+      "b": "Cyclooctatetraene (Image)",
+      "c": "Both",
+      "d": "None"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "সাইক্লোবিউটাডাইইন (4n pi electron) এবং সাইক্লোঅক্টাটেট্রাইন (সমতলীয় নয়) অ্যারোমেটিক নয়। [cite: 12501]"
+  },
+  {
+    "id": 15,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_3-CH_2CH(OH)-CH_3 + conc. H_2SO_4 \\rightarrow ??$$ Saytzeff rule অনুযায়ী কোন উৎপাদ জোড়া সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3CH=CHCH_3(80\\%) + CH_3CH_2CH=CH_2(20\\%)$$",
+      "b": "$$CH_3CH=CHCH_3(20\\%) + CH_3CH_2CH=CH_2(80\\%)$$",
+      "c": "50-50 mixture",
+      "d": "None"
+    },
+    "correctAnswer": "a",
+    [cite_start]"explanation": "সাইজেফ নীতি অনুযায়ী অধিক প্রতিস্থাপিত অ্যালকিন (বিউট-২-ইন) প্রধান উৎপাদ (৮০%) হবে। [cite: 13104]"
+  },
+  {
+    "id": 16,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন বিক্রিয়াটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3CH_2CH_2Cl + KOH(alc) \\rightarrow CH_3CH_2CH_2CH_2OH$$",
+      "b": "$$CH_3CH_2CH_2Cl + KOH(aq) \\rightarrow$$ Alkene",
+      "c": "$$CH_3CH_2CH_2OH + H_2SO_4(conc.) \\rightarrow CH_3CH=CH_2 + H_2O$$",
+      "d": "সবগুলো"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "অ্যালকোহলকে গাঢ় সালফিউরিক এসিডসহ উত্তপ্ত করলে নিরুদন বিক্রিয়ার মাধ্যমে অ্যালকিন উৎপন্ন হয়। [cite: 13105]"
+  },
+  {
+    "id": 17,
+    "subject": "Chemistry",
+    "topic": "Redox Reactions",
+    "question": "কোন আয়নে +3 জারণ সংখ্যার পরমাণু আছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$ClO_2^-$$",
+      "b": "$$PO_4^{3-}$$",
+      "c": "$$S_2O_3^{2-}$$",
+      "d": "$$NO_2$$"
+    },
+    "correctAnswer": "a",
+    [cite_start]"explanation": "$$ClO_2^-$$ এ ক্লোরিনের জারণ সংখ্যা: $$x + 2(-2) = -1 \\Rightarrow x = +3$$। [cite: 13107]"
+  },
+  {
+    "id": 18,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "ডাইপোল মোমেন্ট আছে যে যৌগে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CCl_4$$",
+      "b": "$$CH_2Cl_2$$",
+      "c": "$$C_2Cl_2$$",
+      "d": "$$C_2Cl_4$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$CH_2Cl_2$$ (ডাইক্লোরোমিথেন) এর গঠন সুষম নয়, তাই এর লব্ধি ডাইপোল মোমেন্ট শূন্য নয়। [cite_start]বাকিরা প্রতিসম হওয়ায় অপোলার। [cite: 13102]"
+  },
+  {
+    "id": 19,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "নরমাল চাপে 84 g $$KNO_3$$ কে উত্তপ্ত করলে কত $$O_2$$ উৎপন্ন হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "9.314 L",
+      "b": "3.914 L",
+      "c": "1.934 L",
+      "d": "2.93 L"
+    },
+    "correctAnswer": "a",
+    "explanation": "202 g $$KNO_3$$ থেকে 22.4 L অক্সিজেন পাওয়া যায়। [cite_start]84 g থেকে পাওয়া যাবে $$9.314$$ L। [cite: 13110]"
+  },
+  {
+    "id": 20,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "আউফবাউ নীতি অনুসারে কোন অরবিটালে ইলেকট্রন সর্বশেষে প্রবেশ করবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "3d",
+      "b": "4s",
+      "c": "4d",
+      "d": "5s"
+    },
+    "correctAnswer": "c",
+    "explanation": "শক্তি ক্রম: $$4s < 3d < 4p < 5s < 4d$$। [cite_start]প্রদত্ত অরবিটালগুলোর মধ্যে 4d এর শক্তি সবচেয়ে বেশি, তাই ইলেকট্রন শেষে প্রবেশ করবে। [cite: 13118]"
+  },
+  {
+    "id": 21,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "অম্লীয় মাধ্যমে 6g $$FeSO_4$$ কে জারিত করতে কত g $$K_2Cr_2O_7$$ প্রয়োজন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.97",
+      "b": "3.80",
+      "c": "5.45",
+      "d": "1.94"
+    },
+    "correctAnswer": "d",
+    "explanation": "তুল্য সংখ্যা সূত্র ব্যবহার করে, $$1 \\times \\frac{6}{151.85} = 6 \\times n_{K2Cr2O7}$$। [cite_start]এখান থেকে ভর বের করলে 1.94 g হয়। [cite: 13123]"
+  },
+  {
+    "id": 22,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CCl_3CHO + 2C_6H_5Cl \\rightarrow A + H_2O$$ বিক্রিয়ায় A হল-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "TNB",
+      "b": "DDT",
+      "c": "TNT",
+      "d": "2,4-DNPH"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "ক্লোরাল ও ক্লোরোবেনজিনের বিক্রিয়ায় ডিডিটি (DDT) উৎপন্ন হয়। [cite: 13133]"
+  },
+  {
+    "id": 23,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "রক্তে গ্লুকোজের ঘনমাত্রা 5 mM হলে, ppm এককে কত হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "90",
+      "b": "900",
+      "c": "9000",
+      "d": "9"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "$$5 \\times 10^{-3} M = 5 \\times 10^{-3} \\times 180$$ g/L = 0.9 g/L = 900 mg/L = 900 ppm। [cite: 14193]"
+  },
+  {
+    "id": 24,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$C_6H_3Cl_3$$ যৌগে কয়টি সমাণু আছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "6"
+    },
+    "correctAnswer": "b",
+    "explanation": "ট্রাইক্লোরোবেনজিনের ৩টি সমাণু সম্ভব: 1,2,3; 1,2,4; [cite_start]এবং 1,3,5। [cite: 14205]"
+  },
+  {
+    "id": 25,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "2g ডিউটোরিয়াম গ্যাসের জন্য আদর্শ গ্যাস সমীকরণ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "PV = RT",
+      "b": "PV = nRT",
+      "c": "2PV = RT",
+      "d": "PV = 2RT"
+    },
+    "correctAnswer": "c",
+    "explanation": "ডিউটোরিয়াম ($$D_2$$) এর মোলার ভর 4 g/mol। 2g এর জন্য মোল সংখ্যা n = 0.5। [cite_start]$$PV = 0.5RT \\Rightarrow 2PV = RT$$। [cite: 14210]"
+  },
+  {
+    "id": 26,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "$$NH_4OH \\rightleftharpoons NH_4^+ + OH^-$$ বিক্রিয়ায় 25 mol থেকে 5 mol আয়নিত হলে বিয়োজন মাত্রা (%) কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5",
+      "b": "10",
+      "c": "20",
+      "d": "30"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "বিয়োজন মাত্রা = 5/25 = 0.20 = 20%। [cite: 14219]"
+  },
+  {
+    "id": 27,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি টটোমারিজম প্রদর্শন করবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C_6H_5-CHO$$",
+      "b": "$$C_6H_5-CO-C_6H_5$$",
+      "c": "$$C_6H_5-CO-CH_3$$",
+      "d": "$$C_6H_5-C_6H_5$$"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "অ্যাসিটোফেনন ($$C_6H_5-CO-CH_3$$) এ আলফা-হাইড্রোজেন আছে, তাই এটি টটোমারিজম প্রদর্শন করবে। [cite: 14227]"
+  },
+  {
+    "id": 28,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "50 mL 1.0 M NaOH এবং 50 mL 0.8 M HCl এর মিশ্রণের pH কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1.0",
+      "b": "2.0",
+      "c": "12.0",
+      "d": "13.0"
+    },
+    "correctAnswer": "d",
+    "explanation": "অবশিষ্ট ক্ষার = 50 - 40 = 10 mmol। মোট আয়তন 100 mL। [cite_start]$$[OH^-] = 0.1 M$$। pOH = 1, pH = 13। [cite: 14235]"
+  },
+  {
+    "id": 29,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "1L আয়তনের একটি পাত্রে 0.25 g $$O_2$$, 0.25 g $$N_2$$ এবং 0.25 g $$CO_2$$ গ্যাস মিশ্রিত আছে। মিশ্রণে কোন গ্যাসটির আংশিক চাপ সর্বাধিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$O_2$$",
+      "b": "$$N_2$$",
+      "c": "$$CO_2$$",
+      "d": "সবগুলোই একই"
+    },
+    "correctAnswer": "b",
+    "explanation": "যার আণবিক ভর কম তার মোল সংখ্যা বেশি হবে (যেহেতু ভর সমান)। [cite_start]$$N_2$$ (28) এর ভর সবচেয়ে কম, তাই এর মোল ও চাপ সর্বাধিক। [cite: 14240]"
+  },
+  {
+    "id": 30,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি অ্যালডল ঘনীভবন বিক্রিয়া দেয় না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C(CH_3)_3-CHO$$",
+      "b": "$$CH_3CH_2-CHO$$",
+      "c": "$$CH_3-CO-CH_3$$",
+      "d": "$$CH_3-CHO$$"
+    },
+    "correctAnswer": "a",
+    [cite_start]"explanation": "Pivalaldehyde ($$C(CH_3)_3-CHO$$) এ কোনো আলফা-হাইড্রোজেন নেই, তাই এটি অ্যালডল ঘনীভবন দেয় না। [cite: 14249]"
+  },
+  {
+    "id": 31,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "নিচের কোনটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "'অরবিটাল' দ্বারা নিউক্লিয়াসের চতুর্দিকে ইলেকট্রন আবর্তনের বৃত্তাকার পথকে বোঝায়",
+      "b": "'অরবিট' দ্বারা নিউক্লিয়াসের চতুর্দিকে ত্রিমাত্রিক স্থানে ইলেকট্রন আবর্তন করে বুঝায়",
+      "c": "সব অরবিটালের আকৃতি একই রকম",
+      "d": "অরবিটসমূহকে K, L, M, N, O দ্বারা চিহ্নিত করা হয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "অরবিট বা শক্তিস্তরকে K, L, M ইত্যাদি দ্বারা প্রকাশ করা হয়। [cite_start]বাকি অপশনগুলো ভুল বা সংজ্ঞার উল্টো। [cite: 13708]"
+  },
+  {
+    "id": 32,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "100 mL $$Na_2CO_3$$ দ্রবণে 15 g $$Na_2CO_3$$ আছে। ঐ দ্রবণের ঘনমাত্রা ppm এককে কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$15 \\times 10^4$$",
+      "b": "$$15 \\times 10^5$$",
+      "c": "$$1.5 \\times 10^4$$",
+      "d": "$$1.5 \\times 10^6$$"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "15 g/100 mL = 150 g/L = 150,000 mg/L = $$1.5 \\times 10^5$$ ppm। [cite: 14253]"
+  },
+  {
+    "id": 33,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কার্বন-কার্বন বন্ধন দূরত্ব সবচেয়ে কম কোন সংকরণের ক্ষেত্রে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সংকরণের প্রভাব নেই",
+      "b": "sp",
+      "c": "$$sp^2$$",
+      "d": "$$sp^3$$"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "sp সংকরণে (ত্রিবন্ধন) কার্বন পরমাণুগুলো সবচেয়ে কাছাকাছি থাকে, তাই বন্ধন দূরত্ব সবচেয়ে কম। [cite: 13622]"
+  },
+  {
+    "id": 34,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "250 mL 40 mM $$Na_2CO_3$$ দ্রবণে কত g $$Na_2CO_3$$ আছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "26.5",
+      "b": "10.6",
+      "c": "8.6",
+      "d": "1.06"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "ভর = SMV/1000 = (40*10^-3 * 106 * 250) / 1000 = 1.06 g। [cite: 14254]"
+  },
+  {
+    "id": 35,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_3CH_2OH + H_2SO_4 \\xrightarrow{170^{\\circ}C}$$ বিক্রিয়ার উৎপাদ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3CH_2SO_3H$$",
+      "b": "$$CH_3CH_3$$",
+      "c": "$$CH_2=CH_2$$",
+      "d": "$$CH_4$$"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "১৭০ ডিগ্রি সেলসিয়াসে ইথানল ও গাঢ় সালফিউরিক এসিডের বিক্রিয়ায় ইথিন উৎপন্ন হয়। [cite: 14259]"
+  },
+  {
+    "id": 36,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "জৈব যৌগে > C = O মূলকের উপস্থিতি শনাক্তকরণের জন্য নমুনার সাথে যে যৌগটি যোগ করা হয়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$Cu^{++}$$",
+      "b": "$$PCl_3$$",
+      "c": "$$PCl_5$$",
+      "d": "2,4-DNPH"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "কার্বনিল মূলক শনাক্তকরণে 2,4-Dinitrophenylhydrazine (2,4-DNPH) ব্যবহৃত হয়। [cite: 14252]"
+  },
+  {
+    "id": 37,
+    "subject": "Chemistry",
+    "topic": "Spectroscopy",
+    "question": "IR বর্ণালী শোষণ ব্যান্ড দ্বারা $$CH_3CONH_2$$ যৌগ শনাক্তকরণে যে বন্ডের শোষণ বিবেচনায় নিতে হবে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "C-H",
+      "b": "C=O",
+      "c": "N-H",
+      "d": "সবগুলো"
+    },
+    "correctAnswer": "b",
+    [cite_start]"explanation": "অ্যামাইড মূলকের শনাক্তকারী বৈশিষ্ট্যমূলক শোষণ C=O বন্ডের প্রসারণ কম্পন (1630-1680 cm-1) দ্বারা নিশ্চিত হওয়া যায়। [cite: 13660]"
+  },
+  {
+    "id": 38,
+    "subject": "Chemistry",
+    "topic": "Periodic Table",
+    "question": "Co এবং $$Co^{2+}$$ এর জন্য কোন যোজ্যতা ইলেকট্রন বিন্যাসটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$4d^7 5s^2$$ এবং $$4d^7 5s^0$$",
+      "b": "$$3d^3 4s^1$$ এবং $$4d^5 4s^0$$",
+      "c": "$$4d^7 3s^2$$ এবং $$3d^7 3s^0$$",
+      "d": "$$3d^7 4s^2$$ এবং $$3d^7 4s^0$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "কোবাল্ট (Co) এর ইলেকট্রন বিন্যাস $$[Ar]3d^7 4s^2$$। [cite_start]$$Co^{2+}$$ এর ক্ষেত্রে 4s থেকে দুটি ইলেকট্রন অপসারিত হয়, তাই $$3d^7 4s^0$$। [cite: 14251]"
+  },
+  {
+    "id": 39,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি পলিমার তৈরি করতে পারে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C_6H_5-CH=CH_2$$",
+      "b": "$$CH_3-CH_2-OH$$",
+      "c": "$$CH_2=CH_2$$",
+      "d": "$$CH_4$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "ইথিন ($$CH_2=CH_2$$) পলিমারাইজেশন বিক্রিয়ার মাধ্যমে পলিথিন তৈরি করে। স্টাইরিন (a) ও পলিমার দেয়, তবে ইথিন সাধারণ উদাহরণ। [cite_start]প্রশ্নব্যাংকে উত্তর ইথিন দেওয়া। [cite: 13647]"
+  },
+  {
+    "id": 40,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "নিচের কোনটি প্যারাম্যাগনেটিক নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$As^+$$",
+      "b": "$$Be^-$$",
+      "c": "$$Ne^{2+}$$",
+      "d": "$$Cl^-$$"
+    },
+    "correctAnswer": "d",
+    [cite_start]"explanation": "$$Cl^-$$ এর ইলেকট্রন বিন্যাস $$[Ar]$$ এর অনুরূপ (পূর্ণ অষ্টক), কোনো অযুগ্ম ইলেকট্রন নেই, তাই এটি ডায়াম্যাগনেটিক। [cite: 13138]"
+  },
+  {
+    "id": 41,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "নিউক্লিওফিলিক প্রতিস্থাপন ($$S_N$$) বিক্রিয়ার ক্ষেত্রে নিচের কোন তথ্যটি সঠিক নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C(CH_3)_3-Cl$$ যৌগটি $$S_N1$$ বিক্রিয়া বেশি দেয়",
+      "b": "$$CH_3CH_2-Cl$$ যৌগটি $$S_N2$$ বিক্রিয়া বেশি দেয়",
+      "c": "$$S_N1$$ বিক্রিয়া এক ধাপে ঘটে",
+      "d": "$$S_N1$$ বিক্রিয়া লঘু ক্ষার দ্রবণে ঘটে"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$S_N1$$ বিক্রিয়া দুই ধাপে ঘটে। [cite_start]প্রথম ধাপে কার্বোক্যাটায়ন তৈরি হয়। [cite: 13604]"
+  },
+  {
+    "id": 42,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "বিক্রিয়াগুলোর কোনটিতে সাম্যধ্রুবক একটি মাত্র পদার্থের ঘনমাত্রার উপর নির্ভর করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C(s) + CO_2(g) \\rightleftharpoons 2CO(g)$$",
+      "b": "$$H_2(g) + Cl_2(g) \\rightleftharpoons 2HCl(g)$$",
+      "c": "$$CaCO_3(s) \\rightleftharpoons CaO(s) + CO_2(g)$$",
+      "d": "$$N_2O_4(g) \\rightleftharpoons 2NO_2(g)$$"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "$$CaCO_3$$ বিয়োজনে কঠিন পদার্থগুলোর সক্রিয় ভর ধ্রুবক ধরা হয়, তাই $$K_c = [CO_2]$$। [cite: 14230]"
+  },
+  {
+    "id": 43,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "যদি 40 mL 5% NaOH দ্রবণ 50 mL HCl কে পূর্ণ প্রশমিত করে, তবে HCl এর M কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.01",
+      "b": "0.10",
+      "c": "1.00",
+      "d": "10.00"
+    },
+    "correctAnswer": "c",
+    [cite_start]"explanation": "5% NaOH = 1.25 M. $$V_a S_a = V_b S_b \\Rightarrow 50 \\times S_a = 40 \\times 1.25 \\Rightarrow S_a = 1.0$$ M. [cite: 14263]"
+  },
+  {
+    "id": 44,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন যৌগটি অপোলার?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$NH_3$$",
+      "b": "$$H_2O$$",
+      "c": "$$CH_4$$",
+      "d": "$$HCl$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$CH_4$$ (মিথেন) একটি সুষম চতুস্তলকীয় অণু, এর লব্ধি ডাইপোল মোমেন্ট শূন্য, তাই এটি অপোলার।"
+  }
+]

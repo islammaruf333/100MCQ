@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন ফেনলটির অম্লীয় ক্ষমতা সর্বোচ্চ?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "p-methoxy phenol",
+      "b": "p-cresol",
+      "c": "p-nitrophenol",
+      "d": "p-chlorophenol"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$NO_2$$ বেনজিন বলয় নিষ্ক্রিয়কারী মূলক। এটি বেনজিন বলয় থেকে ইলেকট্রন ঘনত্ব নিজের দিকে টেনে নেয়। ফলশ্রুতিতে -OH বন্ধন সহজেই ভেঙ্গে $$H^+$$ মুক্ত হয়। অপরপক্ষে, $$-Cl, -CH_3$$ বেনজিন বলয় সক্রিয়কারী মূলক।"
+  },
+  {
+    "id": 2,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_2=CH-C\\equiv CH$$ যৌগটির IUPAC নাম কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "বিউটিন 1, 3- আইন",
+      "b": "বিউট-1-ইন-3-আইন",
+      "c": "বিউট-1-আইন-3-ইন",
+      "d": "বিউট-1,3-ইন-আইন"
+    },
+    "correctAnswer": "b",
+    "explanation": "দ্বিবন্ধন ও ত্রিবন্ধন উভয়ই থাকলে এবং উভয় দিক থেকে তাদের অবস্থান সমান হলে দ্বিবন্ধন অগ্রাধিকার পায়। তাই নাম: বিউট-১-ইন-৩-আইন।"
+  },
+  {
+    "id": 3,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "আইসোনাইট্রাইল কার্যকরী মূলক কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "-CNS",
+      "b": "-NC",
+      "c": "-CN",
+      "d": "-CSN"
+    },
+    "correctAnswer": "b",
+    "explanation": "আইসোনাইট্রাইল বা কার্বিলঅ্যামিন মূলক হলো -NC। সায়ানাইড বা নাইট্রাইল হলো -CN।"
+  },
+  {
+    "id": 4,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন জৈব যৌগটি $$NaNH_2$$ এর সাথে বিক্রিয়া দেয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3CH=CH_2$$",
+      "b": "$$CH_3C\\equiv CCH_3$$",
+      "c": "$$CH_3CH=CHCH_3$$",
+      "d": "$$CH_3C\\equiv CH$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "অ্যালকাইন-১ বা প্রান্তীয় অ্যালকাইনে অম্লধর্মী হাইড্রোজেন থাকে যা $$NaNH_2$$ এর সাথে বিক্রিয়া করে সোডিয়াম অ্যালকানাইড গঠন করে। এখানে $$CH_3C\\equiv CH$$ হলো প্রোপাইন (প্রান্তীয় অ্যালকাইন)।"
+  },
+  {
+    "id": 5,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$S_N2$$ বিক্রিয়ার ক্ষেত্রে কোন তথ্যটি সঠিক নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "জ্যামিতিক কাঠামো অপরিবর্তিত থাকে",
+      "b": "বিক্রিয়াটি এক ধাপেই সম্পন্ন হয়",
+      "c": "বিক্রিয়াটি দ্বিতীয় ক্রম অনুসরণ করে",
+      "d": "শক্তিশালী নিউক্লিওফাইলের প্রভাবে সম্পন্ন হয়"
+    },
+    "correctAnswer": "a",
+    "explanation": "$$S_N2$$ বিক্রিয়ায় জ্যামিতিক কাঠামোর পূর্ণ উল্টায়ন (Walden Inversion) ঘটে, তাই কাঠামো অপরিবর্তিত থাকে না।"
+  },
+  {
+    "id": 6,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি হ্যালোফর্ম বিক্রিয়া দেয়?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_3COCl$$",
+      "b": "$$CH_3CONH_2$$",
+      "c": "Benzoyl chloride derivative",
+      "d": "$$CH_3COCH_3$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "হ্যালোফর্ম বিক্রিয়ার শর্ত হলো যৌগে মিথাইল কিটোন ($$CH_3-CO-$$) মূলক বা মিথাইল কার্বিনল ($$CH_3-CH(OH)-$$) মূলক থাকতে হবে এবং $$CH_3-CO-$$ মূলকটি H বা অ্যালকাইল/অ্যারাইল মূলকের সাথে যুক্ত থাকতে হবে। অ্যাসিটোন ($$CH_3COCH_3$$) এই শর্ত পূরণ করে।"
+  },
+  {
+    "id": 7,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগে দুটি কাইরাল কার্বন আছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2-হাইড্রক্সি প্রোপানোয়িক এসিড",
+      "b": "বিউটেন-2,3-ডাইঅল",
+      "c": "2-মিথাইল প্রোপেন-2-অল",
+      "d": "বিউটেন-2-অল"
+    },
+    "correctAnswer": "b",
+    "explanation": "বিউটেন-2,3-ডাইঅল ($$CH_3-CH(OH)-CH(OH)-CH_3$$) এ ২য় এবং ৩য় কার্বন পরমাণু দুটি কাইরাল কার্বন।"
+  },
+  {
+    "id": 8,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_3-CH(Cl)-CH_2-CH_3 \\xrightarrow{KOH(alc), \\Delta} CH_3CH=CHCH_3$$; বিক্রিয়াটি কোন নিয়ম অনুসারে ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মারকনিকভ",
+      "b": "সাইজেফ",
+      "c": "প্রতিস্থাপন",
+      "d": "বিপরীত মারকনিকভ"
+    },
+    "correctAnswer": "b",
+    "explanation": "অ্যালকাইল হ্যালাইডের অপসারণ বিক্রিয়ায় সাইজেফ নীতি অনুসারে অধিক প্রতিস্থাপিত অ্যালকিন প্রধান উৎপাদ হিসেবে উৎপন্ন হয়।"
+  },
+  {
+    "id": 9,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "কোন জোড়া আইসোটোন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$${}^{12}_{6}C, {}^{13}_{6}C$$",
+      "b": "$${}^{14}_{6}C, {}^{16}_{8}O$$",
+      "c": "Cu, Zn",
+      "d": "None"
+    },
+    "correctAnswer": "b",
+    "explanation": "আইসোটোন হলো যাদের নিউট্রন সংখ্যা সমান।\n$${}^{14}_{6}C$$ এর নিউট্রন = 14 - 6 = 8\n$${}^{16}_{8}O$$ এর নিউট্রন = 16 - 8 = 8\nউভয়ের নিউট্রন সংখ্যা সমান।"
+  },
+  {
+    "id": 10,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "250 mL NaOH দ্রবণে 5 g NaOH দ্রবীভূত থাকলে ঐ দ্রবণের মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.1",
+      "b": "0.5",
+      "c": "1.25",
+      "d": "0.125"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$S = \\frac{1000w}{MV} = \\frac{1000 \\times 5}{40 \\times 250} = 0.5$$ M."
+  },
+  {
+    "id": 11,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "বোর পরমাণু মডেল অনুযায়ী পঞ্চম শক্তিস্তরের একটি ইলেকট্রনের কৌণিক ভরবেগ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$\\frac{2.5h}{\\pi}$$",
+      "b": "$$\\frac{h}{\\pi}$$",
+      "c": "$$\\frac{5h}{\\pi}$$",
+      "d": "$$\\frac{2.5h}{\\pi}$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "কৌণিক ভরবেগ, $$L = \\frac{nh}{2\\pi}$$। এখানে $$n=5$$।\n$$L = \\frac{5h}{2\\pi} = 2.5 \\frac{h}{\\pi}$$।"
+  },
+  {
+    "id": 12,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোনটি লুইস এসিড নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$BeCl_2$$",
+      "b": "$$AlCl_3$$",
+      "c": "$$SO_2$$",
+      "d": "$$BF_3$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$BeCl_2, AlCl_3, BF_3$$ অষ্টক অসম্পূর্ণ থাকায় লুইস এসিড। $$SO_2$$ তে সালফারের মুক্তজোড় ইলেকট্রন থাকায় এটি লুইস ক্ষার হিসেবেও কাজ করতে পারে, যদিও এটি লুইস এসিড হিসেবেও কাজ করে। তবে প্রশ্নব্যাংকের উত্তর অনুযায়ী $$SO_2$$ কে ব্যাতিক্রম হিসেবে ধরা হয়েছে।"
+  },
+  {
+    "id": 13,
+    "subject": "Chemistry",
+    "topic": "Periodic Table",
+    "question": "আয়নীকরণ শক্তির সঠিক ক্রম কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Be < B < N < O",
+      "b": "B < Be < N < O",
+      "c": "Be < B < O < N",
+      "d": "B < Be < O < N"
+    },
+    "correctAnswer": "d",
+    "explanation": "ব্যতিক্রম: Be এর পূর্ণ ২s অরবিটালের কারণে B এর চেয়ে বেশি এবং N এর অর্ধপূর্ণ 2p অরবিটালের কারণে O এর চেয়ে বেশি। ক্রম: B < Be < O < N।"
+  },
+  {
+    "id": 14,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "0.01 M NaCl দ্রবণের ঘনমাত্রা ppm এককে কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "558",
+      "b": "585",
+      "c": "858",
+      "d": "354"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$ppm = M \\times \\text{molar mass} \\times 1000 = 0.01 \\times 58.5 \\times 1000 = 585$$ ppm।"
+  },
+  {
+    "id": 15,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "একটি দ্রবণের pOH = 3 হলে $$H_3O^+$$ এর মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$1 \\times 10^{-3}$$",
+      "b": "$$1 \\times 10^{-11}$$",
+      "c": "$$1 \\times 10^{-7}$$",
+      "d": "$$1 \\times 10^{-14}$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$pH + pOH = 14 \\Rightarrow pH = 14 - 3 = 11$$।\n$$[H_3O^+] = 10^{-pH} = 10^{-11}$$ M।"
+  },
+  {
+    "id": 16,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন যৌগে সবচেয়ে শক্তিশালী H-বন্ধন ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$H_2O$$",
+      "b": "$$H_2S$$",
+      "c": "HF",
+      "d": "$$NH_3$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "ফ্লোরিন (F) এর তড়িৎঋণাত্মকতা সবচেয়ে বেশি হওয়ায় HF এ হাইড্রোজেন বন্ধন সবচেয়ে শক্তিশালী হয়।"
+  },
+  {
+    "id": 17,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন অণুর বন্ধন কোণের মান সবচেয়ে কম?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_4$$",
+      "b": "$$H_2O$$",
+      "c": "$$NH_3$$",
+      "d": "$$BCl_3$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$CH_4 (109.5^\\circ), NH_3 (107^\\circ), H_2O (104.5^\\circ), BCl_3 (120^\\circ)$$। সবচেয়ে কম $$H_2O$$।"
+  },
+  {
+    "id": 18,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন যৌগের গঠন চতুস্তলকীয় নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CCl_4$$",
+      "b": "$$NH_4^+$$",
+      "c": "$$BH_4^-$$",
+      "d": "$$SF_4$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "$$SF_4$$ এর আকৃতি ঢেকিকল (See-saw) বা বিকৃত চতুস্তলকীয়, কারণ এতে এক জোড়া মুক্তজোড় ইলেকট্রন থাকে। বাকিরা সুষম চতুস্তলকীয়।"
+  },
+  {
+    "id": 19,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "ভ্যানডার ওয়ালস্ সমীকরণের ধ্রুবক 'a' দ্বারা কী বুঝায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "গ্যাসের গতিশক্তি",
+      "b": "আন্তঃআণবিক আকর্ষণ",
+      "c": "গ্যাসের আয়তন",
+      "d": "আন্তঃআণবিক বিকর্ষণ"
+    },
+    "correctAnswer": "b",
+    "explanation": "ধ্রুবক 'a' গ্যাসের অণুসমূহের আন্তঃআণবিক আকর্ষণ বলের পরিমাপক। 'b' আয়তন নির্দেশ করে।"
+  },
+  {
+    "id": 20,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question": "কোন ১ম ক্রম বিক্রিয়ায় অর্ধায়ু 5 মিনিট হলে বিক্রিয়াটির হার ধ্রুবক কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$2.3 \\times 10^{-4}$$",
+      "b": "$$2.3 \\times 10^{-3}$$",
+      "c": "$$2.6 \\times 10^{-3}$$",
+      "d": "$$2.4 \\times 10^{-4}$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$k = \\frac{0.693}{t_{1/2}} = \\frac{0.693}{5 \\times 60} s^{-1} = \\frac{0.693}{300} = 0.00231 = 2.3 \\times 10^{-3} s^{-1}$$।"
+  },
+  {
+    "id": 21,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "নাইট্রোজেনকে আদর্শ গ্যাস ধরলে কত গ্রাম নাইট্রোজেনের জন্য PV = 0.02RT সমীকরণটি প্রযোজ্য?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.14",
+      "b": "0.28",
+      "c": "0.56",
+      "d": "0.65"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$PV = nRT$$ সমীকরণের সাথে তুলনা করে পাই, $$n = 0.02$$ মোল।\nনাইট্রোজেনের ভর $$W = n \\times M = 0.02 \\times 28 = 0.56$$ g।"
+  },
+  {
+    "id": 22,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "গ্যাসীয় অবস্থায় কোন বিক্রিয়ার সাম্যবস্থায় $$K_p$$ ও $$K_c$$ এর মান সমান?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$PCl_5 \\rightleftharpoons PCl_3 + Cl_2$$",
+      "b": "$$2SO_2 + O_2 \\rightleftharpoons 2SO_3$$",
+      "c": "$$N_2 + 3H_2 \\rightleftharpoons 2NH_3$$",
+      "d": "$$H_2 + I_2 \\rightleftharpoons 2HI$$"
+    },
+    "correctAnswer": "d",
+    "explanation": "$$K_p = K_c(RT)^{\\Delta n}$$। যদি $$\\Delta n = 0$$ হয় তবে $$K_p = K_c$$।\n$$H_2 + I_2 \\rightleftharpoons 2HI$$ বিক্রিয়ায় $$\\Delta n = 2 - (1+1) = 0$$।"
+  },
+  {
+    "id": 23,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "$$25^{\\circ}C$$ তাপমাত্রায় 1 atm চাপে $$O_2$$ গ্যাসকে 0.8 L এ সংকুচিত করতে কত চাপ প্রয়োগ করতে হবে? (প্রশ্নটি অসম্পূর্ণ মনে হচ্ছে, তবে প্রদত্ত তথ্যে উত্তর অনুমান করা হয়েছে)",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5 atm",
+      "b": "4 atm",
+      "c": "3 atm",
+      "d": "2 atm"
+    },
+    "correctAnswer": "a",
+    "explanation": "উত্তরটি প্রশ্নব্যাংকের উত্তরমালা অনুযায়ী দেওয়া হয়েছে।"
+  },
+  {
+    "id": 24,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "গ্যাসের গড় গতিবেগের সঠিক সমীকরণ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$\\overline{c} = \\sqrt{\\frac{8RT}{\\pi M}}$$",
+      "b": "$$c = \\sqrt{\\frac{3RT}{M}}$$",
+      "c": "$$\\overline{c} = \\sqrt{\\frac{2RT}{M}}$$",
+      "d": "$$\\alpha = \\sqrt{\\frac{2RT}{M}}$$"
+    },
+    "correctAnswer": "a",
+    "explanation": "গড় বর্গবেগ (RMS) = $$\\sqrt{\\frac{3RT}{M}}$$, গড় বেগ = $$\\sqrt{\\frac{8RT}{\\pi M}}$$, এবং সম্ভাব্যতম বেগ = $$\\sqrt{\\frac{2RT}{M}}$$।"
+  },
+  {
+    "id": 25,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "0.5 মোল Al ক্যাথোডে জমা করতে কী পরিমাণ বিদ্যুৎ লাগবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1 F",
+      "b": "3 F",
+      "c": "1.5 F",
+      "d": "2 F"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$Al^{3+} + 3e^- \\rightarrow Al$$। 1 মোল Al জমা করতে 3F বিদ্যুৎ লাগে।\nসুতরাং, 0.5 মোল Al এর জন্য লাগবে $$0.5 \\times 3 = 1.5$$ F।"
+  },
+  {
+    "id": 26,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "$$6.02 \\times 10^{20}$$ অণু ইউরিয়া 100 mL দ্রবণে বিদ্যমান। উক্ত ইউরিয়া দ্রবণের ঘনমাত্রা কত মোলার?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.001",
+      "b": "0.1",
+      "c": "0.02",
+      "d": "0.01"
+    },
+    "correctAnswer": "d",
+    "explanation": "মোল সংখ্যা, $$n = \\frac{6.02 \\times 10^{20}}{6.02 \\times 10^{23}} = 10^{-3}$$ মোল।\nঘনমাত্রা, $$S = \\frac{n}{V(L)} = \\frac{10^{-3}}{0.1} = 10^{-2} = 0.01$$ M।"
+  },
+  {
+    "id": 27,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question": "হাইড্রোজেন আয়োডাইডের বিয়োজনে এর প্রারম্ভিক ঘনমাত্রা 0.5M হতে 0.2M এ হ্রাস পেতে 50 মিনিট সময় লাগে। বিক্রিয়ার হার $$mol L^{-1} s^{-1}$$ এককে কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$1.5 \\times 10^{-4}$$",
+      "b": "$$1.0 \\times 10^{-4}$$",
+      "c": "$$2.0 \\times 10^{-4}$$",
+      "d": "$$2.5 \\times 10^{-4}$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "বিক্রিয়ার হার = $$\\frac{\\Delta C}{\\Delta t} = \\frac{0.5 - 0.2}{50 \\times 60} = \\frac{0.3}{3000} = 1 \\times 10^{-4} mol L^{-1} s^{-1}$$।"
+  },
+  {
+    "id": 28,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "K-পরমাণুর সর্ববহিস্থ স্তরের ইলেকট্রনের ক্ষেত্রে চারটি কোয়ান্টাম সংখ্যার সেট কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$4, 0, 0, +\\frac{1}{2}$$",
+      "b": "$$4, 1, 0, +\\frac{1}{2}$$",
+      "c": "$$4, 1, 1, +\\frac{1}{2}$$",
+      "d": "$$4, 0, 1, +\\frac{1}{2}$$"
+    },
+    "correctAnswer": "a",
+    "explanation": "পটাশিয়াম (K-19) এর ইলেকট্রন বিন্যাস: $$[Ar] 4s^1$$।\nসর্ববহিস্থ ইলেকট্রনটি 4s অরবিটালে আছে। তাই $$n=4, l=0, m=0, s=+\\frac{1}{2}$$।"
+  },
+  {
+    "id": 29,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন অণুর কেন্দ্রীয় পরমাণুতে $$sp^3d$$ সংকরণ ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$SiCl_4$$",
+      "b": "$$PCl_3$$",
+      "c": "$$PCl_5$$",
+      "d": "$$SF_6$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "$$PCl_5$$ এ ফসফরাস পরমাণুর যোজনী স্তরে ৫টি ইলেকট্রন এবং ৫টি ক্লোরিন পরমাণু যুক্ত। তাই সংকরণ = $$\\frac{1}{2}(5+5) = 5$$ (sp3d)।"
+  },
+  {
+    "id": 30,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH_3CH_2CH(Br)CH_3 + KOH (alc.)$$ বিক্রিয়ার উৎপাদ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CH_2=CHCH_2CH_3$$",
+      "b": "$$CH \\equiv CCH_2CH_3$$",
+      "c": "$$CH_3CH=CHCH_3$$",
+      "d": "$$H_3CC \\equiv CH_3$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "অ্যালকোহলীয় KOH এর উপস্থিতিতে অপসারণ বিক্রিয়া ঘটে। সাইজেফ নীতি অনুসারে অধিক প্রতিস্থাপিত অ্যালকিন ($$CH_3CH=CHCH_3$$) প্রধান উৎপাদ হয়।"
+  },
+  {
+    "id": 31,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "যদি $$E^{\\circ}_{Fe^{3+}/Fe^{2+}} = +0.77V$$ এবং $$E^{\\circ}_{Sn^{2+}/Sn} = -0.14V$$ হয় তবে $$Sn(s) + 2Fe^{3+}(aq) \\rightarrow 2Fe^{2+}(aq) + Sn^{2+}(aq)$$ বিক্রিয়ার তড়িৎকোষের $$E^{\\circ}_{cell}$$ কত ভোল্ট?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1.68",
+      "b": "0.63",
+      "c": "0.91",
+      "d": "1.40"
+    },
+    "correctAnswer": "c",
+    "explanation": "এখানে Sn জারিত হয় (অ্যানোড) এবং $$Fe^{3+}$$ বিজারিত হয় (ক্যাথোড)।\n$$E^{\\circ}_{cell} = E^{\\circ}_{cathode} - E^{\\circ}_{anode} = 0.77 - (-0.14) = 0.91$$ V।"
+  },
+  {
+    "id": 32,
+    "subject": "Chemistry",
+    "topic": "Redox Reactions",
+    "question": "$$IO_3^- + 5I^- + 6H^+ \\rightarrow 3I_2 + 3H_2O$$ বিক্রিয়ায় কোনটি বিজারিত হয়েছে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$I^-$$",
+      "b": "$$IO_3^-$$",
+      "c": "$$H^+$$",
+      "d": "None"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$IO_3^-$$ এ আয়োডিনের জারণ মান +5 যা উৎপাদে $$I_2$$ (0) তে পরিণত হয়েছে। জারণ মান হ্রাস পাওয়ায় এটি বিজারিত হয়েছে।"
+  },
+  {
+    "id": 33,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "10% NaOH এর জলীয় দ্রবণের 50 mL প্রশমিত করতে 100 mL HCl দ্রবণের প্রয়োজন। HCl দ্রবণের মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1.00",
+      "b": "1.25",
+      "c": "1.50",
+      "d": "2.00"
+    },
+    "correctAnswer": "b",
+    "explanation": "10% NaOH = 2.5 M।\n$$V_a S_a = V_b S_b \\Rightarrow 100 \\times S_a = 50 \\times 2.5 \\Rightarrow S_a = 1.25$$ M।"
+  },
+  {
+    "id": 34,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "$$2SO_2(g) + O_2(g) \\rightleftharpoons 2SO_3(g)$$ বিক্রিয়ার সাম্যধ্রুবক, $$K_c$$ এর মানকে প্রভাবিত করে কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "তাপমাত্রার প্রভাব",
+      "b": "চাপ বৃদ্ধি",
+      "c": "প্রভাবকের ব্যবহার",
+      "d": "সাম্যাবস্থায় বিক্রিয়ার মিশ্রণ হতে $$SO_3$$ অপসারণ"
+    },
+    "correctAnswer": "a",
+    "explanation": "সাম্যধ্রুবক ($$K_c$$ বা $$K_p$$) শুধুমাত্র তাপমাত্রার পরিবর্তনের সাথে পরিবর্তিত হয়।"
+  },
+  {
+    "id": 35,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন পদ্ধতিতে অ্যালকেন তৈরি করা যায় না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ক্লিমেনসন বিজারণ",
+      "b": "কোবের তড়িৎ বিশ্লেষণ",
+      "c": "উর্টজ বিক্রিয়া",
+      "d": "উইলিয়ামসনের সংশ্লেষণ"
+    },
+    "correctAnswer": "d",
+    "explanation": "উইলিয়ামসনের সংশ্লেষণ পদ্ধতিতে ইথার তৈরি করা হয়, অ্যালকেন নয়।"
+  },
+  {
+    "id": 36,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন যৌগে আয়নিক, সমযোজী এবং সন্নিবেশ বন্ধন বিদ্যমান?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$KBF_4$$",
+      "b": "$$NH_4Cl$$",
+      "c": "$$CuSO_4.5H_2O$$",
+      "d": "সবগুলোতেই"
+    },
+    "correctAnswer": "d",
+    "explanation": "প্রদত্ত সবকটি যৌগে (Complex salts, Ammonium salts) আয়নিক, সমযোজী ও সন্নিবেশ বন্ধন বিদ্যমান।"
+  },
+  {
+    "id": 37,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "কোনটি গ্রাহামের ব্যাপন সূত্র?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$r \\propto \\frac{1}{d}$$",
+      "b": "$$r \\propto \\frac{1}{M}$$",
+      "c": "$$r_1\\sqrt{M_1} = r_2\\sqrt{M_2}$$",
+      "d": "$$r_1\\sqrt{M_2} = r_2\\sqrt{M_1}$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "গ্রাহামের ব্যাপন সূত্র: $$r \\propto \\frac{1}{\\sqrt{M}}$$ বা $$r\\sqrt{M} = k$$। সুতরাং, $$r_1\\sqrt{M_1} = r_2\\sqrt{M_2}$$।"
+  },
+  {
+    "id": 38,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "কোনটি লুইস অম্ল?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$NH_3$$",
+      "b": "$$BF_3$$",
+      "c": "$$CH_3OH$$",
+      "d": "$$CH_3CH_2OCH_2CH_3$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$BF_3$$ অণুর কেন্দ্রে বোরন পরমাণুর অষ্টক অসম্পূর্ণ থাকায় এটি ইলেকট্রন জোড় গ্রহণ করতে পারে, তাই এটি লুইস এসিড।"
+  },
+  {
+    "id": 39,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "কোনটি বাফার দ্রবণ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$NaOH$$ ও $$Na_2CO_3$$",
+      "b": "$$NaCl$$ ও $$HCl$$",
+      "c": "$$NaH_2PO_4$$ ও $$Na_2HPO_4$$",
+      "d": "$$CH_3COOH$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "দুর্বল এসিড ও তার লবণের মিশ্রণ বাফার দ্রবণ তৈরি করে। ফসফেট বাফার ($$NaH_2PO_4 + Na_2HPO_4$$) একটি উত্তম বাফার।"
+  },
+  {
+    "id": 40,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "পানির আয়নিক গুণফল $$K_w$$ সম্পর্কিত কোনটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$K_w = [H_3O^+] \\times [OH^-]$$",
+      "b": "$$K_w = [H_2O]^2 \\times [OH^-]$$",
+      "c": "$$K_w = \\frac{[H_2O]^2}{[H_3O^+] \\times [OH^-]}$$",
+      "d": "None"
+    },
+    "correctAnswer": "a",
+    "explanation": "পানির আয়নিক গুণফল, $$K_w$$ হলো হাইড্রোজেন আয়ন (বা হাইড্রোনিয়াম আয়ন) এবং হাইড্রোক্সিল আয়নের মোলার ঘনমাত্রার গুণফল।"
+  },
+  {
+    "id": 41,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি আলোক নিষ্ক্রিয়?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "Structure A",
+      "b": "Structure B",
+      "c": "Meso-tartaric acid structure",
+      "d": "Structure D"
+    },
+    "correctAnswer": "c",
+    "explanation": "মেসো-টারটারিক এসিডে দুটি কাইরাল কার্বন থাকা সত্ত্বেও প্রতিসাম্য তল (Plane of symmetry) থাকায় এটি আলোক নিষ্ক্রিয়।"
+  },
+  {
+    "id": 42,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "যদি 500K তাপমাত্রায় 10.0L গ্যাসকে 250 K তাপমাত্রায় আনা হয় এবং গ্যাসটি আদর্শ অবস্থা থেকে বিচ্যুতি হওয়ায় আয়তন 20% বৃদ্ধি পায়, তবে গ্যাসটি চূড়ান্ত আয়তন কত লিটার?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4.0",
+      "b": "5.0",
+      "c": "6.0",
+      "d": "7.0"
+    },
+    "correctAnswer": "c",
+    "explanation": "চার্লসের সূত্রানুসারে, $$\\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\Rightarrow V_2 = \\frac{10}{500} \\times 250 = 5$$ L।\nবিচ্যুতির কারণে 20% বৃদ্ধি: $$5 + (5 \\times 0.2) = 6.0$$ L।"
+  },
+  {
+    "id": 43,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "6 গ্রাম হিলিয়াম গ্যাসের জন্য আদর্শ গ্যাস সমীকরণ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$PV = 6RT$$",
+      "b": "$$2PV = 3RT$$",
+      "c": "$$3PV = 2RT$$",
+      "d": "$$PV = 3RT$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "He এর পারমাণবিক ভর 4। মোল সংখ্যা, $$n = 6/4 = 1.5 = 3/2$$।\n$$PV = nRT \\Rightarrow PV = \\frac{3}{2}RT \\Rightarrow 2PV = 3RT$$।"
+  },
+  {
+    "id": 44,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$C_6H_5NH_2 + CHCl_3 + KOH(alc) \\rightarrow A$$ (প্রধান উৎপাদ)। বিক্রিয়ায় A যৌগ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$C_6H_5-CN$$",
+      "b": "$$C_6H_5-NC$$",
+      "c": "$$C_6H_5-OH$$",
+      "d": "$$C_6H_5-Cl$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "এটি কার্বিলঅ্যামিন বিক্রিয়া। অ্যানিলিন ক্লোরোফর্ম ও ক্ষারের সাথে বিক্রিয়া করে দুর্গন্ধযুক্ত ফিনাইল আইসোসায়ানাইড ($$C_6H_5-NC$$) তৈরি করে।"
+  },
+  {
+    "id": 45,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন আয়নটি অ্যারোমেটিক চরিত্রের?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "Cyclopentadienyl cation",
+      "b": "Cyclopropenyl cation",
+      "c": "Cycloheptatrienyl anion",
+      "d": "Cyclobutadiene dication"
+    },
+    "correctAnswer": "b",
+    "explanation": "সাইক্লোপ্রোপিনাইল ক্যাটায়নে (3-membered ring with double bond and + charge) হাকেল সংখ্যা $$n=0$$ এর জন্য $$4n+2 = 2$$ টি পাই ইলেকট্রন আছে এবং এটি সমতলীয় ও সঞ্চারণশীল, তাই এটি অ্যারোমেটিক।"
+  },
+  {
+    "id": 46,
+    "subject": "Chemistry",
+    "topic": "Solubility",
+    "question": "$$Mg(OH)_2$$ এর দ্রাব্যতা গুণফল $$4 \\times 10^{-12}$$ হলে $$OH^-$$ আয়নের মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$1 \\times 10^{-4}$$",
+      "b": "$$2 \\times 10^{-4}$$",
+      "c": "$$1 \\times 10^{-3}$$",
+      "d": "$$2 \\times 10^{-3}$$"
+    },
+    "correctAnswer": "b",
+    "explanation": "$$K_{sp} = 4s^3 \\Rightarrow 4s^3 = 4 \\times 10^{-12} \\Rightarrow s = 10^{-4}$$।\n$$[OH^-] = 2s = 2 \\times 10^{-4}$$ M।"
+  },
+  {
+    "id": 47,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন ধরনের দুটি সমাণুর 1:1 মিশ্রণে রেসিমিক মিশ্রণ হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "টটোমার",
+      "b": "ডায়াস্টেরিওমার",
+      "c": "সিস-ট্রান্স",
+      "d": "এনানসিওমার"
+    },
+    "correctAnswer": "d",
+    "explanation": "দুটি এনানসিওমারের সমমোলার মিশ্রণকে রেসিমিক মিশ্রণ বলা হয় যা আলোক নিষ্ক্রিয়।"
+  },
+  {
+    "id": 48,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "কোন যৌগের গলনাংক সবচেয়ে বেশি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "$$CaCl_2$$",
+      "b": "$$SrCl_2$$",
+      "c": "$$BaCl_2$$",
+      "d": "$$MgCl_2$$"
+    },
+    "correctAnswer": "c",
+    "explanation": "ফাজানের নীতি অনুযায়ী ক্যাটায়নের আকার যত বড় হবে, পোলারায়ন তত কম হবে এবং যৌগটি তত বেশি আয়নিক হবে। বেশি আয়নিক যৌগের গলনাংক বেশি। এখানে $$Ba^{2+}$$ এর আকার সবচেয়ে বড়।"
+  },
+  {
+    "id": 49,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "$$CH \\equiv CH + H_2O \\xrightarrow{20\\% H_2SO_4, 2\\% HgSO_4, 60^\\circ C} A$$; বিক্রিয়ায় A যৌগটি কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "HCHO",
+      "b": "$$CH_3COCH_3$$",
+      "c": "$$CH_3CHO$$",
+      "d": "HCOOH"
+    },
+    "correctAnswer": "c",
+    "explanation": "ইথাইন পানির সাথে বিক্রিয়া করে ইথান্যাল ($$CH_3CHO$$) উৎপন্ন করে।"
+  },
+  {
+    "id": 50,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন যৌগটি টটোমারিজম প্রদর্শন করে না?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "Acetone derivative",
+      "b": "$$CCl_3CHO$$",
+      "c": "Enol form",
+      "d": "Cyclic ketone"
+    },
+    "correctAnswer": "b",
+    "explanation": "টটোমারিজম প্রদর্শনের জন্য আলফা-হাইড্রোজেন থাকা প্রয়োজন। ক্লোরাল বা ট্রাইক্লোরোইথান্যাল ($$CCl_3CHO$$) এ আলফা কার্বনে কোনো হাইড্রোজেন নেই, তাই এটি টটোমারিজম দেখায় না।"
+  }
+]

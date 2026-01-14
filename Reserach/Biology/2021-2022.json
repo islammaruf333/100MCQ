@@ -1,0 +1,1218 @@
+[
+  {
+    "id": 1,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কোরালেয়েড মূল কোন উদ্ভিদে পাওয়া যায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সাইকাস",
+      "b": "ফার্ন",
+      "c": "মটরশুঁটি",
+      "d": "বরবটি"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Mixed) Q56"
+  },
+  {
+    "id": 2,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কোন টিস্যু উদ্ভিদের খাদ্য তৈরি করে না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কোলেনকাইমা",
+      "b": "ভাজক টিস্যু",
+      "c": "স্থায়ী টিস্যু",
+      "d": "জাইলেম"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q57"
+  },
+  {
+    "id": 3,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "উদ্ভিদের মজ্জার প্রধান কাজ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "খাদ্য উৎপাদন",
+      "b": "খাদ্য সঞ্চয়",
+      "c": "টিস্যু তৈরি",
+      "d": "পানি সঞ্চয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q58"
+  },
+  {
+    "id": 4,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "একবীজপত্রী উদ্ভিদে সাধারণত নিচের কোনটি থাকে না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কিউটিকল",
+      "b": "ক্লোরেনকাইমা",
+      "c": "প্রোটোজাইলেম",
+      "d": "ক্যাম্বিয়াম"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Mixed) Q59"
+  },
+  {
+    "id": 5,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "উদ্ভিদের ডিম্বকের মাঝের টিস্যুকে কি বলা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ডিম্বকেন্দ্ৰ",
+      "b": "নিউসেলাস",
+      "c": "নিউক্লিয়াস",
+      "d": "ডিম্বফোর"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q60"
+  },
+  {
+    "id": 6,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "উদ্ভিদের প্রস্বেদনের হার কার সাহায্যে নির্ণয় করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "গ্যানং পটোমিটার",
+      "b": "ল্যাক্টোমিটার",
+      "c": "ল্যাকটোমিটার",
+      "d": "pH মিটার"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Mixed) Q61"
+  },
+  {
+    "id": 7,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "রক্তরসে দ্রবীভূত কঠিন পদার্থের শতকরা পরিমাণ কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "6-8",
+      "b": "8-10",
+      "c": "10-12",
+      "d": "12-14"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q62"
+  },
+  {
+    "id": 8,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "এন্টিবডি উৎপন্ন করে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ইওসিনোফিল",
+      "b": "লিম্ফোসাইট",
+      "c": "বেসোফিল",
+      "d": "মনোসাইট"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q63"
+  },
+  {
+    "id": 9,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "মেসেন্টেরন কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "জননতন্ত্রের একটি অংশ",
+      "b": "পৌষ্টিকতন্ত্রের একটি অংশ",
+      "c": "রক্ত সংবহনতন্ত্রের একটি অংশ",
+      "d": "রেচনতন্ত্রের একটি অংশ"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q64"
+  },
+  {
+    "id": 10,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "মানবদেহে মাংস পরিপাকে কোন এনজাইমটি সক্রিয় ভূমিকা পালন করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কাইমোট্রিপসিন",
+      "b": "লাইপেজ",
+      "c": "সুক্রেজ",
+      "d": "টায়ালিন"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Mixed) Q65"
+  },
+  {
+    "id": 11,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কন্ড্রিকথিসে কয়জোড়া ফুলকা রন্ধ্র থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "3-4",
+      "b": "5-7",
+      "c": "8-10",
+      "d": "10-12"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q66"
+  },
+  {
+    "id": 12,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "গবলেট কোষের প্রধান কাজ কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হাইড্রোক্লোরিক এসিড উৎপাদন",
+      "b": "ইনসুলিন উৎপাদন",
+      "c": "পানি শোষণ",
+      "d": "মিউকাস উৎপাদন"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Mixed) Q67"
+  },
+  {
+    "id": 13,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "মুক্ত রক্ত সংবহনতন্ত্র কোন পর্বের বৈশিষ্ট্য?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Annelida",
+      "b": "Mollusca",
+      "c": "Chordata",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Mixed) Q68"
+  },
+  {
+    "id": 14,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "নিম্নবর্ণিত কোন কোষে নিউক্লিয়াস অনুপস্থিত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "প্যারেনকাইমা",
+      "b": "ক্লোরেনকাইমা",
+      "c": "সিভনল",
+      "d": "রক্ষীকোষ"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A Biology (Full) Q56"
+  },
+  {
+    "id": 15,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "পরাগধানী কালচারের মাধ্যমে কোন উদ্ভিদ উৎপন্ন হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "পলিপ্লয়েড",
+      "b": "হ্যাপ্লয়েড",
+      "c": "ডিপ্লয়েড",
+      "d": "ট্রিপ্লয়েড"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q57"
+  },
+  {
+    "id": 16,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "জৈব প্রযুক্তির মাধ্যমে E. coli ব্যবহার করে প্রস্তুত করা হয়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ভিটামিন",
+      "b": "ইনসুলিন",
+      "c": "প্রোটিন",
+      "d": "চর্বি"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q58"
+  },
+  {
+    "id": 17,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "নিচের কোনটি দ্বৈত-প্রচ্ছন্ন এপিস্ট্যাসিস অনুপাত-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "7:9",
+      "b": "9:7",
+      "c": "13:3",
+      "d": "13:7"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q59"
+  },
+  {
+    "id": 18,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "সবাত শ্বসনের ফলে উৎপন্ন শক্তির পরিমাণ কত কিলোক্যালরি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "360",
+      "b": "460",
+      "c": "560",
+      "d": "660"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q60"
+  },
+  {
+    "id": 19,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কান্ডের পরিধি বৃদ্ধি হয় কোন টিস্যুর বিভাজনের কারণে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "এপিক্যাল মেরিস্টেম",
+      "b": "ক্যাম্বিয়াম",
+      "c": "স্টেম সেল",
+      "d": "জাইলেম ও ফ্লোয়েম"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q61"
+  },
+  {
+    "id": 20,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "মানুষের রক্তের গ্রুপ ইং এর জন্য দায়ী পদার্থ হলো-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "এন্টিবডি",
+      "b": "এন্টিজেন",
+      "c": "বিলুরুবিন",
+      "d": "বিলিভারডিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q62"
+  },
+  {
+    "id": 21,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "স্ট্রোক এর চিকিৎসা হচ্ছে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "পেসমেকার ইমপ্ল্যান্টেশন",
+      "b": "করোনারি বাইপাস",
+      "c": "এনজিওপ্লাস্টি",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q63"
+  },
+  {
+    "id": 22,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "গোল আলু কোনটির রূপান্তর?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মূলের",
+      "b": "কান্ডের",
+      "c": "ফুলের",
+      "d": "পাতার"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q64"
+  },
+  {
+    "id": 23,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ইমাস্কুলেশনের উদ্দেশ্য-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "স্ব-পরাগায়ন রোধ",
+      "b": "অভিযোজন ক্ষমতা বৃদ্ধি",
+      "c": "পরাগরেণুর সংখ্যা হ্রাস",
+      "d": "উদ্ভিদের Vigour বৃদ্ধি"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q65"
+  },
+  {
+    "id": 24,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "অ্যাপোস্পোরি হচ্ছে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "দেহকোষ থেকে সরাসরি স্পোরোফাইটের উৎপত্তি",
+      "b": "দেহকোষ থেকে সরাসরি গ্যামিটোফাইটের উৎপত্তি",
+      "c": "জনন মাতৃকোষ থেকে স্পোর তৈরির প্রক্রিয়া",
+      "d": "নিষেধ ছাড়া ফল তৈরি প্রক্রিয়া"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q66"
+  },
+  {
+    "id": 25,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কৃত্রিম অঙ্গজ জননের মাধ্যমে কোনটি করা সম্ভব নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "নতুন জাত সৃষ্টি",
+      "b": "অপ সময়ে বেশি চারা উৎপাদন",
+      "c": "সৃষ্ট উদ্ভিদ থেকে দ্রুত ফল লাভ",
+      "d": "মৃত গাছের গুণাগুণ রক্ষা"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q67"
+  },
+  {
+    "id": 26,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "‘ল অব মিনিমাম’ তত্ত্বটি প্রস্তাব করেন-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "স্টিলেন হেল্স",
+      "b": "রবিনহিল",
+      "c": "ব্ল্যাকম্যান",
+      "d": "লিবিগ"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q68"
+  },
+  {
+    "id": 27,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ক্রেবস চক্রে প্রথম উৎপন্ন পদার্থ-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অক্সালো অ্যাসিটিক এসিড",
+      "b": "সাকসিনিক এসিড",
+      "c": "ফিউমারিক এসিড",
+      "d": "সাইট্রিক এসিড"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q69"
+  },
+  {
+    "id": 28,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "উদ্ভিদের প্রস্বেদনের হার কোনটির সাহায্যে নির্ণয় করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "গ্যানং পটোমিটার",
+      "b": "ল্যাক্টোমিটার",
+      "c": "ল্যাকটোমিটার",
+      "d": "pH মিটার"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q70"
+  },
+  {
+    "id": 29,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "নিচের কোনটি সঠিক নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ডান নিলয় থেকে CO2 সমৃদ্ধ রক্ত পালমোনারি ধমনিতে যায়",
+      "b": "বাম নিলয় থেকে O2 সমৃদ্ধ রক্ত সিস্টেমিক ধমনিতে যায়",
+      "c": "ফুসফুসে CO2 সমৃদ্ধ রক্ত পরিশোধিত হয়ে ডান নিলয়ে আসে",
+      "d": "CO2 সমৃদ্ধ রক্ত দুটি ভেনাক্যাভা দিয়ে ডান অলিন্দে আসে"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A Biology (Full) Q71"
+  },
+  {
+    "id": 30,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "দ্বিস্তরী প্রাণী কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Hydra",
+      "b": "Taenia",
+      "c": "Fasciola",
+      "d": "Pila"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q72"
+  },
+  {
+    "id": 31,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ইলাস্টিন নির্মিত কিউটিকল দিয়ে আবৃত দেহ দেখা যায়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "জেলিফিসে",
+      "b": "গোল কৃমিতে",
+      "c": "ফিতাকৃমিতে",
+      "d": "অক্টোপাসে"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q73"
+  },
+  {
+    "id": 32,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ম্যাক্সিলারি বার্বেল হলো রুই মাছের-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মাথার অংশ",
+      "b": "পাখনার অংশ",
+      "c": "লেজের অংশ",
+      "d": "বুকের অংশ"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A Biology (Full) Q74"
+  },
+  {
+    "id": 33,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "জটিল শর্করা ভেঙ্গে মল্টোজে পরিণত হতে যে এনজাইম লাগে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সুক্রেজ",
+      "b": "টায়ালিন",
+      "c": "মল্টেজ",
+      "d": "লাইপেজ"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q75"
+  },
+  {
+    "id": 34,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ইনসুলিন হরমোন ক্ষরণ করে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "আলফা কোষ",
+      "b": "বিটা কোষ",
+      "c": "ডেল্টা কোষ",
+      "d": "পিপি কোষ"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q76"
+  },
+  {
+    "id": 35,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "যকৃতে কোন প্রোটিন সংশ্লেষ করতে পারে না-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অ্যালবুমিন",
+      "b": "লিপোপ্রোটিন",
+      "c": "ট্রান্সফারিন",
+      "d": "গামা-গ্লোবিউলিন"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q77"
+  },
+  {
+    "id": 36,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "Bilateral cleavage ঘটে কোন পর্বের প্রাণীতে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Arthropoda",
+      "b": "Chordata",
+      "c": "Annelida",
+      "d": "Mollusca"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A Biology (Full) Q78"
+  },
+  {
+    "id": 37,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "নিচের কোনটি মানবদেহের বৃহদান্ত্র্যের অংশ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "জেজুনাম",
+      "b": "ডিওডেনাম",
+      "c": "সিকাম",
+      "d": "ইলিয়াম"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A Biology (Full) Q79"
+  },
+  {
+    "id": 38,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "মানবদেহের ক্ষুদ্রান্ত্রের শোষণতলের ক্ষেত্রফল-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2 বর্গমিটার",
+      "b": "4 বর্গমিটার",
+      "c": "8 বর্গমিটার",
+      "d": "10 বর্গমিটার"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A Biology (Full) Q80"
+  },
+  {
+    "id": 39,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "“প্রত্যেক ক্রোমোজোমের একটি নিজস্ব সত্ত্বা আছে।”- উক্তিটি কোন বিজ্ঞানীর?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সাটন",
+      "b": "বেটসন",
+      "c": "বোভারী",
+      "d": "মেন্ডেল"
+    },
+    "correctAnswer": "a, c",
+    "explanation": "Set B Biology (Mixed) Q56"
+  },
+  {
+    "id": 40,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "মানুষের রক্তের অণুচক্রিকার আয়ুষ্কাল কত দিন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1-5",
+      "b": "5-6",
+      "c": "7-10",
+      "d": "120"
+    },
+    "correctAnswer": "-",
+    "explanation": "Set B Biology (Mixed) Q57"
+  },
+  {
+    "id": 41,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "আধুনিক ধারণায় পত্ররন্ধ্র খোলা বা বন্ধ হওয়ার জন্য দায়ী কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Ca++",
+      "b": "K+",
+      "c": "Na+",
+      "d": "pH"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q58"
+  },
+  {
+    "id": 42,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "নিচের কোনটি কো-এনজাইম নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "NADP",
+      "b": "CAM",
+      "c": "FAD",
+      "d": "GTP"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q59"
+  },
+  {
+    "id": 43,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কাইলোমাইক্রন যে খাবার শোষণে ভূমিকা রাখে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "শর্করা",
+      "b": "আমিষ",
+      "c": "চর্বি",
+      "d": "সবগুলো সঠিক"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Mixed) Q60"
+  },
+  {
+    "id": 44,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "গণ্ডক কোন শ্রেণিভুক্ত প্রাণী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Amphibia",
+      "b": "Reptilia",
+      "c": "Aves",
+      "d": "Mammalia"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Mixed) Q61"
+  },
+  {
+    "id": 45,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "নিচের কোনটি সেক্স-লিংকড জিনের উদাহরণ নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "বর্ণান্ধতা",
+      "b": "জুভেনাইল গ্লুকোমা",
+      "c": "মায়োপিয়া",
+      "d": "মায়োকার্ডিয়াল ডিজঅর্ডার"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Mixed) Q62"
+  },
+  {
+    "id": 46,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কত সংখ্যক মাইটোটিক বিভাজনে 128 টি অপত্য কোষ উৎপন্ন হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "7",
+      "b": "21",
+      "c": "42",
+      "d": "64"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B Biology (Mixed) Q63"
+  },
+  {
+    "id": 47,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "কোনটিকে জৈব মুদ্রা বলা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "FAD",
+      "b": "NAD",
+      "c": "ATP",
+      "d": "AMP"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Mixed) Q64"
+  },
+  {
+    "id": 48,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "জীবের জিন মিউটেশনের ফলে কোন ধরনের বিবর্তন ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ম্যাক্রো",
+      "b": "মাইক্রো",
+      "c": "মেগা",
+      "d": "ন্যানো"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q65"
+  },
+  {
+    "id": 49,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "স্তন্যপায়ীর ডিম ও নটোকর্ড আবিষ্কার করেন যে বিজ্ঞানী-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "আঁদ্রে ভেসালিয়াস",
+      "b": "কার্ল আর্নস্ট বেয়ার",
+      "c": "লুই পাস্তুর",
+      "d": "সালিম আলী"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q66"
+  },
+  {
+    "id": 50,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "বাস্ট ফাইবার নামে পরিচিত-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ক্লোরেনকাইমা",
+      "b": "ফ্লোয়েম ফাইবার",
+      "c": "কোলেনকাইমা",
+      "d": "জাইলেম ফাইবার"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q67"
+  },
+  {
+    "id": 51,
+    "subject": "Biology",
+    "topic": "Biology (Mixed)",
+    "question": "নিচের কোন পর্বের প্রাণীদের আণুবীক্ষণাল বলা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Nematoda",
+      "b": "Annelida",
+      "c": "Arthropoda",
+      "d": "Mollusca"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Mixed) Q68"
+  },
+  {
+    "id": 52,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "এপিথেলিয়ামের ঠিক নিচে কী অবস্থান করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ট্রাকিয়া",
+      "b": "ট্রাকিড",
+      "c": "সিভনল",
+      "d": "প্যারেনকাইমা"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Full) Q56"
+  },
+  {
+    "id": 53,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ইলেকট্রন-ট্রান্সপোর্ট সিস্টেম-এর কোন যৌগটির ইলেকট্রন গ্রহীতা হলো কপার?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সাইটোক্রোম",
+      "b": "NADP",
+      "c": "প্লাস্টোসায়ানিন",
+      "d": "ফেরিডক্সিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q57"
+  },
+  {
+    "id": 54,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "এক মোল গ্লুকোজকে পোড়ালে কত কিলোক্যালরি শক্তি পাওয়া যায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "386",
+      "b": "380",
+      "c": "360",
+      "d": "600"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q58"
+  },
+  {
+    "id": 55,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "প্রোটিওলাইটিক এনজাইম নিম্নের কোন খাদ্যকে পরিপাক করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ভাত",
+      "b": "মাছ",
+      "c": "মাখন",
+      "d": "শাক"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q59"
+  },
+  {
+    "id": 56,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "মেন্ডেল পরীক্ষার জন্য মটর গাছ কেন বেছে নিয়েছিলেন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ফুলের অবস্থান",
+      "b": "স্বপরাগী ফুল",
+      "c": "বীজের আকার",
+      "d": "কাণ্ডের দৈর্ঘ্য"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Full) Q60"
+  },
+  {
+    "id": 57,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "প্রতি NADPH হতে কত অণু ATP তৈরি হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4",
+      "b": "3",
+      "c": "2",
+      "d": "1"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q61"
+  },
+  {
+    "id": 58,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "Cycas-এর শুক্রাণু সৃষ্টি হয় কোন কোষ থেকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "স্পোর মাতৃকোষ",
+      "b": "স্ত্রীরেণু মাতৃকোষ",
+      "c": "পুংরেণু পত্র",
+      "d": "স্পোরাঞ্জিয়াম"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q62"
+  },
+  {
+    "id": 59,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "Bulliform কোষ কোন উদ্ভিদে থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "আখ",
+      "b": "ভুট্টা",
+      "c": "গম",
+      "d": "সবকটিতে"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B Biology (Full) Q63"
+  },
+  {
+    "id": 60,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ক্রোমোজোমীয় নৃত্য কোন দশায় দেখা যায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "প্রোফেজ",
+      "b": "প্রোমেটাফেজ",
+      "c": "মেটাফেজ",
+      "d": "সবকটিতে"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q64"
+  },
+  {
+    "id": 61,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ফটোরেসপিরেশনের জন্য কোনটি সত্য?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "আলোক নিরপেক্ষ প্রক্রিয়া",
+      "b": "কেলভিন চক্রের সাথে কোন সম্পর্ক নাই",
+      "c": "কেলভিন চক্রের উপর নির্ভরশীল",
+      "d": "ATP ও NADPH উৎপন্ন হয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q65"
+  },
+  {
+    "id": 62,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কোন জিনের কারণে মোরগ-মুরগীর পালক সাদা বর্ণের হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সেমিলেথাল জিন",
+      "b": "এপিস্ট্যাটিক জিন",
+      "c": "হাইপোস্ট্যাটিক জিন",
+      "d": "নন-অ্যালিলিক জিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q66"
+  },
+  {
+    "id": 63,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "Erythropoietin কোথায় তৈরি হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "রক্ত কণিকায়",
+      "b": "কোষে",
+      "c": "কিডনিতে",
+      "d": "যকৃতে"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q67"
+  },
+  {
+    "id": 64,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "অরিয় প্রতিসাম্য দেখা যায় কোন প্রাণীতে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Homo sapiens",
+      "b": "Volvox",
+      "c": "Pila",
+      "d": "Aurelia"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Full) Q68"
+  },
+  {
+    "id": 65,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "ঘাসফড়িং এর রক্তের নাম-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হিমোসাইট",
+      "b": "হিমোসিল",
+      "c": "হিমোলিম্ফ",
+      "d": "হিমোসায়ানিন"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q69"
+  },
+  {
+    "id": 66,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কৃত্রিম পেসমেকারের ব্যাটারি কিসের তৈরি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ক্যাডমিয়াম",
+      "b": "লিথিয়াম",
+      "c": "ইউরেনিয়াম",
+      "d": "অ্যালুমিনিয়াম"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q70"
+  },
+  {
+    "id": 67,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "Archaeopteryx কে কোন কোন শ্রেণির যোগসূত্র বলা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "উভচর ও পাখি",
+      "b": "উভচর ও সরীসৃপ",
+      "c": "সরীসৃপ ও পাখি",
+      "d": "পাখি ও স্তন্যপায়ী"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q71"
+  },
+  {
+    "id": 68,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "এন্টিবডি তৈরি করে কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "লোহিত কণিকা",
+      "b": "থ্রম্বোসাইট",
+      "c": "লিম্ফোসাইট",
+      "d": "মনোসাইট"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q72"
+  },
+  {
+    "id": 69,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "মানবদেহের রক্তের pH কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5.35 - 5.45",
+      "b": "6.35 - 6.45",
+      "c": "7.35 - 7.45",
+      "d": "8.35 -"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q73"
+  },
+  {
+    "id": 70,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কোষচক্র বন্ধ করার অভ্যন্তরীণ উদ্দীপনা প্রদান করে নিম্নের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সাইক্লিন CDR",
+      "b": "সাইক্লিন CDK-MPF",
+      "c": "p53",
+      "d": "p27"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q74"
+  },
+  {
+    "id": 71,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "মেসোফিল কোন ধরনের টিস্যু?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেরিস্টেমেটিক",
+      "b": "গ্রাউন্ড",
+      "c": "এপিডার্মাল",
+      "d": "জাইলেম"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q75"
+  },
+  {
+    "id": 72,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কোনটি পরিফেরা পর্বের প্রাণীর দেহে দেখা যায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কোয়ানোসাইট",
+      "b": "ইলাস্টিন",
+      "c": "র‍্যাডোলা",
+      "d": "ট্যাগমাটা"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B Biology (Full) Q76"
+  },
+  {
+    "id": 73,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "বায়ুথলির কাজ নয় কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "শব্দ উৎপন্ন করা",
+      "b": "দেহের চাপ নিয়ন্ত্রণ করা",
+      "c": "প্লবতা রক্ষা করা",
+      "d": "প্রতিরক্ষা প্রদান করা"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B Biology (Full) Q77"
+  },
+  {
+    "id": 74,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "দেহের বিভিন্ন অংশে ক্যান্সার কোষ ছড়িয়ে পড়াকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Oncogenesis",
+      "b": "Necrosis",
+      "c": "Metastasis",
+      "d": "Apoptosis"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B Biology (Full) Q78"
+  },
+  {
+    "id": 75,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "লিম্ফোসাইটের পরিপক্কতা নিয়ন্ত্রণ করে কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "লিম্ফয়েড",
+      "b": "অ্যাডেনয়েড",
+      "c": "থাইমাস",
+      "d": "অস্থিমজ্জা"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B Biology (Full) Q79"
+  },
+  {
+    "id": 76,
+    "subject": "Biology",
+    "topic": "Biology (Full)",
+    "question": "কোনটি সিলোমযুক্ত প্রাণী নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কৃমি",
+      "b": "কেঁচো",
+      "c": "শামুক",
+      "d": "চিংড়ি"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B Biology (Full) Q80"
+  }
+]

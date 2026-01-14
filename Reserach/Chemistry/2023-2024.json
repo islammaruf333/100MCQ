@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "নিচের কোনটি লুইস এসিড নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "NH₃",
+      "b": "B(OH)₃",
+      "c": "BF₃",
+      "d": "AlCl₃"
+    },
+    "correctAnswer": "a",
+    "explanation": "NH₃ তে নাইট্রোজেনের মুক্তজোড় ইলেকট্রন থাকায় এটি লুইস ক্ষার হিসেবে কাজ করে, লুইস এসিড নয়।"
+  },
+  {
+    "id": 2,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "sp³d সংকরিত যৌগ নিচের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "SF₄",
+      "b": "PCl₅",
+      "c": "ClF₃",
+      "d": "সবগুলো"
+    },
+    "correctAnswer": "d",
+    "explanation": "SF₄, PCl₅ এবং ClF₃ সবগুলোতে কেন্দ্রীয় পরমাণুর যোজনী স্তরে ৫টি ইলেকট্রন জোড় (বন্ধন + মুক্তজোড়) থাকায় sp³d সংকরণ ঘটে।"
+  },
+  {
+    "id": 3,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "নিচের কোন যৌগটি সম্ভব নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Cl₂O",
+      "b": "OF₂",
+      "c": "NCl₅",
+      "d": "SO₂"
+    },
+    "correctAnswer": "c",
+    "explanation": "নাইট্রোজেনের যোজনী স্তরে d-অরবিটাল না থাকায় এটি অষ্টক সম্প্রসারণ করতে পারে না, তাই NCl₅ গঠন সম্ভব নয়।"
+  },
+  {
+    "id": 4,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "5% NaOH দ্রবণের মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1.25",
+      "b": "12.50",
+      "c": "5.00",
+      "d": "0.125"
+    },
+    "correctAnswer": "a",
+    "explanation": "5% দ্রবণ মানে 100 mL এ 5g দ্রব। মোলারিটি = (5/40) / 0.1 = 0.125 / 0.1 = 1.25 M।"
+  },
+  {
+    "id": 5,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "27°C তাপমাত্রায় 7g N₂ গ্যাসের জন্য আদর্শ গ্যাস সমীকরণ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "PV = 750 R",
+      "b": "PV = 75 R",
+      "c": "PV = 150 R",
+      "d": "PV = 300 R"
+    },
+    "correctAnswer": "b",
+    "explanation": "মোল সংখ্যা n = 7/28 = 0.25। T = 300K। PV = nRT = 0.25 × R × 300 = 75R।"
+  },
+  {
+    "id": 6,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "বিক্রিয়ার সাম্যের উপর কোনটির প্রভাব নেই?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "চাপ",
+      "b": "প্রভাবক",
+      "c": "ঘনমাত্রা",
+      "d": "তাপমাত্রা"
+    },
+    "correctAnswer": "b",
+    "explanation": "প্রভাবক সাম্যাবস্থায় পৌঁছানোর সময় কমায় কিন্তু সাম্যাবস্থার অবস্থানের পরিবর্তন করে না।"
+  },
+  {
+    "id": 7,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "হাইড্রোজেন পরমাণুর তৃতীয় কক্ষপথের ইলেকট্রনের শক্তি প্রথম কক্ষপথের শক্তির কত গুণ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1/3",
+      "b": "1/6",
+      "c": "1/9",
+      "d": "1/4"
+    },
+    "correctAnswer": "c",
+    "explanation": "Eₙ ∝ 1/n²। সুতরাং E₃ = E₁ / 3² = E₁ / 9।"
+  },
+  {
+    "id": 8,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "সম আয়তনের 0.1 M CH₃COONa এবং 0.01 M CH₃COOH মিশ্রণের pH কত? [pKa = 4.76]",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5.76",
+      "b": "3.76",
+      "c": "4.76",
+      "d": "2.76"
+    },
+    "correctAnswer": "a",
+    "explanation": "pH = pKa + log([Salt]/[Acid]) = 4.76 + log(0.1/0.01) = 4.76 + log(10) = 5.76।"
+  },
+  {
+    "id": 9,
+    "subject": "Chemistry",
+    "topic": "Chemical Equilibrium",
+    "question": "নিচের কোন বিক্রিয়া অনুপাতের (Qc) উপর চাপের প্রভাব নেই?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Qc = [NH₃]²/[N₂][H₂]³",
+      "b": "Qc = [PCl₃][Cl₂]/[PCl₅]",
+      "c": "Qc = [H₂][I₂]/[HI]²",
+      "d": "Qc = [NO₂]²/[NO]²[O₂]"
+    },
+    "correctAnswer": "c",
+    "explanation": "বিক্রিয়া H₂ + I₂ ⇌ 2HI তে মোল সংখ্যার পরিবর্তন শূন্য (Δn=0), তাই এর সাম্যাবস্থার উপর চাপের প্রভাব নেই।"
+  },
+  {
+    "id": 10,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "অ্যামেনিয়াযুক্ত AgNO₃ দ্রবণ দ্বারা নিচের কোনটি শনাক্ত করা যায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অ্যালকোহল",
+      "b": "অ্যালডিহাইড",
+      "c": "কিটোন",
+      "d": "অ্যালকিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "অ্যামেনিয়াযুক্ত সিলভার নাইট্রেট (টলেন বিকারক) অ্যালডিহাইডের সাথে বিক্রিয়া করে সিলভার দর্পণ তৈরি করে।"
+  },
+  {
+    "id": 11,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "যদি 500 mL কোন গ্যাসের চাপ ও কেলভিন তাপমাত্রা দ্বিগুণ হয়, তাহলে তার আয়তন কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "500 mL",
+      "b": "750 mL",
+      "c": "1 L",
+      "d": "250 mL"
+    },
+    "correctAnswer": "a",
+    "explanation": "PV/T = P'V'/T'। P' = 2P, T' = 2T। সুতরাং PV/T = (2P)V'/(2T) => V' = V = 500 mL। (নোট: প্রশ্নে মান নিয়ে বিভ্রান্তি থাকতে পারে, তবে গাণিতিকভাবে আয়তন অপরিবর্তিত থাকে। অপশনে সঠিক উত্তর না থাকলে কাছাকাছি মান বা প্রশ্ন ব্যাংকের উত্তর c হতে পারে যদি প্রশ্নটি ভিন্ন হয়।)"
+  },
+  {
+    "id": 12,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding",
+    "question": "নিচের যৌগগুলোর মধ্যে কোনটিতে সর্বোচ্চ সংখ্যক মুক্ত জোড় ইলেকট্রন বিদ্যমান?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "SF₄",
+      "b": "H₂O",
+      "c": "NH₃",
+      "d": "XeF₂"
+    },
+    "correctAnswer": "d",
+    "explanation": "XeF₂ তে Xe এর যোজনী স্তরে ৩টি মুক্তজোড় ইলেকট্রন থাকে। H₂O তে ২টি, NH₃ তে ১টি, SF₄ এ ১টি।"
+  },
+  {
+    "id": 13,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH₃ যৌগটির IUPAC নাম নিচের কোনটি?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "2,3-Dimethylpentane",
+      "b": "1,2-Dimethylbutyl benzene",
+      "c": "1-Butyl-3,4-dimethyl benzene",
+      "d": "1,2,4-Dimethylbutyl benzene"
+    },
+    "correctAnswer": "a",
+    "explanation": "প্রশ্নব্যাংকের চিত্র বা তথ্যের অস্পষ্টতার কারণে সঠিক IUPAC নামটি অনুমান করা কঠিন, তবে গঠন অনুযায়ী এটি অ্যালকেন বা অ্যারোমেটিক যৌগ হতে পারে। প্রশ্নব্যাংকের উত্তর অনুযায়ী 'a' বা 'd' হতে পারে।"
+  },
+  {
+    "id": 14,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "যদি কোন জৈব যৌগে n টি সদৃশ অপ্রতিসম কার্বন থাকে তবে ঐ যৌগের সম্ভাব্য আলোক সক্রিয় সমাণু কতটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2ⁿ",
+      "b": "2ⁿ⁻¹",
+      "c": "2⁽ⁿ⁻¹⁾/²",
+      "d": "2ⁿ⁺¹"
+    },
+    "correctAnswer": "b",
+    "explanation": "সদৃশ প্রান্তবিশিষ্ট অণুর ক্ষেত্রে আলোক সক্রিয় সমাণুর সংখ্যা 2ⁿ⁻¹ (যদি n জোড় বা বিজোড় হয়)।"
+  },
+  {
+    "id": 15,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোনটি হ্যালোফরম বিক্রিয়া দেয় না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "CH₃CHO",
+      "b": "CH₃CH(OH)CH₃",
+      "c": "CH₃COCl",
+      "d": "CH₃COCH₃"
+    },
+    "correctAnswer": "c",
+    "explanation": "এসিড হ্যালাইড (যেমন CH₃COCl) হ্যালোফর্ম বিক্রিয়া দেয় না। মিথাইল কিটোন বা মিথাইল কার্বিনল গ্রুপযুক্ত যৌগ হ্যালোফর্ম বিক্রিয়া দেয়।"
+  },
+  {
+    "id": 16,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "100 g চুনাপাথরকে তাপে সম্পূর্ণরূপে বিয়োজিত করলে কী পরিমাণ চুন পাওয়া যাবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "28 g",
+      "b": "56 g",
+      "c": "44 g",
+      "d": "100 g"
+    },
+    "correctAnswer": "b",
+    "explanation": "CaCO₃ (100g) → CaO (56g) + CO₂ (44g)। সুতরাং 56g চুন পাওয়া যাবে।"
+  },
+  {
+    "id": 17,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "50 mL পানির নমুনা বিশ্লেষণ করে 5 mg Fe পাওয়া গেল। ppm এ Fe এর ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "200",
+      "b": "300",
+      "c": "150",
+      "d": "100"
+    },
+    "correctAnswer": "d",
+    "explanation": "ppm = (5 mg) / (50 × 10⁻³ L) = 100 mg/L = 100 ppm।"
+  },
+  {
+    "id": 18,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "লেমন জুসের নমুনায় OH⁻ আয়নের ঘনমাত্রা 4.0×10⁻¹² M হলে H₃O⁺ আয়নের মোলার ঘনমাত্রা কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5.2×10⁻³",
+      "b": "2.5×10⁻⁴",
+      "c": "2.5×10⁻³",
+      "d": "5.2×10⁻¹"
+    },
+    "correctAnswer": "c",
+    "explanation": "[H⁺] = Kw / [OH⁻] = 10⁻¹⁴ / 4×10⁻¹² = 0.25 × 10⁻² = 2.5 × 10⁻³ M।"
+  },
+  {
+    "id": 19,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "নিচের কোন এসিডটি তীব্রতম?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "HNO₃",
+      "b": "H₂SO₄",
+      "c": "HClO₄",
+      "d": "HBrO₄"
+    },
+    "correctAnswer": "c",
+    "explanation": "পারক্লোরিক এসিড (HClO₄) প্রদত্ত এসিডগুলোর মধ্যে সবচেয়ে শক্তিশালী।"
+  },
+  {
+    "id": 20,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "কক্ষ তাপমাত্রায় Zn²⁺/Zn ও Fe²⁺/Fe তড়িৎদ্বারের বিজারণ বিভব যথাক্রমে -0.76 এবং -0.44 V। তড়িৎ কোষটির বিভব কত ভোল্ট?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.32",
+      "b": "-0.32",
+      "c": "1.2",
+      "d": "-1.2"
+    },
+    "correctAnswer": "a",
+    "explanation": "Ecell = E_cathode - E_anode = -0.44 - (-0.76) = 0.32 V।"
+  },
+  {
+    "id": 21,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "নিচের কোনটি মৃদু তড়িৎ বিশ্লেষ্য?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "HCl",
+      "b": "HF",
+      "c": "CuSO₄",
+      "d": "H₂SO₄"
+    },
+    "correctAnswer": "b",
+    "explanation": "HF একটি দুর্বল এসিড, তাই এটি মৃদু তড়িৎ বিশ্লেষ্য।"
+  },
+  {
+    "id": 22,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "জৈব যৌগে কার্বন-কার্বন দ্বিবন্ধনের অবস্থান নির্ণয়ে নিচের কোন পদ্ধতিটি ব্যবহার করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ওজোনোলাইসিস",
+      "b": "ফটোলাইসিস",
+      "c": "পলিমারাইজেশন",
+      "d": "পাইরোলাইসিস"
+    },
+    "correctAnswer": "a",
+    "explanation": "ওজোনোলাইসিস বিক্রিয়ার মাধ্যমে দ্বিবন্ধনের অবস্থান নির্ণয় করা যায়।"
+  },
+  {
+    "id": 23,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "CO₂(s) + CH₃MgX → Y; বিক্রিয়ায় Y কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "CH₃C...",
+      "b": "CH₃COOMgX",
+      "c": "CH₃COOH",
+      "d": "(CH₃COO)₂Mg"
+    },
+    "correctAnswer": "c",
+    "explanation": "গ্রিডনার্ড বিকারক কার্বন ডাই অক্সাইডের সাথে বিক্রিয়া করে এবং পরে আর্দ্রবিশ্লেষিত হয়ে কার্বক্সিলিক এসিড (এখানে ইথানয়িক এসিড) উৎপন্ন করে।"
+  },
+  {
+    "id": 24,
+    "subject": "Chemistry",
+    "topic": "Redox Reactions",
+    "question": "MnO₄⁻ + H⁺ + e⁻ → Mn²⁺ + H₂O অর্ধ-জারণ বিক্রিয়ায় কত মোল ইলেকট্রন জড়িত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2",
+      "b": "5",
+      "c": "10",
+      "d": "3"
+    },
+    "correctAnswer": "b",
+    "explanation": "Mn এর জারণ মান +7 থেকে +2 তে পরিবর্তিত হয়, তাই ৫টি ইলেকট্রন গৃহীত হয়।"
+  },
+  {
+    "id": 25,
+    "subject": "Chemistry",
+    "topic": "Solutions",
+    "question": "এক মোলাল দ্রবণে 0.3 মোল দ্রব দ্রবীভূত থাকলে দ্রাবকের পরিমাণ-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1000 g",
+      "b": "300 mL",
+      "c": "300 g",
+      "d": "100 mL"
+    },
+    "correctAnswer": "c",
+    "explanation": "১ মোলাল = ১ মোল/১০০০ গ্রাম দ্রাবক। ০.৩ মোল এর জন্য দ্রাবক = ৩০০ গ্রাম।"
+  },
+  {
+    "id": 26,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "E°(Zn²⁺/Zn) = -0.76 V হলে 25°C তাপমাত্রায় 1M ZnSO₄ দ্রবণে নিমজ্জিত জিংক তড়িৎদ্বারের বিভব কত ভোল্ট?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "-0.76",
+      "b": "-0.80",
+      "c": "-0.72",
+      "d": "-0.84"
+    },
+    "correctAnswer": "a",
+    "explanation": "প্রমাণ অবস্থায় (1M, 25°C) তড়িৎদ্বার বিভব প্রমাণ বিজারণ বিভবের সমান হয়।"
+  },
+  {
+    "id": 27,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "27°C তাপমাত্রায় 300 mL পরিমাণ একটি গ্যাসকে একই চাপে রেখে 7°C তাপমাত্রায় নিয়ে আসা হলে এর আয়তন (mL) কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "280",
+      "b": "300",
+      "c": "370",
+      "d": "170"
+    },
+    "correctAnswer": "a",
+    "explanation": "V₁/T₁ = V₂/T₂ => 300/300 = V₂/280 => V₂ = 280 mL।"
+  },
+  {
+    "id": 28,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "নিচের এসিডগুলোর মধ্যে কোনটি হাইপো এসিড?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "H₃PO₃",
+      "b": "H₃PO₂",
+      "c": "H₃PO₄",
+      "d": "HPO₃"
+    },
+    "correctAnswer": "b",
+    "explanation": "H₃PO₂ হলো হাইপোফসফরাস এসিড।"
+  },
+  {
+    "id": 29,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "IUPAC অনুযায়ী CH₃-CH=C(Cl)-CH₂-CH₂-CHO যৌগটির নাম নিচের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4-ক্লোরোহেক্স-4-ইন্যাল",
+      "b": "3-ক্লোরো-3-ইন পেন্টান্যাল",
+      "c": "3-ক্লোরোহেক্স-3-ইন্যাল",
+      "d": "4-ক্লোরোহেক্সান্যাল"
+    },
+    "correctAnswer": "a",
+    "explanation": "নামকরণ CHO থেকে শুরু করে: 4-Chlorohex-4-enal।"
+  },
+  {
+    "id": 30,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question": "কী কারণে কোন তীব্র তড়িৎ বিশ্লেষ্য দ্রবণের তুল্য পরিবাহিতা ঘনমাত্রা হ্রাসের সাথে বাড়তে থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "দ্রবণের সান্দ্রতা হ্রাস",
+      "b": "আয়নের সংখ্যা বৃদ্ধি",
+      "c": "আন্তঃআয়ন আকর্ষণ হ্রাস",
+      "d": "আয়নের চার্জ বৃদ্ধি"
+    },
+    "correctAnswer": "c",
+    "explanation": "লঘুকরণের ফলে আয়নগুলোর মধ্যবর্তী দূরত্ব বাড়ে, ফলে আন্তঃআয়ন আকর্ষণ কমে এবং পরিবাহিতা বাড়ে।"
+  },
+  {
+    "id": 31,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "কোন বিক্রিয়া দ্বারা কার্বনিল মূলক মিথিলিন মূলকে পরিণত হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "উর্টজ বিক্রিয়া",
+      "b": "ক্লিমেনসন বিজারণ",
+      "c": "ডিকার্বক্সিলেশন",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "ক্লিমেনসন বিজারণে কার্বনিল মূলক (>C=O) মিথিলিন মূলকে (-CH₂-) পরিণত হয়।"
+  },
+  {
+    "id": 32,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "আউফবাউ নীতি অনুসারে নিচের কোন শক্তিক্রমটি সঠিক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4s < 3d < 4p",
+      "b": "3d < 4s < 4p",
+      "c": "4d < 5s < 5p",
+      "d": "5s < 5p < 4d"
+    },
+    "correctAnswer": "a",
+    "explanation": "(n+l) নিয়ম অনুসারে, 4s (4+0=4) < 3d (3+2=5) < 4p (4+1=5)।"
+  },
+  {
+    "id": 33,
+    "subject": "Chemistry",
+    "topic": "Solubility",
+    "question": "25°C তাপমাত্রায় 50 mL 1×10⁻³ M NaCl দ্রবণে 50 mL 1×10⁻² M AgNO₃ যোগ করলে কী ঘটবে? [Ksp(AgCl) = 1.8×10⁻¹⁰]",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "AgCl এর সম্পৃক্ত দ্রবণ তৈরি হবে",
+      "b": "AgCl অধঃক্ষিপ্ত হবে",
+      "c": "AgCl এর অসম্পৃক্ত দ্রবণ তৈরি হবে",
+      "d": "AgCl অধঃক্ষিপ্ত হবে না"
+    },
+    "correctAnswer": "b",
+    "explanation": "আয়নিক গুণফল KIP = [Ag⁺][Cl⁻] = (0.5×10⁻²)(0.5×10⁻³) = 2.5×10⁻⁶ > Ksp, তাই অধঃক্ষেপ পড়বে।"
+  },
+  {
+    "id": 34,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "হাইড্রোজেন সদৃশ আয়ন Be³⁺ এর ২য় বোর কক্ষপথের ব্যাসার্ধ কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.435 Å",
+      "b": "0.706 Å",
+      "c": "0.529 Å",
+      "d": "0.629 Å"
+    },
+    "correctAnswer": "c",
+    "explanation": "r = r_H × n²/Z = 0.529 × 2²/4 = 0.529 Å।"
+  },
+  {
+    "id": 35,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "উর্টজ-ফিটিগ বিক্রিয়ায় নিচের কোনটি তৈরি হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "C₆H₆",
+      "b": "C₆H₅OH",
+      "c": "C₆H₅CH₃",
+      "d": "C₆H₅Cl"
+    },
+    "correctAnswer": "c",
+    "explanation": "উর্টজ-ফিটিগ বিক্রিয়ায় অ্যারাইল হ্যালাইড এবং অ্যালকাইল হ্যালাইড বিক্রিয়া করে অ্যালকাইল বেনজিন (যেমন টলুইন) তৈরি করে।"
+  },
+  {
+    "id": 36,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "নিচের কোনটি কিটো-ইনল টটোমারিজম প্রদর্শন করে না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "CH₃CHO",
+      "b": "C₆H₅COCH₃",
+      "c": "C₆H₅COC₆H₅",
+      "d": "CH₂=C(OH)CH₃"
+    },
+    "correctAnswer": "c",
+    "explanation": "বেনজোফেনন (C₆H₅COC₆H₅) এ কোনো আলফা-হাইড্রোজেন নেই, তাই এটি টটোমারিজম প্রদর্শন করে না।"
+  },
+  {
+    "id": 37,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "1 mol গ্লুকোজ জারিত করতে STP-তে কত লিটার O₂ প্রয়োজন?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "130.0",
+      "b": "134.4",
+      "c": "140.4",
+      "d": "22.4"
+    },
+    "correctAnswer": "b",
+    "explanation": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O। ১ মোল গ্লুকোজের জন্য ৬ মোল অক্সিজেন লাগে। 6 × 22.4 = 134.4 L।"
+  },
+  {
+    "id": 38,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "50 ppm ঘনমাত্রার 100 mL দ্রবণে কী পরিমাণ দ্রব থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "500 µg",
+      "b": "5 g",
+      "c": "0.5 mg",
+      "d": "5 mg"
+    },
+    "correctAnswer": "d",
+    "explanation": "50 ppm = 50 mg/L। 100 mL = 0.1 L। ভর = 50 × 0.1 = 5 mg।"
+  },
+  {
+    "id": 39,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question": "নিচের কোনটি শূন্য ক্রমের বিক্রিয়া?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "H₂ + Cl₂ → 2HCl (hv)",
+      "b": "H₂ + I₂ → 2HI",
+      "c": "2N₂O₅ → 4NO₂ + O₂",
+      "d": "PCl₅ → PCl₃ + Cl₂"
+    },
+    "correctAnswer": "a",
+    "explanation": "আলোকের উপস্থিতিতে হাইড্রোজেন ও ক্লোরিনের বিক্রিয়া একটি শূন্য ক্রমের বিক্রিয়া।"
+  },
+  {
+    "id": 40,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "NaOH দ্রবণে OH⁻ এর ঘনমাত্রা 0.001 M হলে দ্রবণের pH কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2",
+      "b": "3",
+      "c": "10",
+      "d": "11"
+    },
+    "correctAnswer": "d",
+    "explanation": "[OH⁻] = 10⁻³। pOH = 3। pH = 14 - 3 = 11।"
+  },
+  {
+    "id": 41,
+    "subject": "Chemistry",
+    "topic": "Periodic Table",
+    "question": "ক্ষার ধাতুসমূহের মধ্যে সবচেয়ে কম তড়িৎ ধনাত্মক ও কম সক্রিয় ধাতু নিচের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Li",
+      "b": "Na",
+      "c": "K",
+      "d": "Cs"
+    },
+    "correctAnswer": "a",
+    "explanation": "গ্রুপের উপর থেকে নিচে নামলে সক্রিয়তা বাড়ে। লিথিয়াম (Li) সবার উপরে, তাই এটি সবচেয়ে কম সক্রিয়।"
+  },
+  {
+    "id": 42,
+    "subject": "Chemistry",
+    "topic": "Atomic Structure",
+    "question": "নিচের কোন মৌলের পরমাণুতে একইমুখী স্পিনের সর্বাধিক সংখ্যক বিজোড় ইলেকট্রন বিদ্যমান?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "N",
+      "b": "O",
+      "c": "F",
+      "d": "C"
+    },
+    "correctAnswer": "a",
+    "explanation": "নাইট্রোজেনের (N) যোজনী স্তরে ৩টি বিজোড় ইলেকট্রন (2p³) থাকে, যা প্রদত্ত মৌলগুলোর মধ্যে সর্বোচ্চ।"
+  },
+  {
+    "id": 43,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "C₆H₅CONH₂ + Br₂ + 4NaOH → A + ...; বিক্রিয়ায় A যৌগ নিচের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অ্যানিলিন",
+      "b": "ফেনল",
+      "c": "বেনজয়িক এসিড",
+      "d": "নাইট্রোবেনজিন"
+    },
+    "correctAnswer": "a",
+    "explanation": "এটি হফম্যান ডিগ্রেডেশন বিক্রিয়া। বেনজামাইড থেকে অ্যানিলিন (C₆H₅NH₂) উৎপন্ন হয়।"
+  },
+  {
+    "id": 44,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "4.74 pH বিশিষ্ট বাফার দ্রবণ নিচের কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "CH₃COOH ও CH₃COONa",
+      "b": "HCl ও NaCl",
+      "c": "NH₃ ও NH₄Cl",
+      "d": "NaCl ও NaHCO₃"
+    },
+    "correctAnswer": "a",
+    "explanation": "অ্যাসিটিক এসিডের pKa প্রায় 4.74। তাই অ্যাসিটিক এসিড ও এর লবণের মিশ্রণ এই pH এর বাফার তৈরি করে।"
+  },
+  {
+    "id": 45,
+    "subject": "Chemistry",
+    "topic": "Stoichiometry",
+    "question": "একটি কার্বন-12 পরমাণুর ভর প্রায় কত গ্রাম?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1.66×10⁻¹⁴",
+      "b": "6.02×10⁻²³",
+      "c": "1.99×10⁻²³",
+      "d": "1.99×10⁻²⁴"
+    },
+    "correctAnswer": "c",
+    "explanation": "12 g / 6.022×10²³ = 1.99×10⁻²³ g।"
+  },
+  {
+    "id": 46,
+    "subject": "Chemistry",
+    "topic": "Environmental Chemistry",
+    "question": "নিচের কোনটি পানিতে থাকা জৈব বস্তুর উপস্থিতি নির্দেশ করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "DO",
+      "b": "BOD",
+      "c": "COD",
+      "d": "TDS"
+    },
+    "correctAnswer": "b",
+    "explanation": "BOD (Biochemical Oxygen Demand) পানিতে জৈব দূষকের পরিমাণ নির্দেশ করে।"
+  },
+  {
+    "id": 47,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "নিচের কোনটি উভধর্মী যৌগ নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "H₂O",
+      "b": "HNO₂",
+      "c": "HSO₄⁻",
+      "d": "HCO₃⁻"
+    },
+    "correctAnswer": "b",
+    "explanation": "HNO₂ শুধুমাত্র এসিড হিসেবে কাজ করে (প্রোটন দান করে), তাই এটি উভধর্মী নয়।"
+  },
+  {
+    "id": 48,
+    "subject": "Chemistry",
+    "topic": "Gaseous State",
+    "question": "নিচের কোনটি গ্যাসের গতিতত্ত্বের স্বীকার্য নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "গ্যাস অণুসমূহ সর্বদা বিক্ষিপ্ত গতিতে বিচরণ করে",
+      "b": "গ্যাস অণুসমূহের আয়তন পাত্রের আয়তনের তুলনায় নগণ্য",
+      "c": "গ্যাস অণুসমূহ একে অপরকে আকর্ষণ করে",
+      "d": "গ্যাস অণুসমূহের সংঘর্ষ স্থিতিস্থাপক"
+    },
+    "correctAnswer": "c",
+    "explanation": "আদর্শ গ্যাসের গতিতত্ত্ব অনুযায়ী গ্যাস অণুগুলোর মধ্যে কোনো আকর্ষণ বা বিকর্ষণ নেই।"
+  },
+  {
+    "id": 49,
+    "subject": "Chemistry",
+    "topic": "Acids and Bases",
+    "question": "একটি দ্রবণের pH 5 থেকে কমিয়ে 3 করা হলে H₃O⁺ আয়নের ঘনমাত্রা কত গুণ বৃদ্ধি পাবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "10",
+      "b": "100",
+      "c": "1000",
+      "d": "2"
+    },
+    "correctAnswer": "b",
+    "explanation": "pH পরিবর্তন 2 একক মানে ঘনমাত্রা 10² = 100 গুণ পরিবর্তন।"
+  },
+  {
+    "id": 50,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry",
+    "question": "Sn1 বিক্রিয়া সম্পর্কে নিচের কোনটি সঠিক নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Sn1 বিক্রিয়া দুই ধাপে ঘটে",
+      "b": "পোলার দ্রাবকে Sn1 বিক্রিয়া ঘটে",
+      "c": "Sn1 বিক্রিয়া ১ম ক্রম অনুসরণ করে",
+      "d": "নিউক্লিওফাইলের ঘনমাত্রা বেশি হলে Sn1 অনুসৃত হয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "Sn1 বিক্রিয়ার হার নিউক্লিওফাইলের ঘনমাত্রার উপর নির্ভর করে না।"
+  }
+]

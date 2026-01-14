@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "কোনটি রেস্ট্রিকশন এনজাইম নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "EcoRI",
+      "b": "Hind III",
+      "c": "Hpa-II",
+      "d": "All-Po"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 2,
+    "subject": "Biology",
+    "topic": "Microbiology",
+    "question": "Germ Theory of Disease প্রতিষ্ঠিত করেন কে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "A.V. Leeuwenhoek",
+      "b": "C.G. Ehrenberg",
+      "c": "Louis Pasteur",
+      "d": "Robert Kotch"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 3,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "কোন প্রযুক্তিতে ইনসুলিন তৈরি করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ন্যানো টেকনোলজি",
+      "b": "টিস্যু কালচার",
+      "c": "রিকম্বিন্যান্ট DNA টেকনোলজি",
+      "d": "এক্সপ্লান্ট কালচার"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 4,
+    "subject": "Biology",
+    "topic": "Plant Anatomy",
+    "question": "জাইলেম ও ফ্লোয়েমের মাঝে ক্যাম্বিয়াম থাকে কোন ভাস্কুলার বান্ডলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "বদ্ধ সমপার্শ্বীয়",
+      "b": "মুক্ত সমপার্শ্বীয়",
+      "c": "অরীয়",
+      "d": "সমদ্বিপার্শ্বীয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "মুক্ত সমপার্শ্বীয় ভাস্কুলার বান্ডলে জাইলেম ও ফ্লোয়েমের মাঝে ক্যাম্বিয়াম থাকে।"
+  },
+  {
+    "id": 5,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "ফটোসিনথেসিসে PS-II বিক্রিয়া কেন্দ্রের ক্লোরোফিল-a কত ন্যানোমিটার তরঙ্গদৈর্ঘ্যের আলোক সক্রিয়ভাবে শোষণ করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "700",
+      "b": "760",
+      "c": "680",
+      "d": "660"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 6,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "শ্বসনের দ্বিতীয় ধাপে (পাইরুভিক এসিড জারণ) কয়টি NADH2 তৈরি হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "5"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 7,
+    "subject": "Biology",
+    "topic": "Cell Biology",
+    "question": "Sandwich মডেল কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মাইসেলার মডেল",
+      "b": "দ্বি-স্তর বিশিষ্ট মডেল",
+      "c": "প্রোটিন-ক্রিস্টাল মডেল",
+      "d": "ফ্লুইড মোজাইক মডেল"
+    },
+    "correctAnswer": "b",
+    "explanation": "ড্যানিয়েলি ও ড্যাপসন প্রদত্ত মডেলটি স্যান্ডউইচ মডেল নামে পরিচিত, যা দ্বি-স্তর বিশিষ্ট।"
+  },
+  {
+    "id": 8,
+    "subject": "Biology",
+    "topic": "Cell Biology",
+    "question": "কোষের ট্রাফিক পুলিশ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "গলজি বডি",
+      "b": "লাইসোজোম",
+      "c": "রাইবোজোম",
+      "d": "সেন্ট্রোজোম"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 9,
+    "subject": "Biology",
+    "topic": "Cell Biology",
+    "question": "কোষে পানি ও pH এর পরিমাণ বজায় রাখে কোন কোষীয় অঙ্গাণুটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কোষ ঝিল্লি",
+      "b": "সাইটোপ্লাজম",
+      "c": "নিউক্লিয়াস",
+      "d": "কোষ গহ্বর"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 10,
+    "subject": "Biology",
+    "topic": "Genetics",
+    "question": "প্রি-mRNA এর যে অংশে ট্রান্সলেশন হয়, তাকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Exons",
+      "b": "Introns",
+      "c": "Splicing",
+      "d": "Muton"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 11,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "কোনটি আণবিক কাঁচি হিসেবে পরিচিত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ইন্টারফেরন",
+      "b": "লাইগেজ এনজাইম",
+      "c": "প্লাজমিড",
+      "d": "রেস্ট্রিকশন এনজাইম"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 12,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "পাতায় ক্লোরোফিল অণু সৃষ্টির জন্য কোন মৌলটি অপরিহার্য?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ম্যাগনেসিয়াম",
+      "b": "ক্যালসিয়াম",
+      "c": "সোডিয়াম",
+      "d": "পটাশিয়াম"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 13,
+    "subject": "Biology",
+    "topic": "Cell Biology",
+    "question": "কোষঝিল্লির মোট শুষ্ক ওজনের কত ভাগ লিপিড?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "প্রায় 50 ভাগ",
+      "b": "প্রায় 75 ভাগ",
+      "c": "প্রায় 90 ভাগ",
+      "d": "প্রায় 25 ভাগ"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 14,
+    "subject": "Biology",
+    "topic": "Taxonomy",
+    "question": "শ্রেণিবিন্যাসের মৌলিক এককের নাম কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ট্যাক্সন",
+      "b": "গণ",
+      "c": "দ্বিপদ",
+      "d": "প্রজাতি"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 15,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "হাইড্রার দেহে নিচের কোনটি কঙ্কাল হিসেবে কাজ করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "নিমাটোসিস্ট",
+      "b": "মেসোগ্লিয়া",
+      "c": "এপিডার্মিস",
+      "d": "সিলোম"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 16,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "ঘাসফড়িং-এর সমগ্র দেহে একবার রক্ত প্রবাহ সম্পন্ন হতে কত মিনিট সময় লাগে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "5-10",
+      "b": "10-20",
+      "c": "20-25",
+      "d": "30-60"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 17,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "কোন প্রাণীর দেহগহ্বর সংক্ষিপ্ত ও হিমোসিলে পরিণত হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কৃমি",
+      "b": "কেঁচো",
+      "c": "ব্যাঙ",
+      "d": "শামুক"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 18,
+    "subject": "Biology",
+    "topic": "Embryology",
+    "question": "নিষিক্ত ডিম্বাণু বিভাজন প্রক্রিয়ায় গ্যাস্ট্রুলার উপরের স্তরকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ব্লাস্টোডার্ম",
+      "b": "এপিব্লাস্ট",
+      "c": "ব্লাস্টোমেয়ার",
+      "d": "ক্লিভেজ"
+    },
+    "correctAnswer": "b",
+    "explanation": "গ্যাস্ট্রুলার উপরের স্তরকে এপিব্লাস্ট এবং নিচের স্তরকে হাইপোব্লাস্ট বলে।"
+  },
+  {
+    "id": 19,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "লালাগ্রন্থি নিঃসৃত পরিপাক রসের এনজাইমের নাম কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "টায়ালিন",
+      "b": "পেপসিন",
+      "c": "অ্যামাইলেজ",
+      "d": "রেনিন"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 20,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "যদি প্রতি মিনিটে গড়ে 75 বার হার্টবিট হয়, তবে কার্ডিয়াক চক্রের সময় কত সেকেন্ড?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.4",
+      "b": "0.6",
+      "c": "0.8",
+      "d": "0.1"
+    },
+    "correctAnswer": "c",
+    "explanation": "60 / 75 = 0.8 second."
+  },
+  {
+    "id": 21,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "মানবদেহে লোহিত রক্তকণিকা ও শ্বেত রক্তকণিকার অনুপাত কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "700:1",
+      "b": "600:1",
+      "c": "500:1",
+      "d": "400:1"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 22,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "পুরুষ মানুষের রক্তে ক্রিয়েটিনিনের স্বাভাবিক মাত্রা কত mg/dl?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0.06 – 0.15",
+      "b": "0.6 – 1.2",
+      "c": "3.0 – 4.0",
+      "d": "5.0 – 6.0"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 23,
+    "subject": "Biology",
+    "topic": "Embryology",
+    "question": "ভ্রূণ আবরণের কোন অংশ ভ্রূণকে শুষ্কতার হাত থেকে রক্ষা করে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অ্যামনিওন",
+      "b": "কোরিওন",
+      "c": "কুসুম থলি",
+      "d": "অ্যালানটয়েস"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 24,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "পিনিয়াল গ্রন্থি থেকে নিঃসৃত হরমোন কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেলাটোনিন",
+      "b": "থাইরক্সিন",
+      "c": "থাইমোসিন",
+      "d": "ইনসুলিন"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 25,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "মানব দেহের কোন অঙ্গে গ্লাইকোজেন জমা থাকে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "প্যানক্রিয়াস",
+      "b": "বৃক্ক",
+      "c": "ফুসফুস",
+      "d": "যকৃত"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 26,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "কেলভিন চক্রের প্রথম স্থায়ী পদার্থ কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "3-ফসফোগ্লিসারিক এসিড",
+      "b": "রাইবুলোজ 5 ফসফেট",
+      "c": "4 কার্বন বিশিষ্ট অক্সালো এসিটিক এসিড",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 27,
+    "subject": "Biology",
+    "topic": "Microbiology",
+    "question": "ভাইরাস সংক্রমণের সাথে জড়িত কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মাইক্রোসেফালি",
+      "b": "সিফিলিস",
+      "c": "মেনিনজাইটিস",
+      "d": "অ্যানথ্রাক্স"
+    },
+    "correctAnswer": "a",
+    "explanation": "জিকা ভাইরাস সংক্রমণের ফলে মাইক্রোসেফালি হয়।"
+  },
+  {
+    "id": 28,
+    "subject": "Biology",
+    "topic": "Taxonomy",
+    "question": "Poaceae-গোত্রের ফল কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "বেরি",
+      "b": "ক্যাপসুল",
+      "c": "সিপসেলা",
+      "d": "ক্যারিওপসিস"
+    },
+    "correctAnswer": "d",
+    "explanation": "Poaceae গোত্রের ফলকে ক্যারিওপসিস বলা হয়।"
+  },
+  {
+    "id": 29,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "ঘাসফড়িং এর রক্তকণিকাকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হিমোসিল",
+      "b": "হিমোলিম্ফ",
+      "c": "হিমোসাইট",
+      "d": "লসিকা"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 30,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "GMO এর পূর্ণরূপ কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Genetically Modern Organism",
+      "b": "Genetically Modification Organism",
+      "c": "Genetically Micro Organism",
+      "d": "Genetically Modified Organism"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 31,
+    "subject": "Biology",
+    "topic": "Cell Biology",
+    "question": "কোষের অম্লত্ব ও ক্ষারত্ব নিয়ন্ত্রণকারী অঙ্গাণু কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কোষপ্রাচীর",
+      "b": "সাইটোপ্লাজম",
+      "c": "কোষঝিল্লি",
+      "d": "এন্ডোপ্লাজমিক রেটিকুলাম"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 32,
+    "subject": "Biology",
+    "topic": "Cell Division",
+    "question": "মেটাকাইনেসিস কখন ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেটাফেজ",
+      "b": "প্রোমেটাফেজ",
+      "c": "অ্যানাফেজ",
+      "d": "টেলোফেজ"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 33,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "কেলভিন চক্রে CO2 এর গ্রাহক কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "3PGA",
+      "b": "RuBP",
+      "c": "OAA",
+      "d": "PEP"
+    },
+    "correctAnswer": "b",
+    "explanation": "কেলভিন চক্রে কার্বন ডাই অক্সাইড গ্রাহক হলো রাইবুলোজ ১,৫-বিসফসফেট (RuBP)।"
+  },
+  {
+    "id": 34,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "বর্তমানে কোনটি ব্যবহার করে রিকম্বিনেন্ট DNA শনাক্ত করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "জিন ক্লোনিং",
+      "b": "DNA হাইব্রিডাইজেশন",
+      "c": "DNA প্রোব",
+      "d": "DNA ফিংগার প্রিন্ট"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 35,
+    "subject": "Biology",
+    "topic": "Genetics",
+    "question": "অ্যান্টিকোডন পাওয়া যায় কোথায়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "g-RNA",
+      "b": "t-RNA",
+      "c": "m-RNA",
+      "d": "DNA"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 36,
+    "subject": "Biology",
+    "topic": "Plant Physiology",
+    "question": "Guttation কোথায় ঘটে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হাইডাথোড",
+      "b": "স্টোমাটা",
+      "c": "স্ট্রোমা",
+      "d": "বাকল"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 37,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "নিচের কোনটি পারস্পরিক সম্পর্কযুক্ত নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কেঁচো ও নেফ্রিডিয়া",
+      "b": "গোলকৃমি ও শিখাকোষ",
+      "c": "তারামাছ ও পানিসংবহনতন্ত্র",
+      "d": "চিংড়ি ও হিমোসিল"
+    },
+    "correctAnswer": "b",
+    "explanation": "শিখাকোষ প্লাটিহেলমিনথিস পর্বের রেচন অঙ্গ, গোলকৃমি (নেমাটোডা) এর নয়।"
+  },
+  {
+    "id": 38,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "কোন প্রাণীর রক্তকণিকায় শ্বসনরঞ্জক থাকে না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ঘাসফড়িং",
+      "b": "রুইমাছ",
+      "c": "হাইড্রা",
+      "d": "কেঁচো"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 39,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "কিটোসিস রোগের কারণ কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "শর্করা বিপাক",
+      "b": "প্রোটিন বিপাক",
+      "c": "লিপিড বিপাক",
+      "d": "হরমোন বিপাক"
+    },
+    "correctAnswer": "c",
+    "explanation": "লিপিড বিপাকের ফলে কিটোন বডি উৎপন্ন হয়, যা থেকে কিটোসিস হয়।"
+  },
+  {
+    "id": 40,
+    "subject": "Biology",
+    "topic": "Genetics",
+    "question": "জীবের কোন প্রজাতির একসেট হ্যাপ্লয়েড ক্রোমোজোমে বিদ্যমান জিনের সমষ্টিকে বলে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অ্যালিল",
+      "b": "জিনোম",
+      "c": "ক্যারিওটাইপ",
+      "d": "অ্যালোজোম"
+    },
+    "correctAnswer": "b",
+    "explanation": ""
+  },
+  {
+    "id": 41,
+    "subject": "Biology",
+    "topic": "Genetics",
+    "question": "লিথাল জিনের ফলাফল কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "4:1",
+      "b": "9:7",
+      "c": "13:3",
+      "d": "2:1"
+    },
+    "correctAnswer": "d",
+    "explanation": ""
+  },
+  {
+    "id": 42,
+    "subject": "Biology",
+    "topic": "Zoology",
+    "question": "দ্বিতরী প্রাণীর দেহগহ্বরকে বলা হয়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সিলোম",
+      "b": "হিমোসিল",
+      "c": "সিলেন্টেরন",
+      "d": "মেসোগ্লিয়া"
+    },
+    "correctAnswer": "c",
+    "explanation": ""
+  },
+  {
+    "id": 43,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "কোনটি সেরিব্রামকে আবৃত করে রাখে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেনিনজেস",
+      "b": "সেরিব্রাম কর্টেক্স",
+      "c": "নিউরন",
+      "d": "সেরিব্রাল হেমিস্ফিয়ার"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 44,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "প্লুরা কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ফুসফুসের দ্বিস্ওরী পর্দা",
+      "b": "হৃৎপিণ্ডের আবরণী পর্দা",
+      "c": "ব্যবধায়ক পর্দা",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 45,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "মধ্যকর্ণের সংক্রমণকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ওটিটিস মিডিয়া",
+      "b": "ব্রঙ্কাইটিস",
+      "c": "এমফাইসেমা",
+      "d": "সাইনোসাইটিস"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 46,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "মানবদেহে 'Biological clock' নিয়ন্ত্রণ করে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হাইপোথ্যালামাস",
+      "b": "সেরিব্রাম",
+      "c": "সেরিবেলাম",
+      "d": "থ্যালামাস"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 47,
+    "subject": "Biology",
+    "topic": "Human Physiology",
+    "question": "ভ্রূণীয় অবস্থায় লোহিত রক্ত কণিকা কোথায় তৈরি হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অস্থিমজ্জায়",
+      "b": "যকৃতে",
+      "c": "কিডনিতে",
+      "d": "কশেরুকায়"
+    },
+    "correctAnswer": "b",
+    "explanation": "ভ্রূণীয় অবস্থায় যকৃত ও প্লীহায় লোহিত রক্তকণিকা উৎপন্ন হয়।"
+  },
+  {
+    "id": 48,
+    "subject": "Biology",
+    "topic": "Genetics",
+    "question": "প্রি-mRNA এর অ্যাডেনিন নিউক্লিওটাইডকে বলা হয়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "পলি-A টেইল",
+      "b": "পলি-B টেইল",
+      "c": "পলি-α টেইল",
+      "d": "পলি-β টেইল"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  },
+  {
+    "id": 49,
+    "subject": "Biology",
+    "topic": "Plant Anatomy",
+    "question": "কোনটি স্টিলীয় অংশ নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "এপিডার্মিস",
+      "b": "হাইপোডার্মিস",
+      "c": "এন্ডোডার্মিস",
+      "d": "ভাস্কুলার বান্ডিল"
+    },
+    "correctAnswer": "c",
+    "explanation": "এন্ডোডার্মিস বা অন্তঃত্বক স্টিলির বাইরের অংশ। পেরিসাইকল থেকে স্টিলি শুরু।"
+  },
+  {
+    "id": 50,
+    "subject": "Biology",
+    "topic": "Biotechnology",
+    "question": "'হাইব্রিড' শব্দটি নিচের কোন প্রক্রিয়ার সাথে জড়িত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হাইব্রিডাইজেশন",
+      "b": "জিন ক্লোনিং",
+      "c": "টিস্যু কালচার",
+      "d": "গ্রাফটিং"
+    },
+    "correctAnswer": "a",
+    "explanation": ""
+  }
+]

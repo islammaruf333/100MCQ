@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "subject": "Biology",
+    "question": "ইউরিয়া চক্রের সঠিক নির্দেশিত পথ কোনটি?",
+    "options": {
+      "a": "সাইটুলিন → আরজিনিনোসাকসিনেট → আরজিনিন → অরনিথিন",
+      "b": "অরনিথিন → আরজিনিন → আরজিনিনোসাকসিনেট → সাইটুলিন",
+      "c": "আরজিনিনোসাকসিনেট → সাইটুলিন → আরজিনিন → অরনিথিন",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A"
+  },
+  {
+    "id": 2,
+    "subject": "Biology",
+    "question": "টিস্যু কালচার প্রযুক্তির প্রাথমিক উদ্দেশ্য-",
+    "options": {
+      "a": "বেশি টিস্যু উৎপাদন করা",
+      "b": "নতুন জাতের টিস্যু সৃষ্টি করা",
+      "c": "উন্নত মানের বীজ উৎপাদন",
+      "d": "বিভাজনক্ষম অঙ্গ থেকে নতুন চারা উৎপাদন"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 3,
+    "subject": "Biology",
+    "question": "কোন নগ্নবীজী উদ্ভিদে দ্বিনিষেক ঘটে?",
+    "options": {
+      "a": "Gnetum",
+      "b": "Cycas",
+      "c": "Pinus",
+      "d": "Ephedra"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A"
+  },
+  {
+    "id": 4,
+    "subject": "Biology",
+    "question": "পৃথিবীর আদিপ্রাণী কোন পর্বের অন্তর্ভুক্ত?",
+    "options": {
+      "a": "কর্ডাটা",
+      "b": "পরিফেরা",
+      "c": "সিলেন্টারেটা",
+      "d": "প্রোটোজোয়া"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 5,
+    "subject": "Biology",
+    "question": "Petromyzontida শ্রেণির মাছেরা কী নামে পরিচিত?",
+    "options": {
+      "a": "হ্যাগফিশ",
+      "b": "ল্যাম্প্রে",
+      "c": "স্লাইম ঈল",
+      "d": "লাং ফিশ"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A"
+  },
+  {
+    "id": 6,
+    "subject": "Biology",
+    "question": "কোন ব্লাড গ্রুপের ব্যক্তিকে সার্বজনীন গ্রহীতা বলা হয়?",
+    "options": {
+      "a": "A",
+      "b": "B",
+      "c": "AB",
+      "d": "O"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 7,
+    "subject": "Biology",
+    "question": "মাইটোসিস কোষ বিভাজনে ডিএনএ রেপ্লিকেশন হয় যে দশায়-",
+    "options": {
+      "a": "G1",
+      "b": "G2",
+      "c": "S",
+      "d": "সবগুলোই"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 8,
+    "subject": "Biology",
+    "question": "সোমাটোস্ট্যাটিন ক্ষরিত হয়-",
+    "options": {
+      "a": "alpha-কোষ",
+      "b": "delta-কোষ",
+      "c": "beta-কোষ",
+      "d": "gamma-কোষ"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 9,
+    "subject": "Biology",
+    "question": "বিশ্বজনীন উদ্ভিদ বলা হয়-",
+    "options": {
+      "a": "শৈবাল",
+      "b": "ছত্রাক",
+      "c": "ব্রায়োফাইটা",
+      "d": "লাইকেন"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 10,
+    "subject": "Biology",
+    "question": "কোন উদ্ভিদ কোষে নিউক্লিয়াস থাকে না?",
+    "options": {
+      "a": "সিভনল",
+      "b": "সঙ্গীকোষ",
+      "c": "ট্রাকিড",
+      "d": "ভেসেল"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 11,
+    "subject": "Biology",
+    "question": "বর্তমানে কোনটি ব্যবহার করে রিকম্বিনেন্ট DNA শনাক্ত করা হয়?",
+    "options": {
+      "a": "SDS-Page",
+      "b": "ক্যালাস সৃষ্টি করে",
+      "c": "DNA প্রোব",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A"
+  },
+  {
+    "id": 12,
+    "subject": "Biology",
+    "question": "মাছ কোন অঙ্গের সাহায্যে পানির বিভিন্ন স্তর সম্পর্কে জানতে পারে?",
+    "options": {
+      "a": "পাখনা রশ্মি",
+      "b": "পার্শ্বরেখা",
+      "c": "নাসারন্ধ্র",
+      "d": "বায়ুথলি"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A"
+  },
+  {
+    "id": 13,
+    "subject": "Biology",
+    "question": "ইন্টারফেরন কী?",
+    "options": {
+      "a": "প্রোটিন",
+      "b": "হরমোন",
+      "c": "কার্বোহাইড্রেট",
+      "d": "লিপিড"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 14,
+    "subject": "Biology",
+    "question": "ঘাস ফড়িং এর ট্রাকিয়া কখনো চুপসে যায় না, কারণ-",
+    "options": {
+      "a": "ইন্টিমা",
+      "b": "অ্যাট্রিয়াম",
+      "c": "ভিত্তিঝিল্লি",
+      "d": "টিনিডিয়া"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 15,
+    "subject": "Biology",
+    "question": "E. coli মানুষের অন্ত্রে নিচের কোন ভিটামিন তৈরি করে?",
+    "options": {
+      "a": "B6",
+      "b": "C",
+      "c": "B3",
+      "d": "B12"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A"
+  },
+  {
+    "id": 16,
+    "subject": "Biology",
+    "question": "ফ্যাটি এসিডের বিপাক উদ্ভিদ কোষের কোথায় ঘটে?",
+    "options": {
+      "a": "গ্লাইঅক্সিসোম",
+      "b": "লাইসোসোম",
+      "c": "রাইবোসোম",
+      "d": "পারঅক্সিসোম"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 17,
+    "subject": "Biology",
+    "question": "এরিথ্রোসাইট ধ্বংস হয় কোথায়?",
+    "options": {
+      "a": "যকৃৎ ও প্লীহা",
+      "b": "যকৃৎ ও অগ্ন্যাশয়",
+      "c": "অস্থিমজ্জা ও প্লীহা",
+      "d": "অস্থিমজ্জা ও বৃক্ক"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 18,
+    "subject": "Biology",
+    "question": "পানির ফটোলাইসিসের জন্য প্রয়োজন-",
+    "options": {
+      "a": "Mg",
+      "b": "Ca",
+      "c": "Fe",
+      "d": "Mn"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set A"
+  },
+  {
+    "id": 19,
+    "subject": "Biology",
+    "question": "গ্লুকোজের RQ-",
+    "options": {
+      "a": "2.5",
+      "b": "1.0",
+      "c": "1.5",
+      "d": "2.0"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 20,
+    "subject": "Biology",
+    "question": "Hydra-র টটিপোটেন্ট কোষ-",
+    "options": {
+      "a": "ইন্টারস্টিশিয়াল কোষ",
+      "b": "জনন কোষ",
+      "c": "সংবেদী কোষ",
+      "d": "নিডোসাইট"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 21,
+    "subject": "Biology",
+    "question": "খনিজ লবণ শোষণের সময় উদ্ভিদের মূল কোন ক্যাটায়ন দ্রুত গতিতে শোষণ করে?",
+    "options": {
+      "a": "Ca++",
+      "b": "Mg++",
+      "c": "K+",
+      "d": "Na+"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 22,
+    "subject": "Biology",
+    "question": "আমরা অন্ন জাতীয় খাদ্য গ্রহণ করা সত্ত্বেও রক্তের pH এর পরিবর্তন না হওয়ার কারণ-",
+    "options": {
+      "a": "এন্টিবডি",
+      "b": "এন্টিজেন",
+      "c": "রক্তের গ্রুপ",
+      "d": "বাফার"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 23,
+    "subject": "Biology",
+    "question": "গ্লাইকোলাইসিস কোষের কোন অঙ্গাণুতে ঘটে?",
+    "options": {
+      "a": "সাইটোপ্লাজম",
+      "b": "মেসোসোম",
+      "c": "গলগি বডি",
+      "d": "প্রোটোপ্লাস্ট"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set A"
+  },
+  {
+    "id": 24,
+    "subject": "Biology",
+    "question": "Gastrovascular Cavity কোন প্রাণীতে পাওয়া যায়?",
+    "options": {
+      "a": "Scypha",
+      "b": "Hydra",
+      "c": "Taenia",
+      "d": "Aurelia"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set A"
+  },
+  {
+    "id": 25,
+    "subject": "Biology",
+    "question": "সেক্স (X-Chromosome) লিংকড ডিসঅর্ডার নয় কোনটি?",
+    "options": {
+      "a": "বর্ণান্ধতা",
+      "b": "হিমোফিলিয়া",
+      "c": "ক্রিসমাস",
+      "d": "মূক বধিরতা"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set A"
+  },
+  {
+    "id": 26,
+    "subject": "Biology",
+    "question": "কোনটি প্লাজমা প্রোটিন নয়?",
+    "options": {
+      "a": "অ্যালবুমিন",
+      "b": "প্রোথ্রম্বিন",
+      "c": "ফাইব্রিনোজেন",
+      "d": "বিলিরুবিন"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 27,
+    "subject": "Biology",
+    "question": "এসিডিক পরিবেশে কাজ করে কোনটি?",
+    "options": {
+      "a": "অ্যামাইলেজ",
+      "b": "পেপসিন",
+      "c": "ট্রিপসিন",
+      "d": "লাইপেজ"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 28,
+    "subject": "Biology",
+    "question": "স্ট্রেপটোকক্কাস দেখতে-",
+    "options": {
+      "a": "গদাকৃতির",
+      "b": "গোলাকার",
+      "c": "কমাকৃতির",
+      "d": "তারকাকার"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 29,
+    "subject": "Biology",
+    "question": "ব্যাক্টেরিওফফাজ এক প্রকার-",
+    "options": {
+      "a": "ব্যাকটেরিয়া",
+      "b": "লাইকেন",
+      "c": "ছত্রাক",
+      "d": "ভাইরাস"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 30,
+    "subject": "Biology",
+    "question": "গ্লুকোজ অণুর কত শতাংশ সবাত শ্বসনে ব্যবহৃত হয়-",
+    "options": {
+      "a": "প্রায় 42%",
+      "b": "প্রায় 32%",
+      "c": "প্রায় 52%",
+      "d": "প্রায় 62%"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B"
+  },
+  {
+    "id": 31,
+    "subject": "Biology",
+    "question": "Hydra-র পরিপাক কোন ধরনের?",
+    "options": {
+      "a": "অন্তঃকোষীয়",
+      "b": "বহিঃকোষীয়",
+      "c": "সাপ্রোজোয়িক",
+      "d": "অন্তঃকোষীয় ও বহিঃকোষীয়"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 32,
+    "subject": "Biology",
+    "question": "বহিনিউক্লিয়াসযুক্ত উদ্ভিদ কোষকে বলা হয়-",
+    "options": {
+      "a": "লাইকেন",
+      "b": "প্লাসমোডিয়াম",
+      "c": "সিনোসাইট",
+      "d": "সিনসাইটিয়াম"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B"
+  },
+  {
+    "id": 33,
+    "subject": "Biology",
+    "question": "ক্যাম্বিয়ামের ক্ষেত্রে কোনটি সঠিক নয়?",
+    "options": {
+      "a": "স্থায়ী টিস্যু",
+      "b": "ভাজক টিস্যু",
+      "c": "জাইলেম ও ফ্লোয়েমের মাঝখানে অবস্থান করে",
+      "d": "দ্বিবীজপত্রী উদ্ভিদের কাণ্ডে পাওয়া যায়"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B"
+  },
+  {
+    "id": 34,
+    "subject": "Biology",
+    "question": "পলিপেপটাইড ট্রান্সলেশনের জন্য টার্মিনেশন কোডন কোনটি?",
+    "options": {
+      "a": "AGU",
+      "b": "UGG",
+      "c": "UGA",
+      "d": "AUG"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B"
+  },
+  {
+    "id": 35,
+    "subject": "Biology",
+    "question": "দ্বিবীজপত্রী উদ্ভিদের মূলের পরিবহন কলাগুচ্ছের সংখ্যা-",
+    "options": {
+      "a": "4",
+      "b": "8",
+      "c": "10",
+      "d": "12"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B"
+  },
+  {
+    "id": 36,
+    "subject": "Biology",
+    "question": "C3 উদ্ভিদের কার্বন বিজারণ প্রক্রিয়ায় প্রথম স্থায়ী পদার্থ কোনটি?",
+    "options": {
+      "a": "ফসফোগ্লিসারিক এসিড",
+      "b": "অক্সালো অ্যাসিটিক এসিড",
+      "c": "ম্যালিক এসিড",
+      "d": "3-ফসফোগ্লিসারিক এসিড"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 37,
+    "subject": "Biology",
+    "question": "উদ্ভিদ দেহে প্রস্বেদনে প্রধান অঙ্গ কোনটি?",
+    "options": {
+      "a": "লেন্টিসেল",
+      "b": "গ্রন্থিটিস্যু",
+      "c": "ত্বকীয কোষ",
+      "d": "পত্ররন্ধ্র"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 38,
+    "subject": "Biology",
+    "question": "পিত্তলবণ নিম্নের কোন ভিটামিনের ক্ষুদ্রান্ত্রে শোষণ প্রক্রিয়ায় ভূমিকা পালন করে?",
+    "options": {
+      "a": "ভিটামিন K",
+      "b": "ভিটামিন C",
+      "c": "ভিটামিন B2",
+      "d": "ভিটামিন B12"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B"
+  },
+  {
+    "id": 39,
+    "subject": "Biology",
+    "question": "ভাইরাসমুক্ত উদ্ভিদ তৈরিতে কোন পদ্ধতি বাংলাদেশে বাণিজ্যিকভাবে বহুল প্রচলিত?",
+    "options": {
+      "a": "মেরিস্টেম কালচার",
+      "b": "ক্যালাস কালচার",
+      "c": "হ্যাপ্লয়েড কালচার",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B"
+  },
+  {
+    "id": 40,
+    "subject": "Biology",
+    "question": "যে জিন অপর জিনের বৈশিষ্ট্য প্রকাশে বাধা প্রদান করে, সেই জিনকে বলে-",
+    "options": {
+      "a": "হাইপোস্ট্যাটিক জিন",
+      "b": "এপিস্ট্যাটিক জিন",
+      "c": "লিথাল জিন",
+      "d": "সেমিলিখাল জিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 41,
+    "subject": "Biology",
+    "question": "ফুসফুসের কার্যকরী একক-",
+    "options": {
+      "a": "অ্যালভিওলাস",
+      "b": "ব্রঙ্কিওল",
+      "c": "ট্রাকিয়া",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "a",
+    "explanation": "Set B"
+  },
+  {
+    "id": 42,
+    "subject": "Biology",
+    "question": "BMI-এর মান 30-34.99 হলে, তা নির্দেশ করে-",
+    "options": {
+      "a": "স্বাভাবিক ওজন",
+      "b": "অতিরিক্ত ওজন",
+      "c": "প্রথম শ্রেণির স্থূলতা",
+      "d": "দ্বিতীয় শ্রেণির স্থূলতা"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B"
+  },
+  {
+    "id": 43,
+    "subject": "Biology",
+    "question": "মাকড়সার জাল তৈরিতে সিল্কগ্রন্থি থেকে ক্ষরিত প্রোটিন-",
+    "options": {
+      "a": "ইমিউনোগ্লোবিউলিন",
+      "b": "স্কেলেরোপ্রোটিন",
+      "c": "প্রোটিন P45",
+      "d": "ট্রিপসিন"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 44,
+    "subject": "Biology",
+    "question": "বাধ্যতামূলক পরজীবী বলা হয় কোনটি?",
+    "options": {
+      "a": "ছত্রাক",
+      "b": "ব্যাকটেরিয়া",
+      "c": "ভাইরাস",
+      "d": "শৈবাল"
+    },
+    "correctAnswer": "c",
+    "explanation": "Set B"
+  },
+  {
+    "id": 45,
+    "subject": "Biology",
+    "question": "Second generation biofuel বলা হয়-",
+    "options": {
+      "a": "ছত্রাক",
+      "b": "শৈবাল",
+      "c": "লাইকেন",
+      "d": "ব্রায়োফাইটা"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 46,
+    "subject": "Biology",
+    "question": "PCR প্রযুক্তি ব্যবহৃত হয়-",
+    "options": {
+      "a": "রিকম্বিনেন্ট DNA প্রযুক্তিতে",
+      "b": "রোগ নির্ণয়ে",
+      "c": "জীবন সংক্রান্ত গবেষণায়",
+      "d": "সবগুলোতেও"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 47,
+    "subject": "Biology",
+    "question": "ট্রান্সজেনিক উদ্ভিদ তৈরিতে কোনটি বাহক হিসেবে কাজ করে?",
+    "options": {
+      "a": "Plasmodium",
+      "b": "Penicillium",
+      "c": "Vibrio",
+      "d": "Agrobacterium"
+    },
+    "correctAnswer": "d",
+    "explanation": "Set B"
+  },
+  {
+    "id": 48,
+    "subject": "Biology",
+    "question": "ডিঅক্সিরাইবোজ সুগারে অক্সিজেন অনুপস্থিত থাকে-",
+    "options": {
+      "a": "প্রথম কার্বনে",
+      "b": "দ্বিতীয় কার্বনে",
+      "c": "চতুর্থ কার্বনে",
+      "d": "পঞ্চম কার্বনে"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 49,
+    "subject": "Biology",
+    "question": "ব্যাকটেরিয়ার প্লাসমিড DNA-",
+    "options": {
+      "a": "একসূত্রক",
+      "b": "দ্বিসূত্রক",
+      "c": "ত্রিসূত্রক",
+      "d": "বহুসূত্রক"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  },
+  {
+    "id": 50,
+    "subject": "Biology",
+    "question": "গোল্ডেন রাইসের রঙ-",
+    "options": {
+      "a": "সাদা",
+      "b": "হলুদ",
+      "c": "বাদামি",
+      "d": "বেগুনি"
+    },
+    "correctAnswer": "b",
+    "explanation": "Set B"
+  }
+]

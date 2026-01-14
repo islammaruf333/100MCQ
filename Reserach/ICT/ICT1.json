@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "BD DO-C লজিক বর্তনীতে আউটপুট Y = ?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "AB",
+      "b": "AB bar",
+      "c": "A+B",
+      "d": "A+B bar"
+    },
+    "correctAnswer": "a",
+    "explanation": "বর্তনীটি মূলত ন্যান্ড (NAND) গেট দ্বারা গঠিত যা একটি AND গেটের কাজ করছে। সমীকরণ: Y = ((AB)')' = AB।"
+  },
+  {
+    "id": 2,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "yz' + y'z' + yz বুলিয়ান ফাংশনটি সরল করলে পাওয়া যায়-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "y + z'",
+      "b": "y' + z",
+      "c": "y + z",
+      "d": "y' + z'"
+    },
+    "correctAnswer": "a",
+    "explanation": "সরলীকরণ: yz' + y'z' + yz = z'(y + y') + yz = z'.1 + yz = z' + yz = (z' + y)(z' + z) = y + z'।"
+  },
+  {
+    "id": 3,
+    "subject": "ICT",
+    "topic": "Web Design & HTML",
+    "question": "IPv6 অ্যাড্রেসে কত বিট ব্যবহার করা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "32-বিট",
+      "b": "64-বিট",
+      "c": "128-বিট",
+      "d": "256-বিট"
+    },
+    "correctAnswer": "c",
+    "explanation": "IPv4 এ 32 বিট এবং IPv6 এ 128 বিট ব্যবহার করা হয়।"
+  },
+  {
+    "id": 4,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "x = 4 এবং y = 10 হলে y % x এর মান কত হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "6",
+      "b": "2.5",
+      "c": "2",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "c",
+    "explanation": "y % x হলো মডুলাস অপারেটর যা ভাগশেষ নির্দেশ করে। 10 কে 4 দ্বারা ভাগ করলে ভাগশেষ 2 থাকে।"
+  },
+  {
+    "id": 5,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "কোনো নেটওয়ার্কের মধ্য দিয়ে প্রতি সেকেন্ডে ডাটা পরিবহনে সক্ষমতাকে বলে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেগাবাইট (Megabyte)",
+      "b": "ইন্টারনেট (Internet)",
+      "c": "ব্যান্ডউইথ (Bandwidth)",
+      "d": "লেটেন্সি (Latency)"
+    },
+    "correctAnswer": "c",
+    "explanation": "প্রতি সেকেন্ডে যে পরিমাণ ডেটা স্থানান্তরিত হয় তাকে ব্যান্ডউইথ বলে।"
+  },
+  {
+    "id": 6,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "ANSI C এর Double Data Type কম্পিউটার মেমরিতে কত বাইট জায়গা নেয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1 বাইট",
+      "b": "2 বাইট",
+      "c": "4 বাইট",
+      "d": "8 বাইট"
+    },
+    "correctAnswer": "d",
+    "explanation": "ANSI C তে double ডাটা টাইপ সাধারণত 8 বাইট (64 বিট) জায়গা নেয়।"
+  },
+  {
+    "id": 7,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "(1011.11)₂ এবং (101.1)₂ -এর বিয়োগফল হবে-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "(110.10)₂",
+      "b": "(1010.01)₂",
+      "c": "(100.10)₂",
+      "d": "(100.11)₂"
+    },
+    "correctAnswer": "d",
+    "explanation": "বিয়োগফল হিসাব করে সঠিক মান পাওয়া যায় (110.01)₂। প্রশ্নব্যাংকের উত্তরে অমিল থাকতে পারে, তবে গাণিতিক নিয়মে 110.01 সঠিক।"
+  },
+  {
+    "id": 8,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "কোন গেটের সকল ইনপুট 0 হলে, আউটপুট 0 হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "NOR",
+      "b": "NAND",
+      "c": "X-OR",
+      "d": "X-NOR"
+    },
+    "correctAnswer": "c",
+    "explanation": "X-OR গেটে বিজোড় সংখ্যক 1 ইনপুট থাকলে আউটপুট 1 হয়। সকল ইনপুট 0 হলে আউটপুট 0 হয়।"
+  },
+  {
+    "id": 9,
+    "subject": "ICT",
+    "topic": "Operating System",
+    "question": "নিম্নলিখিত ফাইল সিস্টেমগুলির মধ্যে কোনটি Windows 10 দ্বারা সমর্থিত (Supported)?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "NTFS",
+      "b": "FAT32",
+      "c": "exFAT",
+      "d": "সবগুলোই"
+    },
+    "correctAnswer": "d",
+    "explanation": "Windows 10 মূলত NTFS, FAT32 এবং exFAT সব ধরনের ফাইল সিস্টেম সমর্থন করে। যদিও প্রশ্নব্যাংকে উত্তর ভিন্ন হতে পারে, সঠিক উত্তর 'সবগুলোই'।"
+  },
+  {
+    "id": 10,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "a=a+b; b=a-b; a=a-b এই তিনটি স্টেটমেন্ট পরপর execute হওয়ার পরে কী ঘটবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "a ও b এর মান একই থাকবে",
+      "b": "শুধু a এর মান পরিবর্তিত হবে",
+      "c": "শুধু b এর মান পরিবর্তিত হবে",
+      "d": "a ও b এর মান বিনিময় হবে"
+    },
+    "correctAnswer": "d",
+    "explanation": "এটি দুটি ভেরিয়েবলের মান অদলবদল (swap) করার একটি প্রচলিত অ্যালগরিদম যা তৃতীয় কোনো ভেরিয়েবল ছাড়াই কাজ করে।"
+  },
+  {
+    "id": 11,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "(10101.01)₂ এর সমকক্ষ অক্টাল সংখ্যা কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "(52.1)₈",
+      "b": "(52.2)₈",
+      "c": "(25.2)₈",
+      "d": "(25.1)₈"
+    },
+    "correctAnswer": "c",
+    "explanation": "বাইনারি থেকে অক্টালে রূপান্তর: 010 101 . 010 = 2 5 . 2 = (25.2)₈।"
+  },
+  {
+    "id": 12,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "লজিক বর্তনীতে আউটপুট Y = ?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "AB",
+      "b": "AB bar",
+      "c": "A+B",
+      "d": "A+B bar"
+    },
+    "correctAnswer": "c",
+    "explanation": "প্রদত্ত লজিক সার্কিটটি সমাধান করলে আউটপুট A+B পাওয়া যায় (এটি মূলত একটি OR গেইট বা সমতুল্য বর্তনী)।"
+  },
+  {
+    "id": 13,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "লজিক বর্তনীতে Y-এর মান কত?",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "0",
+      "b": "1",
+      "c": "001",
+      "d": "111"
+    },
+    "correctAnswer": "b",
+    "explanation": "বর্তনীতে ইনপুটগুলোর লজিক অপারেশন শেষে আউটপুট Y এর মান 1 পাওয়া যায়।"
+  },
+  {
+    "id": 14,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "বাইনারি 111 এর পরের সংখ্যাটি কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1111",
+      "b": "1001",
+      "c": "1000",
+      "d": "1100"
+    },
+    "correctAnswer": "c",
+    "explanation": "বাইনারিতে 111 এর সাথে 1 যোগ করলে 1000 পাওয়া যায় (দশমিকে 7 + 1 = 8)।"
+  },
+  {
+    "id": 15,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "সরকারের সকল কার্যক্রম তথ্যপ্রযুক্তির মাধ্যমে পরিচালনা করার ব্যবস্থার নাম কী?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ই-কমার্স",
+      "b": "টেলিমেডিসিন",
+      "c": "ই-লার্নিং",
+      "d": "ই-গভার্নেন্স"
+    },
+    "correctAnswer": "d",
+    "explanation": "ইলেকট্রনিক উপায়ে সরকারি সেবা প্রদান ও পরিচালনাকে ই-গভার্নেন্স বলা হয়।"
+  },
+  {
+    "id": 16,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "A=B=C=1 হলে XOR লজিক গেইটের আউটপুট কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "10",
+      "b": "11",
+      "c": "1",
+      "d": "0"
+    },
+    "correctAnswer": "c",
+    "explanation": "তিনটি ইনপুট 1 হলে XOR গেইটের আউটপুট: 1 ⊕ 1 ⊕ 1 = 0 ⊕ 1 = 1। (XOR গেইটে বিজোড় সংখ্যক 1 থাকলে আউটপুট 1 হয়)।"
+  },
+  {
+    "id": 17,
+    "subject": "ICT",
+    "topic": "Networking",
+    "question": "নেটওয়ার্ক সিস্টেমে ব্যবহৃত প্রধান কম্পিউটারকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "হাব",
+      "b": "সুইচ",
+      "c": "ব্রিজ",
+      "d": "সার্ভার"
+    },
+    "correctAnswer": "d",
+    "explanation": "নেটওয়ার্কের কেন্দ্রীয় কম্পিউটার যা অন্যান্য কম্পিউটারকে সেবা প্রদান করে তাকে সার্ভার বলে।"
+  },
+  {
+    "id": 18,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "ওয়াকিটকি কী ধরনের ট্রান্সমিশন মোডের উদাহরণ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Simplex",
+      "b": "Half-duplex",
+      "c": "Full-duplex",
+      "d": "Semi half-duplex"
+    },
+    "correctAnswer": "b",
+    "explanation": "ওয়াকিটকিতে উভয় দিকে ডেটা আদান-প্রদান করা যায় তবে একই সময়ে নয়, তাই এটি হাফ-ডুপ্লেক্স মোড।"
+  },
+  {
+    "id": 19,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "বাইনারি বিয়োগের ক্ষেত্রে, (10010)₂ - (1011)₂ = ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0111",
+      "b": "1010",
+      "c": "1110",
+      "d": "1011"
+    },
+    "correctAnswer": "a",
+    "explanation": "(10010)₂ = 18 এবং (1011)₂ = 11। বিয়োগফল = 18 - 11 = 7, যার বাইনারি মান (111)₂ বা 0111।"
+  },
+  {
+    "id": 20,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "লজিক গেইটে আউটপুট X=1 পেতে A ও B-এর মান কত হবে? [একটি লজিক গেইটের প্রতীক নির্দেশিত যা NOR গেইট নির্দেশ করে]",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "A=0, B=1",
+      "b": "A=1, B=0",
+      "c": "A=1, B=1",
+      "d": "A=0, B=0"
+    },
+    "correctAnswer": "d",
+    "explanation": "NOR গেইটের ক্ষেত্রে, উভয় ইনপুট 0 হলেই কেবল আউটপুট 1 হয় (0 + 0)' = 1। অন্য সকল ক্ষেত্রে আউটপুট 0 হয়।"
+  },
+  {
+    "id": 21,
+    "subject": "ICT",
+    "topic": "Emerging Technologies",
+    "question": "কৃত্রিম বুদ্ধিমত্তা সম্পন্ন প্রোগ্রাম কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Microsoft Office",
+      "b": "Chat GPT",
+      "c": "Apple",
+      "d": "Virus"
+    },
+    "correctAnswer": "b",
+    "explanation": "Chat GPT হলো একটি কৃত্রিম বুদ্ধিমত্তা (AI) সম্পন্ন ল্যাঙ্গুয়েজ মডেল।"
+  },
+  {
+    "id": 22,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "সি প্রোগ্রামের জন্য অত্যাবশ্যকীয় ফাংশন কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "print()",
+      "b": "getch()",
+      "c": "scanf()",
+      "d": "main()"
+    },
+    "correctAnswer": "d",
+    "explanation": "যেকোনো সি প্রোগ্রাম execution বা নির্বাহ main() ফাংশন থেকে শুরু হয়, তাই এটি অত্যাবশ্যকীয়।"
+  },
+  {
+    "id": 23,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "IEEE 802.11 প্রযুক্তির সাহায্যে কোন নেটওয়ার্কটি তৈরি করা যাবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "MAN",
+      "b": "LAN",
+      "c": "WAM",
+      "d": "Internet"
+    },
+    "correctAnswer": "b",
+    "explanation": "IEEE 802.11 হলো Wi-Fi স্ট্যান্ডার্ড যা মূলত WLAN (Wireless Local Area Network) বা LAN তৈরিতে ব্যবহৃত হয়।"
+  },
+  {
+    "id": 24,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "ডিকোডারের ইনপুট লাইন 3 টি হলে সর্বোচ্চ আউটপুট কয়টি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "1",
+      "b": "3",
+      "c": "6",
+      "d": "8"
+    },
+    "correctAnswer": "d",
+    "explanation": "ডিকোডারের ইনপুট সংখ্যা n হলে আউটপুট সংখ্যা হয় সর্বোচ্চ 2^n। এখানে n=3, তাই আউটপুট = 2^3 = 8 টি।"
+  },
+  {
+    "id": 25,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "বাইনারি বিয়োগের ক্ষেত্রে, (11001)₂ - (1010)₂ = ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "0001",
+      "b": "1111",
+      "c": "1100",
+      "d": "1101"
+    },
+    "correctAnswer": "b",
+    "explanation": "(11001)₂ = 25 এবং (1010)₂ = 10। বিয়োগফল = 25 - 10 = 15, যার বাইনারি মান (1111)₂।"
+  },
+  {
+    "id": 26,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "getch() ফাংশনের জন্য প্রয়োজনীয় Header File কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "stdio.h",
+      "b": "math.h",
+      "c": "conio.h",
+      "d": "graphics.h"
+    },
+    "correctAnswer": "c",
+    "explanation": "getch() ফাংশনটি conio.h (Console Input/Output) হেডার ফাইলের অন্তর্ভুক্ত।"
+  },
+  {
+    "id": 27,
+    "subject": "ICT",
+    "topic": "Emerging Technologies",
+    "question": "হার্ডওয়‍্যার ও সফটওয়‍্যারের মাধ্যমে তৈরীকৃত বাস্তবভিত্তিক কৃত্রিম পরিবেশকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "রোবোটিক্স",
+      "b": "আর্টিফিসিয়াল ইন্টেলিজেন্স",
+      "c": "ভার্চুয়াল রিয়েলিটি",
+      "d": "বায়োইনফরমেটিক্স"
+    },
+    "correctAnswer": "c",
+    "explanation": "কম্পিউটার প্রযুক্তির মাধ্যমে তৈরি ত্রিমাত্রিক কৃত্রিম পরিবেশ যা ব্যবহারকারীর কাছে সত্য ও বাস্তব বলে মনে হয়, তাকে ভার্চুয়াল রিয়েলিটি বলে।"
+  },
+  {
+    "id": 28,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "(100)₂ এবং (AB)₁₆ এর যোগফল কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "(1A)₁₆",
+      "b": "(1B)₁₆",
+      "c": "(AF)₁₆",
+      "d": "(AE)₁₆"
+    },
+    "correctAnswer": "c",
+    "explanation": "(100)₂ = 4 এবং (AB)₁₆ = 171 (দশমিকে)। যোগফল = 4 + 171 = 175। 175 এর হেক্সাডেসিমেল মান (AF)₁₆।"
+  },
+  {
+    "id": 29,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "নিচের কোনটি ওয়্যারলেস মান (Wireless MAN) এর উদাহরণ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ওয়াইম্যাক্স (WiMAX)",
+      "b": "ব্লুটুথ",
+      "c": "স্যাটেলাইট",
+      "d": "ইনফ্রারেড"
+    },
+    "correctAnswer": "a",
+    "explanation": "WiMAX (Worldwide Interoperability for Microwave Access) হলো একটি ওয়্যারলেস প্রযুক্তির মান (IEEE 802.16) যা মেট্রোপলিটন এরিয়া নেটওয়ার্ক (MAN) এ ব্যবহৃত হয়।"
+  },
+  {
+    "id": 30,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "বর্তনীতে F এর মান কত? [চিত্রে একটি NAND গেইট প্রদর্শিত]",
+    "hasDiagram": true,
+    "svg_code": "",
+    "options": {
+      "a": "A'B",
+      "b": "AB",
+      "c": "(AB)'",
+      "d": "কোনটিই নয়"
+    },
+    "correctAnswer": "c",
+    "explanation": "প্রদত্ত চিত্র এবং সঠিক উত্তর (c) অনুযায়ী এটি একটি NAND গেইট, যার আউটপুট F = (AB)' বা AB bar।"
+  },
+  {
+    "id": 31,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "টেলিভিশনের রিমোট কন্ট্রোলে কী ব্যবহৃত হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Radio wave",
+      "b": "Micro wave",
+      "c": "Bluetooth",
+      "d": "Infrared"
+    },
+    "correctAnswer": "d",
+    "explanation": "টেলিভিশনের রিমোট কন্ট্রোলে সাধারণত ইনফ্রারেড (Infrared) রশ্মি ব্যবহৃত হয় যা অপটিক্যাল ফাইবার বা তারবিহীন যোগাযোগের মাধ্যম হিসেবে কাজ করে।"
+  },
+  {
+    "id": 32,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "(A+B) এর সরলীকৃত মান কোনটি? (প্রশ্নটি অস্পষ্ট, সম্ভাব্য প্রশ্ন: A + A'B = ?)",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "A' + B",
+      "b": "AB",
+      "c": "A + B'",
+      "d": "A + B"
+    },
+    "correctAnswer": "d",
+    "explanation": "বুলিয়ান অ্যালজেবরা অনুযায়ী A + A'B = A + B। (প্রশ্নের ওসিআর অস্পষ্টতার কারণে এটি একটি সাধারণ অনুমান)।"
+  },
+  {
+    "id": 33,
+    "subject": "ICT",
+    "topic": "Emerging Technologies",
+    "question": "পারসেপট্রনের অর্থ-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "উচ্চ শক্তিস্তরের ইলেকট্রন",
+      "b": "নিম্ন শক্তিস্তরের ইলেকট্রন",
+      "c": "কৃত্রিম নিউরোন",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "c",
+    "explanation": "পারসেপট্রন (Perceptron) হলো একটি কৃত্রিম নিউরোন বা নিউরাল নেটওয়ার্কের প্রাথমিক একক যা মেশিন লার্নিং-এ ব্যবহৃত হয়।"
+  },
+  {
+    "id": 34,
+    "subject": "ICT",
+    "topic": "Web Design & HTML",
+    "question": "নিচের কোন HTML ট্যাগের ক্লোজিং ট্যাগ প্রয়োজন হয় না?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "<br>",
+      "b": "<hr>",
+      "c": "<img>",
+      "d": "এ সবগুলোরই"
+    },
+    "correctAnswer": "d",
+    "explanation": "<br>, <hr>, এবং <img> সবগুলিই এম্পটি ট্যাগ (Empty Tag) বা ভয়েড ট্যাগ, যাদের ক্লোজিং ট্যাগ থাকে না।"
+  },
+  {
+    "id": 35,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "if (a>=80) printf(\"A+\"); else if (a<40) printf(\"Fail\"); else printf(\"Pass\"); a এর মান 70 হলে, আউটপুট কী হবে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "A+",
+      "b": "Fail",
+      "c": "Pass",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "c",
+    "explanation": "a = 70। প্রথম শর্ত (70 >= 80) মিথ্যা। দ্বিতীয় শর্ত (70 < 40) মিথ্যা। তাই else অংশটি কাজ করবে এবং 'Pass' প্রিন্ট হবে।"
+  },
+  {
+    "id": 36,
+    "subject": "ICT",
+    "topic": "Programming (C)",
+    "question": "নিচের কোনটি সি ভাষার সঠিক চলক?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "Roll 02",
+      "b": "roll 02",
+      "c": "roll_2",
+      "d": "Roll@02"
+    },
+    "correctAnswer": "c",
+    "explanation": "সি ভাষায় চলকের নামে ফাঁকা স্থান (space) বা বিশেষ চিহ্ন (যেমন @) ব্যবহার করা যায় না, তবে আন্ডারস্কোর (_) ব্যবহার করা যায়। তাই 'roll_2' সঠিক।"
+  },
+  {
+    "id": 37,
+    "subject": "ICT",
+    "topic": "Number System",
+    "question": "+15 এবং -16 এর 2 এর পরিপূরক পদ্ধতিতে যোগফল-",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "00011111",
+      "b": "10011111",
+      "c": "11111111",
+      "d": "10000001"
+    },
+    "correctAnswer": "c",
+    "explanation": "+15 = 00001111। -16 (2's complement) = 11110000। যোগফল: 00001111 + 11110000 = 11111111।"
+  },
+  {
+    "id": 38,
+    "subject": "ICT",
+    "topic": "Web Design & HTML",
+    "question": "<p>a<sup>2</sup>=b<sub>2</sub></p> এর আউটপুট কোনটি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "a² = b₂",
+      "b": "a² = b²",
+      "c": "a₂ = b²",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "a",
+    "explanation": "<sup> ট্যাগ সুপারস্ক্রিপ্ট (পাওয়ার) এবং <sub> ট্যাগ সাবস্ক্রিপ্ট (নিচে) নির্দেশ করে। তাই a এর পাওয়ার 2 এবং b এর নিচে 2 প্রদর্শিত হবে।"
+  },
+  {
+    "id": 39,
+    "subject": "ICT",
+    "topic": "Digital Logic",
+    "question": "(A+B+C̅)' . B . C লজিকটির মান কত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "A",
+      "b": "0",
+      "c": "1",
+      "d": "কোনোটিই নয়"
+    },
+    "correctAnswer": "b",
+    "explanation": "সরলীকরণ: (A+B+C̅)'BC = A'B'(C̅)'BC = A'B'CBC = A'(B'B)(CC) = A'.0.C = 0।"
+  },
+  {
+    "id": 40,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "কোনটি সত্য নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "কী-বোর্ড, মাউস সিমপ্লেক্স মোডের উদাহরণ",
+      "b": "ইউএসবি প্যারালাল ডাটা ট্রান্সমিশনের উদাহরণ",
+      "c": "সিঙ্গেল এসএমএস ইউনিকাস্ট মোডের উদাহরণ",
+      "d": "ভিডিও কনফারেন্সিং মাল্টিকাস্ট মোডের উদাহরণ"
+    },
+    "correctAnswer": "b",
+    "explanation": "ইউএসবি (USB) এর পূর্ণরূপ হলো Universal Serial Bus, যা সিরিয়াল ডাটা ট্রান্সমিশন পদ্ধতি ব্যবহার করে, প্যারালাল নয়।"
+  },
+  {
+    "id": 41,
+    "subject": "ICT",
+    "topic": "Global Village",
+    "question": "গ্লোবাল ভিলেজ প্রতিষ্ঠার ক্ষেত্রে নিচের কোন উপাদানটির ভূমিকা সবচেয়ে বেশি?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ইন্টারনেট",
+      "b": "রেডিও",
+      "c": "টেলিভিশন",
+      "d": "টেলিফোন"
+    },
+    "correctAnswer": "a",
+    "explanation": "গ্লোবাল ভিলেজ বা বিশ্বগ্রামের মেরুদণ্ড হলো কানেক্টিভিটি বা ইন্টারনেট। ইন্টারনেটের মাধ্যমেই বিশ্বব্যাপী যোগাযোগ ব্যবস্থা গড়ে উঠেছে।"
+  },
+  {
+    "id": 42,
+    "subject": "ICT",
+    "topic": "Artificial Intelligence",
+    "question": "কোন প্রযুক্তিটি কৃত্রিম বুদ্ধিমত্তার সাথে সম্পর্কিত?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ডাটা এন্ট্রি",
+      "b": "স্প্রেডশিট",
+      "c": "ওয়াই-ফাই",
+      "d": "মেশিন লার্নিং"
+    },
+    "correctAnswer": "d",
+    "explanation": "মেশিন লার্নিং (Machine Learning) হলো কৃত্রিম বুদ্ধিমত্তার (AI) একটি শাখা বা প্রয়োগ, যা কম্পিউটারকে মানুষের মতো শিখতে সাহায্য করে।"
+  },
+  {
+    "id": 43,
+    "subject": "ICT",
+    "topic": "Digital Devices",
+    "question": "যে লজিক বর্তনী আলফা নিউমেরিক ক্যারেকটারকে বাইনারি কোডে পরিণত করে তাকে কী বলে?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "রেজিস্টার",
+      "b": "এনকোডার",
+      "c": "ডিকোডার",
+      "d": "অ্যাডার"
+    },
+    "correctAnswer": "b",
+    "explanation": "এনকোডার (Encoder) মানুষের বোধগম্য ভাষাকে (আলফা নিউমেরিক) কম্পিউটারের বোধগম্য যান্ত্রিক ভাষায় (বাইনারি কোড) রূপান্তর করে।"
+  },
+  {
+    "id": 44,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "রেডিও এবং টেলিভিশনের সম্প্রচার কোন ধরনের কমিউনিকেশন মোড?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "সিমপ্লেক্স এবং ইউনিকাস্ট",
+      "b": "হাফ-ডুপ্লেক্স এবং ইউনিকাস্ট",
+      "c": "সিমপ্লেক্স এবং ব্রডকাস্ট",
+      "d": "ফুল-ডুপ্লেক্স এবং ব্রডকাস্ট"
+    },
+    "correctAnswer": "c",
+    "explanation": "রেডিও ও টিভি সম্প্রচারে ডেটা কেবল একদিকে প্রবাহিত হয় (সিমপ্লেক্স) এবং একটি প্রেরক থেকে অনেক গ্রাহকের কাছে একসাথে পাঠানো হয় (ব্রডকাস্ট)।"
+  },
+  {
+    "id": 45,
+    "subject": "ICT",
+    "topic": "Number Systems",
+    "question": "নিচের কোন পরিপূরক পদ্ধতিটি কম্পিউটারে ব্যবহৃত হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "১-এর পরিপূরক",
+      "b": "২-এর পরিপূরক",
+      "c": "১০-এর পরিপূরক",
+      "d": "৯-এর পরিপূরক"
+    },
+    "correctAnswer": "b",
+    "explanation": "কম্পিউটার সিস্টেমে ঋণাত্মক সংখ্যা প্রকাশ এবং গাণিতিক বিয়োগের কাজের জন্য ২-এর পরিপূরক (2's Complement) পদ্ধতি সবচেয়ে বেশি ব্যবহৃত হয়।"
+  },
+  {
+    "id": 46,
+    "subject": "ICT",
+    "topic": "Programming",
+    "question": "C ভাষায় লেখা প্রোগ্রামকে কী কোড বলা হয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "আসকি কোড",
+      "b": "সোর্স কোড",
+      "c": "অবজেক্ট কোড",
+      "d": "ইউনিকোড"
+    },
+    "correctAnswer": "b",
+    "explanation": "উচ্চস্তরের ভাষায় (যেমন C) লেখা প্রোগ্রাম যা মানুষ বুঝতে পারে তাকে সোর্স কোড (Source Code) বলা হয়।"
+  },
+  {
+    "id": 47,
+    "subject": "ICT",
+    "topic": "Programming Languages",
+    "question": "কোন ভাষার মাধ্যমে কম্পিউটারের মেমরি-অ্যাড্রেসের সাথে সরাসরি সংযোগ সাধন সম্ভব?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "মেশিন ভাষা",
+      "b": "হাই লেভেল ভাষা",
+      "c": "অ্যাসেম্বলি ভাষা",
+      "d": "চতুর্থ প্রজন্মের ভাষা"
+    },
+    "correctAnswer": "a",
+    "explanation": "মেশিন ভাষা (Machine Language) সরাসরি হার্ডওয়্যার এবং মেমোরি অ্যাড্রেস নিয়ে কাজ করতে পারে কারণ এটি বাইনারি (0,1) দিয়ে গঠিত যা কম্পিউটার সরাসরি বোঝে।"
+  },
+  {
+    "id": 48,
+    "subject": "ICT",
+    "topic": "Virtual Reality",
+    "question": "নিচের কোনটি ভার্চুয়াল রিয়েলিটির অংশ নয়?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "অবগাহন (Immersion)",
+      "b": "কল্পনার জগৎ (Imagination)",
+      "c": "মিথস্ক্রিয়া (Interaction)",
+      "d": "আন্তর্জাতিকীকরণ (Internationalization)"
+    },
+    "correctAnswer": "d",
+    "explanation": "ভার্চুয়াল রিয়েলিটির মূল উপাদানগুলো হলো Immersion, Interaction এবং Imagination। আন্তর্জাতিকীকরণ এর অংশ নয়।"
+  },
+  {
+    "id": 49,
+    "subject": "ICT",
+    "topic": "Number Systems",
+    "question": "ASCII কোড কত বিটের?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "৪",
+      "b": "৮",
+      "c": "১২",
+      "d": "১৬"
+    },
+    "correctAnswer": "b",
+    "explanation": "আদর্শ ASCII কোড ৭ বিটের হলেও বর্তমানে বর্ধিত ASCII (Extended ASCII) ৮ বিটের হয়ে থাকে। অপশনে ৭ না থাকায় ৮ সঠিক উত্তর।"
+  },
+  {
+    "id": 50,
+    "subject": "ICT",
+    "topic": "Communication Systems",
+    "question": "নিচের কোনটি ওয়্যারলেস MAN এর উদাহরণ?",
+    "hasDiagram": false,
+    "svg_code": "",
+    "options": {
+      "a": "ওয়াই-ম্যাক্স (WiMAX)",
+      "b": "ব্লু-টুথ",
+      "c": "স্যাটেলাইট",
+      "d": "ইনফ্রারেড"
+    },
+    "correctAnswer": "a",
+    "explanation": "WiMAX (Worldwide Interoperability for Microwave Access) প্রযুক্তি ব্যবহার করে একটি শহর বা বড় এলাকা জুড়ে তারবিহীন নেটওয়ার্ক (Wireless MAN) তৈরি করা যায়।"
+  }
+]
